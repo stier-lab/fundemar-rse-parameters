@@ -91,6 +91,8 @@ def main():
         "FigS22_heatwave_scenarios": "S6",
         "Studies contributing to the synthesis": "S1",
         "TableS2_study_window_disturbance_audit": "S2",
+        "Matrix resampling and source sensitivity": "S3",
+        "Matrix structure and initial population composition": "S4",
     }
     actual_esm = {item["stem"] if item["stem"] != "-" else item["short_title"]: item.get("esm_number", "")
                   for item in items if item.get("esm_number", "")}

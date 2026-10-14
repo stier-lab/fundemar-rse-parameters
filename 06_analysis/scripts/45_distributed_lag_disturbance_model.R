@@ -483,7 +483,7 @@ p <- ggplot(plot_terms, aes(x = term, y = estimate, ymin = estimate - 1.96 * std
 ggsave(file.path(fig_dir, "exploratory", "distributed_lag_coefficients.png"), p,
        width = 200, height = 130, units = "mm", dpi = 300)
 ggsave(file.path(fig_dir, "exploratory", "distributed_lag_coefficients.pdf"), p,
-       width = 200, height = 130, units = "mm")
+       width = 200, height = 130, units = "mm", device = cairo_pdf)
 
 cat("\nModel comparison (lower AIC is better):\n")
 print(model_comparison %>% arrange(outcome, delta_aic))

@@ -164,6 +164,8 @@ scripts <- c(
   "39_restoration_subtype_sensitivity.R",
   # 40: Heatwave scenarios (Manzello 2025)
   "40_manzello_heatwave_scenarios.R",
+  "50_matrix_robustness.R",
+  "51_heatwave_matrix_robustness.R",
   # 41-47: Advanced dynamic model extensions
   "41_multistate_transition_model.R",
   "42_joint_longitudinal_survival_model.R",
@@ -252,6 +254,8 @@ script_descriptions <- c(
   "Restoration subtype sensitivity analysis",
   # 40: Heatwave scenarios
   "Manzello 2025 heatwave scenario projections",
+  "Matrix resampling, imputation, and Vardi source sensitivities",
+  "Full-matrix and initial-size heatwave sensitivities",
   # 41-47: Advanced dynamic model extensions
   "Advanced multistate transition model",
   "Advanced joint longitudinal-survival model",
@@ -286,6 +290,25 @@ script_descriptions <- c(
 # =============================================================================
 # RUN PIPELINE
 # =============================================================================
+
+# Explicit recovery after a failed step; never silently skip earlier analyses.
+start_at <- Sys.getenv("APAL_PIPELINE_START_AT", "")
+if (nzchar(start_at)) {
+  first <- match(start_at, scripts)
+  if (is.na(first)) stop("Unknown APAL_PIPELINE_START_AT script: ", start_at)
+  cat("Explicit continuation from", start_at,
+      "— earlier steps must be verified in their original run log.\n")
+  scripts <- scripts[first:length(scripts)]
+  script_descriptions <- script_descriptions[first:length(script_descriptions)]
+}
+stop_after <- Sys.getenv("APAL_PIPELINE_STOP_AFTER", "")
+if (nzchar(stop_after)) {
+  last <- match(stop_after, scripts)
+  if (is.na(last)) stop("Unknown or earlier APAL_PIPELINE_STOP_AFTER script: ", stop_after)
+  cat("Explicit segment ending at", stop_after, "— this is not a whole-pipeline run.\n")
+  scripts <- scripts[seq_len(last)]
+  script_descriptions <- script_descriptions[seq_len(last)]
+}
 
 results <- data.frame(
   script = scripts,
@@ -461,3 +484,4 @@ cat(sprintf("Total runtime: %.1f minutes\n\n", total_duration))
 
 # Return results invisibly for programmatic use
 invisible(results)
+if (pipeline_failed) quit(status = 1)

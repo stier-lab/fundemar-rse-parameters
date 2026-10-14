@@ -115,6 +115,7 @@ for (reg in paired_regions) {
 # For each region, fit rma() with population_type moderator
 
 within_region_results <- list()
+within_region_coverage <- list()
 
 for (reg in paired_regions) {
   cat(sprintf("\n--- %s ---\n", reg))
@@ -129,6 +130,14 @@ for (reg in paired_regions) {
   # Compute weighted (by n) pooled survival for each type
   nat_sub <- reg_sub %>% filter(population_type == "Natural colony")
   rest_sub <- reg_sub %>% filter(population_type == "Restoration fragment")
+
+  estimable <- sum(nat_sub$n_total) > 0 && sum(rest_sub$n_total) > 0
+  within_region_coverage[[reg]] <- data.frame(region=reg, k_natural=k_nat,
+    k_restoration=k_rest, contrast_estimable=estimable)
+  if (!estimable) {
+    cat("  No two-population contrast: one group has no usable observations.\n")
+    next
+  }
 
   nat_pooled_surv <- sum(nat_sub$n_survived) / sum(nat_sub$n_total)
   rest_pooled_surv <- sum(rest_sub$n_survived) / sum(rest_sub$n_total)
@@ -218,6 +227,8 @@ for (reg in paired_regions) {
 }
 
 within_region_df <- bind_rows(within_region_results)
+write_csv(bind_rows(within_region_coverage),
+          file.path(output_dir, "within_region_comparison_coverage.csv"))
 
 # --- 1b. Overall within-region difference via meta-analysis of regional differences ---
 # Compute a log-odds ratio for each region (nat vs rest) for meta-analysis

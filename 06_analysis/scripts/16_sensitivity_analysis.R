@@ -332,8 +332,12 @@ if (!is.null(growth_data_for_lambda)) {
               diff(range(loo_lambdas$lambda, na.rm = TRUE))))
 
   # Save
-  write.csv(loo_lambdas, file.path(output_dir, "sensitivity_lambda_loo.csv"), row.names = FALSE)
-  cat("  Saved: sensitivity_lambda_loo.csv\n")
+  # Retain this individual-record estimator as an exploratory diagnostic only.
+  write.csv(loo_lambdas, file.path(output_dir, "sensitivity_lambda_loo_individual.csv"), row.names = FALSE)
+  # The manuscript-facing exclusion analysis must reconstruct the primary
+  # study-level REML estimator (including summary cells and fragmentation).
+  source(file.path(project_root, "06_analysis/scripts/49_matrix_concordance.R"), local = TRUE)
+  cat("  Saved: matched-estimator sensitivity_lambda_loo.csv\n")
 } else {
   cat("NOTE: Growth data not available. Lambda sensitivity skipped.\n")
 }

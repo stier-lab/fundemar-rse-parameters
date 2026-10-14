@@ -832,6 +832,8 @@ growth_spatial_newdata <- spatial_pred %>%
     study = factor(as.character(ref_growth$study), levels = levels(growth_panel$study)),
     site_id_pred = factor(as.character(ref_growth$site_id), levels = levels(growth_panel$site_id)),
     log_size = median(growth_panel$log_size, na.rm = TRUE),
+    population_type = factor(as.character(ref_growth$population_type),
+                             levels = levels(growth_panel$population_type)),
     disturbance_state = factor("No curated disturbance", levels = disturbance_state_levels)
   )
 
@@ -933,7 +935,8 @@ ggsave(
   filename = file.path(fig_dir, "exploratory", "spatiotemporal_hierarchical_summary.pdf"),
   plot = spatiotemporal_fig,
   width = 13,
-  height = 10
+  height = 10,
+  device = cairo_pdf
 )
 
 cat("\nModel comparison summary:\n")

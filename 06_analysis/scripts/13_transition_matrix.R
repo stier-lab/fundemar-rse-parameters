@@ -988,9 +988,8 @@ cat("═════════════════════════
 #
 # KNOWN LIMITATION: Survival and growth are resampled independently.
 # Joint resampling (same study draw for both) would capture within-study
-# correlation but is not implemented because survival uses cell-level data
-# (5 natural studies) while growth uses individual data (3 studies),
-# and the study sets only partially overlap.
+# correlation. The study sets partially overlap; coordinated resampling is
+# evaluated separately in script 50, without changing this primary estimator.
 
 n_boot <- 2000  # Increased from 1000 for more stable percentile estimates
 lambda_boot <- numeric(n_boot)
@@ -1001,8 +1000,10 @@ boot_survival_by_sc <- matrix(NA_real_, nrow = n_boot, ncol = 5,
 
 # FIX: Track imputation vs discard for each bootstrap iteration (critique audit 2026-03-29)
 # Previously, ~24% of bootstrap iterations were discarded when a resampled study set
-# lacked data for a size class (typically SC5). Discarding biases the CI because it
-# conditions on having SC5 data, which is only available from NOAA. Instead, we now
+# lacked data for a size class. In the current four-study inputs the missing
+# class is usually SC1; some draws also lack other classes. Discarding
+# conditions the interval on adequate class coverage.
+# Instead, we now
 # impute missing size class survival from the full-data point estimate. We track both
 # approaches: lambda_boot stores the imputed version; lambda_boot_discard stores NA
 # for iterations that would have been discarded under the old approach.
@@ -1050,6 +1051,16 @@ resample_F_mat <- function(frag_data_annual, frag_rate_cols, size_class_labels) 
 # Get unique studies — survival from cells (includes summary studies), growth from individual data
 surv_studies <- unique(surv_cells_natural$study)
 growth_studies <- unique(growth_filtered$study)
+
+# Cache colony rows once. Sampling still uses the original unique-ID order and
+# identical random draws; avoid thousands of repeated data-frame filters.
+growth_colony_rows <- setNames(lapply(growth_studies, function(s) {
+  dat <- growth_filtered %>% filter(study == s)
+  ids <- unique(dat$coral_id)
+  stopifnot(!anyNA(ids))
+  list(data = dat, ids = ids,
+       rows = lapply(ids, function(id) which(dat$coral_id == id)))
+}), growth_studies)
 
 cat(sprintf("Running %d hierarchical bootstrap iterations...\n", n_boot))
 cat(sprintf("  Survival studies (from cells, natural, rma per SC): %d (%s)\n", length(surv_studies),
@@ -1178,14 +1189,12 @@ for (b in 1:n_boot) {
 
   # STAGE 2 for growth: Resample colonies within each resampled study
   growth_boot <- do.call(rbind, lapply(seq_along(growth_studies_boot), function(i) {
-    study_data <- growth_filtered %>% filter(study == growth_studies_boot[i])
-    if (nrow(study_data) == 0) return(NULL)
+    cached <- growth_colony_rows[[growth_studies_boot[i]]]
+    study_data <- cached$data
     # Resample colonies within study
-    colonies <- unique(study_data$coral_id)
+    colonies <- cached$ids
     boot_colonies <- sample(colonies, replace = TRUE)
-    do.call(rbind, lapply(boot_colonies, function(col) {
-      study_data %>% filter(coral_id == col)
-    }))
+    study_data[unlist(cached$rows[match(boot_colonies, colonies)], use.names = FALSE), ]
   }))
 
   if (is.null(growth_boot) || nrow(growth_boot) < 10) {
@@ -1855,8 +1864,10 @@ cat("  The absence of sexual reproduction in this model is a critical assumption
 # survival from FUNDEMAR, Chamberland, and Mendoza-Quiroz restoration programs.
 # We use this to decompose fecundity into: larvae × settlement × s_recruit
 recruit_pars_path <- file.path(project_root, "parameter_lists", "recruit_surv_pars.rds")
-if (file.exists(recruit_pars_path)) {
-  recruit_pars <- readRDS(recruit_pars_path)
+recruit_pars <- if (file.exists(recruit_pars_path)) readRDS(recruit_pars_path) else NULL
+if (!is.null(recruit_pars) && length(recruit_pars$s_recruit) == 1L &&
+    is.finite(recruit_pars$s_recruit) && recruit_pars$s_recruit > 0 &&
+    recruit_pars$s_recruit <= 1) {
   s_recruit <- recruit_pars$s_recruit
   sett_rate <- 0.15  # FUNDEMAR 2025 estimate (rest_pars.rmd in RSE repo)
 
@@ -1897,7 +1908,7 @@ if (file.exists(recruit_pars_path)) {
   write_csv(fecundity_sensitivity, file.path(output_dir, "fecundity_sensitivity.csv"))
   cat("  Updated: fecundity_sensitivity.csv (with s_recruit decomposition)\n")
 } else {
-  cat("\n  NOTE: recruit_surv_pars.rds not found; run script 17 first for data-informed fecundity decomposition.\n")
+  cat("\n  NOTE: No estimable recruit-survival parameter; optional fecundity decomposition skipped.\n")
 }
 
 # =============================================================================
@@ -2412,6 +2423,14 @@ cat("✓ Saved: stochastic_projections.csv\n")
 # FIX: Save imputed lambda vector as primary (backward-compatible format) (critique audit 2026-03-29)
 # Downstream scripts (22_fig6_population_model.R, 23_verification.R) expect a numeric vector.
 saveRDS(lambda_boot, file.path(output_dir, "lambda_bootstrap_samples.rds"))
+valid_matrix_ids <- which(vapply(boot_matrices, function(x)
+  is.matrix(x) && all(is.finite(x)), logical(1)))
+saveRDS(list(matrices = boot_matrices[valid_matrix_ids],
+             iteration = valid_matrix_ids, seed = 42L,
+             imputed = boot_imputed_flag[valid_matrix_ids],
+             lambda = vapply(boot_matrices[valid_matrix_ids], function(x)
+               Re(eigen(x)$values[1]), numeric(1))),
+        file.path(output_dir, "transition_bootstrap_matrices.rds"))
 cat("✓ Saved: lambda_bootstrap_samples.rds (imputed approach, backward-compatible numeric vector)\n")
 
 # Per-size-class bootstrap survival distributions for script 17 parameter lists

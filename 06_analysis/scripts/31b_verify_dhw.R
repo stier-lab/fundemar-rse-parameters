@@ -53,6 +53,19 @@ project_root <- if (file.exists("06_analysis/output/heat_stress_by_site_year.csv
 
 output_dir <- file.path(project_root, "06_analysis/output")
 
+# Reproducible reruns reuse the frozen verification cache, including explicit
+# missing observations; refreshing NOAA data is a separate, online operation.
+if (identical(Sys.getenv("APAL_OFFLINE"), "true")) {
+  cache_file <- file.path(output_dir, "heat_stress_by_site_year_verified.csv")
+  if (!file.exists(cache_file)) stop("Offline DHW verification requires the frozen verified cache")
+  cached <- read_csv(cache_file, show_col_types = FALSE)
+  stopifnot(nrow(cached) > 0,
+            all(c("lat_round", "lon_round", "survey_yr", "max_dhw", "query_status") %in% names(cached)),
+            all(is.na(cached$max_dhw) | (is.finite(cached$max_dhw) & cached$max_dhw >= 0)))
+  cat(sprintf("Offline rerun: validated and retained %d frozen site-year records; NOAA was not re-queried.\n", nrow(cached)))
+  quit(status = 0)
+}
+
 # ==============================================================================
 # SECTION 1: LOAD EXISTING DATA
 # ==============================================================================

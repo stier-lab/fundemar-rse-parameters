@@ -307,6 +307,10 @@ p_legend_src <- ggplot(legend_df, aes(x = type, y = y, fill = type)) +
         legend.key.size = unit(4, "mm"),
         legend.text = element_text(size = 8))
 
+# cowplot opens its own null device for patchwork conversion. Use base R's
+# font-capable Cairo device there, without adding a Cairo-package dependency.
+old_null_device <- cowplot::set_null_device(function(width, height)
+  grDevices::cairo_pdf(tempfile(fileext = ".pdf"), width = width, height = height))
 shared_legend <- cowplot::get_legend(p_legend_src)
 
 # --- Combine S4 with shared legend ---
@@ -320,6 +324,7 @@ p_s4_final <- cowplot::plot_grid(
   ncol = 1,
   rel_heights = c(1, 0.06)
 )
+cowplot::set_null_device(old_null_device)
 
 # Save S4
 png_path_s4 <- file.path(supp_dir, "FigS4_model_selection.png")
@@ -329,10 +334,9 @@ check_coral_reefs_figure(p_s4_final, 174, 190, "FigS4_model_selection")
 ggsave(png_path_s4, plot = p_s4_final,
        width = 174, height = 190, units = "mm", dpi = 600, bg = "white")
 
-# Base PDF avoids a macOS Cairo CID-font failure triggered by cowplot's legend
-# grob while retaining a vector submission asset.
+# Use the same font-capable device for measurement and vector export.
 ggsave(pdf_path_s4, plot = p_s4_final,
-       width = 174, height = 190, units = "mm", bg = "white", device = "pdf")
+       width = 174, height = 190, units = "mm", bg = "white", device = cairo_pdf)
 
 cat(sprintf("  Saved: FigS4_model_selection (.png + .pdf) -- 174 x 190 mm\n"))
 

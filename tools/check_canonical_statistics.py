@@ -47,6 +47,11 @@ def main():
         sys.exit(1)
 
     checks = {
+        "lambda_deterministic": row_value(OUT / "population_parameters.csv", "parameter", "lambda", "value"),
+        "lambda_ci_lower": row_value(OUT / "population_parameters.csv", "parameter", "lambda_ci_lower", "value"),
+        "lambda_ci_upper": row_value(OUT / "population_parameters.csv", "parameter", "lambda_ci_upper", "value"),
+        "p_decline_pct": 100 * row_value(OUT / "population_parameters.csv", "parameter", "p_decline", "value"),
+        "max_elasticity_pct": 100 * row_value(OUT / "transition_matrix_model_diagnostics.csv", "metric", "sc5_cell_elasticity", "value"),
         "all_subtypes_mean_survival_pct": 100 * row_value(
             OUT / "restoration_subtype_sensitivity.csv",
             "scenario",

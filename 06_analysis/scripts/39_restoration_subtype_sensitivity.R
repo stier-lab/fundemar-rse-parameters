@@ -161,10 +161,15 @@ surv_rest <- surv_data %>%
   filter(fragment == "Y" | is_restoration_population(population_type) | study %in% restore_mapping$study) %>%
   assign_restoration_subtype(restore_mapping)
 
+growth_population_restoration <- if ("population_type" %in% names(growth_data)) {
+  is_restoration_population(growth_data$population_type)
+} else {
+  rep(FALSE, nrow(growth_data))
+}
 growth_rest <- growth_data %>%
   filter(
     fragment == "Y" | study %in% restore_mapping$study |
-      ("population_type" %in% names(growth_data) && is_restoration_population(population_type))
+      growth_population_restoration
   ) %>%
   assign_restoration_subtype(restore_mapping)
 

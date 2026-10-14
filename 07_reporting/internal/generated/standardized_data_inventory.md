@@ -1,6 +1,6 @@
 # Standardized Data Inventory
 
-Generated from pipeline run `20260930_151646` on 2026-09-30 15:41:56.
+Generated from pipeline run `20260930_155236` on 2026-10-14 15:43:09.
 
 | File | Role | Rows | Studies | Regions | Year Range | Duplicate Keys |
 |---|---:|---:|---:|---:|---|---:|

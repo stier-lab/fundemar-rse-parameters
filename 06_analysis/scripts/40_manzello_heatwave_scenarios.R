@@ -568,7 +568,7 @@ p_lambda <- ggplot(lambda_data, aes(x = severity, y = effective_lambda,
   labs(x = "Heatwave severity",
        y = expression("Effective " * lambda)) +
   coord_cartesian(ylim = c(
-    min(lambda_data$effective_lambda, na.rm = TRUE) * 0.95,
+    0,
     1.03
   )) +
   theme_manuscript() +

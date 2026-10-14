@@ -585,7 +585,7 @@ ggsave(
 )
 ggsave(
   file.path(supp_dir, "exploratory", "stochastic_ipm_projection_trajectories.pdf"),
-  plot = p, width = 180, height = 120, units = "mm"
+  plot = p, width = 180, height = 120, units = "mm", device = cairo_pdf
 )
 
 # ==============================================================================

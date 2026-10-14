@@ -163,6 +163,7 @@ fetch_region_monthly <- function(region, lat, lon) {
     }
   }
 
+  if (identical(Sys.getenv("APAL_OFFLINE"), "true")) return(NULL)
   if (!has_rerddap) return(NULL)
 
   options(timeout = RERDDAP_TIMEOUT)

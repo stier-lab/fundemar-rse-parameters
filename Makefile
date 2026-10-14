@@ -15,7 +15,7 @@
 R ?= Rscript
 PY ?= python3
 
-.PHONY: all pipeline verify display-check renv-check submit-check test help
+.PHONY: all pipeline verify display-check renv-check submit-check test help matrix-robustness
 
 all: pipeline verify
 
@@ -23,9 +23,12 @@ pipeline:
 	$(R) 06_analysis/scripts/run_all.R
 
 verify:
+	$(R) 06_analysis/scripts/49_matrix_concordance.R
 	$(R) 06_analysis/scripts/23_verification.R
 	$(R) 06_analysis/scripts/48_pipeline_refresh_audit.R
 	$(PY) tools/check_canonical_statistics.py
+	$(PY) tools/check_matrix_reporting.py
+	$(PY) tools/check_robustness_reporting.py
 	$(PY) tools/check_claims.py
 	$(PY) tools/check_vocabulary.py
 	$(PY) tools/check_model_inventory.py
@@ -41,6 +44,13 @@ submit-check: verify display-check renv-check
 	@echo "OK - submission checks completed."
 
 test: verify
+
+matrix-robustness:
+	$(R) tools/check_r_version.R
+	$(R) 06_analysis/scripts/13_transition_matrix.R
+	$(R) 06_analysis/scripts/49_matrix_concordance.R
+	$(R) 06_analysis/scripts/50_matrix_robustness.R
+	$(R) 06_analysis/scripts/51_heatwave_matrix_robustness.R
 
 help:
 	@echo "Canonical workflow targets:"

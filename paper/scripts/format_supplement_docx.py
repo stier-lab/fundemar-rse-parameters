@@ -51,7 +51,7 @@ def borders(cell, color=GRID):
         if element is None:
             element = OxmlElement(f"w:{edge}")
             tc_borders.append(element)
-        element.set(qn("w:val"), "single")
+        element.set(qn("w:val"), "nil" if edge in ("left", "right", "insideV") else "single")
         element.set(qn("w:sz"), "4")
         element.set(qn("w:space"), "0")
         element.set(qn("w:color"), color)
@@ -71,6 +71,8 @@ def set_table_layout(table, widths):
         layout = OxmlElement("w:tblLayout")
         tbl_pr.append(layout)
     layout.set(qn("w:type"), "fixed")
+    for column, width in zip(table.columns, widths):
+        column.width = Inches(width)
     for row in table.rows:
         for idx, width in enumerate(widths):
             cell = row.cells[idx]
@@ -148,8 +150,10 @@ def main(source, output):
             p.paragraph_format.space_before = Pt(10)
 
     table_widths = (
-        [1.40, 0.65, 1.15, 1.00, 0.40, 0.70, 0.70, 1.00],
+        [1.45, 0.35, 1.15, 1.20, 0.60, 0.65, 0.65, 0.75],
         [1.10, 0.85, 0.85, 0.85, 1.00, 1.00, 1.25],
+        [2.80, 0.50, 1.00, 1.15, 1.35],
+        [1.20, 1.15, 1.05, 1.65, 1.75],
     )
     for table_index, table in enumerate(doc.tables):
         table.autofit = False
@@ -159,7 +163,7 @@ def main(source, output):
             table.rows[0].cells[1].text = "T"
         repeat_table_header(table.rows[0])
         for r_idx, row in enumerate(table.rows):
-            for cell in row.cells:
+            for c_idx, cell in enumerate(row.cells):
                 cell.vertical_alignment = WD_ALIGN_VERTICAL.CENTER
                 borders(cell)
                 if r_idx == 0:
@@ -170,7 +174,8 @@ def main(source, output):
                     paragraph.paragraph_format.space_after = Pt(2)
                     paragraph.paragraph_format.space_before = Pt(2)
                     for run in paragraph.runs:
-                        set_run_font(run, size=9.2, bold=(r_idx == 0), color=("FFFFFF" if r_idx == 0 else None))
+                        size = 8 if table_index == 0 and r_idx == 0 and c_idx == 4 else 9.2
+                        set_run_font(run, size=size, bold=(r_idx == 0), color=("FFFFFF" if r_idx == 0 else None))
 
     header = section.header.paragraphs[0]
     header.text = "Online Resource 1 | Acropora palmata demography"

@@ -1,3 +1,5 @@
-"excluded_study","lambda"
-"NOAA_survey",0.880872011025295
-"neely_et_al_2022",0.991273873705569
+excluded_study,lambda
+garrison_ward_2008,0.959062996727353
+neely_et_al_2022,0.9773282632617464
+NOAA_survey,0.9355410900219995
+vardi_2011,0.8887260572165627

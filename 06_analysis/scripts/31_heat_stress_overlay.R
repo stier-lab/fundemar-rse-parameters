@@ -225,6 +225,7 @@ dhw_literature_lut <- tribble(
 
 # --- Function: query a single site-year from ERDDAP via rerddap ---
 query_dhw_rerddap <- function(lat, lon, year) {
+  if (identical(Sys.getenv("APAL_OFFLINE"), "true")) return(NULL)
   if (!has_rerddap) return(NULL)
 
   # CRW 5km monthly DHW -- warm season is approximately June through December
@@ -256,6 +257,7 @@ query_dhw_rerddap <- function(lat, lon, year) {
 
 # --- Function: query a single site-year from ERDDAP via httr (REST fallback) ---
 query_dhw_httr <- function(lat, lon, year) {
+  if (identical(Sys.getenv("APAL_OFFLINE"), "true")) return(NULL)
   if (!has_httr) return(NULL)
 
   # Try multiple ERDDAP endpoints and dataset IDs
@@ -392,6 +394,14 @@ for (i in seq_len(n_total)) {
   }
 
   # Pre-1985: CRW data unavailable
+
+  # A frozen-input rerun must not silently replace missing cached values with
+  # newly fetched values or regional literature approximations.
+  if (identical(Sys.getenv("APAL_OFFLINE"), "true")) {
+    site_years_all$query_status[i] <- "offline: no cached observation"
+    n_na <- n_na + 1
+    next
+  }
 
   if (yr < 1985) {
     site_years_all$query_status[i] <- "pre-1985 (CRW unavailable)"

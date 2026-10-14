@@ -46,5 +46,7 @@ figS29	supplementary	29	FigS29_biological_realism	supplementary	06_analysis/scri
 figS30	supplementary	30	FigS30_disturbance_type_size	supplementary	06_analysis/scripts/37b_disturbance_type_size_interaction.R	Fig. S30	Disturbance type by size class
 tableS1	supp_table	1	TableS1_disturbance_chronology	tables	06_analysis/scripts/34_disturbance_summaries.R	Table S1	Disturbance chronology
 esm_tableS1	supp_table	1	-	-	paper/submission/supplement/ESM_1.md	Table S1	Studies contributing to the synthesis	S1
+esm_tableS3	supp_table	3	-	-	paper/submission/supplement/ESM_1.md	Table S3	Matrix resampling and source sensitivity	S3
+esm_tableS4	supp_table	4	-	-	paper/submission/supplement/ESM_1.md	Table S4	Matrix structure and initial population composition	S4
 tableS2	supp_table	2	TableS2_study_window_disturbance_audit	tables	06_analysis/scripts/38_study_window_disturbance_audit.R	Table S2	Study-window disturbance audit	S2
 tableS3	supp_table	3	size_class_synthesis_table	tables	07_reporting/manuscript/tables/size_class_synthesis_table.md	Table S3	Size-class synthesis

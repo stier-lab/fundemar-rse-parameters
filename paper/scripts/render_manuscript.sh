@@ -8,14 +8,14 @@ csl="$root/paper/springer-basic-author-date.csl"
 
 test -f "$input"
 # Word does not reliably display embedded vector-PDF figures.  Build a
-# Word-specific source that uses the matching high-resolution PNGs, while the
-# PDF manuscript continues to use the vector originals.
+# Word-specific source that uses the matching high-resolution PNGs. The PDF is
+# exported from this formatted Word file so the two deliverables agree.
 sed 's|06_analysis/figures/manuscript/\([^)]*\)\.pdf|06_analysis/figures/manuscript/\1.png|g' \
   "$input" > "$word_input"
 pandoc "$word_input" --citeproc --csl="$csl" --resource-path="$root:$root/07_reporting/manuscript" \
   --output="$out.docx"
-pandoc "$input" --citeproc --csl="$csl" --resource-path="$root:$root/07_reporting/manuscript" \
-  --pdf-engine=tectonic --output="$out.pdf"
+"${DOCX_PYTHON:-python3}" "$root/paper/scripts/format_main_docx.py" "$out.docx"
+"${DOCX_PYTHON:-python3}" "$root/paper/scripts/export_word_pdf.py" "$out.docx" "$out.pdf"
 python3 "$root/paper/scripts/check_citations.py" "$input" \
   "$root/paper/manuscript/references.bib" \
   "$root/paper/manuscript/palmata_library.bib"

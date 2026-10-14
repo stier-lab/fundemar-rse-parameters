@@ -78,6 +78,12 @@ All output files live under `06_analysis/figures/manuscript/` (Fig 1--4) or `06_
 | Table S2 — Study-window disturbance audit | `38_study_window_disturbance_audit.R` | `07_reporting/manuscript/tables/TableS2_study_window_disturbance_audit.md` |
 | Table S3 — Size-class synthesis | Reporting synthesis | `07_reporting/manuscript/tables/size_class_synthesis_table.md` |
 
+The independently numbered uploaded Online Resource 1 also contains Table S3
+(matrix resampling and Vardi source sensitivity; scripts 50_matrix_robustness.R)
+and Table S4 (matrix structure and initial population composition; script
+51_heatwave_matrix_robustness.R). Their sources are the CSV outputs of those
+scripts and the self-contained captions in paper/submission/supplement/ESM_1.md.
+
 ---
 
 ## Advanced Model Figures (unnumbered, descriptive names)

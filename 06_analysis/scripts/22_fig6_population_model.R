@@ -60,13 +60,14 @@ cat("================================================================\n\n")
 # GET DETERMINISTIC LAMBDA
 # =============================================================================
 
-det_lambda <- 0.9856  # fallback
+det_lambda <- NA_real_
 pop_params_file <- require_output(file.path(output_dir, "population_parameters.csv"))
 if (file.exists(pop_params_file)) {
   pop_params <- read_csv(pop_params_file, show_col_types = FALSE)
   det_row <- pop_params %>% filter(parameter == "lambda")
   if (nrow(det_row) > 0) det_lambda <- as.numeric(det_row$value[1])
 }
+if (!is.finite(det_lambda)) stop("Missing deterministic lambda in population_parameters.csv")
 cat(sprintf("  Deterministic lambda: %.4f\n", det_lambda))
 
 leverage_file <- require_output(file.path(output_dir, "transition_matrix_source_leverage.csv"))
@@ -113,7 +114,7 @@ fig4a <- ggplot(tmat_long, aes(x = from, y = to, fill = value)) +
             size = 2.5, fontface = "bold") +
   scale_color_identity() +
   scale_fill_viridis_c(
-    name = "Transition probability",
+    name = "Annual matrix entry",
     option = "D", limits = c(0, 1),
     breaks = c(0, 0.25, 0.5, 0.75, 1),
     guide = guide_colorbar(
@@ -301,10 +302,9 @@ boot_df <- data.frame(lambda = boot_vals) %>%
 
 # Use subtitle below the panel for summary stats instead of in-panel text box.
 # Split into two lines so the text fits within the half-panel width.
-stats_subtitle <- sprintf("\u03BB = %.3f; 95%% CI [%.3f, %.3f]; bootstrap share \u03BB < 1 = %.1f%%\nSC5 support %.1f%% NOAA; %s of %s valid",
+stats_subtitle <- sprintf("\u03BB = %.3f; 95%% interval %.3f–%.3f\n%.1f%% below replacement; n = %s",
                          det_lambda, ci_95[1], ci_95[2], p_decline * 100,
-                         sc5_noaa_share,
-                         comma(length(boot_vals)), comma(n_boot_total))
+                         comma(length(boot_vals)))
 
 fig4c <- ggplot(boot_df, aes(x = lambda, fill = status)) +
   geom_histogram(bins = 40, color = "white", linewidth = 0.2,
@@ -316,7 +316,7 @@ fig4c <- ggplot(boot_df, aes(x = lambda, fill = status)) +
   geom_vline(xintercept = det_lambda, linetype = "dashed",
              color = pal$surv_dark, linewidth = 0.8) +
   scale_fill_manual(
-    values = c("below replacement" = pal$accent, "at/above replacement" = pal$surv_mid),
+    values = c("below replacement" = "#7A7A7A", "at/above replacement" = "#1B9E77"),
     labels = c("below replacement" = expression(lambda < 1),
                 "at/above replacement" = expression(lambda >= 1)),
     name = NULL
@@ -334,6 +334,7 @@ fig4c <- ggplot(boot_df, aes(x = lambda, fill = status)) +
     plot.margin  = margin(6, 10, 4, 6, "mm"),
     plot.subtitle = element_text(size = 7.5, color = "grey25", hjust = 0,
                                  margin = margin(b = 4), lineheight = 1.1),
+    plot.tag.position = "topleft",
     legend.position = "bottom",
     legend.text = element_text(size = 8)
   )

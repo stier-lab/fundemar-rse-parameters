@@ -144,7 +144,7 @@ fig2a <- ggplot() +
   geom_rug(data = rug_died,
            aes(x = size_cm2), sides = "b",
            alpha = 0.05, linewidth = 0.4,
-           length = unit(0.02, "npc"), color = pal$accent) +
+           length = unit(0.02, "npc"), color = pal$surv_mid) +
   scale_x_log10(
     breaks = c(1, 10, 100, 1000, 10000),
     labels = comma,

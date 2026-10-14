@@ -1,0 +1,39 @@
+"script","description","status","duration_sec"
+"31b_verify_dhw.R","DHW/site-year verification","SUCCESS",2.3
+"32_disturbance_survival_analysis.R","Disturbance survival analysis","SUCCESS",5.3
+"33_hurricane_exposure.R","Hurricane exposure summary","SUCCESS",42.6
+"34_disturbance_summaries.R","Disturbance catalogs and summary figures","SUCCESS",4.8
+"35_curate_literature_scope.R","Literature scope curation","SUCCESS",2.4
+"36_shrinkage_retrogression_summary.R","Shrinkage and retrogression synthesis","SUCCESS",4.1
+"37_disturbance_size_interaction.R","Disturbance-by-size interaction analysis","SUCCESS",6.2
+"37b_disturbance_type_size_interaction.R","FigS30: Disturbance-TYPE by size class (storm/disease/heatwave)","SUCCESS",9.3
+"37c_rse_size_multipliers.R","Export RSE-ready per-type size-survival multipliers (disease/storm/thermal)","SUCCESS",2
+"38_study_window_disturbance_audit.R","Study-window disturbance audit","SUCCESS",4
+"39_restoration_subtype_sensitivity.R","Restoration subtype sensitivity analysis","FAILED",3.2
+"40_manzello_heatwave_scenarios.R","Manzello 2025 heatwave scenario projections","SKIPPED",NA
+"50_matrix_robustness.R","Matrix resampling, imputation, and Vardi source sensitivities","SKIPPED",NA
+"51_heatwave_matrix_robustness.R","Full-matrix and initial-size heatwave sensitivities","SKIPPED",NA
+"41_multistate_transition_model.R","Advanced multistate transition model","SKIPPED",NA
+"42_joint_longitudinal_survival_model.R","Advanced joint longitudinal-survival model","SKIPPED",NA
+"43_stochastic_ipm_disturbance_model.R","Advanced stochastic disturbance-driven IPM","SKIPPED",NA
+"44_regime_switching_model.R","Advanced regime-switching hidden-state model","SKIPPED",NA
+"45_distributed_lag_disturbance_model.R","Advanced distributed-lag disturbance model","SKIPPED",NA
+"46_recurrent_event_frailty_model.R","Advanced recurrent-event frailty model","SKIPPED",NA
+"47_spatiotemporal_hierarchical_model.R","Advanced spatiotemporal hierarchical model","SKIPPED",NA
+"49_annual_survival_timeseries.R","Annual survival time series by study and region","SKIPPED",NA
+"49b_temporal_synthesis_figure.R","FigS28: Cross-study temporal synthesis figure","SKIPPED",NA
+"50_derive_outplant_age.R","Derive outplant age per colony (restoration studies)","SKIPPED",NA
+"51_winter_sst_anomalies.R","Winter SST anomalies per region-year (ERDDAP or placeholder)","SKIPPED",NA
+"52_colony_lesion_state.R","Per-colony lesion state from tissue-loss intervals","SKIPPED",NA
+"53_sexual_fecundity_layer.R","Build F_sex matrix: size-threshold sexual fecundity layer","SKIPPED",NA
+"54_sterility_lag_layer.R","Apply 4-yr post-disturbance sterility lag to F_sex","SKIPPED",NA
+"55_lesion_fecundity_penalty.R","Apply 20% partial-mortality fecundity penalty to F_sex","SKIPPED",NA
+"56_outplant_age_model.R","Fit outplant-age survival GLMM (Boisvert 2024 decay)","SKIPPED",NA
+"57_winter_sst_survival_model.R","Fit winter-SST survival GLMM (disease epizootic proxy)","SKIPPED",NA
+"58_depensatory_corallivory_layer.R","Build depensatory corallivory hazard layer (SC1-SC2)","SKIPPED",NA
+"59_microhabitat_depth_model.R","Fit depth covariate survival GLMM (microhabitat refugia)","SKIPPED",NA
+"59b_fertilization_allee_layer.R","Fertilization Allee layer (S9): density-dependent phi(rho) sweep + RSE export","SKIPPED",NA
+"60_scenario_comparison.R","10-scenario comparison (S0-S9): lambda + sexual/asexual share","SKIPPED",NA
+"61_fig_biological_realism.R","FigS29: tornado plot + pathway share + 50-yr projection","SKIPPED",NA
+"23_verification.R","Pipeline verification","SKIPPED",NA
+"48_pipeline_refresh_audit.R","Refresh pipeline manifests and generated reporting artifacts","SKIPPED",NA

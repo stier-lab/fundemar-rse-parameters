@@ -1,6 +1,6 @@
 # Canonical Statistics
 
-Generated from pipeline run `20260930_151646` on 2026-09-30 15:41:56.
+Generated from pipeline run `20260930_155236` on 2026-10-14 15:43:09.
 
 ## Disturbance
 
@@ -43,13 +43,13 @@ Generated from pipeline run `20260930_151646` on 2026-09-30 15:41:56.
 
 | Metric | Value | Source |
 |---|---|---|
-| `annual_decline_pct_from_bootstrap_mean` | 4.60% | `06_analysis/output/lambda_bootstrap_samples.rds` |
-| `lambda_bootstrap_mean` | 0.9540 | `06_analysis/output/lambda_bootstrap_samples.rds` |
-| `lambda_ci_lower` | 0.816 | `06_analysis/output/population_parameters.csv` |
-| `lambda_ci_upper` | 1.010 | `06_analysis/output/population_parameters.csv` |
-| `lambda_deterministic` | 0.961 | `06_analysis/output/population_parameters.csv` |
-| `max_elasticity_pct` | 58.9% | `06_analysis/output/elasticity_matrix.csv` |
-| `p_decline_pct` | 94.3% | `06_analysis/output/population_parameters.csv` |
+| `annual_decline_pct_from_bootstrap_mean` | 4.39% | `06_analysis/output/lambda_bootstrap_samples.rds` |
+| `lambda_bootstrap_mean` | 0.9561 | `06_analysis/output/lambda_bootstrap_samples.rds` |
+| `lambda_ci_lower` | 0.902 | `06_analysis/output/population_parameters.csv` |
+| `lambda_ci_upper` | 1.001 | `06_analysis/output/population_parameters.csv` |
+| `lambda_deterministic` | 0.959 | `06_analysis/output/population_parameters.csv` |
+| `max_elasticity_pct` | 59.8% | `06_analysis/output/elasticity_matrix.csv` |
+| `p_decline_pct` | 97.1% | `06_analysis/output/population_parameters.csv` |
 
 ## Restoration
 
@@ -75,14 +75,14 @@ Generated from pipeline run `20260930_151646` on 2026-09-30 15:41:56.
 
 | Metric | Value | Source |
 |---|---|---|
-| `gam_deviance_explained_pct` | 9.0% | `06_analysis/output/prepared_survival_data.rds` |
+| `gam_deviance_explained_pct` | 9.4% | `06_analysis/output/prepared_survival_data.rds` |
 | `glm_p_value` | p < 0.001 | `06_analysis/output/prepared_survival_data.rds` |
-| `n_observations_natural` | 6141 | `06_analysis/output/prepared_survival_data.rds` |
-| `n_studies_natural` | 3 | `06_analysis/output/prepared_survival_data.rds` |
-| `odds_ratio_ci_lower` | 1.388 | `06_analysis/output/prepared_survival_data.rds` |
-| `odds_ratio_ci_upper` | 1.483 | `06_analysis/output/prepared_survival_data.rds` |
-| `odds_ratio_log_size` | 1.435 | `06_analysis/output/prepared_survival_data.rds` |
-| `tjur_r2_pct` | 8.4% | `06_analysis/output/prepared_survival_data.rds` |
+| `n_observations_natural` | 6089 | `06_analysis/output/prepared_survival_data.rds` |
+| `n_studies_natural` | 2 | `06_analysis/output/prepared_survival_data.rds` |
+| `odds_ratio_ci_lower` | 1.406 | `06_analysis/output/prepared_survival_data.rds` |
+| `odds_ratio_ci_upper` | 1.504 | `06_analysis/output/prepared_survival_data.rds` |
+| `odds_ratio_log_size` | 1.454 | `06_analysis/output/prepared_survival_data.rds` |
+| `tjur_r2_pct` | 9.0% | `06_analysis/output/prepared_survival_data.rds` |
 
 ## Thresholds
 

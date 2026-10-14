@@ -22,7 +22,7 @@ This repository updates the Vardi et al. (2012) Lefkovitch projection model usin
 | --- | --- |
 | Canonical demographic data, reproducible R analyses, manuscript figures, and RSE-ready parameter lists | [Analysis workflow](06_analysis/README.md) · [Manuscript-facing outputs](07_reporting/README.md) · [Quick start](#quick-start) |
 
-**Current analysis status.** The interval-annualized meta-analysis estimates pooled annual survival at 78.7% (95% CI: 70.4–85.1%; 95% prediction interval: 37.4–95.8%; 17 studies, 22 effects). The recruitment-free post-settlement transition subsystem has deterministic λ = 0.961 (bootstrap interval: 0.816–1.010). This is not a forecast of whole-population viability because sexual recruitment and external recruitment are fixed at zero. A clean-clone rerun under the locked R environment remains a release requirement.
+**Current analysis status.** The interval-annualized meta-analysis estimates pooled annual survival at 78.7% (95% CI: 70.4–85.1%; 95% prediction interval: 37.4–95.8%; 17 studies, 22 effects). The recruitment-free post-settlement transition subsystem has deterministic λ = 0.959 (bootstrap interval: 0.902–1.001). This is not a forecast of whole-population viability because sexual recruitment and external recruitment are fixed at zero. A clean-clone rerun under the locked R environment remains a release requirement.
 
 **Design principle.** Transparency over false precision: analyses distinguish manuscript-facing results from supporting and exploratory work, expose heterogeneity, and preserve a traceable path from source studies to model parameters.
 
@@ -74,8 +74,8 @@ This organization ensures every step from literature search to final analysis is
 
 | Finding | Value | Interpretation |
 |---------|-------|----------------|
-| **Conditional transition λ** | 0.961 (CI: 0.816–1.010) | Recruitment-free post-settlement subsystem; 94.3% of bootstrap replicates had λ < 1, not a real-world decline probability |
-| **Most Critical Parameter** | SC5 Stasis | Large-adult persistence contributes 58.9% of matrix-cell elasticity |
+| **Conditional transition λ** | 0.959 (CI: 0.902–1.001) | Recruitment-free post-settlement subsystem; 97.1% of bootstrap replicates had λ < 1, not a real-world decline probability |
+| **Most Critical Parameter** | SC5 Stasis | Large-adult persistence contributes 59.8% of matrix-cell elasticity |
 | **Survival Nonlinearity** | Threshold ~7,498 cm² | Supported sigmoidal survival response, but weakly stable across study folds |
 | **Core Growth Nonlinearity** | RGR threshold at 36.9 cm² | The steepest proportional-growth shift occurs early in ontogeny |
 | **Shrinkage Frequency** | 39.4% | Matrix-compatible growth records frequently show tissue loss rather than simple positive growth |
@@ -85,7 +85,7 @@ This organization ensures every step from literature search to final analysis is
 | **Natural vs Restoration** | 85.4% vs 74.5% | 10.9 pp difference, p=0.199; the comparison is underpowered and not statistically supported |
 | **Updates Vardi (2012)** | Lefkovitch matrix | Largest dataset for species |
 | **Pre-2023 baseline** | All vital rates pre-date the 2023 Florida heatwave | Manzello et al. (2025, *Science*) documented functional extinction of *A. palmata* from Florida at 16-20 DHW. This matrix describes the chronic regime before that event. |
-| **Recruitment assumption** | λ = 0.961 assumes no sexual or external recruitment | Fragmentation is the only recruitment pathway represented; λ is therefore conditional rather than a full population forecast. |
+| **Recruitment assumption** | λ = 0.959 assumes no sexual or external recruitment | Fragmentation is the only recruitment pathway represented; λ is therefore conditional rather than a full population forecast. |
 | **Biological-realism framework (FigS29)** | 9-scenario sensitivity analysis | Layered seven literature-sourced mechanisms (Vardi 2011 size threshold; Mendoza-Quiroz 2023 oocyte density; Lirman 2000a sterility lag; Piñón-González 2018 lesion penalty; Boisvert 2024 outplant decay; Rodriguez-Martinez 2014 winter SST; Williams 2012 depensatory corallivory; depth refugia). Biggest driver: outplant-age penalty Δλ = −0.126; depth refugia +0.064; "all combined" Δλ = +0.094. |
 
 > For manuscript-facing interpretation, use [the manuscript draft](07_reporting/manuscript/acropora_palmata_demography_manuscript_draft.md), [the claim-to-output crosswalk](07_reporting/internal/claim_output_crosswalk.md), and [the figure/table map](07_reporting/manuscript/figure_table_map.md).
@@ -363,6 +363,24 @@ Rscript 14b_expanded_meta_analysis.R  # Meta-analysis k=17 (22 effects)
 ```
 
 For figure numbering and manuscript-facing build targets, use [07_reporting/manuscript/figure_table_map.md](07_reporting/manuscript/figure_table_map.md).
+
+### Matrix robustness and Word exports
+
+`make matrix-robustness` regenerates the primary 2,000-draw bootstrap, the
+coordinated-resampling and missing-class sensitivities, the Vardi component
+exclusions, and the full-matrix heatwave projections. Use the R version in
+`renv.lock` and restore its package library first.
+
+Both manuscript PDFs are exported from their formatted Word documents, not
+from separate LaTeX layouts. Run `scripts/assemble_manuscript.sh`,
+`scripts/render_manuscript.sh`, and `scripts/render_supplement.sh` from
+`paper/`. Export requires LibreOffice on PATH, or `DOCX_RENDERER` pointing
+to the document renderer; `DOCX_PYTHON` can select its Python runtime.
+
+For a frozen environmental-data rerun, `APAL_OFFLINE=true` retains the DHW
+verification and SST caches, including their missing observations; it does
+not refresh NOAA observations. `APAL_PIPELINE_START_AT` can resume an exact
+script after a logged failure, but earlier steps must already be verified.
 
 ### Reviewer preflight
 
