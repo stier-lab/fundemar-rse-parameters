@@ -87,8 +87,9 @@ def set_table_layout(table, widths):
 
 
 def keep_with_next(paragraph):
-    p_pr = paragraph._p.get_or_add_pPr()
-    p_pr.append(OxmlElement("w:keepNext"))
+    # python-docx inserts keepNext in schema order and avoids duplicates.
+    # Appending it after spacing/outlineLvl can make Word request recovery.
+    paragraph.paragraph_format.keep_with_next = True
 
 
 def add_page_number(paragraph):

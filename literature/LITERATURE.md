@@ -1,5 +1,11 @@
 # Literature Library — Detmer & Stier *A. palmata* Demography
 
+## Review additions on 19 October 2026
+
+Added the publisher PDF of Croquer et al. (2026), *Towards a systematic framework to assess restoration success of interventions in coral reef ecosystems*, PLoS One 21:e0331083, DOI [10.1371/journal.pone.0331083](https://doi.org/10.1371/journal.pone.0331083), at `pdfs/restoration/Croquer_etal_2026_restoration_success_framework.pdf`. This paper distinguishes population performance from ecosystem recovery and defines effective return as survival to reproduction. It informs interpretation, not demographic parameter extraction. Download and citation checks are recorded in `PROVENANCE.md`. The inventory below is the historical March/April catalogue, not a current PDF count.
+
+Aldo's subsequent reproductive-size clarification was verified against Soong and Lang (1992), *Reproductive integration in reef corals*, DOI [10.2307/1542018](https://doi.org/10.2307/1542018). An unchanged copy of the existing library PDF is at `pdfs/data_studies/Soong_Lang_1992_reproductive_integration_reef_corals.pdf`. Its first-fertility and maturation estimates provide Discussion context; its living surface-area measure is not a direct threshold for the synthesis's planar-area classes. See `PROVENANCE.md` for page-specific checks.
+
 **81 PDFs** | Organized 2026-03-24 (Schopmeyer 2017 added 2026-04-24) | Gap analysis: `LITERATURE_GAPS.md`
 
 ---

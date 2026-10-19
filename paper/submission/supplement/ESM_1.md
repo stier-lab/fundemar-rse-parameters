@@ -30,6 +30,8 @@ header-includes:
 9. Resampling choices changed uncertainty more than the central estimate (Table S3)
 10. Initial composition changed finite-horizon projections (Table S4)
 
+**Study selection.** Consolidating duplicate and within-study entries reduced 104 screening-ledger rows to 101 distinct sources: 83 excluded and 18 included (seven individual-record studies and eleven summary studies). Seventeen studies supplied 22 survival-synthesis effects; Mendoza Quiroz et al. [-@mendozaquiroz2023] contributed only to size-dependent analyses. Approximately 2,500 records were identified, but inconsistent early screening totals prevent an exact PRISMA flow. The repository ledger retains all screening decisions.
+
 \clearpage
 
 ## 1. Eighteen studies supported the synthesis
@@ -102,6 +104,8 @@ The interval linkage had no field mismatches. The full disturbance chronology, i
 \clearpage
 
 ## 5. Surviving colonies often lost tissue and retrogressed
+
+Size classes are live-area ranges, not observations of reproductive maturity. Soong and Lang [-@soonglang1992] reported a smallest fertile *A. palmata* colony of 16 × 8 cm and an operational puberty size of 1,600 cm² in Panama. They defined puberty size as the size of the smallest colony in the first group of 20 consecutively size-ranked colonies with at least 90% fertility. For *A. palmata*, they summed the living surface area of branches and the colony base. Fertility indicated gonads in sampled tissue, not observed spawning. Those measurements are not directly interchangeable with our live planar areas. We therefore did not assign fertility to a model class or treat retrogression as loss of reproductive capacity. Neither reproductive output nor three-dimensional habitat complexity was estimated in this analysis.
 
 **Fig. S3. Large colonies commonly survived while losing tissue, and every non-recruit class moved backward through the size structure.** (a) Shrinkage frequency among surviving colonies by size class, rising from 18.2% in SC1 to 47.5% in SC5. (b) Mean annual tissue loss among shrinking colonies (cm² yr^−1^). (c) Observed annual transition probabilities (growth, stasis, retrogression) by initial size class; labels give retrogression probabilities. (d) Shrinkage frequency by study; point colour gives mean tissue loss and point size the number of records. The analysis uses matrix-compatible records of surviving colonies with paired size observations.
 
