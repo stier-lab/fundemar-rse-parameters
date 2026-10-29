@@ -52,7 +52,7 @@ interval. Points show binned survival proportions. (b) Relative growth rate
 fitted GAM (Gaussian family). Orange points show binned median RGR values and
 grey points show individual observations. The vertical dashed orange line marks
 the detected RGR threshold at 36.9 cm2, and the shaded orange band shows the
-cluster-bootstrap interval (36.9-38.9 cm2). Dashed horizontal line indicates
+2.5th-97.5th percentile range across leave-one-study-out thresholds (36.9-38.9 cm2). Dashed horizontal line indicates
 zero growth. (c) Annual survival by size class across all available studies.
 Points show study-level survival estimates by size class, colored by population
 type and shaped by data tier. Point size is proportional to sample size. Bold
@@ -75,8 +75,8 @@ with a recommended threshold near 7,498 cm2 and broad leave-one-study-out
 uncertainty (2,136-8,748 cm2), indicating that the survival inflection is real
 but weakly stable across the available study mix. Relative growth rate shows a
 much sharper nonlinear transition: the supported threshold is 36.9 cm2 and the
-bootstrap interval is tight (36.9-38.9 cm2), indicating that the steepest
-decline in proportional growth occurs early in ontogeny. Across the size-class
+leave-one-study-out percentile range is 36.9-38.9 cm2. The most negative
+curvature of the fitted proportional-growth response occurs at a small colony size. Across the size-class
 synthesis, pooled annual survival is lowest and most variable in the smaller
 and mid-sized classes, and highest in large adults, but variability in SC2-SC4
 reflects mixed disturbance history and population composition rather than size
@@ -147,17 +147,16 @@ valid replicates, and leave-one-study-out sensitivity analysis was used to
 assess dependence on individual study contributions.
 
 RESULTS:
-The transition matrix shows that stasis dominates all size classes, but
-retrogression is not negligible. A dedicated shrinkage synthesis indicates that
-39.4% of matrix-compatible growth records involve tissue loss, and observed
-retrogression probabilities are 15.2% in SC2, 16.8% in SC3, 17.2% in SC4, and
-9.1% in SC5. Large-adult persistence remains the dominant conditional transition lever:
-SC5-to-SC5 stasis accounts for 58.9% of matrix-cell elasticity, and aggregated
-SC5 survival elasticity is 60.2%. The deterministic `lambda` is 0.961, with a
-bootstrap 95% interval of 0.816-1.010; 94.3% of bootstrap replicates had
-`lambda < 1`. Leave-one-study-out sensitivity spans `lambda` = 0.882-0.993,
-showing that the conditional estimate depends on a small set of natural-colony
-transition datasets.
+The corrected matrix uses 4,698 natural-colony records with observed positive
+live-area endpoints. Annualized live-area change is projected over one year,
+with a 0.1-cm² projected endpoint floor. SC5-to-SC5 stasis accounts for 51.4%
+of matrix-cell elasticity (95% bootstrap interval: 38.8–64.5%); aggregated
+SC5 survival elasticity is 53.4%. Deterministic `lambda` is 0.955, with a
+95% bootstrap interval of 0.916–0.998; 98.0% of replicates had `lambda < 1`.
+Matched-estimator leave-one-study-out estimates span 0.888–0.966. Tissue-loss
+and retrogression frequencies should be read from their regenerated subset
+and transition CSVs, not from legacy mixed-area values. These conditional
+sensitivities do not estimate reproductive recovery or intervention effectiveness.
 
 
 ================================================================================
@@ -247,17 +246,17 @@ probabilities by size class, using the matrix-compatible subset for shrinkage
 metrics and observed transitions for retrogression estimates.
 
 METHODS:
-Shrinkage was defined as negative annual change in live tissue area among
+Tissue loss was defined as negative annual change in live tissue area among
 surviving colonies. The main summary uses the matrix-compatible subset of the
 cleaned growth data; an all-clean sensitivity set is also retained in the
 output files. Retrogression was quantified directly from observed size-class
 transitions in the matrix-compatible data.
 
 RESULTS:
-Shrinkage is common rather than exceptional. In the matrix-compatible subset,
-39.4% of growth records involve tissue loss. Shrinkage frequency rises from
-18.2% in SC1 to 47.5% in SC5. Retrogression probabilities are 15.2% in SC2,
-16.8% in SC3, 17.2% in SC4, and 9.1% in SC5, showing that many colonies
+Tissue loss is frequent in the near-annual natural-colony subset:
+42.6% of 4,370 growth records involve tissue loss. Tissue-loss frequency rises from
+21.6% in SC1 to 47.3% in SC5. Retrogression probabilities are 15.6% in SC2,
+16.9% in SC3, 17.0% in SC4, and 9.2% in SC5, showing that many colonies
 survive while moving backward demographically after partial mortality.
 
 
@@ -542,7 +541,10 @@ Manzello et al. (2025). (a) Dose-response curve relating degree heating weeks
 (DHW) to colony mortality. (b) 50-year population trajectories under chronic
 and acute heatwave scenarios. (c) Effective population growth rate (lambda)
 across heatwave intensity scenarios, with the dotted line marking the
-stable-population threshold (lambda = 1).
+unperturbed deterministic lambda (0.955). The saved baseline matrix and its
+bootstrap uncertainty describe a recruitment-free subsystem. Consult the
+regenerated heatwave summary for effective lambdas and year-50 threshold
+frequencies; these are prescribed Florida-like stress tests, not forecasts.
 
 
 ================================================================================
@@ -680,12 +682,10 @@ Effective lambda was computed by embedding episodic heatwave mortality at the
 indicated return intervals into the projection.
 
 RESULTS:
-Effective lambda declines from 0.93 under the chronic baseline (no heatwave) to
-roughly 0.69 to 0.92 under bleaching scenarios and to about 0.50 under a
-catastrophic 2023-scale event recurring every five years. All heatwave
-scenarios sit below the replacement threshold, so projected trajectories
-decline over the horizon, with quasi-extinction probability rising sharply as
-the heatwave return interval shortens.
+Read effective lambda and year-50 threshold frequencies from the regenerated
+`heatwave_scenario_summary.csv`. The heatwave panel inherits the corrected
+live-area baseline; it must not display the former mixed-area scenario values.
+The IPM and regime-classification panels use separate model outputs.
 
 
 ================================================================================
@@ -696,29 +696,33 @@ LEGEND:
 Fig. S29 Biological-realism scenario framework for Acropora palmata population
 growth. (a) Tornado plot of the change in population growth rate (delta lambda)
 relative to the baseline matrix (S0) when each biological mechanism is layered
-in individually and when all are combined. (b) Share of recruit (SC1) inflow
-attributable to the sexual versus fragmentation pathway under each scenario.
+in individually and when all are combined. Ten scenarios (S0–S9) are displayed;
+the tornado shows changes from S0 for S1–S9. (b) Share of modeled SC1
+reproductive inflow attributable to sexual recruitment versus fragmentation.
+This denominator excludes surviving colonies that remain in or move into SC1;
+it is not the fraction of all SC1 entries attributable to sexual reproduction.
 (c) Fifty-year projection trajectories of total colony number (log scale) by
 scenario. (d) Probability of quasi-extinction at 20-year and 50-year horizons
 by scenario.
 
 METHODS:
-Starting from the published baseline matrix (lambda = 0.9613), nine scenarios
+Starting from the corrected live-area baseline matrix (lambda = 0.955), ten
+scenarios (S0–S9)
 layer literature-sourced mechanisms onto the vital rates: sexual fecundity with
 a size threshold, sterility lag, lesion penalty, outplant-age survival decay,
 winter sea-surface-temperature effects, depensatory corallivory at small sizes,
-microhabitat (depth) refugia, and an all-combined scenario. Each scenario
+microhabitat (depth) refugia, an all-combined scenario, and a sparse-reef
+fertilization Allee sensitivity. Each scenario
 recomputes lambda, the SC5 elasticity, the sexual pathway contribution, and
 quasi-extinction probability.
 
 RESULTS:
-The outplant-age survival penalty is the strongest single driver (delta lambda
-= -0.126, lambda = 0.836), while depth refugia is the strongest positive single
-driver (delta lambda = +0.064, lambda = 1.026). With all mechanisms combined,
-the population crosses the replacement threshold (delta lambda = +0.094, lambda
-= 1.055) and quasi-extinction risk falls to near zero. When sexual reproduction
-is active, the sexual pathway supplies roughly 98 percent of recruit inflow,
-underscoring how sensitive projected viability is to fecundity assumptions.
+Use the regenerated `biological_realism_scenarios.csv` for each scenario's
+lambda, delta lambda, SC5 elasticity, and sexual contribution. Scenario S0 must
+reproduce the corrected canonical matrix and eigenvalue. Reproductive and
+environmental modifiers are supporting assumptions, not newly estimated
+components of the primary recruitment-free matrix. The neighboring RSE model
+and app have not been rerun as part of this correction.
 
 
 ================================================================================
@@ -801,7 +805,7 @@ construction to reduce bias from linear-growth assumptions over long gaps.
 POPULATION MATRIX COMPOSITION:
 The transition matrix is built from the natural-colony subset and remains
 Florida heavy, especially for large adults. SC5 stasis is still the dominant
-elasticity component (58.9% of matrix-cell elasticity), but the resulting
+elasticity component (51.4% of matrix-cell elasticity), but the resulting
 `lambda` estimate is conditional on the available study mix and not a
 Caribbean-wide universal growth rate.
 

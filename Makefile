@@ -15,14 +15,18 @@
 R ?= Rscript
 PY ?= python3
 
-.PHONY: all pipeline verify display-check renv-check submit-check test help matrix-robustness
+.PHONY: all pipeline verify display-check renv-check submit-check test help matrix-robustness rebuild-live-area
 
 all: pipeline verify
 
 pipeline:
 	$(R) 06_analysis/scripts/run_all.R
 
+rebuild-live-area:
+	$(R) tools/rebuild_live_area.R
+
 verify:
+	$(R) tools/check_live_area_contract.R
 	$(R) 06_analysis/scripts/49_matrix_concordance.R
 	$(R) 06_analysis/scripts/23_verification.R
 	$(R) 06_analysis/scripts/48_pipeline_refresh_audit.R
@@ -55,6 +59,7 @@ matrix-robustness:
 help:
 	@echo "Canonical workflow targets:"
 	@echo "  pipeline       Run 06_analysis/scripts/run_all.R"
+	@echo "  rebuild-live-area  Rebuild the live-area matrix and every maintained consumer"
 	@echo "  verify         Refresh canonical stats and run source/prose/model gates"
 	@echo "  display-check  Validate display_items.tsv against rendered files and legends"
 	@echo "  renv-check     Fail if renv lockfile/library state is out of sync"

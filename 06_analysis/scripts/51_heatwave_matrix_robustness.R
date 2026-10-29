@@ -11,7 +11,7 @@ scalar <- simplify2array(lapply(boot$lambda,function(l) model$projection_matrix*
 stopifnot(all(full>=0),all(is.finite(full)))
 scenarios <- read_csv(file.path(out,"heatwave_scenario_summary.csv"),show_col_types=FALSE)
 starts <- list(original=c(100,50,30,20,10)/210,
-  recruit_heavy=c(.7,.15,.08,.05,.02),adult_heavy=c(.02,.03,.05,.2,.7),
+  recruit_heavy=c(.7,.15,.08,.05,.02),adult_heavy=rev(c(.7,.15,.08,.05,.02)),
   stable=as.numeric(model$stable_distribution)/sum(model$stable_distribution))
 methods <- list(lambda_only=scalar,full_matrix=full)
 results <- list(); trajectories <- list()

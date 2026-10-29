@@ -9,9 +9,9 @@ shared <- intersect(surv_studies, grow_studies)
 survival_only <- setdiff(surv_studies, shared)
 stopifnot(length(shared) == 2L, length(survival_only) == 2L)
 growth <- growth %>% mutate(from=cut(size_cm2,SIZE_BREAKS,labels=SIZE_LABELS,
-  include.lowest=TRUE), to=cut(pmax(size_cm2+growth_cm2_yr,.1),SIZE_BREAKS,
+  include.lowest=TRUE), to=cut(pmax(size_cm2+growth_metric,.1),SIZE_BREAKS,
   labels=SIZE_LABELS,include.lowest=TRUE)) %>% filter(!is.na(from),!is.na(to))
-growth <- filter(growth,abs(growth_cm2_yr)<quantile(abs(growth_cm2_yr),.99,na.rm=TRUE))
+growth <- filter(growth,abs(growth_metric)<quantile(abs(growth_metric),.99,na.rm=TRUE))
 cache <- setNames(lapply(grow_studies,function(st) {
   d <- filter(growth,study==st)
   ids <- unique(d$coral_id)

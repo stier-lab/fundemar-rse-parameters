@@ -1,5 +1,5 @@
 moderator,coefficient,p_value,r_squared,interpretation
-Mean colony size (log),0.06021194823699694,0.7649487496089027,0,Not significant
-Fragment percentage,-0.00754257968046356,0.3716664982838577,0,Not significant
+Mean colony size (log),0.08071212241852374,0.6769303118568555,0,Not significant
+Fragment percentage,-0.008266235763487633,0.29875775441957114,2.3067631770648886,Not significant
 Study year (most recent),0.19366079525101612,0.20499867539223185,53.43839863739276,Not significant
 Mortality definition,NA,0.8541696921474491,0,Not significant: mortality definition does not explain heterogeneity

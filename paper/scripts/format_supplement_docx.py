@@ -147,8 +147,26 @@ def main(source, output):
             p.paragraph_format.space_before = Pt(4)
             p.paragraph_format.space_after = Pt(6)
             keep_with_next(p)
+        if text.startswith("Fig. S1."):
+            # The full-size six-panel figure has a separate labeled page;
+            # its long legend must not pull the page label back with it.
+            p.paragraph_format.keep_with_next = False
+        if text == "Fig. S1 (continued)":
+            p.paragraph_format.page_break_before = True
+            keep_with_next(p)
         if text == "Contents":
             p.paragraph_format.space_before = Pt(10)
+
+    # A standalone page-break paragraph can overflow after a full-page figure
+    # and create an otherwise blank page. Attach the break to the following
+    # heading instead, so the section starts on a new page without an empty run.
+    paragraphs = list(doc.paragraphs)
+    for index, paragraph in enumerate(paragraphs[:-1]):
+        if (not paragraph.text.strip()
+                and paragraph._p.xpath('.//w:br[@w:type="page"]')
+                and not paragraph._p.xpath('.//w:drawing')):
+            paragraphs[index + 1].paragraph_format.page_break_before = True
+            paragraph._p.getparent().remove(paragraph._p)
 
     table_widths = (
         [1.45, 0.35, 1.15, 1.20, 0.60, 0.65, 0.65, 0.75],

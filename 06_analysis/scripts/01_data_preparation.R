@@ -135,19 +135,20 @@ filtering_audit <- rbind(filtering_audit, data.frame(
   n_removed = 0L, n_after = n_surv_loaded, reason = "Raw data loaded"))
 
 # Duplicate detection: flag and remove exact duplicates
+if (!"source_interval_id" %in% names(surv_ind)) surv_ind$source_interval_id <- NA_character_
 surv_dupes <- surv_ind %>%
-  group_by(study, coral_id, survey_yr, location) %>%
+  group_by(study, coral_id, survey_yr, location, source_interval_id) %>%
   filter(n() > 1) %>%
   ungroup()
 if (nrow(surv_dupes) > 0) {
   cat(sprintf("  WARNING: %d potential duplicate survival records detected — deduplicating\n", nrow(surv_dupes)))
   n_before_dedup_surv <- nrow(surv_ind)
-  surv_ind <- surv_ind %>% distinct(study, coral_id, survey_yr, location, .keep_all = TRUE)
+  surv_ind <- surv_ind %>% distinct(study, coral_id, survey_yr, location, source_interval_id, .keep_all = TRUE)
   cat(sprintf("  After deduplication: %d records\n", nrow(surv_ind)))
   filtering_audit <- rbind(filtering_audit, data.frame(
     stage = "deduplication", dataset = "survival", n_before = n_before_dedup_surv,
     n_removed = n_before_dedup_surv - nrow(surv_ind), n_after = nrow(surv_ind),
-    reason = "Exact duplicate removal (study, coral_id, survey_yr, location)"))
+    reason = "Duplicate key: study, coral_id, survey_yr, location, source_interval_id when available"))
 } else {
   cat("  No duplicate survival records detected\n")
   filtering_audit <- rbind(filtering_audit, data.frame(
@@ -167,19 +168,20 @@ filtering_audit <- rbind(filtering_audit, data.frame(
   n_removed = 0L, n_after = n_growth_loaded, reason = "Raw data loaded"))
 
 # Duplicate detection for growth data
+if (!"source_interval_id" %in% names(growth_ind)) growth_ind$source_interval_id <- NA_character_
 growth_dupes <- growth_ind %>%
-  group_by(study, coral_id, survey_yr, location) %>%
+  group_by(study, coral_id, survey_yr, location, source_interval_id) %>%
   filter(n() > 1) %>%
   ungroup()
 if (nrow(growth_dupes) > 0) {
   cat(sprintf("  WARNING: %d potential duplicate growth records detected — deduplicating\n", nrow(growth_dupes)))
   n_before_dedup_growth <- nrow(growth_ind)
-  growth_ind <- growth_ind %>% distinct(study, coral_id, survey_yr, location, .keep_all = TRUE)
+  growth_ind <- growth_ind %>% distinct(study, coral_id, survey_yr, location, source_interval_id, .keep_all = TRUE)
   cat(sprintf("  After deduplication: %d records\n", nrow(growth_ind)))
   filtering_audit <- rbind(filtering_audit, data.frame(
     stage = "deduplication", dataset = "growth", n_before = n_before_dedup_growth,
     n_removed = n_before_dedup_growth - nrow(growth_ind), n_after = nrow(growth_ind),
-    reason = "Exact duplicate removal (study, coral_id, survey_yr, location)"))
+    reason = "Duplicate key: study, coral_id, survey_yr, location, source_interval_id when available"))
 } else {
   cat("  No duplicate growth records detected\n")
   filtering_audit <- rbind(filtering_audit, data.frame(

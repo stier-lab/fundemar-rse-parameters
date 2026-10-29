@@ -93,6 +93,11 @@ def main():
     }
 
     got = canonical_values()
+    subtype = read_csv(OUT / "restoration_subtype_survival_summary.csv")
+    checks["endpoint_selected_fragments_n"] = sum(
+        float(r["n_records"]) for r in subtype if r["cohort_survival_estimable"] == "FALSE")
+    checks["subtype_survival_estimable_records"] = sum(
+        float(r["n_records"]) for r in subtype if r["cohort_survival_estimable"] == "TRUE")
     failures = []
     for metric, expected in checks.items():
         actual = got.get(metric, math.nan)

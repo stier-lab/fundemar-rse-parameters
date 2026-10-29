@@ -19,14 +19,12 @@
 #     05_data/standardized/apal_growth_ind.csv
 #
 # DISTURBANCE HANDLING:
-#   A catastrophic mortality event occurred between Fall 2013 (TP4) and
-#   Winter 2014-15 (TP5), with survival dropping from 94.6% to 53.2%.
-#   All intervals are included in the primary analysis with the disturbance
-#   column flagged:
-#     - TP4->TP5: "disease_2014" (catastrophic mortality)
-#     - TP5->TP6: "disease_2014_aftermath" (continued elevated mortality)
-#     - All other intervals: NA (no known disturbance)
-#   Downstream scripts use this flag for sensitivity analyses.
+#   The source explanation identifies 2014 bleaching and site dependence,
+#   not a colony-level diagnosed disease cause. All intervals are retained:
+#     - TP4->TP5: "bleaching_2014_context"
+#     - TP5->TP6: "bleaching_2014_aftermath_context"
+#     - Other intervals: NA (no source flag, not proof of no exposure)
+#   The contextual timeline and acute-event exclusion flags are separate.
 #
 # NOAA OVERLAP: None. Neely monitors Middle/Lower Keys + Dry Tortugas;
 #   NOAA monitors Upper Keys. Sites are fully independent.
@@ -68,14 +66,12 @@ existing_surv <- read_csv(surv_file, show_col_types = FALSE)
 if ("neely_et_al_2022" %in% existing_surv$study) {
   cat("Neely data already present in apal_surv_ind.csv — removing old rows first.\n")
   existing_surv <- existing_surv %>% filter(study != "neely_et_al_2022")
-  write_csv(existing_surv, surv_file)
 }
 
 existing_growth <- read_csv(growth_file, show_col_types = FALSE)
 if ("neely_et_al_2022" %in% existing_growth$study) {
   cat("Neely data already present in apal_growth_ind.csv — removing old rows first.\n")
   existing_growth <- existing_growth %>% filter(study != "neely_et_al_2022")
-  write_csv(existing_growth, growth_file)
 }
 
 # ==============================================================================
@@ -127,26 +123,36 @@ colnames(raw) <- c("site", "coral_id",
                     "date_5", "lai_5", "date_6", "lai_6",
                     "date_7", "lai_7")
 
-# Force LAI columns to numeric (some read as character)
+# Preserve known fate separately from measurement availability. Karen's literal
+# "live" records are alive with unmeasured LAI, not missing survival or zero area.
+raw$source_row <- seq_len(nrow(raw)) + 2L
 for (tp in 1:7) {
   lai_col <- paste0("lai_", tp)
-  raw[[lai_col]] <- as.numeric(raw[[lai_col]])
+  value <- trimws(tolower(as.character(raw[[lai_col]])))
+  numeric_lai <- suppressWarnings(as.numeric(value))
+  unknown <- !is.na(value) & value != "" & is.na(numeric_lai) & value != "live"
+  if (any(unknown)) stop("Unrecognized Neely LAI code at timepoint ", tp)
+  raw[[paste0("alive_", tp)]] <- ifelse(value == "live", 1L,
+    ifelse(is.finite(numeric_lai), as.integer(numeric_lai > 0), NA_integer_))
+  raw[[lai_col]] <- numeric_lai
 }
 
 # Create long format: one row per colony per timepoint
 long <- raw %>%
   pivot_longer(
-    cols = matches("^(date|lai)_"),
+    cols = matches("^(date|lai|alive)_"),
     names_to = c(".value", "timepoint"),
-    names_pattern = "(date|lai)_(\\d+)"
+    names_pattern = "(date|lai|alive)_(\\d+)"
   ) %>%
   mutate(
     timepoint = as.integer(timepoint),
     survey_date = as.Date(date),
     survey_yr = year(survey_date)
   ) %>%
-  filter(!is.na(lai)) %>%
-  select(site, coral_id, timepoint, survey_date, survey_yr, lai)
+  filter(!is.na(alive)) %>%
+  select(site, coral_id, source_row, timepoint, survey_date, survey_yr, lai, alive)
+
+stopifnot(!anyDuplicated(long[c("site", "coral_id", "timepoint")]))
 
 cat(sprintf("  Long format: %d rows (colony x timepoint)\n", nrow(long)))
 cat(sprintf("  Colonies: %d unique\n", n_distinct(long$coral_id)))
@@ -169,13 +175,15 @@ intervals <- long %>%
     suffix = c("_start", "_end")
   ) %>%
   # Only keep colonies alive at start
-  filter(lai_start > 0) %>%
+  filter(alive_start == 1L) %>%
   mutate(
-    survived = as.integer(lai_end > 0),
+    survived = alive_end,
     delta_days = as.numeric(survey_date_end - survey_date_start),
     time_interval_yr = delta_days / 365.25,
     # Growth (for survivors only)
-    growth_cm2_yr = ifelse(survived == 1, (lai_end - lai_start) / time_interval_yr, NA_real_),
+    growth_cm2_yr = ifelse(survived == 1 & is.finite(lai_start) & is.finite(lai_end) &
+      is.finite(time_interval_yr) & time_interval_yr > 0,
+      (lai_end - lai_start) / time_interval_yr, NA_real_),
     # Extract site prefix for location mapping
     site_prefix = gsub("\\d+$", "", site)
   )
@@ -190,8 +198,8 @@ cat(sprintf("  Survived: %d (%.1f%%)\n",
 intervals <- intervals %>%
   mutate(
     disturbance = case_when(
-      timepoint == 4 ~ "disease_2014",
-      timepoint == 5 ~ "disease_2014_aftermath",
+      timepoint == 4 ~ "bleaching_2014_context",
+      timepoint == 5 ~ "bleaching_2014_aftermath_context",
       TRUE ~ NA_character_
     )
   )
@@ -225,6 +233,9 @@ study_n <- n_distinct(intervals$coral_id)
 # --- Survival records ---
 neely_surv <- intervals %>%
   mutate(
+    source_interval_id = paste(coral_id, paste0("TP", timepoint, "-", timepoint + 1L), sep = ":"),
+    survey_start_date = as.character(survey_date_start),
+    survey_end_date = as.character(survey_date_end),
     study = "neely_et_al_2022",
     region = "Florida Keys",
     plot = site,
@@ -235,9 +246,9 @@ neely_surv <- intervals %>%
     depth_m = NA_real_,
     data_type = "field",
     size_cm2 = lai_start,
-    size_live_cm2 = lai_start,  # LAI IS live tissue area
+    size_live_cm2 = lai_start,  # Source live-area index; not literal planar area.
     fragment = "N",
-    study_notes = "Neely lab FKNMS monitoring; LAI = live tissue area (cm2); 0 = dead (absorbing state confirmed)",
+    study_notes = "Neely FKNMS; LAI=((L+W+H)/3)^2*live_fraction (cm2 index), not measured planar area; live=alive with LAI missing; 0=dead",
     study_N = study_n,
     group_N = NA_integer_
   ) %>%
@@ -249,15 +260,20 @@ neely_surv <- intervals %>%
     study, region, location, plot, treatment_1, treatment_2,
     latitude, longitude, depth_m, survey_yr = survey_yr_start,
     data_type, coral_id, size_cm2, size_live_cm2, survived,
-    fragment, time_interval_yr, disturbance, study_notes, study_N, group_N
+    fragment, time_interval_yr, disturbance, study_notes, study_N, group_N,
+    source_interval_id, survey_start_date, survey_end_date
   )
 
 cat(sprintf("  Survival records: %d\n", nrow(neely_surv)))
 
 # --- Growth records (survivors only, positive interval) ---
 neely_growth <- intervals %>%
-  filter(survived == 1, time_interval_yr > 0) %>%
+  filter(survived == 1, time_interval_yr > 0,
+         is.finite(lai_start), is.finite(lai_end), is.finite(growth_cm2_yr)) %>%
   mutate(
+    source_interval_id = paste(coral_id, paste0("TP", timepoint, "-", timepoint + 1L), sep = ":"),
+    survey_start_date = as.character(survey_date_start),
+    survey_end_date = as.character(survey_date_end),
     study = "neely_et_al_2022",
     region = "Florida Keys",
     plot = site,
@@ -271,7 +287,7 @@ neely_growth <- intervals %>%
     size_live_cm2 = lai_start,
     growth_live_cm2_yr = growth_cm2_yr,
     fragment = "N",
-    study_notes = "Neely lab FKNMS monitoring; LAI = live tissue area (cm2)",
+    study_notes = "Neely FKNMS; LAI=((L+W+H)/3)^2*live_fraction (cm2 index); paired measured indices only; live code has no growth value",
     study_N = study_n,
     group_N = NA_integer_
   ) %>%
@@ -283,7 +299,8 @@ neely_growth <- intervals %>%
     latitude, longitude, depth_m, survey_yr = survey_yr_start,
     data_type, coral_id, size_cm2, size_live_cm2,
     growth_cm2_yr, growth_live_cm2_yr,
-    fragment, time_interval_yr, disturbance, study_notes, study_N, group_N
+    fragment, time_interval_yr, disturbance, study_notes, study_N, group_N,
+    source_interval_id, survey_start_date, survey_end_date
   )
 
 cat(sprintf("  Growth records: %d\n", nrow(neely_growth)))
@@ -295,9 +312,20 @@ cat(sprintf("  Growth records: %d\n", nrow(neely_growth)))
 cat("\nSECTION 5: Appending to standardized data files\n")
 cat(paste(rep("-", 60), collapse = ""), "\n\n")
 
-# Read existing data
-existing_surv <- read_csv(surv_file, show_col_types = FALSE)
-existing_growth <- read_csv(growth_file, show_col_types = FALSE)
+# Other studies were retained above; write only after validation succeeds.
+dir.create(file.path(project_root, "06_analysis/output"), recursive = TRUE, showWarnings = FALSE)
+interval_audit <- intervals %>% transmute(
+  study = "neely_et_al_2022", site, coral_id,
+  source_file = basename(input_file), source_row = source_row_start,
+  start_timepoint = timepoint, end_timepoint = timepoint + 1L,
+  start_date = survey_date_start, end_date = survey_date_end,
+  initial_lai = lai_start, endpoint_lai = lai_end, survived,
+  endpoint_known_live_missing_lai = survived == 1 & is.na(lai_end),
+  initial_lai_missing = is.na(lai_start),
+  time_interval_yr,
+  missing_start_date = is.na(survey_date_start),
+  missing_end_date = is.na(survey_date_end))
+write_csv(interval_audit, file.path(project_root, "06_analysis/output/neely_interval_source_audit.csv"))
 
 cat(sprintf("  Existing survival: %d rows from %d studies\n",
             nrow(existing_surv), n_distinct(existing_surv$study)))
@@ -305,6 +333,10 @@ cat(sprintf("  Existing growth: %d rows from %d studies\n",
             nrow(existing_growth), n_distinct(existing_growth$study)))
 
 # Ensure column alignment
+for (column in c("source_interval_id", "survey_start_date", "survey_end_date")) {
+  if (!column %in% names(existing_surv)) existing_surv[[column]] <- NA_character_
+  if (!column %in% names(existing_growth)) existing_growth[[column]] <- NA_character_
+}
 surv_cols <- names(existing_surv)
 growth_cols <- names(existing_growth)
 

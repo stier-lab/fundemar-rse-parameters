@@ -357,21 +357,50 @@ print_success("Saved: disturbance_size_prediction_grid.csv")
 
 print_subheader("Figure generation")
 
-plot_surv <- surv_summary %>%
-  mutate(
-    size_label = as.character(size_class),
-    fill_label = sprintf("%.0f%%", survival_rate * 100),
-    text_col = if_else(survival_rate > 0.78, "white", pal$slate_dark)
-  ) %>%
-  ggplot(aes(x = disturbance_state, y = size_class, fill = survival_rate)) +
-  geom_tile(color = "white", linewidth = 0.6) +
-  geom_text(aes(label = fill_label, color = text_col), size = 3.1, fontface = "bold") +
+# This display-only rule is independent of cell outcomes and applies uniformly
+# to both responses. Sparse observations remain in the summaries and models.
+MIN_DISPLAY_N <- 5L
+display_grid <- expand_grid(
+  size_class = factor_size_class(SIZE_LABELS),
+  disturbance_state = factor(disturbance_state_levels, levels = disturbance_state_levels)
+)
+make_display_data <- function(summary_data, rate_column, white_text_above) {
+  display_grid %>%
+    left_join(summary_data, by = c("size_class", "disturbance_state")) %>%
+    mutate(
+      n = coalesce(n, 0L),
+      display_rate = if_else(n >= MIN_DISPLAY_N, .data[[rate_column]], NA_real_),
+      fill_label = case_when(
+        n == 0L ~ "No data\nn = 0",
+        n < MIN_DISPLAY_N ~ sprintf("<%d obs.\nn = %d", MIN_DISPLAY_N, n),
+        TRUE ~ sprintf("%.0f%%\nn = %s", display_rate * 100, scales::comma(n))
+      ),
+      text_col = if_else(!is.na(display_rate) & display_rate > white_text_above,
+                         "white", pal$slate_dark),
+      availability_fill = if_else(n == 0L, "white", "#E5E7EB")
+    )
+}
+
+surv_display <- make_display_data(surv_summary, "survival_rate", 0.40)
+growth_display <- make_display_data(growth_summary, "pct_positive_growth", Inf)
+stopifnot(
+  sum(surv_display$n) == sum(surv_summary$n),
+  sum(growth_display$n) == sum(growth_summary$n)
+)
+
+plot_surv <- surv_display %>%
+  ggplot(aes(x = disturbance_state, y = size_class, fill = display_rate)) +
+  geom_tile(aes(fill = I(availability_fill)), color = "#D1D5DB", linewidth = 0.4) +
+  geom_tile(data = filter(surv_display, n >= MIN_DISPLAY_N),
+            color = "white", linewidth = 0.6) +
+  geom_text(aes(label = fill_label, color = text_col), size = 3.0,
+            lineheight = 1.05, fontface = "bold", family = "Arial") +
   scale_color_identity() +
   scale_fill_gradient(low = "#dbeafe", high = pal$surv_dark, limits = c(0, 1),
                       labels = label_percent(accuracy = 1),
-                      name = "Annual survival") +
+                      name = "Observed interval\nsurvival") +
   labs(x = NULL, y = "Size class") +
-  theme_manuscript(base_size = 9) +
+  theme_manuscript(base_size = 10) +
   theme(
     axis.text.x = element_blank(),
     axis.ticks.x = element_blank(),
@@ -379,20 +408,19 @@ plot_surv <- surv_summary %>%
     plot.margin = margin(2, 4, 2, 4, "mm")
   )
 
-plot_growth <- growth_summary %>%
-  mutate(
-    fill_label = sprintf("%.0f%%", pct_positive_growth * 100),
-    text_col = if_else(pct_positive_growth > 0.72, "white", pal$slate_dark)
-  ) %>%
-  ggplot(aes(x = disturbance_state, y = size_class, fill = pct_positive_growth)) +
-  geom_tile(color = "white", linewidth = 0.6) +
-  geom_text(aes(label = fill_label, color = text_col), size = 3.1, fontface = "bold") +
+plot_growth <- growth_display %>%
+  ggplot(aes(x = disturbance_state, y = size_class, fill = display_rate)) +
+  geom_tile(aes(fill = I(availability_fill)), color = "#D1D5DB", linewidth = 0.4) +
+  geom_tile(data = filter(growth_display, n >= MIN_DISPLAY_N),
+            color = "white", linewidth = 0.6) +
+  geom_text(aes(label = fill_label, color = text_col), size = 3.0,
+            lineheight = 1.05, fontface = "bold", family = "Arial") +
   scale_color_identity() +
   scale_fill_gradient(low = "#fef3c7", high = pal$accent, limits = c(0, 1),
                       labels = label_percent(accuracy = 1),
                       name = "P(growth > 0)") +
   labs(x = NULL, y = "Size class") +
-  theme_manuscript(base_size = 9) +
+  theme_manuscript(base_size = 10) +
   theme(
     axis.text.x = element_text(angle = 20, hjust = 1),
     legend.position = "right",
@@ -404,23 +432,21 @@ interaction_fig <- plot_surv / plot_growth +
   plot_annotation(tag_levels = "a") &
   theme(plot.tag = element_text(face = "bold"))
 
-ggsave(
-  file.path(fig_dir, "FigS17_disturbance_size_interaction.png"),
-  interaction_fig,
-  width = 174,
-  height = 140,
-  units = "mm",
-  dpi = 300,
-  bg = "white"
+save_manuscript_fig(
+  interaction_fig, "FigS17_disturbance_size_interaction",
+  width_mm = 174, height_mm = 140, fig_dir = fig_dir
 )
-ggsave(
-  file.path(fig_dir, "FigS17_disturbance_size_interaction.pdf"),
-  interaction_fig,
-  width = 174,
-  height = 140,
-  units = "mm",
-  bg = "white",
-  device = if (capabilities("cairo")) cairo_pdf else "pdf"
+
+legend_dir <- file.path(dirname(fig_dir), "legends")
+dir.create(legend_dir, showWarnings = FALSE, recursive = TRUE)
+writeLines(
+  c(
+    "Fig. S17 (Fig. S4 in Online Resource 1). Observed demographic rates across size classes and curated disturbance states.",
+    "(a) Observed interval survival and (b) the proportion of records with positive growth for natural colonies. Tile labels give the observed percentage and the number of colony-interval records; these are descriptive proportions, not size-class-specific treatment effects or pairwise tests. Survival percentages average binary colony-interval fates. Survey durations differ among records, so these percentages are not annual survival rates.",
+    sprintf("Both panels display a percentage only when n >= %d. Grey tiles labeled '<%d obs.' indicate an observed cell below this display threshold; white tiles labeled 'No data' indicate n = 0. The no-curated-disturbance SC1 cell has one survival record and no growth records. This display rule does not remove observations from the models or exported summaries.", MIN_DISPLAY_N, MIN_DISPLAY_N),
+    "Blue shading encodes observed interval survival; gold shading encodes positive-growth frequency. The positive-growth indicator uses annual live-area change when available and otherwise annual total-colony-area change from the prepared growth data; it is not restricted to the matched live-area endpoints used in the primary growth analysis. SC1-SC5 use initial live-area boundaries of 0, 10, 100, 900, and 4,000 cm². Disturbance states distinguish intervals without a curated event, context-only pressure, and acute-event intervals flagged for baseline exclusion. Study, site, and time composition differ among states, so the displayed contrasts are not causal disturbance effects."
+  ),
+  file.path(legend_dir, "FigS17_disturbance_size_interaction.md")
 )
 
 print_success("Saved: FigS17_disturbance_size_interaction.png")

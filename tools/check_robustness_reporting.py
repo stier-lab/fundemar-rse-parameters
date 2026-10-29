@@ -33,7 +33,8 @@ for initial in ("original", "recruit_heavy", "adult_heavy", "stable"):
     for method in ("lambda_only", "full_matrix"):
         b = next(r for r in heat if r["scenario"] == "baseline" and r["initial"] == initial and r["method"] == method)
         h = next(r for r in heat if r["scenario"] == "observed_2023_florida" and r["return_interval_yr"] == "50" and r["initial"] == initial and r["method"] == method)
-        label = initial.replace("_", "-").capitalize()
+        label = {"recruit_heavy": "Small-colony-heavy", "adult_heavy": "Large-colony-heavy"}.get(
+            initial, initial.replace("_", "-").capitalize())
         ml = "Lambda-only" if method == "lambda_only" else "Full matrix"
         expected = f'| {label} | {ml} | {fmt(b["effective_lambda"])} | {fmt(b["p_below_10pct_year50"], 1, True)} | {fmt(h["p_below_10pct_year50"], 2, True)} |'
         checks.append((initial + method, expected in esm))

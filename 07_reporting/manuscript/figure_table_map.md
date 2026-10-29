@@ -17,6 +17,17 @@ Canonical mapping of every manuscript and supplementary figure/table to its gene
 
 ---
 
+## Manuscript tables
+
+| Table | Source | Role |
+|-------|--------|------|
+| Table 1 — Restoration research and action priorities | `acropora_palmata_demography_manuscript_draft.md`, Tables section | Six proposed comparisons/actions, their measurements and inferential limits; complements the Discussion rather than reporting additional analyses |
+
+Table 1 is embedded as an editable Word table on its own page. The canonical
+source is the main manuscript, not a separately edited copy. References in its
+cells resolve through the same bibliography as the main text. These are proposed
+priorities, not model-derived rankings of interventions.
+
 ## Submission supplement (Online Resource 1)
 
 The journal submission contains one concise supplementary PDF, `paper/submission/supplement/ESM_1.pdf`. Its six figures are cited in the main manuscript as `Online Resource 1, Fig. S1` through `Fig. S6`.

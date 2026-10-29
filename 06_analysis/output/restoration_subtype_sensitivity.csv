@@ -1,6 +1,9 @@
-scenario,n_records,n_studies,mean_survival
-All subtype-coded records,5079,5,0.8117739712541846
-Exclude natural fragments,1111,4,0.6003600360036008
-Nursery outplants only,1065,3,0.5981220657277
-All restoration subtypes,1111,4,0.6003600360036008
-Outplanted colonies only,46,1,0.6521739130434782
+scenario,n_records,n_studies,n_natural_fragments,n_nursery_held,n_post_outplant,mean_survival,cohort_survival_estimable,comparison_scope
+All subtype-coded records,1257,6,94,61,1102,0.6467780429594275,FALSE,legacy_inventory_summary_includes_live_endpoint_selected_fragments_not_practice_comparison
+Exclude natural fragments,1163,5,0,61,1102,0.6182287188306109,TRUE,descriptive_observational_survival_not_treatment_efficacy
+All restoration subtypes,1163,5,0,61,1102,0.6182287188306109,TRUE,descriptive_observational_survival_not_treatment_efficacy
+Post-outplant records only (excludes natural fragments and nursery-held),1102,4,0,0,1102,0.6025408348457354,TRUE,descriptive_observational_survival_not_treatment_efficacy
+Asexual post-outplant records only,1067,3,0,0,1067,0.5895032802249301,TRUE,descriptive_observational_survival_not_treatment_efficacy
+Nursery outplants only,1021,2,0,0,1021,0.5866797257590602,TRUE,descriptive_observational_survival_not_treatment_efficacy
+Nursery-held records only,61,2,0,61,0,0.9016393442622951,TRUE,descriptive_observational_survival_not_treatment_efficacy
+Outplanted colonies only,46,1,0,0,46,0.6521739130434782,TRUE,descriptive_observational_survival_not_treatment_efficacy

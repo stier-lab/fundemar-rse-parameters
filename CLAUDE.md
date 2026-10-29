@@ -27,7 +27,7 @@ add or update a row whenever a maintained script gains a model/test family.
 
 A synthesis of all existing *Acropora palmata* (Elkhorn Coral) demographic data across the Caribbean. The central question: **how do survival and growth vary as a function of colony size in restored vs. natural populations?**
 
-We compiled ~12,000 individual-level observations from 7 studies (including the newly added Neely et al. 2022 FKNMS dataset: 878 colonies, FL Keys 2010-2016) plus 10 additional summary-level studies (17 unique studies contributing 22 study-level effects) across 13 Caribbean regions. The data are standardized to a common size metric (live planar tissue area, cm^2) and analyzed using GAMs, GLMMs, and random-effects meta-analysis. A Lefkovitch population projection matrix translates the size-dependent vital rates into a population growth rate (lambda) and elasticity analysis.
+Seven individual-record and eleven summary studies support the synthesis; 17 contribute 22 survival effects across 13 Caribbean regions. Prepared inputs contain 7,780 survival and 6,299 growth intervals, including Neely's 878 Florida Keys colonies. Size includes live area and the Neely index `((L+W+H)/3)^2 × live fraction`, not uniformly planar measurements. GAMs, GLMMs, meta-analysis and the recruitment-free matrix address distinct questions; do not conflate their sample sizes or estimands.
 
 This repo is the **empirical parameter source** for the restoration decision-support work. The sibling repo [stier-lab/Detmer-2025-coral-RSE](https://github.com/stier-lab/Detmer-2025-coral-RSE) holds the Restoration Strategy Evaluation model and the interactive web app (`coral-app/`); its R analyses read the demographic parameters produced here and expect this repo cloned alongside it at `../Detmer-2025-coral-parameters/`. (The earlier `Detmer-2025-coral-platform` first-pass app is archived — point readers to coral-RSE, not it.)
 
@@ -38,18 +38,18 @@ This repo is the **empirical parameter source** for the restoration decision-sup
 These apply to **every** analysis change:
 
 - **I^2 = 97.6%** (interval-annualized expanded meta, 2026-09-29) — extreme heterogeneity across studies. Any bootstrap must use **hierarchical resampling** (study -> observation).
-- **NOAA = 78%** of individual-level data. Results may not generalize. Always check LOSO sensitivity.
-- **Natural vs restoration confounded with study identity** — in individual-level data, natural colonies are mostly NOAA + Neely. The expanded meta (k=17, 22 effects) has 10 natural + 12 restoration effects; difference not significant (moderator p=0.199 in the three-level model; natural 85.4% vs restoration 74.5%).
-- **Neely 2014 disturbance event** — Neely et al. 2022 includes a catastrophic mortality event (53% surv in 2014 vs 88% in non-disturbance intervals). Disturbance intervals are flagged; sensitivity analysis shows excluding them shifts pooled survival by +2.7 pp.
+- **Uneven coverage:** Florida Keys supplies 85.6% of prepared survival intervals; NOAA supplies 79.6% of SC5 survival support. Check matched-estimator LOSO rather than retaining legacy source shares.
+- **Natural vs restoration confounded with study identity** — individual natural records are mostly NOAA + Neely. The expanded meta has 10 natural and 12 restoration-origin effects (85.7% vs 74.5%; moderator p=0.165). Restoration origin includes nursery-held material as well as reef outplants.
+- **Neely 2014 context:** the source describes bleaching and site dependence, not a verified colony-level disease cause. Flags are `bleaching_2014_context` and `bleaching_2014_aftermath_context`. Blank survey dates are not inferred; literal `live` means alive with unmeasured LAI. Preserve source interval IDs, including the two 2012 rounds.
 - **Fragmentation data from one study** (Vardi 2011, 13 rows). Cannot be improved without new data.
-- **All Florida vital rates are pre-2023 collapse.** Manzello et al. (2025, *Science*) documented functional extinction of *A. palmata* from Florida after the 2023 heatwave (97.8-100% mortality at 16-20 DHW). Our transition matrix describes the chronic demographic regime that operated before this event. Heatwave scenario analysis (Script 40) layers Manzello's dose-response onto the population model.
+- **Heatwave reference is pooled, not pre-2023:** NOAA monitoring includes intervals through 2024. Scripts 40/51 apply additional Florida-like mortality pulses to this pooled reference matrix; they are not hindcasts or fitted between-event counterfactuals. Observed endpoint bounds (97.8–100% mortality) are distinct from the dose-response sensitivity.
 - Any new binomial GLMM needs an **overdispersion check** (`sum(pearson_resid^2) / rdf`).
 - Any new maintained model/test family needs an entry in `07_reporting/internal/model_inventory.tsv`; `make verify` enforces script coverage, display IDs, and output paths.
 - Meta-analysis: the primary model is the three-level `rma.mv()` with `test = "t"`; use `test = "knha"` (Knapp-Hartung) in independent-effect `rma()` sensitivity models. Moderator analyses are exploratory at k=17 (22 effects).
-- **Size measurement varies across studies**: L x W x %live (NOAA, Pausch), photo tracing (USGS, Kuffner), diameter^2 (Mendoza-Quiroz). Pooled analyses assume comparability.
+- **Size measurement varies across studies**: L x W x %live (NOAA, Pausch), photo tracing (USGS, Kuffner), diameter^2 (Mendoza-Quiroz), three-dimension LAI (Neely). Pooled analyses assume comparability; do not describe all values as measured planar area.
 - **Mortality definitions are heterogeneous and not harmonized.** NOAA = no tissue AND skeleton gone (conservative); Kuffner = >=50% tissue loss (aggressive); others = no live tissue. No sensitivity analysis stratifying by mortality definition has been run. This is a known limitation.
 - **Annualization assumes constant hazard** (`S_annual = S_observed^(1/t)`). This is the standard approach but does not account for seasonal mortality peaks (hurricane season, summer bleaching). No sensitivity to alternative annualization methods has been tested.
-- **Small-study asymmetry** is assessed in `publication_bias_assessment.csv` (Egger independent p=0.55; three-level p=0.001; trim-and-fill 80.1%→77.3% on the independent model) and reported in the manuscript.
+- **Small-study asymmetry** is assessed in `publication_bias_assessment.csv` (Egger independent p=0.71; three-level p=0.001; trim-and-fill 80.3%→74.8% on the independent model). These diagnostics are not proof of publication bias in single-proportion effects.
 - **Size class boundaries (0/10/100/900/4000 cm^2) follow Vardi 2011** without formal optimization for this dataset. No comparison to alternative discretizations or an IPM has been conducted.
 
 ---
@@ -159,7 +159,7 @@ Never use `"SC1_recruit"`, `"SC1 (0-10)"`, or other variants in analysis code.
 | Study | Type | Region | n | Key Issue |
 |-------|------|--------|---|-----------|
 | NOAA_survey | Natural | FL, Curacao, Navassa | 4,048 | Largest dataset; large colonies |
-| neely_et_al_2022 | Natural | FL Keys | 878 | 2014 disease catastrophe (53% surv); disturbance-flagged |
+| neely_et_al_2022 | Natural | FL Keys | 878 | 2014 bleaching context; not a diagnosed disease cause |
 | pausch_et_al_2018 | Restoration | Florida | 969 | Fragment experiments |
 | USGS_USVI_exp | Restoration | USVI | 46 | Outplanted 2019 |
 | kuffner_et_al_2020 | Restoration | Florida | 52 | Mortality = >=50% tissue loss |
@@ -263,7 +263,7 @@ Domain prefixes: `survival_`, `growth_`, `meta_analysis_`, `expanded_meta_`, `se
 5. **Year column**: Use `survey_yr`, not `year` (conflicts with `base::year` in dplyr context).
 6. **cairo_pdf**: Fails on some systems. `save_manuscript_fig()` has a fallback PDF device.
 7. **Natural vs restoration**: NOT significant (moderator p=0.199 at k=17, 22 effects; underpowered, MDD ≈ 20 pp). Study identity confounded with population type. Don't overinterpret.
-8. **Biological realism S0 reproduction**: Script 60 passes `G_override = tm$growth_transitions` to `compute_lambda_from_survival()` so S0 reproduces the published λ = 0.9613 exactly. Do NOT recompute G from the current growth data file — it has drifted since the validated matrix was built.
+8. **Biological realism S0 reproduction**: Script 60 passes `G_override = tm$growth_transitions` to `compute_lambda_from_survival()` so S0 reproduces the corrected canonical live-area matrix (λ = 0.955136658687). Rebuild that matrix from observed positive live-area endpoints and annualized live-area change before rebuilding scenarios. The primary growth panel contains 4,698 records; projected one-year endpoints have a 0.1-cm² floor. Never restore the former mixed total-area/live-area convention to match a legacy numerical baseline.
 9. **F_sex calibration**: Script 60 applies `SETTLEMENT_EFFICIENCY = 1e-4` to rescale Chamberland 2015 nursery recruit survival (0.028) down to wild broadcast-spawning rates. This is the only non-literal-from-literature parameter choice in the scenario framework — mention in Methods.
 10. **Winter SST**: Script 51 uses NOAA ERSST v5 (monthly, 2° grid) via `rerddap::griddap()`. The daily OISST (`ncdcOisst21Agg`) repeatedly times out at ERDDAP for multi-year windows. Do NOT switch back.
 

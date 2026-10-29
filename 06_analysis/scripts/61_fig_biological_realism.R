@@ -3,7 +3,7 @@
 ################################################################################
 #
 # PURPOSE:
-#   Produce FigS29 — the 3-panel figure for the biological-realism scenario
+#   Produce FigS29 — the four-panel figure for the biological-realism scenario
 #   framework. Inputs: biological_realism_scenarios.csv (from script 60).
 #
 # PANELS:
@@ -29,7 +29,8 @@ scenario_rds <- readRDS("06_analysis/output/biological_realism_scenarios.rds")
 
 # Preserve scenario order
 summary_tab$scenario <- factor(summary_tab$scenario,
-                               levels = paste0("S", 0:8))
+                               levels = paste0("S", 0:9))
+stopifnot(!anyNA(summary_tab$scenario))
 summary_tab$label_display <- sprintf("%s: %s",
                                       as.character(summary_tab$scenario),
                                       summary_tab$label)
@@ -53,8 +54,7 @@ p_a <- ggplot(tornado_data,
                      labels = sprintf("%+.2f", seq(-0.2, 0.2, 0.1))) +
   scale_fill_manual(values = c(increase = "#2C7FB8", decrease = "#E66101")) +
   labs(x = NULL,
-       y = expression(paste(Delta, lambda, " vs baseline (S0)")),
-       title = "a. Scenario sensitivity") +
+       y = expression(paste(Delta, lambda, " vs baseline (S0)"))) +
   theme_manuscript() +
   theme(legend.position = "none",
         axis.text.y = element_text(size = 8),
@@ -78,8 +78,7 @@ p_b <- ggplot(share_data,
                     name = NULL) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 101)) +
   labs(x = NULL,
-       y = "Share of SC1 inflow (%)",
-       title = "b. Reproductive pathway share") +
+       y = "SC1 reproductive inflow (%)") +
   theme_manuscript() +
   theme(legend.position = "bottom",
         plot.title = element_text(size = 10, face = "bold"))
@@ -101,7 +100,10 @@ trajectories <- do.call(rbind,
                          lapply(scenario_rds[
                                    sapply(scenario_rds, function(x) x$scenario %in% focal)],
                                 project_50yr))
-trajectories$label_display <- sprintf("%s: %s", trajectories$scenario, trajectories$label)
+trajectory_labels <- c(S0 = "S0: Baseline", S1 = "S1: Sexual recruitment",
+                       S4 = "S4: Outplant age", S7 = "S7: Depth",
+                       S8 = "S8: Combined")
+trajectories$label_display <- unname(trajectory_labels[trajectories$scenario])
 
 p_c <- ggplot(trajectories,
               aes(x = year, y = total, color = label_display)) +
@@ -109,10 +111,9 @@ p_c <- ggplot(trajectories,
   scale_y_log10(breaks = scales::trans_breaks("log10", function(x) 10^x),
                  labels = scales::trans_format("log10", scales::math_format(10^.x))) +
   scale_color_manual(values = c("grey30", "#2C7FB8", "#E66101", "#238B45", "#762A83"),
-                     name = NULL) +
+                     name = NULL, guide = guide_legend(nrow = 2, byrow = TRUE)) +
   labs(x = "Year",
-       y = "Total colonies (log scale)",
-       title = "c. 50-year projection") +
+       y = "Total colonies (log scale)") +
   theme_manuscript() +
   theme(legend.position = "bottom",
         legend.text = element_text(size = 7),
@@ -129,27 +130,28 @@ qe_long <- summary_tab %>%
 p_d <- ggplot(qe_long,
               aes(x = scenario, y = p_qe, fill = horizon)) +
   geom_col(position = position_dodge(width = 0.75), width = 0.7) +
-  geom_text(aes(label = sprintf("%.2f", p_qe)),
-            position = position_dodge(width = 0.75),
-            vjust = -0.3, size = 2.4) +
   scale_fill_manual(values = c(`20 yr` = "#A6BDDB", `50 yr` = "#034E7B"),
                     name = NULL) +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.1)),
-                     limits = c(0, 1.1), breaks = seq(0, 1, 0.25)) +
-  labs(x = NULL, y = "P(quasi-extinction)",
-       title = "d. Quasi-extinction risk (10% of initial N)") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.02)),
+                     limits = c(0, 1.05), breaks = seq(0, 1, 0.25),
+                     labels = scales::label_percent(accuracy = 1)) +
+  labs(x = NULL, y = "Below 10% of initial abundance") +
   theme_manuscript() +
   theme(legend.position = "bottom",
         plot.title = element_text(size = 10, face = "bold"))
 
 # --- Combine and save ---
-fig <- (p_a / p_b / p_c / p_d) + plot_layout(heights = c(1.2, 1, 1.2, 1.2))
+fig <- (p_a / p_b / p_c / p_d) +
+  plot_layout(heights = c(1.2, 1, 1.2, 1.2)) +
+  plot_annotation(tag_levels = "a") &
+  theme(plot.tag = element_text(face = "bold", size = 10),
+        plot.tag.location = "panel", plot.tag.position = c(0.02, 0.97))
 
 save_manuscript_fig(fig,
                      "FigS29_biological_realism",
                      # Coral Reefs permits a maximum figure height of 234 mm;
-                     # 230 mm preserves room for the external legend.
-                     width_mm = 170, height_mm = 230,
+                     # Keep a compact, consistent double-column canvas.
+                     width_mm = 174, height_mm = 225,
                      fig_dir = "06_analysis/figures/supplementary")
 
 print_success("FigS29 rendered")

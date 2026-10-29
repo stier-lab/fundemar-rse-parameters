@@ -8,6 +8,7 @@ model <- readRDS(file.path(out, "transition_matrix.rds"))
 cells <- readRDS(file.path(out, "prepared_survival_cells.rds")) %>%
   filter(population_type == "Natural colony", !is.na(size_class))
 growth <- readRDS(file.path(out, "prepared_growth_data.rds")) %>%
+  prepare_live_area_growth() %>%
   filter(population_type == "Natural colony", time_interval_yr >= .5,
          time_interval_yr <= 1.5)
 if ("impossible_growth" %in% names(growth)) growth <- filter(growth, !impossible_growth)
@@ -39,10 +40,10 @@ pool_survival <- function(dat, fallback = NULL) {
 growth_matrix <- function(dat) {
   dat <- dat %>% mutate(from = cut(size_cm2, SIZE_BREAKS, labels=SIZE_LABELS,
                                   include.lowest=TRUE),
-    to = cut(pmax(size_cm2+growth_cm2_yr,.1), SIZE_BREAKS, labels=SIZE_LABELS,
+    to = cut(pmax(size_cm2+growth_metric,.1), SIZE_BREAKS, labels=SIZE_LABELS,
              include.lowest=TRUE)) %>% filter(!is.na(from), !is.na(to))
   if (!nrow(dat)) stop("No growth records after study exclusion")
-  dat <- filter(dat, abs(growth_cm2_yr) < quantile(abs(growth_cm2_yr), .99, na.rm=TRUE))
+  dat <- filter(dat, abs(growth_metric) < quantile(abs(growth_metric), .99, na.rm=TRUE))
   counts <- table(factor(dat$to, levels=SIZE_LABELS), factor(dat$from, levels=SIZE_LABELS))
   g <- sweep(counts, 2, colSums(counts), "/")
   g[is.nan(g)] <- 0

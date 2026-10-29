@@ -66,11 +66,13 @@ compute_lambda_from_survival <- function(survival_by_class, growth_data, frag_ma
     return(list(lambda = NA, note = "No growth data"))
   }
 
-  # Compute transition probabilities from growth data
+  growth_data <- prepare_live_area_growth(growth_data)
+  if (nrow(growth_data) == 0) return(list(lambda = NA, note = "No live-area growth data"))
+  # Compute transition probabilities from consistently measured live area.
   # Use right=TRUE, include.lowest=TRUE to match shared_utilities.R canonical convention
   growth_data$initial_sc <- cut(growth_data$size_cm2, breaks = size_breaks,
                                  labels = size_labels, include.lowest = TRUE)
-  growth_data$final_size <- pmax(growth_data$size_cm2 + growth_data$growth_cm2_yr, 0.01)
+  growth_data$final_size <- pmax(growth_data$size_cm2 + growth_data$growth_metric, 0.1)
   growth_data$final_sc <- cut(growth_data$final_size, breaks = size_breaks,
                                labels = size_labels, include.lowest = TRUE)
 

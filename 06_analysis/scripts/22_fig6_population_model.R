@@ -241,6 +241,11 @@ fig4b <- ggplot(elast_core, aes(x = size_class, y = elasticity, fill = vital_rat
            label = sprintf("SC5 stasis: %.1f%%", sc5_pct),
            hjust = 0, vjust = 1, size = 2.6, color = "grey25",
            fontface = "italic", lineheight = 0.9) +
+  annotate("point", x = 1, y = sc5_stasis * 0.80,
+           color = vr_colors["Fragmentation"], size = 2.6) +
+  annotate("text", x = 1.2, y = sc5_stasis * 0.80,
+           label = "Fragmentation\n(non-additive)", hjust = 0,
+           size = 2.4, color = "grey25", lineheight = 0.95) +
   scale_fill_manual(values = vr_colors, name = "Vital rate") +
   scale_color_manual(values = vr_colors["Fragmentation"], name = "Fragmentation",
                      guide = "none") +

@@ -2,7 +2,7 @@
 # Edit this file first when a figure or table is added, removed, renumbered,
 # or moved between manuscript and supplement.
 #
-# tier      : main | supplementary | supp_table | support_table
+# tier      : main | main_table | supplementary | supp_table | support_table
 # number    : reader-facing number within that tier. Fig. S27 is intentionally
 #             vacant; see figure_table_map.md.
 # stem      : rendered basename, or "-" for markdown-only table entries.
@@ -14,8 +14,9 @@ fig1	main	1	Fig1_study_landscape	manuscript	06_analysis/scripts/18_fig1_study_la
 fig2	main	2	Fig2_demographic_rates	manuscript	06_analysis/scripts/19_fig2_demographic_rates.R	Fig. 2	Size-dependent demographic rates
 fig3	main	3	Fig3_caribbean_synthesis	manuscript	06_analysis/scripts/20b_fig_expanded_forest_plot.R	Fig. 3	Caribbean survival synthesis
 fig4	main	4	Fig4_population_model	manuscript	06_analysis/scripts/22_fig6_population_model.R	Fig. 4	Conditional transition dynamics
+table1	main_table	1	-	-	07_reporting/manuscript/acropora_palmata_demography_manuscript_draft.md	Table 1	Restoration research and action priorities
 figS1	supplementary	1	FigS1_size_distribution	supplementary	06_analysis/scripts/18_fig1_study_landscape.R	Fig. S1	Size distribution
-esm_figS1	supplementary	1	FigS1_growth_diagnostics	supplementary	06_analysis/scripts/25_supp_S5_S6_S7_thresholds_growth.R	Fig. S1	Growth-size diagnostics	S1
+esm_figS1	supplementary	1	FigS1_growth_diagnostics	supplementary	06_analysis/scripts/25_supp_S5_S6_S7_thresholds_growth.R	Fig. S1	Growth-size diagnostics (six panels a-f)	S1
 figS2	supplementary	2	FigS2_data_gaps	supplementary	06_analysis/scripts/23_figS2_data_gaps.R	Fig. S2	Data gaps
 figS3	supplementary	3	FigS3_model_diagnostics	supplementary	06_analysis/scripts/24_supp_S3_S4.R	Fig. S3	Model diagnostics
 figS4	supplementary	4	FigS4_model_selection	supplementary	06_analysis/scripts/24_supp_S3_S4.R	Fig. S4	Model selection

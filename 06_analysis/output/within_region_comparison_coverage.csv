@@ -1,0 +1,4 @@
+region,k_natural,k_restoration,contrast_estimable
+Florida Keys,1,2,TRUE
+Puerto Rico,1,2,TRUE
+US Virgin Islands,2,0,FALSE

@@ -109,6 +109,11 @@ cat("Loading prepared data...\n")
 growth_data_raw <- readRDS(file.path(output_dir, "prepared_growth_data.rds"))
 growth_data_raw <- growth_data_raw %>%
   mutate(
+    # One declared response convention for AGR, RGR and P(positive growth).
+    # Preserve the source total-area field without mixing it into only some
+    # responses in the same diagnostic figure.
+    growth_total_source_cm2_yr = growth_cm2_yr,
+    growth_cm2_yr = coalesce(growth_live_cm2_yr, growth_cm2_yr),
     population_type_detail = population_type,
     population_type = collapse_population_type(population_type)
   )

@@ -372,8 +372,8 @@ parameter_lists/                    # RDS files consumed by the web platform API
 
 | Metric | Value |
 |--------|-------|
-| Population growth rate (lambda) | 0.961 (95% CI: 0.816–1.010) |
-| Most critical parameter | SC5 stasis (58.9% of matrix-cell elasticity) |
+| Conditional population growth rate (lambda) | 0.941 (95% bootstrap interval: 0.892–0.982); 99.8% of bootstrap replicates below one |
+| Most critical matrix cell | SC5 stasis (54.1% of matrix-cell elasticity; interval: 39.2–68.2%) |
 | Between-study heterogeneity | I-squared = 97.2% |
 | NOAA data share | 78% of individual-level observations |
 | Total observations | 7,346 individual records + 332 summary records from 16 studies |
@@ -381,6 +381,8 @@ parameter_lists/                    # RDS files consumed by the web platform API
 ---
 
 ## R Package Dependencies
+
+The corrected primary matrix uses 4,301 growth records with observed positive live-area endpoints. It projects annualized live-area change over one year and floors the projected endpoint at 0.1 cm². Script 17's RSE growth exports use live area but have distinct documented eligibility. Regenerating these exports does not rerun the neighboring RSE model or app.
 
 ```r
 # Core

@@ -553,9 +553,10 @@ p_lambda <- ggplot(lambda_data, aes(x = severity, y = effective_lambda,
   geom_col(position = position_dodge(0.8), width = 0.7) +
   geom_hline(yintercept = 1, linetype = "dashed", color = "grey50") +
   geom_hline(yintercept = lambda_det, linetype = "dotted", color = pal$surv_dark) +
-  annotate("text", x = 0.55, y = lambda_det,
+  annotate("label", x = 2.5, y = 0.975,
            label = sprintf("Baseline lambda = %.3f", lambda_det),
-           hjust = 0, vjust = -0.6, size = 2.5, color = pal$surv_dark,
+           hjust = 0.5, vjust = 0.5, size = 2.5, color = pal$surv_dark,
+           fill = "white", label.size = 0, label.padding = unit(0.1, "lines"),
            fontface = "italic") +
   annotate("text", x = 4.45, y = 1,
            label = "stable",

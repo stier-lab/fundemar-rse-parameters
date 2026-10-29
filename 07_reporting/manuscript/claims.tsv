@@ -5,8 +5,10 @@
 # metric_a / metric_b : metric names in 06_analysis/output/canonical_statistics.csv
 # predicate           : Python expression over numeric a and optional b
 id	claim	file	sentence_contains	metric_a	metric_b	predicate
-cl1	Shrinkage is common in matrix-compatible growth records	acropora_palmata_demography_manuscript_draft.md	lost live tissue in 39.4% of records	matrix_compatible_shrinkage_pct	-	a >= 30
+cl1	Tissue loss is common in matrix-compatible growth records	acropora_palmata_demography_manuscript_draft.md	lost live tissue in 39.3% of 4,698	matrix_compatible_shrinkage_pct	-	a >= 30
 cl2	Size--survival associations differ among observational exposure categories	acropora_palmata_demography_manuscript_draft.md	Size--survival relationships differed among the three exposure categories	disturbance_size_interaction_lrt_p	-	a < 0.05
 cl3	The study-window disturbance audit has high overlap coverage	acropora_palmata_demography_manuscript_draft.md	95.1% overlapped a documented disturbance or chronic pressure	study_window_pct_any_overlap	-	a >= 90
-cl4	Subtype-coded survival is higher when natural fragments are included	acropora_palmata_demography_manuscript_draft.md	from 81.2% to 60.0%	all_subtypes_mean_survival_pct	exclude_natural_mean_survival_pct	a > b
-cl6	The conditional transition subsystem has lambda below replacement	acropora_palmata_demography_manuscript_draft.md	deterministic lambda of 0.959	lambda_deterministic	p_decline_pct	a < 1 and b > 90
+# cl4 formerly asserted a pooled comparison invalidated by endpoint-selected
+# NOAA fragment coding. Replace it with the estimability and inclusion claim.
+cl4	Endpoint-selected fragments are withheld from cohort survival	acropora_palmata_demography_manuscript_draft.md	withholding 94 endpoint-selected NOAA fragments	endpoint_selected_fragments_n	subtype_survival_estimable_records	a == 94 and b == 1163
+cl6	The conditional transition subsystem has lambda below replacement	acropora_palmata_demography_manuscript_draft.md	deterministic lambda of 0.955	lambda_deterministic	p_decline_pct	a < 1 and b > 90

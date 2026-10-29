@@ -181,13 +181,20 @@ hw_plot <- hw_data %>%
     # Build clean labels
     label = case_when(
       scenario == "baseline" ~ "Baseline\n(no heatwave)",
+      scenario == "observed_2023_florida" ~ paste0("Observed Florida\nevery ", return_interval_yr, " yr"),
       TRUE ~ paste0(dhw, " DHW\nevery ", return_interval_yr, " yr")
     ),
     # Order: baseline first, then by DHW ascending + return interval descending
     # (most frequent heatwaves last within each DHW group)
     sort_key = case_when(
       scenario == "baseline" ~ 0,
+      scenario == "observed_2023_florida" ~ 3000 + (100 - return_interval_yr),
       TRUE ~ dhw * 100 + (100 - return_interval_yr)
+    ),
+    mortality_basis = case_when(
+      scenario == "baseline" ~ "No heatwave",
+      scenario == "observed_2023_florida" ~ "Observed Florida",
+      TRUE ~ paste0(dhw, " DHW")
     )
   ) %>%
   arrange(sort_key) %>%
@@ -195,22 +202,23 @@ hw_plot <- hw_data %>%
 
 # Color by DHW intensity
 dhw_colors <- c(
-  "0"  = pal$slate_mid,
-  "8"  = "#F0E442",
-  "12" = pal$accent,
-  "18" = "#CC0000"
+  "No heatwave" = pal$slate_mid,
+  "8 DHW" = "#A68A00",
+  "12 DHW" = pal$accent,
+  "18 DHW" = "#CC0000",
+  "Observed Florida" = "#542788"
 )
 
 panel_c <- ggplot(hw_plot, aes(x = label, y = effective_lambda)) +
   geom_hline(yintercept = 1, linetype = "dashed", color = pal$slate_light,
              linewidth = 0.5) +
-  geom_point(aes(color = factor(dhw)), size = 2.5) +
+  geom_point(aes(color = mortality_basis), size = 2.5) +
   geom_segment(aes(x = label, xend = label,
                    y = 1, yend = effective_lambda,
-                   color = factor(dhw)),
+                   color = mortality_basis),
                linewidth = 0.5) +
-  scale_color_manual(values = dhw_colors, name = "DHW") +
-  scale_y_continuous(limits = c(0.4, 1.05), breaks = seq(0.4, 1.0, by = 0.1)) +
+  scale_color_manual(values = dhw_colors, name = NULL) +
+  scale_y_continuous(limits = c(0, 1.05), breaks = seq(0, 1.0, by = 0.2)) +
   labs(x = NULL, y = expression("Effective " * lambda)) +
   annotate("text", x = Inf, y = 1.02, label = expression(lambda * " = 1"),
            hjust = 1.1, vjust = 0, size = 3, color = pal$slate_mid) +

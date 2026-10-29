@@ -334,9 +334,9 @@ bootstrap_growth_transitions <- function(data, n_boot = 1000, study_col = "study
       # Calculate final size class after growth
       sc_data <- sc_data %>%
         mutate(
-          final_size = pmax(size_cm2 + growth_rate, 0.01),  # Minimum 0.01 cm² (near-zero, but positive for log transforms)
-          # Note: individuals with extreme negative growth (final_size near 0) likely represent
-          # partial mortality events that may be better modeled as mortality
+          final_size = pmax(size_cm2 + growth_rate, 0.1),  # Same one-year floor as canonical matrix
+          # Observed zero-live endpoints were excluded before annual projection.
+          # A subannual survivor can extrapolate below zero over a full year.
           final_class = cut(final_size,
                            breaks = size_class_breaks,
                            labels = SIZE_LABELS,
@@ -512,17 +512,16 @@ growth_data <- growth_data %>%
                      include.lowest = TRUE)
   )
 
-# Calculate growth by size class (column is growth_cm2_yr in prepared data)
-growth_data <- growth_data %>%
-  mutate(growth_rate = growth_cm2_yr)  # Standardize column name
+# Export live-area growth only; skeletal-only rows cannot define live-area transitions.
+growth_data <- prepare_live_area_growth(growth_data)
 
 # Preserve the full growth panel for the nursery branch, then restrict field
 # growth parameters to natural colonies only — fragmentation events and
 # outplant/nursery fragments do not represent natural somatic growth.
 growth_data_all <- growth_data
 growth_data <- growth_data %>%
-  filter(!is.na(fragment), fragment == "N")
-cat(sprintf("  Field growth (natural colonies only, fragment=='N'): %d records\n",
+  filter(population_type == "Natural colony")
+cat(sprintf("  Field growth (natural colonies, verified live-area measures): %d records\n",
             nrow(growth_data)))
 
 growth_by_sc <- growth_data %>%
@@ -604,7 +603,11 @@ field_growth_pars <- list(
   n_observations = nrow(growth_data),
   n_studies = n_distinct(growth_data$study),
   n_bootstrap = N_BOOT_PARAMS,
-  data_integration = "cluster_bootstrap (study -> observation); natural colonies only, fragment=='N'",
+  data_integration = "cluster_bootstrap (study -> observation); population_type=='Natural colony'",
+  growth_measure = "live_planar_area_survivor",
+  growth_units = "cm2 per year",
+  endpoint_rule = "initial live area + annual live-area change; floor 0.1 cm2",
+  eligibility = "positive observed live endpoint and valid duration; all intervals; no primary-matrix near-annual restriction or q99 trim",
   generation_date = Sys.time(),
   ci_type = "cluster_bootstrap_percentile",
   ci_interpretation = "Confidence interval for population mean, not prediction interval for individual outcome",
@@ -762,12 +765,12 @@ cat("  ✓ Saved: nurs_surv_pars.rds\n\n")
 cat("Generating nursery growth parameters...\n")
 
 # Nursery / outplant-fragment growth — anything with fragment == "Y" or an
-# explicit nursery data_type. Uses growth_data_all (the unfiltered panel)
-# because the field_growth branch above restricted to fragment == "N".
+# explicit nursery data_type. Uses the strict-live panel before the natural-colony
+# restriction; NOAA natural fragments are not nursery material.
 nurs_growth_data <- growth_data_all %>%
   mutate(size_class = cut(size_cm2, breaks = size_class_breaks,
                            labels = SIZE_LABELS, include.lowest = TRUE),
-         growth_rate = growth_cm2_yr) %>%
+         growth_rate = growth_metric) %>%
   filter(!grepl("NOAA", study, ignore.case = TRUE)) %>%  # exclude NOAA natural fragments (94 records, fragment=='Y' but hurricane-generated, not nursery)
   filter(
     (!is.na(fragment) & fragment == "Y") |
@@ -829,6 +832,10 @@ if (nrow(nurs_growth_data) > 0) {
     n_studies = n_distinct(nurs_growth_data$study),
     n_bootstrap = N_BOOT_PARAMS,
     data_integration = "cluster_bootstrap (study -> observation); fragment=='Y' + nursery data_type",
+    growth_measure = "live_planar_area_survivor",
+    growth_units = "cm2 per year",
+    endpoint_rule = "initial live area + annual live-area change; floor 0.1 cm2",
+    eligibility = "positive observed live endpoint and valid duration; nursery/fragment provenance excluding NOAA; all intervals; no primary-matrix q99 trim",
     generation_date = Sys.time(),
     ci_type = "cluster_bootstrap_percentile",
     ci_interpretation = "Confidence interval for population mean, not prediction interval for individual outcome",

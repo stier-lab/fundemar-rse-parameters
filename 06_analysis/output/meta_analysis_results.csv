@@ -1,18 +1,18 @@
 statistic,value
 Number of studies (k),6
-Total observations (N),7294
-Pooled survival (RE),0.759
-95% CI lower,0.609
-95% CI upper,0.864
-95% PI lower,0.345
-95% PI upper,0.950
-tau² (between-study variance),0.4100
-tau (SD of true effects),0.6403
+Total observations (N),7728
+Pooled survival (RE),0.767
+95% CI lower,0.622
+95% CI upper,0.868
+95% PI lower,0.360
+95% PI upper,0.951
+tau² (between-study variance),0.3995
+tau (SD of true effects),0.6321
 I² (%),98.4
 I² 95% CI lower,95.3
 I² 95% CI upper,99.7
-Cochran's Q,453.45
+Cochran's Q,417.70
 Q df,5
 Q p-value,0.0000
-Egger's intercept,-1.443
-Egger's p-value,0.8490
+Egger's intercept,-1.810
+Egger's p-value,0.8022

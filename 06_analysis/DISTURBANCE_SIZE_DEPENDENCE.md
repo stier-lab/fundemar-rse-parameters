@@ -1,4 +1,6 @@
-# Size-Dependence of Disturbance Survival in *Acropora palmata*
+# Historical disturbance-size interpretation — superseded
+
+**Correction, 21 October 2026.** The numerical table and “locked” interpretation below are historical, not current inference. The Neely 2014 source describes bleaching context and site-dependent losses, not diagnosed disease/predation. After that correction, script 37b has no source-specific disease group; its disease contrasts and handoff multipliers are non-estimable. “No flag” is not verified no exposure. The updated manuscript uses the three contextual states in script 37 and explicitly descriptive cells, not this historical causal ranking. Consult the current CSVs, manuscript, and `07_reporting/internal/karen_feedback_integration_2026-10-21.md`. The observed Florida survival-bound midpoint is 0.011 (bounds0–0.022), not the historical0.05 attributed to those bounds. The pooled reference includes monitoring through2024, not a fitted pre-heatwave counterfactual. Historical narrative retained below for audit only.
 
 *Created: 2026-07-21 · Detmer & Stier Lab. Authoritative demographic provenance for how disturbance
 reshapes the size–survival relationship, and the RSE-ready per-type size multipliers exported for the

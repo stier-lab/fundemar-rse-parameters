@@ -1,7 +1,13 @@
 # RSE Model Compatibility Notes
 
-**Updated:** 2026-04-14
+**Updated:** 2026-10-19
 **RSE repo:** `Detmer-2025-coral-RSE`
+
+## Current live-area correction
+
+The corrected synthesis baseline has λ = **0.955136658687** (95% bootstrap interval: **0.915756226–0.998406745**); **98.0%** of bootstrap replicates fall below one. The primary matrix uses **4,698** records with observed positive live-area endpoints, projects annualized live-area change over one year, and floors the projected endpoint at **0.1 cm²**. Script 17's field and nursery growth exports use live-area change but retain distinct documented eligibility and bootstrap estimators; they are not claimed to reproduce the primary G exactly. Survival and fragmentation inputs are not changed by this growth correction. S0 scenario matrices use the primary saved G and must reproduce the corrected baseline exactly.
+
+These files are inputs for a future neighboring-RSE rerun. The RSE analyses and app were **not** rerun or deployed as part of this correction. The April change log below is historical; its numerical baselines are superseded by this section and the current output files.
 
 ---
 
@@ -86,7 +92,7 @@ Already fixed (pushed to RSE main, April 15):
 
 Still needed:
 
-4. **Re-run all scenarios**: Field survival values changed (rma-based, 2000 bootstrap samples). Lambda shifted from 0.986 to 0.961. Restoration effectiveness comparisons may shift.
+4. **Re-run all scenarios**: Load the corrected live-area growth exports and scenario matrices, verify their provenance and schemas, and rerun the neighboring RSE analyses before reporting updated restoration comparisons. The synthesis baseline is now λ = 0.955136658687; the sibling model has not been rerun in this correction.
 5. **Consider `recruit_surv_pars.rds`**: The new `s_recruit = 0.028` parameter is available for recruit-based restoration scenarios. It's a potential alternative to or supplement for the hardcoded `s1 = 0.70` (which applies to nursery fragments, not microscopic settlers).
 6. **Consider whether lab survival parameters need updating**: The RSE model uses hardcoded `lab_pars$s0 = 0.95` and `lab_pars$s1 = 0.70`. The synthesis repo has `apal_surv_lab_short.csv` (6 rows, 4-30 day intervals) but these are too short-term to directly inform annual lab survival. The current hardcoded values may still be the best available estimates.
 
@@ -94,7 +100,7 @@ Still needed:
 
 ## Biological-Realism Scenario Framework (April 2026)
 
-A 9-scenario sensitivity analysis (S0–S8) layering literature-sourced biological mechanisms onto the baseline matrix is now available as **drop-in inputs for the RSE model**. The main demography synthesis paper uses all nine; Raine's RSE paper will likely select a subset but the full set is exported so that decision can be made downstream.
+A supporting sensitivity analysis layers literature-sourced biological mechanisms onto the baseline matrix. Scenario matrices are exported for downstream RSE evaluation; this is not evidence that the RSE model has consumed them or that all scenarios are primary results in the demography paper. Consult the current scenario CSV/RDS for the maintained scenario set.
 
 ### Files added
 
@@ -107,7 +113,7 @@ A 9-scenario sensitivity analysis (S0–S8) layering literature-sourced biologic
 
 | Scenario | Description | Source |
 |----------|-------------|--------|
-| **S0** Baseline | Current published λ = 0.961 | This synthesis |
+| **S0** Baseline | Corrected live-area λ = 0.955 | This synthesis; no sexual or external recruitment |
 | **S1** +Sexual fecundity | Size-threshold F_sex (SC5 fully reproductive ≥4000 cm²) | Vardi 2011 × Mendoza-Quiroz 2023 |
 | **S2** +Sterility lag | 4-yr post-disturbance reproductive silence | Lirman 2000a |
 | **S3** +Lesion penalty | 20% fecundity penalty for partial-mortality colonies | Piñón-González 2018 |
@@ -139,9 +145,9 @@ A_rse <- build_rse_scenario_matrix(inputs)   # your RSE function
 qe <- compute_qe(A_rse, years = c(20, 50), init = c(200, 100, 50, 20, 10))
 ```
 
-### Reproduction of published λ
+### Reproduction of the corrected canonical baseline
 
-`scenarios$S0$matrix` reproduces the published λ = 0.961 exactly because script 60 overrides the growth-transition block with the canonical `growth_transitions` from `transition_matrix.rds`. Rebuilding the matrix from current CSVs alone gives λ ≈ 0.982 — use the scenario matrices, not a fresh recompute, to stay anchored to the manuscript's baseline.
+`scenarios$S0$matrix` must reproduce the canonical matrix and λ = 0.955136658687 because script 60 uses `growth_transitions` from the rebuilt `transition_matrix.rds`. This is endpoint and estimator consistency, not precision anchoring to an old published value. Reconstructing G requires the same live-area endpoint eligibility, annualization, filtering, and missing-class handling as script 13; adding total-area growth to live initial area is invalid.
 
 ### Defaults used in `compute_qe()`
 

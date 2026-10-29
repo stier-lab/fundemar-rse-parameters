@@ -1,1 +1,2 @@
 "context","n_studies","n","mean_survival","se_survival","ci_lower","ci_upper","median_size","mean_size","difference_from_field","pct_difference","recommendation","adjustment_factor","caveat"
+"nursery_insitu",2,61,0.901639344262295,0.0381295971999709,0.826905333750352,0.976373354774238,15.2600650724644,15.2600650724644,0.104678547429196,13.1347172715596,"MODERATE OBSERVED DIFFERENCE (exploratory)",0.883901974669437,"Observational association only — confounded with study identity, size, region, era"

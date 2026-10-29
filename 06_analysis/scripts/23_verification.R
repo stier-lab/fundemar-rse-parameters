@@ -752,11 +752,22 @@ if (file.exists(shrinkage_file)) {
 restore_file <- file.path(output_dir, "restoration_subtype_survival_summary.csv")
 if (file.exists(restore_file)) {
   restore_summary <- read_csv(restore_file, show_col_types = FALSE)
+  estimable <- restore_summary$cohort_survival_estimable
+  add_stat("restoration", "subtype_survival_estimable_records",
+    sum(restore_summary$n_records[estimable]),
+    as.character(sum(restore_summary$n_records[estimable])),
+    "06_analysis/output/restoration_subtype_survival_summary.csv",
+    "Excludes endpoint-selected natural fragments")
+  add_stat("restoration", "endpoint_selected_fragments_n",
+    sum(restore_summary$n_records[!estimable]),
+    as.character(sum(restore_summary$n_records[!estimable])),
+    "06_analysis/output/restoration_subtype_survival_summary.csv",
+    "Inventory only; cohort survival not estimable")
   for (i in seq_len(nrow(restore_summary))) {
     add_stat(
       "restoration", paste0("survival_", restore_summary$restoration_subtype[i]),
-      restore_summary$weighted_survival[i] * 100,
-      sprintf("%.1f%%", restore_summary$weighted_survival[i] * 100),
+      if (estimable[i]) restore_summary$weighted_survival[i] * 100 else NA_real_,
+      if (estimable[i]) sprintf("%.1f%%", restore_summary$weighted_survival[i] * 100) else "Not estimable",
       "06_analysis/output/restoration_subtype_survival_summary.csv",
       sprintf("n=%s", restore_summary$n_records[i])
     )

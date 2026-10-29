@@ -85,7 +85,7 @@ SC_MID <- c(SC1 = 5, SC2 = 55, SC3 = 500, SC4 = 2450, SC5 = 8000)
 
 ## Palette: baseline grey, disease vermillion, storm blue (Okabe-Ito)
 type_cols <- c(none = "#7f7f7f", disease = "#D55E00", storm = "#0072B2")
-type_labs <- c(none = "No disturbance", disease = "Disease (Neely 2014)",
+type_labs <- c(none = "No source-specific storm/disease flag", disease = "Source-specific disease flag",
                storm = "Storm (NOAA)")
 
 # =============================================================================
@@ -152,7 +152,14 @@ write_csv(terms_tab, file.path(output_dir, "disturbance_type_size_model_terms.cs
 
 ## Size-survival SLOPE per type via linear combinations of fixef + vcov
 b <- fixef(m_int); V <- as.matrix(vcov(m_int)); nm <- names(b)
-mkc <- function(vec) { c <- setNames(numeric(length(nm)), nm); c[names(vec)] <- vec; c }
+mkc <- function(vec) {
+  # Missing source categories are not zero effects. In particular, Neely's
+  # 2014 bleaching context must not be relabeled as diagnosed coral disease.
+  contrast <- setNames(numeric(length(nm)), nm)
+  if (!all(names(vec) %in% nm)) return(contrast * NA_real_)
+  contrast[names(vec)] <- vec
+  contrast
+}
 slope_defs <- list(
   none    = mkc(c(log_size = 1)),
   disease = mkc(c(log_size = 1, "log_size:dist_typedisease" = 1)),
@@ -187,12 +194,14 @@ print(slope_pairs %>% mutate(across(where(is.numeric), ~round(., 3))), row.names
 ## Predicted survival curves (each type over its observed size range)
 type_ranges <- surv %>% group_by(dist_type) %>%
   summarise(lo = min(size_use), hi = max(size_use), .groups = "drop")
-pred_A <- do.call(rbind, lapply(levels(surv$dist_type), function(t) {
+pred_A <- do.call(rbind, lapply(unique(as.character(surv$dist_type)), function(t) {
   rg <- type_ranges %>% filter(dist_type == t)
   xs <- exp(seq(log(rg$lo), log(rg$hi), length.out = 160))
   nd <- data.frame(size_use = xs, log_size = log(xs),
                    dist_type = factor(t, levels = levels(surv$dist_type)))
   X <- model.matrix(delete.response(terms(m_int)), nd)
+  stopifnot(all(nm %in% colnames(X)))
+  X <- X[, nm, drop = FALSE]
   eta <- as.numeric(X %*% b); se <- sqrt(rowSums((X %*% V) * X))
   nd %>% mutate(pred = plogis(eta),
                 lo = plogis(eta - 1.96 * se), hi = plogis(eta + 1.96 * se))
@@ -215,7 +224,8 @@ bleach <- read_csv(file.path(project_root,
   mutate(dhw = vapply(dhw_satellite, dhw_mid, numeric(1))) %>%
   transmute(region, survey_yr = year, dhw, severity)
 
-## Exclude disease-flagged colonies to avoid the 2014 disease/thermal confound
+## Exclude source-specific disease flags. Regional bleaching context is not
+## itself a colony-level diagnosis of disease.
 heat <- surv %>%
   filter(dist_type != "disease") %>%
   inner_join(bleach, by = c("region", "survey_yr")) %>%

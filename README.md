@@ -22,7 +22,7 @@ This repository updates the Vardi et al. (2012) Lefkovitch projection model usin
 | --- | --- |
 | Canonical demographic data, reproducible R analyses, manuscript figures, and RSE-ready parameter lists | [Analysis workflow](06_analysis/README.md) · [Manuscript-facing outputs](07_reporting/README.md) · [Quick start](#quick-start) |
 
-**Current analysis status.** The interval-annualized meta-analysis estimates pooled annual survival at 78.7% (95% CI: 70.4–85.1%; 95% prediction interval: 37.4–95.8%; 17 studies, 22 effects). The recruitment-free post-settlement transition subsystem has deterministic λ = 0.959 (bootstrap interval: 0.902–1.001). This is not a forecast of whole-population viability because sexual recruitment and external recruitment are fixed at zero. A clean-clone rerun under the locked R environment remains a release requirement.
+**Current analysis status.** The interval-annualized meta-analysis estimates pooled annual survival at 78.9% (95% CI: 70.7–85.2%; 95% prediction interval: 38.0–95.8%; 17 studies, 22 effects). After preserving distinct Neely survey intervals and known live fates, the recruitment-free transition subsystem has deterministic λ = 0.955 (bootstrap interval: 0.916–0.998). Its 4,698 growth records require observed positive live-area endpoints or source live-area indices; annualized change is projected over one year, with a 0.1-cm² floor. The Neely index is not literal planar area. Nursery-held material is separate from reef outplants, and endpoint-selected NOAA fragments cannot estimate cohort survival. Sexual and external recruitment remain fixed at zero, so this is not a forecast of whole-population viability. RSE parameter exports were refreshed, but the neighboring RSE analyses and app have not been rerun. A clean-clone rerun under the locked R environment remains a release requirement.
 
 **Design principle.** Transparency over false precision: analyses distinguish manuscript-facing results from supporting and exploratory work, expose heterogeneity, and preserve a traceable path from source studies to model parameters.
 
@@ -74,19 +74,19 @@ This organization ensures every step from literature search to final analysis is
 
 | Finding | Value | Interpretation |
 |---------|-------|----------------|
-| **Conditional transition λ** | 0.959 (CI: 0.902–1.001) | Recruitment-free post-settlement subsystem; 97.1% of bootstrap replicates had λ < 1, not a real-world decline probability |
-| **Most Critical Parameter** | SC5 Stasis | Large-adult persistence contributes 59.8% of matrix-cell elasticity |
-| **Survival Nonlinearity** | Threshold ~7,498 cm² | Supported sigmoidal survival response, but weakly stable across study folds |
-| **Core Growth Nonlinearity** | RGR threshold at 36.9 cm² | The steepest proportional-growth shift occurs early in ontogeny |
-| **Shrinkage Frequency** | 39.4% | Matrix-compatible growth records frequently show tissue loss rather than simple positive growth |
-| **Disturbance × Size** | Survival interaction `p = 6.93e-4` | Size–survival associations differed among curated exposure categories; this observational comparison does not estimate a causal disturbance effect |
-| **Study Heterogeneity (I²)** | 97.6% | Between-study variation is substantial; the prediction interval is 37.4–95.8% |
-| **Expanded Meta-Analysis** | 78.7% (k=17; 22 effects) | Tier-1 and Tier-2 inputs use the same interval-annualized time scale |
-| **Natural vs Restoration** | 85.4% vs 74.5% | 10.9 pp difference, p=0.199; the comparison is underpowered and not statistically supported |
+| **Conditional transition λ** | 0.955 (CI: 0.916–0.998) | Recruitment-free post-settlement subsystem; 98.0% of bootstrap replicates had λ < 1, not a real-world decline probability |
+| **Most Critical Parameter** | SC5 Stasis | Largest-class persistence contributes 51.4% of matrix-cell elasticity (bootstrap interval: 38.8–64.5%) |
+| **Survival Nonlinearity** | Curvature minimum ~7,498 cm² | Strongest downward curvature, not an inflection or tested planting-size cutoff; unstable across study folds |
+| **Core Growth Nonlinearity** | RGR curvature minimum at 35 cm² | Relative growth declines with size; positive-growth probability has no supported nonlinear threshold |
+| **Shrinkage Frequency** | See output-backed subset summaries | Surviving colonies frequently lose tissue; near-annual shrinkage and matrix-transition subsets have distinct eligibility |
+| **Disturbance × Size** | Survival interaction `p = 0.00126` | Global association, not pairwise class-specific tests or a causal disturbance effect |
+| **Study Heterogeneity (I²)** | 97.6% | Among-study variation is substantial; the prediction interval is 38.0–95.8% |
+| **Expanded Meta-Analysis** | 78.9% (k=17; 22 effects) | Tier-1 and Tier-2 inputs use the same interval-annualized time scale |
+| **Natural vs Restoration** | 85.7% vs 74.5% | 11.1 pp difference, p=0.165; underpowered and not statistically resolved; restoration-origin includes nursery-held material |
 | **Updates Vardi (2012)** | Lefkovitch matrix | Largest dataset for species |
-| **Pre-2023 baseline** | All vital rates pre-date the 2023 Florida heatwave | Manzello et al. (2025, *Science*) documented functional extinction of *A. palmata* from Florida at 16-20 DHW. This matrix describes the chronic regime before that event. |
-| **Recruitment assumption** | λ = 0.959 assumes no sexual or external recruitment | Fragmentation is the only recruitment pathway represented; λ is therefore conditional rather than a full population forecast. |
-| **Biological-realism framework (FigS29)** | 9-scenario sensitivity analysis | Layered seven literature-sourced mechanisms (Vardi 2011 size threshold; Mendoza-Quiroz 2023 oocyte density; Lirman 2000a sterility lag; Piñón-González 2018 lesion penalty; Boisvert 2024 outplant decay; Rodriguez-Martinez 2014 winter SST; Williams 2012 depensatory corallivory; depth refugia). Biggest driver: outplant-age penalty Δλ = −0.126; depth refugia +0.064; "all combined" Δλ = +0.094. |
+| **Heatwave reference** | Pooled monitoring extends through 2024 | The reference matrix is not a fitted pre-2023 counterfactual. Manzello et al. (2025) mortality is an additional prescribed stress pulse, not a reconstruction of the historical event. |
+| **Recruitment assumption** | λ = 0.955 assumes no sexual or external recruitment | Fragmentation is the only recruitment pathway represented; removing it lowers λ to 0.890. This remains a conditional subsystem. |
+| **Biological-realism framework (FigS29)** | Supporting scenario sensitivity analysis | Mechanism-specific results are in `06_analysis/output/biological_realism_scenarios.csv`; S0 must reproduce the corrected live-area baseline, not a legacy matrix. These scenarios are separate from the primary recruitment-free analysis. |
 
 > For manuscript-facing interpretation, use [the manuscript draft](07_reporting/manuscript/acropora_palmata_demography_manuscript_draft.md), [the claim-to-output crosswalk](07_reporting/internal/claim_output_crosswalk.md), and [the figure/table map](07_reporting/manuscript/figure_table_map.md).
 
@@ -295,7 +295,7 @@ What was removed in cleanup was the ad hoc thresholding that had been bolted ont
 | Study | Type | Region | n | Notes |
 |-------|------|--------|---|-------|
 | NOAA NCRMP | Natural | FL, Curacao, Navassa | 4,048 | Largest dataset |
-| Neely et al. 2022 | Natural | FL Keys | 878 | 2014 disease catastrophe flagged |
+| Neely et al. 2022 | Natural | FL Keys | 878 | 2014 bleaching context flagged |
 | Pausch et al. 2018 | Restoration | Florida | 969 | Fragment experiments |
 | USGS USVI | Restoration | USVI | 92 | Outplanted 2019 |
 | Kuffner et al. 2020 | Restoration | Florida | 106 | Outplanted 2018 |

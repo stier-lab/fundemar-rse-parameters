@@ -43,22 +43,19 @@ if (is.data.frame(S_base_raw)) {
 }
 F_mat  <- tm$fragmentation
 lambda_base <- tm$lambda
-G_published <- tm$growth_transitions   # anchor to published baseline
+G_canonical <- tm$growth_transitions   # corrected canonical live-area baseline
 
 cat(sprintf("  Baseline lambda: %.3f\n", lambda_base))
 cat(sprintf("  Baseline survival: %s\n",
             paste(names(S_base), round(S_base, 3), sep = "=", collapse = ", ")))
 
-growth_data <- read.csv("05_data/standardized/apal_growth_ind.csv",
-                        stringsAsFactors = FALSE)
-growth_data <- growth_data[!is.na(growth_data$size_cm2) &
-                           !is.na(growth_data$growth_cm2_yr), ]
+growth_data <- prepare_live_area_growth(readRDS("06_analysis/output/prepared_growth_data.rds"))
 
 # --- Match script 13 transition-matrix filters (critical for S0 reproduction) ---
-# (1) Natural colonies only (fragment == "N")
-if ("fragment" %in% names(growth_data)) {
-  growth_data <- growth_data[growth_data$fragment == "N" | is.na(growth_data$fragment), ]
-  growth_data <- growth_data[!is.na(growth_data$fragment) & growth_data$fragment == "N", ]
+# (1) Provenance-based natural-colony classification, not fragment status.
+growth_data <- growth_data[growth_data$population_type == "Natural colony", ]
+if ("impossible_growth" %in% names(growth_data)) {
+  growth_data <- growth_data[!growth_data$impossible_growth, ]
 }
 # (2) Near-annual intervals only (0.5-1.5 yr)
 if ("time_interval_yr" %in% names(growth_data)) {
@@ -67,8 +64,8 @@ if ("time_interval_yr" %in% names(growth_data)) {
                              growth_data$time_interval_yr <= 1.5, ]
 }
 # (3) Remove top-1% absolute growth outliers (script 13 line 475)
-q99 <- quantile(abs(growth_data$growth_cm2_yr), 0.99, na.rm = TRUE)
-growth_data <- growth_data[abs(growth_data$growth_cm2_yr) < q99, ]
+q99 <- quantile(abs(growth_data$growth_metric), 0.99, na.rm = TRUE)
+growth_data <- growth_data[abs(growth_data$growth_metric) < q99, ]
 cat(sprintf("  Growth data (post-filter): %d rows\n", nrow(growth_data)))
 
 # --- Load F_sex variants (scripts 53-55) ---
@@ -143,7 +140,7 @@ run_one <- function(name, label, S, F_sex_use = NULL) {
     growth_data       = growth_data,
     frag_matrix       = F_mat,
     F_sex             = F_sex_use,
-    G_override        = G_published
+    G_override        = G_canonical
   )
   list(scenario = name, label = label, result = res,
        S = S, F_sex = F_sex_use)
@@ -254,14 +251,11 @@ print_subheader("Scenario summary")
 print(rows)
 
 # --- S0 reproduction check ---
-s0_lam <- rows$lambda[rows$scenario == "S0"]
-if (abs(s0_lam - lambda_base) > 0.01) {
-  warning(sprintf("S0 lambda=%.3f diverges from published %.3f. Check pipeline.",
-                  s0_lam, lambda_base))
-} else {
-  cat(sprintf("\n  S0 reproduces baseline lambda: %.3f (expected %.3f)\n",
-              s0_lam, lambda_base))
-}
+s0 <- scenarios[[which(vapply(scenarios, function(sc) sc$scenario == "S0", logical(1)))]]$result
+stopifnot(abs(s0$lambda - lambda_base) < 1e-10,
+          max(abs(s0$matrix - tm$projection_matrix)) < 1e-10)
+cat(sprintf("\n  S0 reproduces the canonical live-area matrix and lambda: %.12f\n",
+            s0$lambda))
 
 # --- Save outputs ---
 out_path <- "06_analysis/output/biological_realism_scenarios.csv"

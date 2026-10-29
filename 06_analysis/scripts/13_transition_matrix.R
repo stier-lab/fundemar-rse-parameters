@@ -66,7 +66,7 @@ if (file.exists("utils/shared_utilities.R")) {
 
 # NOTE: Matrix restricted to natural colonies (population_type == "Natural colony")
 # and near-annual growth intervals (0.5-1.5 yr). This means the matrix is heavily
-# NOAA-dependent (NOAA provides 99% of natural colony data). Growth data excludes
+# NOAA-dependent (see source-leverage outputs for current shares). Growth data excludes
 # Navassa (all >1.5 yr intervals) and some Florida long-interval records.
 # See LOSO sensitivity analysis for robustness.
 
@@ -111,6 +111,19 @@ cat("\nLoading prepared data...\n")
 
 surv_data <- readRDS(file.path(output_dir, "prepared_survival_data.rds"))
 growth_data <- readRDS(file.path(output_dir, "prepared_growth_data.rds"))
+growth_input_audit <- growth_data %>%
+  group_by(study, population_type) %>%
+  summarise(n_input = n(), n_live_area = sum(is.finite(size_live_cm2) &
+    size_live_cm2 > 0 & is.finite(growth_live_cm2_yr)), .groups = "drop") %>%
+  mutate(n_excluded_missing_live_measure = n_input - n_live_area)
+live_survivor_counts <- prepare_live_area_growth(growth_data) %>%
+  count(study, population_type, name = "n_live_positive_endpoint")
+growth_input_audit <- left_join(growth_input_audit, live_survivor_counts,
+  by = c("study", "population_type")) %>%
+  mutate(n_live_positive_endpoint = coalesce(n_live_positive_endpoint, 0L),
+    n_excluded_nonpositive_endpoint_or_duration = n_live_area - n_live_positive_endpoint)
+readr::write_csv(growth_input_audit, file.path(output_dir, "live_area_growth_input_audit.csv"))
+growth_data <- prepare_live_area_growth(growth_data)
 
 # Load cell-level survival dataset (individual + summary, inverse-variance weights)
 # See 04_extraction/data_integration_issues.md for rationale
@@ -195,7 +208,7 @@ growth_data <- growth_data %>%
     size_class_initial = cut(size_cm2, breaks = size_class_breaks,
                              labels = size_class_labels, include.lowest = TRUE),
     # Calculate final size
-    size_final_cm2 = size_cm2 + growth_cm2_yr,
+    size_final_cm2 = size_cm2 + growth_metric,
     size_final_cm2 = pmax(size_final_cm2, 0.1),  # Can't be negative
     size_class_final = cut(size_final_cm2, breaks = size_class_breaks,
                            labels = size_class_labels, include.lowest = TRUE)
@@ -439,9 +452,9 @@ sc5_studies <- unique(sc5_cells$study)
 sc5_n <- sum(sc5_cells$n_initial)
 cat("\n")
 cat("╔═══════════════════════════════════════════════════════════════╗\n")
-cat("║  WARNING: SC5 SINGLE-STUDY DEPENDENCE                        ║\n")
+cat("║  SC5 SURVIVAL SOURCE COVERAGE                               ║\n")
 cat("╚═══════════════════════════════════════════════════════════════╝\n")
-cat(sprintf("WARNING: SC5 (>4000 cm2) survival estimated entirely from NOAA monitoring.\n"))
+cat("SC5 (>4000 cm2) survival is pooled across the contributing studies below.\n")
 cat(sprintf("  SC5 observations: %d from %d study(ies): %s\n",
             sc5_n, length(sc5_studies), paste(sc5_studies, collapse = ", ")))
 if (length(sc5_studies) == 1) {
@@ -461,18 +474,13 @@ cat("═════════════════════════
 # =============================================================================
 # DATA QUALITY FILTERING FOR TRANSITIONS
 # =============================================================================
-# NOTE: We use only 99th percentile outlier filtering here, NOT the impossible_growth
-# flag. The "impossible" records (negative growth > initial size) actually represent
-# real partial mortality/fragmentation events and are important for accurate
-# transition probability estimation.
-#
-# The impossible_growth flag is useful for other analyses (e.g., positive growth
-# probability) but should NOT be used for the transition matrix to maintain
-# consistency with the validated results (λ = 0.986).
+# Positive observed live endpoints, natural-colony provenance, impossible-growth
+# exclusions and near-annual intervals were applied above. Trim the upper 1%
+# of absolute annual live-area change here, using the same metric as the endpoint.
 
 growth_filtered <- growth_data %>%
   filter(!is.na(size_class_initial), !is.na(size_class_final)) %>%
-  filter(abs(growth_cm2_yr) < quantile(abs(growth_cm2_yr), 0.99, na.rm = TRUE))
+  filter(abs(growth_metric) < quantile(abs(growth_metric), 0.99, na.rm = TRUE))
 
 cat(sprintf("Using %d growth records (after filtering extremes)\n\n", nrow(growth_filtered)))
 
@@ -878,15 +886,15 @@ cat(sprintf("\nSummary: Survival elasticity total = %.4f, Fragmentation elastici
 sc5_stasis_elasticity <- elasticity[5, 5]
 cat("\n")
 cat("╔═══════════════════════════════════════════════════════════════╗\n")
-cat("║  SC5 SINGLE-STUDY DEPENDENCE — ELASTICITY IMPACT             ║\n")
+cat("║  SC5 SOURCE COVERAGE AND ELASTICITY                         ║\n")
 cat("╚═══════════════════════════════════════════════════════════════╝\n")
-cat(sprintf("WARNING: SC5 (>4000 cm2) survival estimated entirely from NOAA monitoring.\n"))
-cat(sprintf("  SC5 stasis elasticity = %.1f%% of total — most influential vital rate from single source.\n",
+cat(sprintf("SC5 (>4000 cm2) survival uses %d contributing study(ies).\n", length(sc5_studies)))
+cat(sprintf("  SC5 stasis matrix-cell elasticity = %.1f%% of total.\n",
             sc5_stasis_elasticity * 100))
 cat(sprintf("  SC5 survival rate = %.3f (annualized), n = %d observations\n",
             S["SC5"], sum(surv_data$size_class == "SC5", na.rm = TRUE)))
 cat("  NOAA uses conservative mortality definition (no tissue AND skeleton gone).\n")
-cat("  This single-source dependence is the greatest structural uncertainty in the model.\n")
+cat("  See source-leverage and study-exclusion outputs for source dependence.\n")
 
 # =============================================================================
 # TRANSITION SAMPLE SIZE ASSESSMENT
@@ -2203,7 +2211,7 @@ pop_params <- data.frame(
             lambda_no_frag),
   notes = c("deterministic dominant eigenvalue", "percentile bootstrap 2.5%", "percentile bootstrap 97.5%",
             "bias-corrected 2.5%", "bias-corrected 97.5%",
-            "P(lambda < 1)", "Cochran-Ellner method; unreliable when fragmentation elasticity near zero",
+            "Bootstrap fraction with lambda < 1; not a probability of real-world decline", "Cochran-Ellner method; unreliable when fragmentation elasticity near zero",
             "Mod(eigenvalue1) / Mod(eigenvalue2); rate of convergence to stable distribution",
             "diagonal elasticity sum", "below-diagonal elasticity sum",
             "above-diagonal elasticity sum", "total fragmentation elasticity",
@@ -2234,9 +2242,9 @@ if (exists("loso_results") && !is.null(loso_results) && "lambda" %in% names(loso
 caveat_rows <- data.frame(
   parameter = c("caveat_noaa_pct_data", "caveat_sc5_single_study",
                  "caveat_frag_single_source"),
-  value = c(78, as.numeric(length(sc5_studies) == 1), 1),
-  notes = c("NOAA provides 78% of individual-level data; lambda is NOAA-conditional",
-            "SC5 stasis (highest elasticity) estimated from single study (1=TRUE)",
+  value = c(100 * mean(surv_data$study == "NOAA_survey"), as.numeric(length(sc5_studies) == 1), 1),
+  notes = c("NOAA percentage of filtered natural-colony individual survival records used for matrix support",
+            "SC5 survival supplied by one study (1=TRUE); not a cell-elasticity attribution",
             "All fragmentation from Vardi 2011 (13 rows, 1 study)")
 )
 pop_params <- rbind(pop_params, caveat_rows)
@@ -2591,8 +2599,8 @@ cat(paste0(strrep("=", 62), "\n"))
 cat("  INTERPRETATION CAVEATS\n")
 cat(paste0(strrep("=", 62), "\n\n"))
 cat("  1. Lambda is estimated primarily from NOAA monitoring sites\n")
-cat("     (Florida Keys, Curacao, Navassa) -- 78% of individual data.\n")
-cat(sprintf("  2. SC5 stasis (elasticity = %.1f%%) is from NOAA alone.\n", e_stasis / sum(elasticity) * 100))
+cat("     (Florida Keys, Curacao, Navassa); consult current source-leverage tables.\n")
+cat(sprintf("  2. SC5 stasis matrix-cell elasticity = %.1f%%; survival is pooled across studies.\n", elasticity[5, 5] * 100))
 cat("     NOAA uses a conservative mortality definition (no tissue/skeleton).\n")
 cat("  3. BRACKETING SCENARIOS:\n")
 cat(sprintf("     With fragmentation (Vardi 2011):    lambda = %.4f\n", lambda))

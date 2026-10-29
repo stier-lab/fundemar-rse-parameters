@@ -40,7 +40,7 @@ find_output <- function() {
 out_dir <- find_output()
 
 SC <- c("SC1","SC2","SC3","SC4","SC5")
-MANZELLO_CATASTROPHIC <- 0.05   # DHW>20 flat survival (Manzello et al. 2025, 97.8-100% mortality)
+MANZELLO_CATASTROPHIC <- 0.011  # midpoint survival of the observed 0--2.2% Florida bounds
 
 by_size <- function(df, key_col, key_val, val = "survival") {
   s <- setNames(rep(NA_real_, 5), SC)
@@ -68,10 +68,10 @@ m_therm_cat <- round(rep(MANZELLO_CATASTROPHIC, 5), 3); names(m_therm_cat) <- SC
 
 types <- list(disease = m_disease, storm = m_storm,
               thermal_moderate = m_therm_mod, thermal_catastrophic = m_therm_cat)
-prov  <- c(disease = "37b disease/predation (Neely 2014-15 compound); large-favoring",
+prov  <- c(disease = "Not estimable: no source-specific disease observations after correcting Neely 2014 to bleaching context; do not substitute a thermal label for disease",
            storm = "37b storm; flattened (branch breakage)",
            thermal_moderate = "37b heatwave DHW<10; gradient persists ~ baseline",
-           thermal_catastrophic = "Manzello 2025 Science; DHW>20 flat collapse (external)")
+           thermal_catastrophic = "Manzello 2025 Science observed Florida endpoint: midpoint survival 0.011 of bounds 0--0.022; an external scenario, not a fitted DHW threshold")
 
 res <- do.call(rbind, lapply(names(types), function(ty) data.frame(
   disturbance_type = ty, size_class = SC,

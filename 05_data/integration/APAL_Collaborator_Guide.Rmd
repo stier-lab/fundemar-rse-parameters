@@ -22,6 +22,8 @@ params:
   fig_dir: "../figures"
 ---
 
+> **Historical tutorial — superseded numerical results (2026-10-19).** This guide retains earlier analysis descriptions and numerical examples, including the old mixed-area matrix baseline and decline-probability language. Do not use it as the current results source or rerender it as a release document without a full update. Current live-area results, uncertainty definitions, and endpoint eligibility are in the main README, canonical manuscript, and `06_analysis/output/population_parameters.csv`. The corrected primary matrix uses 4,301 growth records and λ = 0.941; bootstrap fractions below one are not real-world decline probabilities.
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
 

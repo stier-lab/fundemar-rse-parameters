@@ -25,6 +25,8 @@ params:
   fig_dir: "../figures"
 ---
 
+> **Historical tutorial — superseded numerical results (2026-10-19).** The earlier matrix and elasticity examples below are retained for history and are not current estimates. The corrected live-area primary matrix uses 4,301 growth records and λ = 0.941; SC5 stasis contributes 54.1% of matrix-cell elasticity. Consult the main README, canonical manuscript, and current matrix/elasticity CSVs for output-backed results. Do not rerender this tutorial as a release document without updating its code, figures, and interpretation throughout.
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
   echo = TRUE,

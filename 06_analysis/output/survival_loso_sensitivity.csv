@@ -1,9 +1,9 @@
 method,sig_criteria,threshold_mean,threshold_se,ci_lower,ci_upper,n_detected,n_folds,detection_frac
-abs_max_d2,none,4.260387660715779,NA,NA,NA,1,2,0.5
+abs_max_d2,none,4.063403503941898,NA,NA,NA,1,2,0.5
 abs_max_d2,sim_int,NA,NA,NA,NA,0,2,0
-min_d2,none,1.6995936226553334,NA,NA,NA,1,2,0.5
+min_d2,none,NA,NA,NA,NA,0,2,0
 min_d2,sim_int,NA,NA,NA,NA,0,2,0
-zero_d2,none,4.424541124694012,NA,2.5531916353421487,6.295890614045876,2,2,1
+zero_d2,none,4.2275569679201315,NA,2.1690725296330813,6.2860414062071825,2,2,1
 zero_d2,sim_int,NA,NA,NA,NA,0,2,0
 zero_d1,none,NA,NA,NA,NA,0,2,0
 zero_d1,sim_int,NA,NA,NA,NA,0,2,0

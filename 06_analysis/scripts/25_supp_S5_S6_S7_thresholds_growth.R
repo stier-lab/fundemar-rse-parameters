@@ -111,11 +111,16 @@ cat("  All data loaded successfully.\n\n")
 # DATA PREPARATION (shared across figures)
 # =============================================================================
 
-# Natural colony subset for survival
-surv_natural <- surv_data %>% filter(population_type == "Natural colony")
+# Exact analysis rows, including script 02's subannual-interval exclusions.
+surv_natural <- as_tibble(model.frame(surv_models$gam_model))
+stopifnot(nrow(surv_natural) == nobs(surv_models$gam_model))
 
 # Clean growth data (matching script 04 filtering)
 growth_clean <- growth_data %>%
+  mutate(
+    growth_total_cm2_yr = growth_cm2_yr,
+    growth_cm2_yr = coalesce(growth_live_cm2_yr, growth_cm2_yr)
+  ) %>%
   filter(!is.na(size_cm2), size_cm2 > 0, !is.na(growth_cm2_yr))
 
 if ("impossible_growth" %in% names(growth_clean)) {
@@ -185,12 +190,14 @@ log_size_axis <- function(sec_breaks = c(10, 1000, 100000),
 cat("Generating Figure S5: Threshold analysis...\n")
 
 # --- Panel (a): Survival gate / GAM smooth with CI ---
-# The survival gate test failed (delta AICc = 0.83 < 2), meaning the GAM
-# is not significantly better than a linear model. Show the GAM smooth
-# with CI and annotate the gate result.
+# Show the saved survival GAM and its computed nonlinearity-gate result.
 
 surv_gate_delta <- surv_thresh$gate_delta_aicc[1]
 surv_gate_passed <- surv_thresh$gate_passed[1]
+# nonlinearity_gate() uses AICc only below n = 40 (and with MuMIn present).
+# Keep the legacy CSV field name, but label the criterion actually computed.
+surv_gate_criterion <- if (surv_thresh$n_observations[1] < 40 &&
+                            requireNamespace("MuMIn", quietly = TRUE)) "AICc" else "AIC"
 
 # Extract survival GAM model & prediction grid
 surv_gam <- surv_models$gam_model
@@ -209,7 +216,7 @@ fig_s5a <- ggplot() +
     data = surv_natural,
     aes(x = log_size, y = survived),
     fun = mean,
-    fun.min = function(x) mean(x) - 1.96 * sqrt(mean(x) * (1 - mean(x)) / max(length(x), 1)),
+    fun.min = function(x) max(0, mean(x) - 1.96 * sqrt(mean(x) * (1 - mean(x)) / max(length(x), 1))),
     fun.max = function(x) min(1, mean(x) + 1.96 * sqrt(mean(x) * (1 - mean(x)) / max(length(x), 1))),
     geom = "pointrange",
     bins = 20,
@@ -238,7 +245,8 @@ fig_s5a <- ggplot() +
     "label",
     x = min(surv_pred$log_size) + 0.3,
     y = 0.15,
-    label = sprintf("Gate: \u0394AICc = %.2f\n(threshold = 2)", surv_gate_delta),
+    label = sprintf("Gate: \u0394%s = %.2f\n(threshold = 2)",
+                    surv_gate_criterion, surv_gate_delta),
     size = 2.5, hjust = 0, vjust = 0,
     fill = "white", alpha = 0.85,
     label.r = unit(1, "mm"),
@@ -246,7 +254,7 @@ fig_s5a <- ggplot() +
   ) +
   log_size_axis() +
   scale_y_continuous(
-    name = "Annual survival probability",
+    name = "Interval survival probability",
     limits = c(0, 1),
     breaks = seq(0, 1, 0.2)
   ) +
@@ -256,15 +264,20 @@ fig_s5a <- ggplot() +
     plot.margin = margin(5, 8, 5, 5, "mm")
   )
 
-# --- Panel (b): P(positive growth) vs size with dome-shape threshold ---
+# --- Panel (b): P(positive growth); display a location only if the gate passes ---
 
 # Extract P(+growth) results from growth models
 pos_thresh_row <- growth_thresh %>% filter(response == "positive_growth_prob")
-pos_thresh_cm2 <- pos_thresh_row$recommended_threshold_cm2[1]
-pos_thresh_log <- pos_thresh_row$recommended_threshold_log[1]
+pos_gate_passed <- isTRUE(pos_thresh_row$gate_passed[1])
+pos_thresh_cm2 <- if (pos_gate_passed) pos_thresh_row$recommended_threshold_cm2[1] else NA_real_
+pos_thresh_log <- if (pos_gate_passed) pos_thresh_row$recommended_threshold_log[1] else NA_real_
+pos_gate_criterion <- if (pos_thresh_row$n_observations[1] < 40 &&
+                           requireNamespace("MuMIn", quietly = TRUE)) "AICc" else "AIC"
 
 # Get GAM model for P(+growth) from growth_models
 pos_gam <- growth_models$model_pos_growth
+pos_fit_data <- as_tibble(model.frame(pos_gam))
+stopifnot(nrow(pos_fit_data) == nobs(pos_gam))
 pos_pred_grid <- growth_models$prediction_grid
 
 # Build prediction with SE if needed
@@ -279,10 +292,10 @@ if (!"prob_pos_lower" %in% names(pos_pred_grid)) {
 
 fig_s5b <- ggplot() +
   stat_summary_bin(
-    data = growth_clean,
+    data = pos_fit_data,
     aes(x = log_size, y = positive_growth),
     fun = mean,
-    fun.min = function(x) mean(x) - 1.96 * sqrt(mean(x) * (1 - mean(x)) / max(length(x), 1)),
+    fun.min = function(x) max(0, mean(x) - 1.96 * sqrt(mean(x) * (1 - mean(x)) / max(length(x), 1))),
     fun.max = function(x) min(1, mean(x) + 1.96 * sqrt(mean(x) * (1 - mean(x)) / max(length(x), 1))),
     geom = "pointrange",
     bins = 20,
@@ -317,6 +330,13 @@ fig_s5b <- ggplot() +
                fill = "white", alpha = 0.85,
                label.r = unit(1, "mm"),
                color = pal$accent, family = "sans")
+  } +
+  {
+    if (!pos_gate_passed)
+      annotate("label", x = min(pos_fit_data$log_size) + 0.2, y = 0.10,
+               label = "No supported threshold", hjust = 0, size = 2.5,
+               fill = "white", alpha = 0.85, label.r = unit(1, "mm"),
+               color = pal$slate_dark, family = "sans")
   } +
   log_size_axis() +
   scale_y_continuous(
@@ -353,10 +373,10 @@ fig_s5c <- if (!is.null(rgr_deriv_df)) {
     {
       if (!is.na(rgr_thresh_cm2))
         annotate("label",
-                 x = rgr_thresh_log + 0.15,
-                 y = max(rgr_deriv_df$d2, na.rm = TRUE) * 0.85,
+                 x = max(rgr_deriv_df$x, na.rm = TRUE) - 0.2,
+                 y = max(rgr_deriv_df$d2_upper, na.rm = TRUE) * 0.9,
                  label = sprintf("T\u2082 = %.0f cm\u00B2", rgr_thresh_cm2),
-                 size = 2.5, hjust = 0,
+                 size = 2.5, hjust = 1,
                  fill = "white", alpha = 0.85,
                  label.r = unit(1, "mm"),
                  color = pal$accent, family = "sans")
@@ -392,26 +412,37 @@ cat("  Done: FigS5_threshold_analysis\n")
 
 cat("Generating Figure S6: AGR vs RGR comparison...\n")
 
-# Build prediction grids from GAMs (refit from clean data to ensure consistency)
+# Retain the lower-k positive-growth diagnostic on its explicitly filtered
+# display population. AGR/RGR use the maintained threshold models and exact
+# fitted rows, rather than refitting different curves to this population.
 pred_grid_s6 <- data.frame(
   log_size = seq(min(growth_clean$log_size), max(growth_clean$log_size),
                  length.out = 200)
 )
 
-# AGR GAM
-agr_gam <- gam(agr ~ s(log_size, k = 3), data = growth_clean, method = "REML")
-agr_se <- predict(agr_gam, newdata = pred_grid_s6, se.fit = TRUE)
-pred_grid_s6$agr_fit      <- agr_se$fit
-pred_grid_s6$agr_ci_lower <- agr_se$fit - 1.96 * agr_se$se.fit
-pred_grid_s6$agr_ci_upper <- agr_se$fit + 1.96 * agr_se$se.fit
+# AGR GAM and exact observed response
+agr_gam <- growth_models$model_gam_abs
+agr_fit_data <- as_tibble(model.frame(agr_gam)) %>%
+  transmute(log_size, agr = growth_cm2_yr)
+stopifnot(nrow(agr_fit_data) == nobs(agr_gam))
+pred_agr_s6 <- data.frame(log_size = seq(min(agr_fit_data$log_size),
+                                        max(agr_fit_data$log_size), length.out = 200))
+agr_se <- predict(agr_gam, newdata = pred_agr_s6, se.fit = TRUE)
+pred_agr_s6$agr_fit      <- agr_se$fit
+pred_agr_s6$agr_ci_lower <- agr_se$fit - 1.96 * agr_se$se.fit
+pred_agr_s6$agr_ci_upper <- agr_se$fit + 1.96 * agr_se$se.fit
 agr_r2 <- summary(agr_gam)$r.sq
 
-# RGR GAM
-rgr_gam <- gam(rgr ~ s(log_size, k = 3), data = growth_clean, method = "REML")
-rgr_se <- predict(rgr_gam, newdata = pred_grid_s6, se.fit = TRUE)
-pred_grid_s6$rgr_fit      <- rgr_se$fit
-pred_grid_s6$rgr_ci_lower <- rgr_se$fit - 1.96 * rgr_se$se.fit
-pred_grid_s6$rgr_ci_upper <- rgr_se$fit + 1.96 * rgr_se$se.fit
+# RGR GAM and exact observed response
+rgr_gam <- growth_models$model_gam_rgr
+rgr_fit_data <- as_tibble(model.frame(rgr_gam))
+stopifnot(nrow(rgr_fit_data) == nobs(rgr_gam))
+pred_rgr_s6 <- data.frame(log_size = seq(min(rgr_fit_data$log_size),
+                                        max(rgr_fit_data$log_size), length.out = 200))
+rgr_se <- predict(rgr_gam, newdata = pred_rgr_s6, se.fit = TRUE)
+pred_rgr_s6$rgr_fit      <- rgr_se$fit
+pred_rgr_s6$rgr_ci_lower <- rgr_se$fit - 1.96 * rgr_se$se.fit
+pred_rgr_s6$rgr_ci_upper <- rgr_se$fit + 1.96 * rgr_se$se.fit
 rgr_r2 <- summary(rgr_gam)$r.sq
 
 # P(+growth) GAM
@@ -425,25 +456,25 @@ pos_dev <- summary(pos_gam_s6)$dev.expl
 
 # --- Panel (a): AGR vs size ---
 fig_s6a <- ggplot() +
-  geom_point(data = growth_clean, aes(x = log_size, y = agr),
+  geom_point(data = agr_fit_data, aes(x = log_size, y = agr),
              alpha = 0.08, size = 0.3, color = pal$slate_light) +
   geom_hline(yintercept = 0, linetype = "dashed", color = "grey60", linewidth = 0.3) +
-  geom_ribbon(data = pred_grid_s6,
+  geom_ribbon(data = pred_agr_s6,
               aes(x = log_size, ymin = agr_ci_lower, ymax = agr_ci_upper),
               alpha = 0.2, fill = pal$surv_mid) +
-  geom_line(data = pred_grid_s6,
+  geom_line(data = pred_agr_s6,
             aes(x = log_size, y = agr_fit),
             color = pal$surv_mid, linewidth = 0.8) +
   annotate("label",
-           x = max(pred_grid_s6$log_size) - 0.3,
-           y = quantile(growth_clean$agr, 0.02, na.rm = TRUE),
+           x = max(pred_agr_s6$log_size) - 0.3,
+           y = quantile(agr_fit_data$agr, 0.02, na.rm = TRUE),
            label = sprintf("R\u00B2 = %.1f%%", agr_r2 * 100),
            size = 2.8, hjust = 1,
            fill = "white", alpha = 0.85,
            label.r = unit(1, "mm"),
            color = pal$slate_dark, family = "sans") +
   log_size_axis() +
-  coord_cartesian(ylim = quantile(growth_clean$agr, c(0.01, 0.99), na.rm = TRUE)) +
+  coord_cartesian(ylim = quantile(agr_fit_data$agr, c(0.01, 0.99), na.rm = TRUE)) +
   scale_y_continuous(name = expression(paste("AGR (cm"^2, " yr"^-1, ")"))) +
   theme_manuscript(base_size = 9) +
   theme(
@@ -453,25 +484,25 @@ fig_s6a <- ggplot() +
 
 # --- Panel (b): RGR vs size ---
 fig_s6b <- ggplot() +
-  geom_point(data = growth_clean, aes(x = log_size, y = rgr),
+  geom_point(data = rgr_fit_data, aes(x = log_size, y = rgr),
              alpha = 0.08, size = 0.3, color = pal$slate_light) +
   geom_hline(yintercept = 0, linetype = "dashed", color = "grey60", linewidth = 0.3) +
-  geom_ribbon(data = pred_grid_s6,
+  geom_ribbon(data = pred_rgr_s6,
               aes(x = log_size, ymin = rgr_ci_lower, ymax = rgr_ci_upper),
               alpha = 0.2, fill = pal$grow_mid) +
-  geom_line(data = pred_grid_s6,
+  geom_line(data = pred_rgr_s6,
             aes(x = log_size, y = rgr_fit),
             color = pal$grow_mid, linewidth = 0.8) +
   annotate("label",
-           x = max(pred_grid_s6$log_size) - 0.3,
-           y = quantile(growth_clean$rgr, 0.02, na.rm = TRUE),
+           x = max(pred_rgr_s6$log_size) - 0.3,
+           y = quantile(rgr_fit_data$rgr, 0.02, na.rm = TRUE),
            label = sprintf("R\u00B2 = %.1f%%", rgr_r2 * 100),
            size = 2.8, hjust = 1,
            fill = "white", alpha = 0.85,
            label.r = unit(1, "mm"),
            color = pal$slate_dark, family = "sans") +
   log_size_axis() +
-  coord_cartesian(ylim = quantile(growth_clean$rgr, c(0.01, 0.99), na.rm = TRUE)) +
+  coord_cartesian(ylim = quantile(rgr_fit_data$rgr, c(0.01, 0.99), na.rm = TRUE)) +
   scale_y_continuous(name = expression(paste("RGR (yr"^-1, ")"))) +
   theme_manuscript(base_size = 9) +
   theme(
@@ -487,7 +518,7 @@ fig_s6c <- ggplot() +
     fun = mean,
     fun.min = function(x) {
       p <- mean(x) / 100
-      (p - 1.96 * sqrt(p * (1 - p) / max(length(x), 1))) * 100
+      max(0, (p - 1.96 * sqrt(p * (1 - p) / max(length(x), 1))) * 100)
     },
     fun.max = function(x) {
       p <- mean(x) / 100
@@ -591,19 +622,102 @@ save_manuscript_fig(fig_s6, "FigS6_agr_vs_rgr",
                     fig_dir = fig_dir)
 cat("  Done: FigS6_agr_vs_rgr\n")
 
-# Submission supplement: combine the threshold and growth-scale diagnostics
-# into one seven-panel figure. The separately saved source figures remain
-# repository diagnostics, while this compact version is Fig. S1 in ESM_1.
-fig_s1_growth_diagnostics <- (fig_s5a + fig_s5b + fig_s5c) /
-  (fig_s6a + fig_s6b) /
-  (fig_s6c + fig_s6d) +
-  plot_layout(heights = c(0.8, 1, 1)) +
+# Submission supplement: six diagnostics in reading order, with equal-width
+# panels. Keep the threshold-model positive-growth smooth (b); the lower-k
+# smooth is a repository diagnostic, not a second reader-facing estimate.
+# Old panel g (variance comparison) becomes f. No model is changed here.
+fig_s1_variance <- fig_s6d +
+  geom_text(
+    data = var_long %>% group_by(metric) %>% slice_max(log_size_mid, n = 1),
+    aes(y = sd * ifelse(metric == "AGR", 0.45, 1.8), label = metric),
+    hjust = 1.15, vjust = 0.5,
+    size = 2.6, family = "sans", show.legend = FALSE
+  ) +
+  theme(legend.position = "none")
+
+fig_s1_growth_diagnostics <- (fig_s5a + fig_s5b) /
+  (fig_s5c + fig_s6a) /
+  (fig_s6b + fig_s1_variance) +
+  plot_layout(heights = c(1, 1, 1)) +
   plot_annotation(tag_levels = "a") &
   theme(plot.tag = element_text(size = 11, face = "bold", family = "sans"))
 
 save_manuscript_fig(fig_s1_growth_diagnostics, "FigS1_growth_diagnostics",
-                    width_mm = 174, height_mm = 230,
+                    width_mm = 174, height_mm = 215,
                     fig_dir = fig_dir)
+
+# Retain the smooth-complexity comparison for reproducibility without adding
+# a new fit. This is not cited as a second positive-growth result in ESM_1.
+exploratory_dir <- file.path(fig_dir, "exploratory")
+dir.create(exploratory_dir, showWarnings = FALSE, recursive = TRUE)
+for (extension in c("png", "pdf")) {
+  export_args <- list(
+    filename = file.path(exploratory_dir,
+                         paste0("positive_growth_lower_k_diagnostic.", extension)),
+    plot = fig_s6c, width = 84, height = 75, units = "mm", bg = "white"
+  )
+  if (extension == "png") export_args$dpi <- 600
+  if (extension == "pdf") {
+    export_args$device <- if (capabilities("cairo")) cairo_pdf else "pdf"
+  }
+  do.call(ggsave, export_args)
+}
+
+legend_dir <- file.path(fig_dir, "legends")
+dir.create(legend_dir, showWarnings = FALSE, recursive = TRUE)
+pos_legend <- if (pos_gate_passed && !is.na(pos_thresh_cm2)) {
+  sprintf(paste0("(b) Probability of positive growth from the threshold-analysis GAM; ",
+                 "the dashed line marks the selected model-defined location ",
+                 "(%.0f cm²; n = %s fitted records), not an estimated optimum for planting size."),
+          pos_thresh_cm2, comma(nobs(pos_gam)))
+} else {
+  sprintf(paste0("(b) Probability of positive growth from the threshold-analysis GAM ",
+                 "(n = %s fitted records). The nonlinearity gate did not support a ",
+                 "threshold (delta %s = %.2f); no threshold line is shown."),
+          comma(nobs(pos_gam)), pos_gate_criterion, pos_thresh_row$gate_delta_aicc[1])
+}
+writeLines(c(
+  "# Fig. S1. Size-dependent survival and growth diagnostics",
+  "",
+  sprintf(paste0("(a) Interval survival against log colony size (n = %s fitted records); the label gives ",
+                 "the improvement of the GAM over the linear model (delta %s = %.2f; ",
+                 "the pre-specified gate was 2)."), comma(nobs(surv_gam)),
+          surv_gate_criterion, surv_gate_delta),
+  pos_legend,
+  sprintf(paste0("(c) Second derivative of the relative-growth-rate GAM; ",
+                 "the dashed line marks the most negative second derivative (%.0f cm²)."),
+          rgr_thresh_cm2),
+  sprintf(paste0("(d, e) Absolute growth rate (AGR, cm² yr−1; n = %s) and relative growth ",
+                 "rate (RGR, yr−1; n = %s) against colony size, from the stored threshold models."),
+          comma(nobs(agr_gam)), comma(nobs(rgr_gam))),
+  sprintf(paste0("(f) Standard deviation of AGR and RGR within size bins on a log scale ",
+                 "(n = %s); lines join bin summaries and are directly labeled."),
+          comma(nrow(growth_clean))),
+  "",
+  paste0("Panels a and b show binned means and approximate binomial 95% intervals; ",
+         "panels d and e show individual records. Observations in a, b, d and e ",
+         "are exactly the rows used by their displayed models. Model ribbons show pointwise 95% ",
+         "confidence intervals; panels d/e display the central 98% of observed response ",
+         "values without excluding any additional rows from their fitted models. The ",
+         "dotted line in a is the linear-model comparison. ",
+         "Blue denotes survival/AGR and teal denotes positive growth/RGR. ",
+         "Panel a uses binary interval fates for natural colonies and excludes subannual ",
+         "intervals; remaining intervals are not uniformly annual. Growth models ",
+         "pool colony sources under script 03's filtering rules. Panel f and the ",
+         "exploratory lower-k display exclude the upper and lower 0.5% of RGR values ",
+         "and high-variance Navassa records. Growth metrics prefer measured live-area ",
+         "change, with total-area change retained only when live change is unavailable. ",
+         "Size includes study-specific area indices/proxies; these are not uniformly ",
+         "direct planar measurements. These diagnostic fits are not independent ",
+         "replications of the size relationship."),
+  "",
+  paste0("The lower-dimension (k = 3) positive-growth smooth remains in ",
+         "exploratory/positive_growth_lower_k_diagnostic.{png,pdf} and source FigS6. ",
+         "It is fitted to the display-filtered growth data, whereas panel b uses ",
+         "the stored threshold-model analysis population; it is therefore not a ",
+         "controlled comparison of k alone. Its omission from the reader-facing ",
+         "figure does not resolve model-shape sensitivity.")
+), file.path(legend_dir, "FigS1_growth_diagnostics_legend.md"))
 cat("  Done: FigS1_growth_diagnostics\n")
 
 # =============================================================================

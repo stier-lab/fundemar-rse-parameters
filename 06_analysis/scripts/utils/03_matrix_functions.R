@@ -33,11 +33,40 @@
 
 
 # ============================================================================
-# 1. compute_lambda_from_survival() — baseline lambda calculator
+# 1. Strict live-area inputs and baseline lambda calculator
 # ============================================================================
 # Originally from 06_analysis/scripts/16_sensitivity_analysis.R:58
 # Refactored here for reuse across scenario framework (scripts 60-61).
 # All existing callers in script 16 continue to work via source() chain.
+
+# A live-area transition cannot combine live initial size with skeletal growth.
+# Fail closed on missing live measurements; never fall back to total colony area.
+# Keep original total-area columns intact for provenance and other analyses.
+prepare_live_area_growth <- function(data) {
+  required <- c("size_live_cm2", "growth_live_cm2_yr", "time_interval_yr")
+  if (!all(required %in% names(data))) {
+    stop("Live-area growth requires initial live area, live-area change and interval duration")
+  }
+  keep <- is.finite(data$size_live_cm2) & data$size_live_cm2 > 0 &
+    is.finite(data$growth_live_cm2_yr) & is.finite(data$time_interval_yr) &
+    data$time_interval_yr > 0
+  # G describes growth CONDITIONAL ON survival. Actual zero-live-area endpoints
+  # are deaths, not retrogression into SC1. Use the observed interval endpoint,
+  # not its one-year extrapolation; retain the existing 0.1 floor for the latter.
+  endpoint <- data$size_live_cm2 + data$growth_live_cm2_yr * data$time_interval_yr
+  keep <- keep & is.finite(endpoint) & endpoint > 1e-6
+  data <- data[keep, , drop = FALSE]
+  data$size_cm2 <- data$size_live_cm2
+  data$growth_metric <- data$growth_live_cm2_yr
+  data$growth_rate <- data$growth_live_cm2_yr
+  data$rgr <- data$growth_metric / data$size_cm2
+  data$log_size <- log(data$size_cm2)
+  data$size_class <- cut(data$size_cm2, SIZE_BREAKS, labels = SIZE_LABELS,
+                         include.lowest = TRUE)
+  data$rgr_source <- "growth_live_cm2_yr"
+  data$growth_measure <- "live_planar_area_survivor"
+  data
+}
 
 compute_lambda_from_survival <- function(survival_by_class, growth_data, frag_matrix,
                                          custom_breaks = NULL,
@@ -50,16 +79,18 @@ compute_lambda_from_survival <- function(survival_by_class, growth_data, frag_ma
 
   # G_override short-circuits the growth-data recomputation so callers can pass
   # the canonical growth_transitions from transition_matrix.rds. This keeps the
-  # scenario framework anchored to the published baseline lambda = 0.961.
+  # scenario framework anchored to the current canonical live-area baseline.
   if (!is.null(G_override)) {
     G <- G_override
   } else {
     if (is.null(growth_data) || nrow(growth_data) == 0) {
       return(list(lambda = NA, note = "No growth data"))
     }
+    growth_data <- prepare_live_area_growth(growth_data)
+    if (nrow(growth_data) == 0) return(list(lambda = NA, note = "No live-area growth data"))
     growth_data$initial_sc <- cut(growth_data$size_cm2, breaks = size_breaks,
                                    labels = size_labels, include.lowest = TRUE)
-    growth_data$final_size <- pmax(growth_data$size_cm2 + growth_data$growth_cm2_yr, 0.1)
+    growth_data$final_size <- pmax(growth_data$size_cm2 + growth_data$growth_metric, 0.1)
     growth_data$final_sc <- cut(growth_data$final_size, breaks = size_breaks,
                                  labels = size_labels, include.lowest = TRUE)
     G <- matrix(0, n_sc, n_sc)

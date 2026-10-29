@@ -14,6 +14,7 @@ FIG_DIRS = {
 }
 TABLE_DIR = MSRC / "tables"
 ESM = ROOT / "paper" / "submission" / "supplement" / "ESM_1.md"
+MAIN = MSRC / "acropora_palmata_demography_manuscript_draft.md"
 ALLOW_SUPP_GAP = {27}
 
 
@@ -30,6 +31,7 @@ def main():
     figure_map = (MSRC / "figure_table_map.md").read_text()
     table_readme = (TABLE_DIR / "README.md").read_text() if (TABLE_DIR / "README.md").exists() else ""
     esm_text = ESM.read_text()
+    main_text = MAIN.read_text()
 
     indexed_figures = set()
     for item in items:
@@ -57,6 +59,18 @@ def main():
             if item["cite"] not in figure_map and item["cite"] not in table_readme:
                 errors.append(f"{item['id']}: {item['cite']} missing from table docs")
 
+        if tier == "main_table":
+            if not (ROOT / item["driver"]).is_file():
+                errors.append(f"{item['id']}: missing main-table source")
+            if item["cite"] not in figure_map:
+                errors.append(f"{item['id']}: {item['cite']} missing from figure_table_map.md")
+            caption = f"**{item['cite']}. "
+            if main_text.count(caption) != 1:
+                errors.append(f"{item['id']}: expected one main-table caption")
+            discussion = main_text.split("## Discussion", 1)[1].split("## Acknowledgements", 1)[0]
+            if item["cite"] not in discussion:
+                errors.append(f"{item['id']}: main table is not cited in the Discussion")
+
     for render_dir, fig_dir in FIG_DIRS.items():
         if not fig_dir.exists():
             continue
@@ -67,6 +81,10 @@ def main():
     main_nums = sorted(int(item["number"]) for item in items if item["tier"] == "main")
     if main_nums != list(range(1, len(main_nums) + 1)):
         errors.append(f"main figure numbering is {main_nums}, expected dense 1..{len(main_nums)}")
+
+    table_nums = sorted(int(item["number"]) for item in items if item["tier"] == "main_table")
+    if table_nums != list(range(1, len(table_nums) + 1)):
+        errors.append(f"main table numbering is {table_nums}, expected dense 1..{len(table_nums)}")
 
     supp_nums = sorted({int(item["number"]) for item in items if item["tier"] == "supplementary"})
     expected_supp = [n for n in range(1, max(supp_nums) + 1) if n not in ALLOW_SUPP_GAP]

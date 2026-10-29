@@ -296,7 +296,7 @@ surv_row <- ggplot() +
     labels = function(x) sprintf("%.0f%%", x * 100)
   ) +
   coord_cartesian(ylim = c(-0.08, 1.08)) +
-  labs(x = NULL, y = "Annual survival", tag = "a") +
+  labs(x = NULL, y = "Interval survival", tag = "a") +
   theme_manuscript() +
   theme(
     text         = element_text(family = "Helvetica"),
@@ -394,7 +394,7 @@ rgr_row <- ggplot() +
     limits = c(display_lo, display_hi), expand = c(0.02, 0)
   ) +
   coord_cartesian(ylim = c(-0.5, 3.0)) +
-  labs(x = expression(paste("Colony live tissue area (cm"^2, ")")),
+  labs(x = expression(paste("Colony area (cm"^2, ")")),
        y = expression(paste("RGR (yr"^-1, ")")),
        tag = "b") +
   theme_manuscript() +
@@ -419,7 +419,9 @@ cat("\nCombining 12-panel figure...\n")
 fig3 <- surv_row / rgr_row +
   plot_layout(heights = c(1, 1)) +
   plot_annotation(
-    caption = "Study identity confounded with population type. Shared size range: 11\u2013202 cm\u00B2 of ~1\u201315,000 cm\u00B2.",
+    caption = sprintf(paste0("Study identity is confounded with colony source. ",
+                             "Shared size range: %.0f\u2013%.0f cm\u00B2."),
+                      10^overlap_lo, 10^overlap_hi),
     theme = theme(
       plot.caption = element_text(size = 8, color = "grey40", hjust = 0.5,
                                    face = "italic", family = "Helvetica")

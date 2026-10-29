@@ -1,0 +1,9 @@
+study,population_type,n_input,n_live_area,n_excluded_missing_live_measure,n_live_positive_endpoint,n_excluded_nonpositive_endpoint_or_duration
+NOAA_survey,Natural colony,3372,3370,2,3340,30
+NOAA_survey,Restoration fragment,94,94,0,94,0
+USGS_USVI_exp,Restoration fragment,30,30,0,30,0
+fundemar_fragments,Restoration fragment,177,177,0,177,0
+kuffner_et_al_2020,Restoration fragment,43,0,43,0,0
+mendoza_quiroz_et_al_2023,Restoration outplant (sexual recruit),52,0,52,0,0
+neely_et_al_2022,Natural colony,1974,1974,0,1974,0
+pausch_et_al_2018,Restoration fragment,557,556,1,556,0

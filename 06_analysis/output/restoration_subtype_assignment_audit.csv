@@ -1,0 +1,53 @@
+outcome,study,location,data_type,fragment,restoration_subtype,subtype_label,observation_context,n_records,source_context_basis
+measured_live_area_growth,NOAA_survey,Blue Baai,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,19,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,NOAA_survey,Boca Santa Marta,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,5,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,NOAA_survey,Carysfort Reef,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,4,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,NOAA_survey,Elbow Reef,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,14,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,NOAA_survey,French Reef,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,1,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,NOAA_survey,Grecian Rocks,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,5,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,NOAA_survey,Key Largo Dry Rocks,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,4,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,NOAA_survey,Molasses Reef,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,3,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,NOAA_survey,Sand Island,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,4,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,NOAA_survey,Sea Aquarium Reef,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,8,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,NOAA_survey,Turtle Rocks,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,20,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,NOAA_survey,Water Factory,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,7,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+measured_live_area_growth,USGS_USVI_exp,NER,field,Y,outplanted_colony,Outplanted colonies (source unspecified),post_outplant,8,study-specific subtype mapping rules and extraction_details.md
+measured_live_area_growth,USGS_USVI_exp,NWR,field,Y,outplanted_colony,Outplanted colonies (source unspecified),post_outplant,9,study-specific subtype mapping rules and extraction_details.md
+measured_live_area_growth,USGS_USVI_exp,SFR,field,Y,outplanted_colony,Outplanted colonies (source unspecified),post_outplant,13,study-specific subtype mapping rules and extraction_details.md
+measured_live_area_growth,fundemar_fragments,Sombrero Reef,nursery_in,Y,nursery_fragment,Nursery-held fragments,nursery_held,177,extraction_details.md Study5; APAL_data_integration.rmd FUNDEMAR nursery/PVC tables
+measured_live_area_growth,pausch_et_al_2018,AAA,field,Y,nursery_outplant,Nursery outplants,post_outplant,51,study-specific subtype mapping rules and extraction_details.md
+measured_live_area_growth,pausch_et_al_2018,French Reef,field,Y,nursery_outplant,Nursery outplants,post_outplant,158,study-specific subtype mapping rules and extraction_details.md
+measured_live_area_growth,pausch_et_al_2018,Horseshoe,field,Y,nursery_outplant,Nursery outplants,post_outplant,55,study-specific subtype mapping rules and extraction_details.md
+measured_live_area_growth,pausch_et_al_2018,Molasses Reef,field,Y,nursery_outplant,Nursery outplants,post_outplant,65,study-specific subtype mapping rules and extraction_details.md
+measured_live_area_growth,pausch_et_al_2018,North Dry Rocks,field,Y,nursery_outplant,Nursery outplants,post_outplant,89,study-specific subtype mapping rules and extraction_details.md
+measured_live_area_growth,pausch_et_al_2018,Pickles Reef,field,Y,nursery_outplant,Nursery outplants,post_outplant,138,study-specific subtype mapping rules and extraction_details.md
+survival,NOAA_survey,Blue Baai,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,19,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,NOAA_survey,Boca Santa Marta,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,5,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,NOAA_survey,Carysfort Reef,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,4,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,NOAA_survey,Elbow Reef,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,14,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,NOAA_survey,French Reef,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,1,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,NOAA_survey,Grecian Rocks,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,5,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,NOAA_survey,Key Largo Dry Rocks,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,4,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,NOAA_survey,Molasses Reef,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,3,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,NOAA_survey,Sand Island,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,4,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,NOAA_survey,Sea Aquarium Reef,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,8,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,NOAA_survey,Turtle Rocks,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,20,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,NOAA_survey,Water Factory,field,Y,natural_fragment,Naturally occurring fragments,naturally_occurring_fragment,7,APAL_data_integration.rmd: current Colony.Type AF/SF at endpoint
+survival,USGS_USVI_exp,NER,field,Y,outplanted_colony,Outplanted colonies (source unspecified),post_outplant,14,study-specific subtype mapping rules and extraction_details.md
+survival,USGS_USVI_exp,NWR,field,Y,outplanted_colony,Outplanted colonies (source unspecified),post_outplant,15,study-specific subtype mapping rules and extraction_details.md
+survival,USGS_USVI_exp,SFR,field,Y,outplanted_colony,Outplanted colonies (source unspecified),post_outplant,17,study-specific subtype mapping rules and extraction_details.md
+survival,fundemar_fragments,Sombrero Reef,nursery_in,Y,nursery_fragment,Nursery-held fragments,nursery_held,44,extraction_details.md Study5; APAL_data_integration.rmd FUNDEMAR nursery/PVC tables
+survival,kuffner_et_al_2020,CRK,field,Y,nursery_outplant_recemented,"Nursery outplants, re-cemented",post_outplant,10,study-specific subtype mapping rules and extraction_details.md
+survival,kuffner_et_al_2020,FWY,field,Y,nursery_outplant_recemented,"Nursery outplants, re-cemented",post_outplant,9,study-specific subtype mapping rules and extraction_details.md
+survival,kuffner_et_al_2020,PLS,field,Y,nursery_outplant_recemented,"Nursery outplants, re-cemented",post_outplant,12,study-specific subtype mapping rules and extraction_details.md
+survival,kuffner_et_al_2020,PLW,field,Y,nursery_outplant_recemented,"Nursery outplants, re-cemented",post_outplant,12,study-specific subtype mapping rules and extraction_details.md
+survival,kuffner_et_al_2020,SMK,field,Y,nursery_outplant_recemented,"Nursery outplants, re-cemented",post_outplant,10,study-specific subtype mapping rules and extraction_details.md
+survival,mendoza_quiroz_et_al_2023,Cuevones Reef,field,N,sexual_recruit_outplant,Sexually propagated outplants,post_outplant,19,extraction_details.md Study5b; source integration nursery/Cuevones/Picudas location
+survival,mendoza_quiroz_et_al_2023,Picudas Reef,field,N,sexual_recruit_outplant,Sexually propagated outplants,post_outplant,16,extraction_details.md Study5b; source integration nursery/Cuevones/Picudas location
+survival,mendoza_quiroz_et_al_2023,Puerto Morelos Nursery,nursery_in,N,sexual_recruit_nursery,Sexually propagated nursery juveniles,nursery_held,17,extraction_details.md Study5b; source integration nursery/Cuevones/Picudas location
+survival,pausch_et_al_2018,AAA,field,Y,nursery_outplant,Nursery outplants,post_outplant,120,study-specific subtype mapping rules and extraction_details.md
+survival,pausch_et_al_2018,French Reef,field,Y,nursery_outplant,Nursery outplants,post_outplant,204,study-specific subtype mapping rules and extraction_details.md
+survival,pausch_et_al_2018,Horseshoe,field,Y,nursery_outplant,Nursery outplants,post_outplant,120,study-specific subtype mapping rules and extraction_details.md
+survival,pausch_et_al_2018,Molasses Reef,field,Y,nursery_outplant,Nursery outplants,post_outplant,201,study-specific subtype mapping rules and extraction_details.md
+survival,pausch_et_al_2018,North Dry Rocks,field,Y,nursery_outplant,Nursery outplants,post_outplant,120,study-specific subtype mapping rules and extraction_details.md
+survival,pausch_et_al_2018,Pickles Reef,field,Y,nursery_outplant,Nursery outplants,post_outplant,203,study-specific subtype mapping rules and extraction_details.md

@@ -10,14 +10,15 @@
 # Panel b: Relative growth rate vs colony size (GAM smooth, Detmer threshold)
 # Panel c: Size-class survival synthesis across 15 studies
 #
-# Both panels: natural colonies only, shared log10 x-axis (1-15,000 cm^2),
-#   GAM (k=4, REML), 25-bin overlays, rug marks / scatter cloud.
+# Panel a: natural colonies, excluding subannual intervals in script 02.
+# Panel b: all colony sources retained by the script-03 threshold analysis,
+#   using its prepared live-area-preferred RGR (including source size proxies).
+# Both panels: saved GAM (k=10, REML), shared log10 x-axis (1-15,000 cm^2),
+#   25-bin overlays and rug marks / scatter cloud from the exact fitted rows.
 #
 # INPUTS:
 #   - 06_analysis/output/survival_threshold_models.rds (fitted survival GAM)
 #   - 06_analysis/output/growth_threshold_models.rds (fitted growth GAM)
-#   - 06_analysis/output/prepared_survival_data.rds (individual survival data)
-#   - 06_analysis/output/prepared_growth_data.rds (individual growth data)
 #   - 06_analysis/output/size_class_survival_synthesis.csv (study x size-class survival)
 #   - 06_analysis/output/size_class_survival_pooled.csv (pooled means with CIs)
 #
@@ -71,29 +72,14 @@ cat("================================================================\n\n")
 
 cat("Panel a: Survival probability...\n")
 
-surv_all <- readRDS(require_output(file.path(output_dir, "prepared_survival_data.rds")))
-
-# Harmonize population type column
-if (!"population_type" %in% names(surv_all) && "source_type" %in% names(surv_all)) {
-  surv_all <- surv_all %>% rename(population_type = source_type)
-}
-
-# Filter to natural corals
-if ("population_type" %in% names(surv_all)) {
-  surv_nat <- surv_all %>% filter(population_type == "Natural colony")
-} else if ("fragment" %in% names(surv_all)) {
-  surv_nat <- surv_all %>% filter(fragment == "N")
-} else {
-  stop("Cannot identify natural corals")
-}
-
-surv_nat <- surv_nat %>%
-  filter(!is.na(size_class), !is.na(survived)) %>%
-  mutate(log_size = log(size_cm2))
-
-cat(sprintf("  Natural survival records: %s\n", comma(nrow(surv_nat))))
-
 surv_gam <- survival_models$gam_model
+# Do not overlay newly prepared or differently filtered rows on a saved fit.
+# The model frame preserves script 02's natural-colony/interval exclusions.
+surv_nat <- as_tibble(model.frame(surv_gam)) %>%
+  transmute(log_size, survived, size_cm2 = exp(log_size))
+stopifnot(nrow(surv_nat) == nobs(surv_gam))
+
+cat(sprintf("  Natural survival fitted records: %s\n", comma(nrow(surv_nat))))
 surv_deviance_explained <- summary(surv_gam)$dev.expl
 cat(sprintf("  Survival GAM deviance explained = %.1f%%\n", surv_deviance_explained * 100))
 
@@ -157,11 +143,12 @@ fig2a <- ggplot() +
   ) +
   labs(
     x = NULL,
-    y = "Survival probability",
+    y = "Interval survival probability",
     tag = "a"
   ) +
   annotate("text", x = 1.5, y = 0.95,
-           label = sprintf("Deviance explained = %.1f%%", surv_deviance_explained * 100),
+           label = sprintf("n = %s; deviance explained = %.1f%%",
+                           comma(nobs(surv_gam)), surv_deviance_explained * 100),
            hjust = 0, size = 2.5, color = "grey50") +
   theme_manuscript(base_size = 10) +
   theme(
@@ -179,41 +166,16 @@ cat("  Panel a complete.\n")
 
 cat("Panel b: Relative growth rate...\n")
 
-growth_data <- readRDS(require_output(file.path(output_dir, "prepared_growth_data.rds")))
-
-# Filter to natural corals
-if ("population_type" %in% names(growth_data)) {
-  growth_natural <- growth_data %>% filter(population_type == "Natural colony")
-} else if ("fragment" %in% names(growth_data)) {
-  growth_natural <- growth_data %>% filter(fragment == "N")
-} else {
-  growth_natural <- growth_data
-}
-
-# Clean and compute RGR
-growth_clean <- growth_natural %>%
-  filter(!is.na(size_cm2), size_cm2 > 0, !is.na(growth_cm2_yr)) %>%
-  mutate(
-    rgr = growth_cm2_yr / size_cm2,
-    log_size = log(size_cm2)
-  )
-
-# Remove impossible growth
-if ("impossible_growth" %in% names(growth_clean)) {
-  growth_clean <- growth_clean %>% filter(!impossible_growth)
-} else {
-  growth_clean <- growth_clean %>%
-    filter(!((growth_cm2_yr < 0) & (abs(growth_cm2_yr) > size_cm2 * 1.1)))
-}
-
-# Trim top/bottom 0.5% RGR outliers
-rgr_bounds <- quantile(growth_clean$rgr, c(0.005, 0.995), na.rm = TRUE)
-growth_rgr <- growth_clean %>%
-  filter(rgr >= rgr_bounds[1], rgr <= rgr_bounds[2], is.finite(rgr))
-
-cat(sprintf("  Natural growth records: %s\n", comma(nrow(growth_rgr))))
-
 rgr_gam <- growth_models$model_gam_rgr
+# Script 03 deliberately pools colony sources for this threshold model. Retain
+# that estimand and its exact response/filters: do not re-compute total-area RGR,
+# restrict its points to natural colonies, or apply a different display trim.
+# This is separate from the strict measured-live-change matrix population.
+growth_rgr <- as_tibble(model.frame(rgr_gam)) %>%
+  transmute(log_size, rgr, size_cm2 = exp(log_size))
+stopifnot(nrow(growth_rgr) == nobs(rgr_gam))
+
+cat(sprintf("  All-source growth fitted records: %s\n", comma(nrow(growth_rgr))))
 rgr_deviance_explained <- summary(rgr_gam)$dev.expl
 cat(sprintf("  RGR GAM deviance explained = %.1f%%\n", rgr_deviance_explained * 100))
 
@@ -299,7 +261,8 @@ fig2b <- ggplot() +
   ) +
   coord_cartesian(ylim = c(rgr_y_lower, rgr_y_upper)) +
   annotate("text", x = 1.5, y = rgr_y_upper * 0.92,
-           label = sprintf("Deviance explained = %.1f%%", rgr_deviance_explained * 100),
+           label = sprintf("All colony sources; n = %s\nDeviance explained = %.1f%%",
+                           comma(nobs(rgr_gam)), rgr_deviance_explained * 100),
            hjust = 0, size = 2.5, color = "grey50") +
   labs(x = expression("Colony size (cm"^2*")"),
        y = expression("Relative growth rate (yr"^-1*")"),

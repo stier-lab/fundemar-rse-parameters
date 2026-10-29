@@ -1,9 +1,9 @@
 # Orientation — Detmer-2025-coral-parameters
 
-_Last reviewed: 2026-09-28 · branch `codex-pipeline-refresh-automation`. Consult `git status` for the working-tree state; this repository intentionally tracks regenerated analysis outputs._
+_Last reviewed: 2026-10-19 · branch `codex-pipeline-refresh-automation`. Consult `git status` for the working-tree state; this repository intentionally tracks regenerated analysis outputs._
 
 ## What this is
-Raine Detmer's PRISMA-structured systematic review + meta-analysis of **size-dependent demography in the Caribbean elkhorn coral *Acropora palmata***, targeting *Coral Reefs*. It re-parameterizes a Vardi et al. (2012) 5×5 Lefkovitch projection matrix from ~14,100 individual-level observations (7 studies) plus summary-level data (17 unique studies / 22 study-level effects across 13 Caribbean regions). Headline results: pooled annual survival **0.787 (95% CI 0.704–0.851; PI 0.374–0.958)** under extreme heterogeneity (**I² = 97.6%**), from the interval-annualized three-level `rma.mv()`; deterministic **λ = 0.9613** (P(λ<1) = 0.94); baseline (no-heatwave) quasi-extinction P = 0.71 over 50 yr; every modeled heatwave regime drives near-certain quasi-extinction. This repo is the **empirical parameter source** for the sibling restoration model [Detmer-2025-coral-RSE](https://github.com/stier-lab/Detmer-2025-coral-RSE) (expects this repo cloned at `../Detmer-2025-coral-parameters/`).
+PRISMA-structured systematic review + meta-analysis of **size-dependent demography in the Caribbean elkhorn coral *Acropora palmata***, targeting *Coral Reefs*. The synthesis includes 18 studies; the survival meta-analysis uses 17 studies and 22 effects across 13 Caribbean regions. Pooled annual survival is **0.789 (95% CI 0.707–0.852; PI 0.380–0.958)** under extreme heterogeneity (**I² = 97.6%**), from the interval-annualized three-level `rma.mv()`. The corrected recruitment-free transition matrix gives **λ = 0.955 (bootstrap interval: 0.916–0.998)**; **98.0%** of bootstrap replicates fall below one, not a real-world decline probability. SC5 stasis contributes **51.4%** of matrix-cell elasticity (interval: 38.8–64.5%). The primary growth panel has **4,698** records with observed positive live-area endpoints. It projects annualized live-area change over one year, with a 0.1-cm² projected endpoint floor. Consult `heatwave_scenario_summary.csv` and `heatwave_matrix_robustness_summary.csv` for output-backed projection results rather than legacy headline values. This repo supplies parameters to [Detmer-2025-coral-RSE](https://github.com/stier-lab/Detmer-2025-coral-RSE), but the neighboring RSE analyses/app have not been rerun as part of this correction.
 
 ## Data
 | Dataset | Location | Range / sites | Notes |
@@ -23,7 +23,7 @@ Raine Detmer's PRISMA-structured systematic review + meta-analysis of **size-dep
 3. **08–12** robustness (climate, power, cross-validation, context, model selection) — exploratory/supplementary
 4. **13** transition matrix + 2000-iter hierarchical bootstrap λ ← **headline population model**
 5. **14 / 14b** meta-analysis: Tier-1 `rma()` (k=6) and expanded three-level `rma.mv()` (k=17, 22 effects) ← **headline meta**
-6. **15–17** heterogeneity, sensitivity (LOSO λ 0.882–0.993), parameter-list regeneration
+6. **15–17** heterogeneity, sensitivity (matched-estimator LOSO λ 0.877–0.956), parameter-list regeneration; RSE growth exports use live-area endpoints with their own documented eligibility
 7. **18, 19, 20b, 22** → **Fig 1–4** (main text)
 8. **20c, 21, 23–39, 49/49b** → supplementary figs S1–S28 (disturbance, temporal, regional)
 9. **40** Manzello heatwave dose-response scenarios (FigS22)
@@ -33,17 +33,17 @@ Raine Detmer's PRISMA-structured systematic review + meta-analysis of **size-dep
 
 - **Entry point:** `make pipeline` (wraps `06_analysis/scripts/run_all.R`)
 - **Verification gate:** `make verify` refreshes canonical statistics and runs source/prose/model-inventory checks; `make display-check` validates the figure/table index.
-- **Headline outputs:** `output/transition_matrix.csv`, `output/population_parameters.csv` (λ=0.9613), `output/expanded_meta_analysis_results.csv` (survival 0.787, I²=97.6%), `output/biological_realism_scenarios.csv`
+- **Headline outputs:** `output/transition_matrix.csv`, `output/population_parameters.csv` (λ=0.955136658687), `output/expanded_meta_analysis_results.csv` (survival 0.789, I²=97.6%), `output/biological_realism_scenarios.csv`
 
 ## Current state
 - **Done:** full pipeline runs; 4 main figs + S1–S30 (S27 vacant); expanded meta, heatwave, and 10-scenario biological-realism framework all integrated. Recent commits fixed SC1 survival mean (use rma point estimate), SC5 midpoint, and figure-legend sync.
 - **New (2026-07-21):** `37b_disturbance_type_size_interaction.R` → FigS30 — disturbance *type* × size class (storm/disease/heatwave). Finding: storm flattens the size–survival slope (0.39→0.15, p=1e-4), disease is a steep level shift (SC2–SC3 hit hardest), heatwave gradient persists at moderate DHW but compresses at catastrophic. Flags that script 40's size-uniform heatwave pulse is only justified at catastrophic DHW.
 - **In progress / open threads (from memory):** RSE parameter reconciliations with Raine — inflation 5.63% vs code 0.056; lab survival s_l 0.98 vs 0.95/0.70; data-integration rework (inverse-variance weighting of summary data).
-- **Broken/uncommitted:** none; `output/elasticity_vital_rates.csv` is present but empty (cosmetic). renv reports out-of-sync (non-blocking).
+- **Working-tree and environment status:** inspect `git status` and run `make submit-check` under the pinned R environment; this orientation is not a claim that the current checkout is clean or its library synchronized.
 
 ## Key architecture facts for analysis work
 - **Density-dependence** exists only on **survival** (SC1–SC2 depensatory corallivory, `apply_density_dep_SC12()`, script 58, Williams 2012). **Fecundity is density-INdependent** — `build_F_sex()` uses a fixed 95% fertilization rate. No colony-density × fertilization dataset exists in-repo; the only Allee proxy is the 95%-outcrossed-vs-15%-sibling fertilization contrast (Mendoza-Quiroz 2023).
-- **Disturbance × size** currently collapses to 3 generic *states* (script 37), NOT by type. Colony-level survival data is typed only for **disease** and **storm** (both confounded with single studies: Neely FL Keys / NOAA). Storm mortality concentrates in large SC4/SC5 (248 SC5 obs); disease is more size-even. Bleaching/cold-snap exist only at event level.
+- **Disturbance × size:** the manuscript uses three contextual states (script 37), not event-specific causal effects. Source-specific NOAA storm flags are distinct from regional overlap. Correcting Neely's 2014 label to bleaching context leaves no diagnosed-disease group in script 37b; disease contrasts are non-estimable. Do not revive the retired disease/predation interpretation.
 
 ## Stack & reproduction
 R 4.3+; `renv.lock` is present. The lockfile was generated under R 4.5.2; use that version (or an explicitly validated compatible R version) and complete `renv::restore()` before running the R verification gate. All scripts `source("utils/shared_utilities.R")`. Reproduce with `make pipeline`, then `make verify` and `make display-check`. Constants (`SIZE_BREAKS`, palette) and matrix helpers live in `utils/00c_*`, `utils/03_matrix_functions.R`.

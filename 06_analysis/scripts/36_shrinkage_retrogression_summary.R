@@ -5,7 +5,7 @@
 ################################################################################
 #
 # PURPOSE:
-#   Summarize shrinkage (negative growth / tissue loss) and retrogression
+#   Summarize tissue loss (any negative measured growth) and shrinkage / retrogression
 #   (transitions to smaller size classes) in a standalone, manuscript-ready
 #   product.
 #
@@ -22,10 +22,12 @@
 #   - 06_analysis/figures/supplementary/shrinkage_retrogression_summary.{png,pdf}
 #
 # NOTES:
-#   - Shrinkage is derived from the harmonized growth metric used in the
-#     prepared data (growth_metric = live tissue growth preferred, raw growth
-#     otherwise).
-#   - Retrogression is derived from the observed transition counts underlying
+#   - Legacy shrinkage_* output columns measure tissue loss, not class transitions.
+#     Manuscript terminology follows Vardi: shrinkage / retrogression is movement
+#     into a smaller class. Legacy filenames and columns are retained for compatibility.
+#   - Tissue loss uses verified initial live area and annual live-area change;
+#     observed zero-live endpoints are excluded from conditional growth.
+#   - Retrogression is derived from the annualized transition counts underlying
 #     the existing transition-matrix workflow.
 ################################################################################
 
@@ -68,7 +70,7 @@ size_class_levels <- c("SC1", "SC2", "SC3", "SC4", "SC5")
 cat("\n")
 cat("╔═══════════════════════════════════════════════════════════════╗\n")
 cat("║  36: SHRINKAGE / RETROGRESSION SUMMARY                       ║\n")
-cat("║  Shrinkage, tissue loss, and observed retrogression          ║\n")
+cat("║  Shrinkage, tissue loss, and annualized retrogression        ║\n")
 cat("╚═══════════════════════════════════════════════════════════════╝\n\n")
 
 # -----------------------------------------------------------------------------
@@ -156,6 +158,7 @@ summarise_studies <- function(df, subset_name) {
 # -----------------------------------------------------------------------------
 cat("Loading prepared data...\n")
 growth_raw <- readRDS(file.path(output_dir, "prepared_growth_data.rds"))
+growth_raw <- prepare_live_area_growth(growth_raw)
 
 transition_sample_sizes_file <- file.path(output_dir, "transition_sample_sizes.csv")
 if (file.exists(transition_sample_sizes_file)) {
@@ -182,7 +185,8 @@ growth_natural <- growth_natural %>%
 
 growth_matrix_compatible <- growth_natural %>%
   { if ("impossible_growth" %in% names(.)) filter(., !impossible_growth) else . } %>%
-  { if ("time_interval_yr" %in% names(.)) filter(., time_interval_yr >= 0.5 & time_interval_yr <= 1.5) else . }
+  { if ("time_interval_yr" %in% names(.)) filter(., time_interval_yr >= 0.5 & time_interval_yr <= 1.5) else . } %>%
+  filter(abs(growth_metric) < quantile(abs(growth_metric), .99, na.rm = TRUE))
 
 growth_all_clean <- growth_natural %>%
   { if ("impossible_growth" %in% names(.)) filter(., !impossible_growth) else . }
@@ -237,7 +241,7 @@ study_summary <- bind_rows(
   arrange(analysis_subset, desc(shrinkage_frequency), study)
 
 # -----------------------------------------------------------------------------
-# Retrogression probabilities from observed transitions
+# Retrogression probabilities from annualized live-area transitions
 # -----------------------------------------------------------------------------
 if (is.null(transition_samples)) {
   stop("transition_sample_sizes.csv is required for retrogression probabilities.")
@@ -311,11 +315,12 @@ plot_size <- size_class_summary %>%
   filter(analysis_subset == "matrix_compatible") %>%
   mutate(size_class = factor(size_class, levels = size_class_levels))
 
-# Humanize raw snake_case study names for display in Panel D
+# Identify the natural-colony origin directly in panel d. No fragment studies
+# enter this live-area subset; the other names remain available for diagnostics.
 humanize_study <- function(x) {
   dplyr::recode(x,
-    "NOAA_survey"              = "NOAA survey",
-    "neely_et_al_2022"         = "Neely et al. 2022",
+    "NOAA_survey"              = "NOAA survey\n(natural colonies)",
+    "neely_et_al_2022"         = "Neely et al. 2022\n(natural colonies)",
     "fundemar_fragments"       = "FUNDEMAR fragments",
     "mendoza_quiroz_et_al_2023" = "Mendoza-Quiroz et al. 2023",
     "pausch_et_al_2018"        = "Pausch et al. 2018",
@@ -352,7 +357,7 @@ p_a <- ggplot(plot_size, aes(x = size_class, y = shrinkage_frequency_pct)) +
             vjust = -0.4, size = 2.6, color = "grey20") +
   scale_y_continuous(labels = label_number(suffix = "%"),
                      expand = expansion(mult = c(0, 0.14))) +
-  labs(x = NULL, y = "Shrinkage frequency") +
+  labs(x = NULL, y = "Tissue-loss frequency") +
   theme_manuscript(base_size = 9) +
   theme(plot.margin = margin(3, 4, 3, 4, "mm"))
 
@@ -413,14 +418,15 @@ p_d <- ggplot(plot_studies, aes(x = shrinkage_frequency_pct, y = study_label)) +
                    y = study_label, yend = study_label),
                linewidth = 0.6, color = "grey80") +
   geom_point(aes(size = n_records, color = mean_tissue_loss_cm2_yr)) +
-  geom_text(aes(label = sprintf("%.1f%%", shrinkage_frequency_pct)),
-            hjust = -0.25, size = 2.4, color = "grey20") +
+  geom_text(aes(x = shrinkage_frequency_pct + 3.5,
+                label = sprintf("%.1f%%", shrinkage_frequency_pct)),
+            hjust = 0, size = 2.4, color = "grey20") +
   scale_x_continuous(labels = label_number(suffix = "%"),
                      expand = expansion(mult = c(0, 0.32)),
                      breaks = c(0, 20, 40)) +
   scale_size_continuous(name = "Records",
                         range = c(2.5, 5.5),
-                        breaks = c(500, 1500),
+                        breaks = scales::breaks_pretty(n = 2),
                         guide = guide_legend(order = 2,
                                              title.position = "top",
                                              title.hjust = 0,
@@ -429,6 +435,7 @@ p_d <- ggplot(plot_studies, aes(x = shrinkage_frequency_pct, y = study_label)) +
   scale_color_gradient(
     low = pal$natural,
     high = pal$restoration,
+    breaks = scales::breaks_pretty(n = 3),
     name = expression(paste("Mean loss (cm"^2, " yr"^-1, ")")),
     guide = guide_colorbar(barwidth = unit(22, "mm"),
                            barheight = unit(2.5, "mm"),
@@ -436,7 +443,7 @@ p_d <- ggplot(plot_studies, aes(x = shrinkage_frequency_pct, y = study_label)) +
                            title.hjust = 0,
                            order = 1)
   ) +
-  labs(x = "Shrinkage frequency", y = NULL) +
+  labs(x = "Tissue-loss frequency", y = NULL) +
   theme_manuscript(base_size = 9) +
   theme(
     plot.margin      = margin(3, 4, 3, 4, "mm"),
@@ -463,6 +470,22 @@ ggsave(png_file, figure, width = 174, height = 170, units = "mm",
 pdf_device <- if (capabilities("cairo")) grDevices::cairo_pdf else "pdf"
 ggsave(pdf_file, figure, width = 174, height = 170, units = "mm",
        device = pdf_device, bg = "white")
+
+# Companion text is regenerated with the figure; the submission label is Fig. S3.
+legend_dir <- file.path(fig_dir, "legends")
+dir.create(legend_dir, showWarnings = FALSE, recursive = TRUE)
+writeLines(c(
+  "# Fig. S3 (repository asset FigS16): tissue loss and retrogression",
+  "",
+  "(a) Tissue-loss frequency by initial live-area size class among surviving colonies.",
+  "(b) Mean annual live-area loss among records with negative live-area change (cm² yr⁻¹).",
+  "(c) Annualized probabilities of growth, stasis, and retrogression; labels give retrogression probabilities.",
+  "(d) Tissue-loss frequency in NOAA survey and Neely et al. (2022) natural colonies. Both rows are explicitly labeled as natural colonies; no fragment records enter this analysis. Point colour represents mean loss, and point size represents the number of records.",
+  "",
+  sprintf("All panels use %s matrix-compatible records from %d natural-colony studies.",
+          comma(nrow(growth_matrix_compatible)), n_distinct(growth_matrix_compatible$study)),
+  "Growth records have positive measured initial live area and observed live endpoints; intervals span 0.5–1.5 years, biologically impossible growth is excluded, and absolute live-area changes are trimmed above the 99th percentile. Panel c uses one-year projected areas from annualized live-area change with a 0.1-cm² floor."
+), file.path(legend_dir, "FigS16_shrinkage_retrogression_summary_legend.md"))
 
 # -----------------------------------------------------------------------------
 # Console summary

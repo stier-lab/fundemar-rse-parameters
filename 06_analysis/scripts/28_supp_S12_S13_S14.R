@@ -207,8 +207,8 @@ p_s12b <- ggplot(boot_ci_plot, aes(x = size_class, y = mean)) +
   geom_point(size = 3, color = pal$surv_dark, fill = pal$surv_mid, shape = 21,
              stroke = 0.8) +
   scale_y_continuous(
-    limits = c(0.4, 1.05),
-    breaks = seq(0.4, 1.0, by = 0.1),
+    limits = c(0, 1.05),
+    breaks = seq(0, 1.0, by = 0.2),
     labels = scales::percent_format(accuracy = 1)
   ) +
   scale_x_discrete(labels = SIZE_LABELS_DESCRIPTIVE) +

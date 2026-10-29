@@ -12,14 +12,14 @@
 #
 # Tests five scenarios:
 #     1. All data (primary/baseline)
-#     2. Excluding Neely disease intervals (disease_2014 + aftermath)
+#     2. Excluding Neely bleaching intervals (bleaching_2014_context + aftermath)
 #     3. Excluding NOAA storm intervals
 #     4. Excluding baseline-exclusion disturbance events
 #     5. Excluding all timeline-linked context (stress test only)
 #
 #   The `disturbance` column flags affected intervals:
-#     - "disease_2014": Neely TP4->TP5 interval (~53% survival vs ~85-90% normal)
-#     - "disease_2014_aftermath": Neely TP5->TP6 interval (~61% survival)
+#     - "bleaching_2014_context": Neely TP4->TP5 interval (~53% survival vs ~85-90% normal)
+#     - "bleaching_2014_aftermath_context": Neely TP5->TP6 interval (~61% survival)
 #     - "storm": NOAA storm-affected intervals (571 records, ~85% survival)
 #     - NA: non-disturbance intervals
 #
@@ -98,7 +98,7 @@ if (!"population_type" %in% names(surv_data)) {
 surv_data <- surv_data %>%
   mutate(
     # Old flags for backward compatibility/reference
-    is_disease_2014 = !is.na(disturbance) & disturbance %in% c("disease_2014", "disease_2014_aftermath"),
+    is_neely_bleaching = !is.na(disturbance) & disturbance %in% c("bleaching_2014_context", "bleaching_2014_aftermath_context"),
     is_storm = !is.na(disturbance) & disturbance == "storm",
     
     # Timeline integration from 01_data_preparation.R
@@ -107,9 +107,12 @@ surv_data <- surv_data %>%
     timeline_analysis_tiers = coalesce(timeline_analysis_tiers, "none"),
     exclude_from_baseline = coalesce(exclude_from_baseline, FALSE),
     is_timeline_disturbance = timeline_event_count > 0,
-    is_baseline_exclusion = exclude_from_baseline | is_disease_2014 | is_storm,
+    # Primary category follows the curated exclusion flag, not the duration
+    # label or an unverified source-specific cause. Separate source-flag
+    # exclusions below remain supplementary sensitivity scenarios.
+    is_baseline_exclusion = exclude_from_baseline,
     primary_exposure = case_when(
-      is_disease_2014 | is_storm ~ coalesce(disturbance, "legacy_flag"),
+      is_neely_bleaching | is_storm ~ coalesce(disturbance, "legacy_flag"),
       disturbance_regime != "none" ~ disturbance_regime,
       TRUE ~ "none"
     ),
@@ -123,7 +126,7 @@ surv_data <- surv_data %>%
 # Define scenarios for analysis
 surv_no_baseline_exclusion <- surv_data %>% dplyr::filter(!is_baseline_exclusion)
 surv_no_any_regime <- surv_data %>%
-  dplyr::filter(!is_timeline_disturbance, !is_disease_2014, !is_storm)
+  dplyr::filter(!is_timeline_disturbance, !is_neely_bleaching, !is_storm)
 
 cat(sprintf("  Baseline-exclusion disturbance intervals flagged: %d\n", sum(surv_data$is_baseline_exclusion, na.rm = TRUE)))
 cat(sprintf("  Timeline-linked intervals: %d\n", sum(surv_data$is_timeline_disturbance, na.rm = TRUE)))
@@ -131,15 +134,15 @@ cat(sprintf("  Baseline-eligible records: %d\n", sum(!surv_data$is_baseline_excl
 cat(sprintf("  Stress-test context-free records: %d\n", nrow(surv_no_any_regime)))
 
 neely_data <- surv_data %>% dplyr::filter(study == "neely_et_al_2022")
-n_disease <- sum(surv_data$is_disease_2014)
-n_neely_disease <- sum(neely_data$is_disease_2014)
+n_disease <- sum(surv_data$is_neely_bleaching)
+n_neely_disease <- sum(neely_data$is_neely_bleaching)
 n_storm <- sum(surv_data$is_storm)
 n_any_disturbance <- sum(surv_data$is_timeline_disturbance)
 n_baseline_exclusion <- sum(surv_data$is_baseline_exclusion)
 
-cat(sprintf("  Disease-flagged intervals (total): %d\n", n_disease))
-cat(sprintf("  Disease-flagged intervals (Neely): %d\n", n_neely_disease))
-cat(sprintf("  Non-disturbance intervals (Neely): %d\n", sum(!neely_data$is_disease_2014)))
+cat(sprintf("  Bleaching-context intervals (total): %d\n", n_disease))
+cat(sprintf("  Bleaching-context intervals (Neely): %d\n", n_neely_disease))
+cat(sprintf("  Non-disturbance intervals (Neely): %d\n", sum(!neely_data$is_neely_bleaching)))
 cat(sprintf("  Storm-flagged intervals (NOAA): %d\n", n_storm))
 cat(sprintf("  All timeline-linked disturbance intervals: %d\n", n_any_disturbance))
 cat(sprintf("  Baseline-exclusion disturbance intervals: %d\n", n_baseline_exclusion))
@@ -163,12 +166,12 @@ study_surv_full <- surv_data %>%
     n_full = n(),
     n_survived_full = sum(survived),
     surv_rate_full = mean(survived),
-    n_disease_intervals = sum(is_disease_2014),
+    n_disease_intervals = sum(is_neely_bleaching),
     .groups = "drop"
   )
 
-# Excluding disease_2014 intervals
-surv_no_disease <- surv_data %>% dplyr::filter(!is_disease_2014)
+# Excluding bleaching_2014_context intervals
+surv_no_disease <- surv_data %>% dplyr::filter(!is_neely_bleaching)
 
 study_surv_excl <- surv_no_disease %>%
   group_by(study) %>%
@@ -229,7 +232,7 @@ neely_overall_all$ci_lower <- neely_overall_all_ci$lower
 neely_overall_all$ci_upper <- neely_overall_all_ci$upper
 
 neely_overall_nondist <- neely_data %>%
-  dplyr::filter(!is_disease_2014) %>%
+  dplyr::filter(!is_neely_bleaching) %>%
   summarise(
     disturbance_label = "Non-disturbance only (Neely)",
     n = n(),
@@ -521,8 +524,8 @@ calc_meta_influence <- function(meta_result, scenario_label) {
 # Run with ALL data
 meta_full <- run_tier1_meta(surv_data, "All data")
 
-# Run EXCLUDING disease_2014 intervals (Neely disease + aftermath)
-meta_no_disease <- run_tier1_meta(surv_no_disease, "Excl. disease 2014")
+# Run EXCLUDING bleaching_2014_context intervals (Neely bleaching + aftermath)
+meta_no_disease <- run_tier1_meta(surv_no_disease, "Excl. Neely bleaching context")
 
 # Run EXCLUDING NOAA storm intervals only
 surv_no_storm <- surv_data %>% dplyr::filter(!is_storm)
@@ -541,16 +544,16 @@ meta_no_any_disturbance <- run_tier1_meta(
 )
 
 scenario_data_list <- list(
-  "All data (including disease 2014)" = surv_data,
-  "Excluding disease 2014 intervals" = surv_no_disease,
+  "All data (including Neely bleaching context)" = surv_data,
+  "Excluding Neely bleaching context intervals" = surv_no_disease,
   "Excluding NOAA storm intervals" = surv_no_storm,
   "Excluding baseline-exclusion events" = surv_no_baseline_exclusion,
   "Excluding all timeline-linked context" = surv_no_any_regime
 )
 
 scenario_meta_list <- list(
-  "All data (including disease 2014)" = meta_full,
-  "Excluding disease 2014 intervals" = meta_no_disease,
+  "All data (including Neely bleaching context)" = meta_full,
+  "Excluding Neely bleaching context intervals" = meta_no_disease,
   "Excluding NOAA storm intervals" = meta_no_storm,
   "Excluding baseline-exclusion events" = meta_no_baseline_exclusion,
   "Excluding all timeline-linked context" = meta_no_any_disturbance
@@ -596,7 +599,7 @@ sensitivity_rows <- list()
 
 if (!is.null(meta_full)) {
   sensitivity_rows[["full"]] <- data.frame(
-    scenario = "All data (including disease 2014)",
+    scenario = "All data (including Neely bleaching context)",
     k = meta_full$k,
     n_total = meta_full$n_total,
     pooled_survival = round(meta_full$pooled_surv, 4),
@@ -613,9 +616,9 @@ if (!is.null(meta_full)) {
 }
 
 if (!is.null(meta_no_disease)) {
-  neely_no_disease <- neely_data %>% dplyr::filter(!is_disease_2014)
+  neely_no_disease <- neely_data %>% dplyr::filter(!is_neely_bleaching)
   sensitivity_rows[["no_disease"]] <- data.frame(
-    scenario = "Excluding disease 2014 intervals",
+    scenario = "Excluding Neely bleaching context intervals",
     k = meta_no_disease$k,
     n_total = meta_no_disease$n_total,
     pooled_survival = round(meta_no_disease$pooled_surv, 4),
@@ -671,7 +674,7 @@ if (!is.null(meta_no_baseline_exclusion)) {
 
 if (!is.null(meta_no_any_disturbance)) {
   neely_no_any_context <- neely_data %>%
-    dplyr::filter(!is_timeline_disturbance, !is_disease_2014, !is_storm)
+    dplyr::filter(!is_timeline_disturbance, !is_neely_bleaching, !is_storm)
   sensitivity_rows[["no_any_disturbance"]] <- data.frame(
     scenario = "Excluding all timeline-linked context",
     k = meta_no_any_disturbance$k,
@@ -702,9 +705,9 @@ noaa_storm_rows <- surv_data %>% dplyr::filter(is_storm)
 sensitivity_summary_full <- bind_rows(
   sensitivity_summary,
   data.frame(
-    scenario = "Neely: disease_2014 intervals only",
-    k = NA, n_total = sum(neely_data$disturbance == "disease_2014", na.rm = TRUE),
-    pooled_survival = round(mean(neely_data$survived[neely_data$disturbance == "disease_2014" & !is.na(neely_data$disturbance)]), 4),
+    scenario = "Neely: bleaching_2014_context intervals only",
+    k = NA, n_total = sum(neely_data$disturbance == "bleaching_2014_context", na.rm = TRUE),
+    pooled_survival = round(mean(neely_data$survived[neely_data$disturbance == "bleaching_2014_context" & !is.na(neely_data$disturbance)]), 4),
     ci_lower = NA, ci_upper = NA, I2 = NA, tau2 = NA, pi_lower = NA, pi_upper = NA,
     neely_survival = NA, neely_n = NA,
     analysis_status = "descriptive_only_interval_subset",
@@ -714,8 +717,8 @@ sensitivity_summary_full <- bind_rows(
   ),
   data.frame(
     scenario = "Neely: aftermath intervals only",
-    k = NA, n_total = sum(neely_data$disturbance == "disease_2014_aftermath", na.rm = TRUE),
-    pooled_survival = round(mean(neely_data$survived[neely_data$disturbance == "disease_2014_aftermath" & !is.na(neely_data$disturbance)]), 4),
+    k = NA, n_total = sum(neely_data$disturbance == "bleaching_2014_aftermath_context", na.rm = TRUE),
+    pooled_survival = round(mean(neely_data$survived[neely_data$disturbance == "bleaching_2014_aftermath_context" & !is.na(neely_data$disturbance)]), 4),
     ci_lower = NA, ci_upper = NA, I2 = NA, tau2 = NA, pi_lower = NA, pi_upper = NA,
     neely_survival = NA, neely_n = NA,
     analysis_status = "descriptive_only_interval_subset",
@@ -756,7 +759,7 @@ surv_natural <- surv_data %>%
   mutate(log_size = log(size_cm2))
 
 surv_natural_no_disease <- surv_natural %>% dplyr::filter(!is_baseline_exclusion)
-surv_natural_no_any <- surv_natural %>% dplyr::filter(!is_timeline_disturbance, !is_disease_2014, !is_storm)
+surv_natural_no_any <- surv_natural %>% dplyr::filter(!is_timeline_disturbance, !is_neely_bleaching, !is_storm)
 
 cat(sprintf("  Natural colony records (all): %d\n", nrow(surv_natural)))
 cat(sprintf("  Natural colony records (excl. baseline-exclusion events): %d\n", nrow(surv_natural_no_disease)))
@@ -1058,7 +1061,7 @@ if (!is.null(meta_full) && !is.null(meta_no_baseline_exclusion)) {
 print_subheader("Section 8: GLMM Overdispersion Check — Disease as Fixed Effect")
 
 # Fit a GLMM including a binary disturbance predictor for Neely data
-# to formally test the disease effect magnitude
+# to formally test the bleaching-context association magnitude
 if (requireNamespace("lme4", quietly = TRUE)) {
   library(lme4)
 
@@ -1067,7 +1070,7 @@ if (requireNamespace("lme4", quietly = TRUE)) {
     mutate(log_size = log(size_cm2))
 
   glmm_neely <- glmer(
-    survived ~ log_size + is_disease_2014 + (1 | coral_id),
+    survived ~ log_size + is_neely_bleaching + (1 | coral_id),
     data = neely_for_glmm,
     family = binomial,
     control = glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 20000))
@@ -1082,11 +1085,11 @@ if (requireNamespace("lme4", quietly = TRUE)) {
   cat("\n  GLMM fixed effects:\n")
   print(summary(glmm_neely)$coefficients)
 
-  # Disease effect on probability scale
+  # Bleaching-context association on probability scale
   coefs <- fixef(glmm_neely)
-  disease_logodds <- coefs["is_disease_2014TRUE"]
+  disease_logodds <- coefs["is_neely_bleachingTRUE"]
   disease_or <- exp(disease_logodds)
-  cat(sprintf("\n  Disease 2014 effect: log-odds = %.3f, OR = %.3f\n",
+  cat(sprintf("\n  Neely bleaching context effect: log-odds = %.3f, OR = %.3f\n",
               disease_logodds, disease_or))
   cat(sprintf("  Interpretation: disease reduces odds of survival by %.1f%%\n",
               (1 - disease_or) * 100))
@@ -1193,12 +1196,12 @@ extract_gam_diag <- function(model, scenario_label, n_obs) {
 
 if (exists("glmm_neely")) {
   disease_p_value <- tryCatch(
-    summary(glmm_neely)$coefficients["is_disease_2014TRUE", "Pr(>|z|)"],
+    summary(glmm_neely)$coefficients["is_neely_bleachingTRUE", "Pr(>|z|)"],
     error = function(e) NA_real_
   )
   glmm_diag <- data.frame(
     model_component = "glmm",
-    scenario = "Neely disease effect",
+    scenario = "Neely bleaching effect",
     model_class = class(glmm_neely)[1],
     family = glmm_neely@resp$family$family,
     nobs = nrow(neely_for_glmm),
@@ -1225,7 +1228,7 @@ if (exists("glmm_neely")) {
 } else {
   glmm_diag <- data.frame(
     model_component = "glmm",
-    scenario = "Neely disease effect",
+    scenario = "Neely bleaching effect",
     model_class = "not_fit",
     family = "binomial",
     nobs = NA_real_,
@@ -1250,7 +1253,7 @@ if (exists("glmm_neely")) {
 
 disturbance_model_diagnostics <- bind_rows(
   extract_meta_diag(meta_full, "All data"),
-  extract_meta_diag(meta_no_disease, "Exclude disease 2014"),
+  extract_meta_diag(meta_no_disease, "Exclude Neely bleaching context"),
   extract_meta_diag(meta_no_storm, "Exclude NOAA storm"),
   extract_meta_diag(meta_no_baseline_exclusion, "Exclude baseline-exclusion events"),
   extract_meta_diag(meta_no_any_disturbance, "Exclude all timeline context"),

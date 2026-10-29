@@ -81,3 +81,8 @@ Rplots.pdf
 temp/
 Thumbs.db
 tmp/
+# Private coauthor correspondence and review ledgers remain local.
+/07_reporting/internal/*_feedback_*.md
+/07_reporting/internal/*_comments_*.md
+/07_reporting/internal/*_authorship_invitations_*.md
+/07_reporting/internal/*_followup_*.md
