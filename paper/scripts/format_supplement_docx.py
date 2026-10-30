@@ -170,8 +170,9 @@ def main(source, output):
 
     table_widths = (
         [1.45, 0.35, 1.15, 1.20, 0.60, 0.65, 0.65, 0.75],
+        [1.35, 0.90, 0.65, 1.20, 0.55, 2.15],
         [1.10, 0.85, 0.85, 0.85, 1.00, 1.00, 1.25],
-        [2.80, 0.50, 1.00, 1.15, 1.35],
+        [3.10, 0.55, 1.00, 1.10, 1.05],
         [1.20, 1.15, 1.05, 1.65, 1.75],
     )
     for table_index, table in enumerate(doc.tables):
@@ -192,6 +193,11 @@ def main(source, output):
                 for paragraph in cell.paragraphs:
                     paragraph.paragraph_format.space_after = Pt(2)
                     paragraph.paragraph_format.space_before = Pt(2)
+                    if table_index == 3:
+                        # Keep labels separate from right-aligned numeric
+                        # fields in the matrix resampling table.
+                        paragraph.alignment = (WD_ALIGN_PARAGRAPH.LEFT if c_idx == 0
+                                               else WD_ALIGN_PARAGRAPH.RIGHT)
                     for run in paragraph.runs:
                         size = 8 if table_index == 0 and r_idx == 0 and c_idx == 4 else 9.2
                         set_run_font(run, size=size, bold=(r_idx == 0), color=("FFFFFF" if r_idx == 0 else None))

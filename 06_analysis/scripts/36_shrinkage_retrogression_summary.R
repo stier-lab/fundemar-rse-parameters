@@ -371,9 +371,8 @@ p_b <- ggplot(plot_size, aes(x = size_class, y = mean_tissue_loss_cm2_yr)) +
   theme_manuscript(base_size = 9) +
   theme(plot.margin = margin(3, 4, 3, 4, "mm"))
 
-# Panel c: retrogression percentage placed INSIDE the retrogression segment
-# (top of stack) to avoid the overlapping mess above the bars. For classes
-# where the retrogression slice is too small, label is omitted (NA).
+# Panel c: label both nonzero growth and retrogression segments from the
+# same observed transition counts used by the bars. Stasis remains unlabelled.
 retro_labels <- retrogression_summary %>%
   mutate(
     from_class = factor(from_class, levels = size_class_levels),
@@ -382,6 +381,15 @@ retro_labels <- retrogression_summary %>%
     label   = ifelse(retrogression_probability >= 0.03,
                      sprintf("%.1f%%", retrogression_probability_pct),
                      NA_character_)
+  )
+
+growth_labels <- retrogression_summary %>%
+  mutate(
+    from_class = factor(from_class, levels = size_class_levels),
+    label_y = growth_probability / 2,
+    label = ifelse(growth_probability >= 0.03,
+                   sprintf("%.1f%%", growth_probability_pct),
+                   NA_character_)
   )
 
 p_c <- ggplot(plot_transitions, aes(x = from_class, y = transition_prob,
@@ -394,14 +402,21 @@ p_c <- ggplot(plot_transitions, aes(x = from_class, y = transition_prob,
     size = 2.4, color = "white", fontface = "bold",
     na.rm = TRUE
   ) +
+  geom_text(
+    data = growth_labels,
+    aes(x = from_class, y = label_y, label = label),
+    inherit.aes = FALSE,
+    size = 2.4, color = "white", fontface = "bold",
+    na.rm = TRUE
+  ) +
   scale_y_continuous(labels = label_percent(accuracy = 1),
                      limits = c(0, 1.001),
                      expand = expansion(mult = c(0, 0.02))) +
   scale_fill_manual(
     values = c(
-      "Retrogression" = pal$restoration,
+      "Retrogression" = pal$surv_dark,
       "Stasis"        = pal$slate_mid,
-      "Growth"        = pal$surv_dark
+      "Growth"        = "#D55E00"
     ),
     name = "Transition"
   ) +
@@ -443,7 +458,7 @@ p_d <- ggplot(plot_studies, aes(x = shrinkage_frequency_pct, y = study_label)) +
                            title.hjust = 0,
                            order = 1)
   ) +
-  labs(x = "Tissue-loss frequency", y = NULL) +
+  labs(x = "Tissue-loss frequency", y = "Natural-colony study") +
   theme_manuscript(base_size = 9) +
   theme(
     plot.margin      = margin(3, 4, 3, 4, "mm"),
@@ -479,8 +494,8 @@ writeLines(c(
   "",
   "(a) Tissue-loss frequency by initial live-area size class among surviving colonies.",
   "(b) Mean annual live-area loss among records with negative live-area change (cm² yr⁻¹).",
-  "(c) Annualized probabilities of growth, stasis, and retrogression; labels give retrogression probabilities.",
-  "(d) Tissue-loss frequency in NOAA survey and Neely et al. (2022) natural colonies. Both rows are explicitly labeled as natural colonies; no fragment records enter this analysis. Point colour represents mean loss, and point size represents the number of records.",
+  "(c) Annualized probabilities of growth (orange), stasis (grey), and retrogression (blue); percentages label nonzero growth and retrogression segments. SC5 has no larger destination class and therefore no upward transition.",
+  "(d) Tissue-loss frequency in NOAA survey and Neely et al. (2022) natural colonies. Both rows are explicitly labeled as natural colonies. Restoration-fragment records are excluded because this figure describes the natural-colony growth subset used by the transition matrix; it is not a comparison of natural and restoration origin. Restoration-fragment summaries are presented separately in Fig. S5. Point colour represents mean loss, and point size represents the number of records.",
   "",
   sprintf("All panels use %s matrix-compatible records from %d natural-colony studies.",
           comma(nrow(growth_matrix_compatible)), n_distinct(growth_matrix_compatible$study)),

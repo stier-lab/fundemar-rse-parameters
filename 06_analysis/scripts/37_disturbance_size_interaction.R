@@ -416,7 +416,7 @@ plot_growth <- growth_display %>%
   geom_text(aes(label = fill_label, color = text_col), size = 3.0,
             lineheight = 1.05, fontface = "bold", family = "Arial") +
   scale_color_identity() +
-  scale_fill_gradient(low = "#fef3c7", high = pal$accent, limits = c(0, 1),
+  scale_fill_gradient(low = "#FFF0E0", high = "#D55E00", limits = c(0, 1),
                       labels = label_percent(accuracy = 1),
                       name = "P(growth > 0)") +
   labs(x = NULL, y = "Size class") +
@@ -444,7 +444,7 @@ writeLines(
     "Fig. S17 (Fig. S4 in Online Resource 1). Observed demographic rates across size classes and curated disturbance states.",
     "(a) Observed interval survival and (b) the proportion of records with positive growth for natural colonies. Tile labels give the observed percentage and the number of colony-interval records; these are descriptive proportions, not size-class-specific treatment effects or pairwise tests. Survival percentages average binary colony-interval fates. Survey durations differ among records, so these percentages are not annual survival rates.",
     sprintf("Both panels display a percentage only when n >= %d. Grey tiles labeled '<%d obs.' indicate an observed cell below this display threshold; white tiles labeled 'No data' indicate n = 0. The no-curated-disturbance SC1 cell has one survival record and no growth records. This display rule does not remove observations from the models or exported summaries.", MIN_DISPLAY_N, MIN_DISPLAY_N),
-    "Blue shading encodes observed interval survival; gold shading encodes positive-growth frequency. The positive-growth indicator uses annual live-area change when available and otherwise annual total-colony-area change from the prepared growth data; it is not restricted to the matched live-area endpoints used in the primary growth analysis. SC1-SC5 use initial live-area boundaries of 0, 10, 100, 900, and 4,000 cm². Disturbance states distinguish intervals without a curated event, context-only pressure, and acute-event intervals flagged for baseline exclusion. Study, site, and time composition differ among states, so the displayed contrasts are not causal disturbance effects."
+    "Blue shading encodes observed interval survival; orange shading encodes positive-growth frequency, matching the outcome colors in Fig. S5. The positive-growth indicator uses annual live-area change when available and otherwise annual total-colony-area change from the prepared growth data; it is not restricted to the matched live-area endpoints used in the primary growth analysis. SC1-SC5 use initial live-area boundaries of 0, 10, 100, 900, and 4,000 cm². Disturbance states distinguish intervals without a curated event, context-only pressure, and acute-event intervals flagged for baseline exclusion. Study, site, and time composition differ among states, so the displayed contrasts are not causal disturbance effects."
   ),
   file.path(legend_dir, "FigS17_disturbance_size_interaction.md")
 )

@@ -9,33 +9,11 @@ FIGURE 1
 ================================================================================
 
 LEGEND:
-Fig. 1 Study landscape for Acropora palmata demographic data across the
-Caribbean. (a) Geographic distribution of observations. Bubble size is
-proportional to the number of observations at each site. Study locations were
-geocoded to region centroids. (b) Data availability matrix showing sample
-sizes across 5 size classes (SC1-SC5) and Caribbean regions. Cell fill
-indicates sample size (n); grey cells indicate no data. Regions are ordered by
-total sample size.
+Fig. 1 Study locations and size-class coverage for the *Acropora palmata* demographic synthesis. (a) Regional totals combining Tier 1 colony-interval records and Tier 2 survival-synthesis denominators; these are not counts of unique colonies. Circles identify regions with individual-level (Tier 1) records, including regions that also have summaries; triangles identify regions with summary-level (Tier 2) data only. Symbol area is proportional to the combined denominator, and labels give regional totals. Locations are regional centroids. Florida Keys combines Florida reef-tract records, including Dry Tortugas, in both panels. (b) Availability of individual-level observations only, by size class and reporting region; cell labels are sample sizes, and warmer yellow cells indicate more observations. Empty cells indicate no available observations. Size classes are SC1, 0–10 cm²; SC2, 10–100 cm²; SC3, 100–900 cm²; SC4, 900–4,000 cm²; and SC5, >4,000 cm². Each class includes its upper boundary and excludes its lower boundary; zero-area records were excluded.
 
-METHODS:
-We compiled individual-level survival and growth records for A. palmata from
-published studies and monitoring programs across the Caribbean. Colony size was
-standardized to two-dimensional live tissue area (cm2), following the planar
-live-area convention used elsewhere in the project. Data availability was
-cross-tabulated across the five canonical size classes (SC1: 0-10 cm2;
-SC2: 10-100 cm2; SC3: 100-900 cm2; SC4: 900-4,000 cm2; SC5: >4,000 cm2) and
-the sampled Caribbean regions.
-
-RESULTS:
-The synthesis currently spans 14,160 observations from 7 individual-level
-studies across 13 Caribbean regions. Coverage is geographically uneven:
-Florida provides the largest share of observations, followed by Curacao, with
-substantially smaller contributions from Navassa, Mexico, the US Virgin
-Islands, and the Dominican Republic. Florida has the most complete size-class
-coverage, whereas several non-Florida regions have sparse representation in
-only two or three size classes. Large adults (SC5) remain poorly represented
-outside Florida, Curacao, and Navassa even though they exert the greatest
-population-viability leverage.
+METHODS AND RESULTS:
+Use the current canonical main manuscript and Online Resource 1.
+This caption index does not duplicate their numerical results.
 
 
 ================================================================================
@@ -43,44 +21,11 @@ FIGURE 2
 ================================================================================
 
 LEGEND:
-Fig. 2 Size-dependent vital rates for Acropora palmata. (a) Annual survival
-probability as a function of colony live tissue area (cm2, log10 scale). Solid
-blue line shows the fitted generalized additive model (GAM; binomial family,
-REML smoothness selection). Shaded ribbon indicates the 95% confidence
-interval. Points show binned survival proportions. (b) Relative growth rate
-(RGR) as a function of colony live tissue area. Solid teal line shows the
-fitted GAM (Gaussian family). Orange points show binned median RGR values and
-grey points show individual observations. The vertical dashed orange line marks
-the detected RGR threshold at 36.9 cm2, and the shaded orange band shows the
-2.5th-97.5th percentile range across leave-one-study-out thresholds (36.9-38.9 cm2). Dashed horizontal line indicates
-zero growth. (c) Annual survival by size class across all available studies.
-Points show study-level survival estimates by size class, colored by population
-type and shaped by data tier. Point size is proportional to sample size. Bold
-black diamonds show pooled survival by size class.
+Fig. 2 Size-dependent demographic rates for *Acropora palmata*. (a) Survival probability against initial area for natural colonies, excluding subannual intervals. The blue line and shaded band are an unadjusted binomial generalized additive model (GAM) and its 95% confidence interval; points are binned observed proportions. Upper and lower rugs identify survival and mortality observations. (b) Relative growth rate (yr^−1^) for natural and restoration records together, using live-area change where available and total-area change otherwise. The teal line and band are the unadjusted Gaussian GAM estimate and 95% confidence interval; pale teal points are individual observations, darker teal points are binned medians, and the dashed dark-teal vertical line and band show the curvature minimum and the 2.5th–97.5th percentile range across leave-one-study-out fits. Teal in this panel identifies growth measurements, not a population type. Area includes the Neely live-area index, not exclusively planar measurements. Points, bins, and rugs in each panel use that panel's fitted records. (c) Study-level annual survival by size class, with natural-colony estimates left and restoration-origin estimates right. Colour indicates population type, shape identifies data tier, and point area is proportional to sample size; diamonds and error bars are pooled estimates and 95% confidence intervals. *k* gives the number of contributing effects.
 
-METHODS:
-We modeled the relationship between colony size and annual survival using a GAM
-with a binomial error distribution and a smooth term for log-transformed colony
-size. The growth panel used a Gaussian GAM fit to relative growth rate, with
-impossible growth values removed and extreme RGR outliers trimmed before model
-fitting. For both responses, we used the Detmer et al. (2025) nonlinearity
-gate and threshold framework to classify functional form and identify supported
-thresholds. Panel c summarizes annualized survival by the five canonical size
-classes using the integrated individual-level and summary-level data products.
-
-RESULTS:
-Both survival and growth are size dependent, but they differ in form and
-strength. Survival shows a supported sigmoidal relationship with colony size,
-with a recommended threshold near 7,498 cm2 and broad leave-one-study-out
-uncertainty (2,136-8,748 cm2), indicating that the survival inflection is real
-but weakly stable across the available study mix. Relative growth rate shows a
-much sharper nonlinear transition: the supported threshold is 36.9 cm2 and the
-leave-one-study-out percentile range is 36.9-38.9 cm2. The most negative
-curvature of the fitted proportional-growth response occurs at a small colony size. Across the size-class
-synthesis, pooled annual survival is lowest and most variable in the smaller
-and mid-sized classes, and highest in large adults, but variability in SC2-SC4
-reflects mixed disturbance history and population composition rather than size
-alone.
+METHODS AND RESULTS:
+Use the current canonical main manuscript and Online Resource 1.
+This caption index does not duplicate their numerical results.
 
 
 ================================================================================
@@ -88,33 +33,11 @@ FIGURE 3
 ================================================================================
 
 LEGEND:
-Fig. 3 Caribbean-wide survival synthesis for Acropora palmata. (a) Forest plot
-of annual survival probability from the expanded meta-analysis (k = 17 studies,
-22 study-region effects). Studies are grouped by population type. Point size is
-proportional to random-effects weight. Diamonds show subgroup and overall
-pooled estimates. The dashed vertical line marks the overall pooled survival.
-The shaded band indicates the 95% prediction interval. (b) Geographic
-variation in annual survival across Caribbean regions. Points show individual
-study estimates and diamonds with confidence intervals show pooled regional
-estimates for regions with multiple contributing studies.
+Fig. 3 Caribbean-wide survival synthesis for *Acropora palmata*. (a) Random-effects annual-survival estimates from 17 studies contributing 22 effects. Points and horizontal lines are study estimates and 95% confidence intervals; point area is proportional to random-effects weight. Circles represent individual-level data and triangles summary-level data. Coloured diamonds are population-type pooled estimates, the dark diamond is the overall pooled estimate, the dashed line marks that estimate, and the shaded interval is its 95% prediction interval. (b) Regional study estimates and 95% confidence intervals. Colour identifies population type, point area is proportional to sample size, and dark diamonds identify regional pooled estimates where at least two effects were available. The dashed line marks overall pooled annual survival.
 
-METHODS:
-We conducted a two-tier random-effects meta-analysis combining individual-level
-and summary-level survival effects. Both tiers were annualized at the observed
-monitoring-interval level under a constant-hazard assumption before aggregation.
-Effect sizes were computed as proportional log-odds and fit with a three-level
-REML model with study and within-study effect structure and t-based inference;
-an independent-effect Knapp-Hartung model was a sensitivity analysis. Panel b
-uses the same meta-analytic framework to summarize regions with multiple
-contributing effects.
-
-RESULTS:
-The annualized expanded synthesis must be rerun before the pooled estimate,
-confidence interval, prediction interval, heterogeneity statistic, and subgroup
-contrasts are reported. The prior mixed-interval result is not retained as an
-annual-survival estimate. Geographic variation is expected to remain substantial
-within population type, so any pooled value is a conditional summary rather than
-a region-independent constant.
+METHODS AND RESULTS:
+Use the current canonical main manuscript and Online Resource 1.
+This caption index does not duplicate their numerical results.
 
 
 ================================================================================
@@ -122,41 +45,11 @@ FIGURE 4
 ================================================================================
 
 LEGEND:
-Fig. 4 Conditional transition dynamics for Acropora palmata. (a) Estimated
-five-class, recruitment-free Lefkovitch transition matrix. Cell values show annual transition probabilities
-between size classes. Fill color indicates probability magnitude. Diagonal
-elements represent stasis, below-diagonal transitions represent growth, and
-above-diagonal transitions represent retrogression. (b) Elasticity
-decomposition by size class and vital rate type. Stacked bars show the
-contribution of stasis, growth, retrogression, and fragmentation to total
-elasticity for each size class. (c) Bootstrap distribution of population growth
-rate (`lambda`); bars are colored by whether each replicate indicates decline
-(`lambda < 1`) or growth (`lambda >= 1`). (d) Leave-one-study-out sensitivity
-analysis for `lambda`. The bootstrap distribution describes uncertainty in
-compiled transition rates, not a probability of real-world decline.
+Fig. 4 Conditional transition dynamics for *Acropora palmata*. (a) Five-class, recruitment-free Lefkovitch transition matrix. Cells give annual matrix entries from size class at time *t* to size class at time *t* + 1; colour encodes entry magnitude. Entries combine survival and size-class movement with fragment production in the SC5 column, which consequently sums to more than one [@vardi2011]. (b) Elasticity decomposition by source size class. Stacked bars show stasis, growth, and retrogression; orange points show fragmentation elasticity, which is displayed separately because it is included in the retrogression entries rather than an additional transition class. (c) Distribution of lambda from 2,000 hierarchical-bootstrap replicates. Gray bars denote replicates with lambda < 1 and green bars replicates with lambda at least 1; the distribution characterizes uncertainty in the compiled transition rates, not the probability of real-world decline. The dashed line is the deterministic estimate and the solid line marks replacement. (d) Leave-one-study-out lambda estimates. The dashed and dotted lines mark the full-data estimate and replacement, respectively; orange identifies exclusion of the NOAA survey.
 
-METHODS:
-We constructed a five-class, recruitment-free Lefkovitch transition matrix
-using the prepared natural-colony transition data and the size classes adopted
-throughout the project. The dominant eigenvalue represented conditional annual
-growth of the observed post-settlement subsystem, not full population viability.
-Elasticity analysis decomposed the sensitivity of
-`lambda` into stasis, growth, retrogression, and fragmentation components.
-Bootstrap uncertainty was estimated via hierarchical resampling with 2,000
-valid replicates, and leave-one-study-out sensitivity analysis was used to
-assess dependence on individual study contributions.
-
-RESULTS:
-The corrected matrix uses 4,698 natural-colony records with observed positive
-live-area endpoints. Annualized live-area change is projected over one year,
-with a 0.1-cm² projected endpoint floor. SC5-to-SC5 stasis accounts for 51.4%
-of matrix-cell elasticity (95% bootstrap interval: 38.8–64.5%); aggregated
-SC5 survival elasticity is 53.4%. Deterministic `lambda` is 0.955, with a
-95% bootstrap interval of 0.916–0.998; 98.0% of replicates had `lambda < 1`.
-Matched-estimator leave-one-study-out estimates span 0.888–0.966. Tissue-loss
-and retrogression frequencies should be read from their regenerated subset
-and transition CSVs, not from legacy mixed-area values. These conditional
-sensitivities do not estimate reproductive recovery or intervention effectiveness.
+METHODS AND RESULTS:
+Use the current canonical main manuscript and Online Resource 1.
+This caption index does not duplicate their numerical results.
 
 
 ================================================================================
@@ -164,15 +57,11 @@ SUPPLEMENTARY FIGURE S1
 ================================================================================
 
 LEGEND:
-Fig. S1 Frequency distribution of colony live tissue area (cm2, log10 scale)
-across all survival and growth records. Dotted vertical lines indicate size
-class boundaries. The orange vertical line marks the median colony size. Rug
-marks show individual observations.
+Fig. S1. Relative growth changed curvature at small sizes, whereas positive-growth probability had no supported nonlinear threshold. (a) Survival against log colony area for natural colonies, excluding subannual intervals (*n* = 5,711); the generalized additive model (GAM) improved Akaike information criterion (AIC) over the linear model by 9.2 units (reporting gate: 2). (b) Probability of positive growth, for all colony sources (*n* = 5,048); the nonlinearity gate failed, so no threshold is marked. (c) Second derivative of the relative growth rate (RGR) GAM (*n* = 4,997); the dashed line marks the curvature minimum near 35 cm², not an outplant-size optimum. (d, e) Absolute areal growth rate (AGR, cm² yr^−1^; *n* = 5,048) and RGR (yr^−1^; *n* = 4,997) against colony size using their fitted records. (f) Within-bin standard deviations of AGR (cm² yr^−1^) and RGR (yr^−1^) on a logarithmic vertical axis (*n* = 5,884); lines join size-bin summaries and are directly labeled. The two growth measures have different units, so their standard deviations are not directly comparable in magnitude. Blue denotes survival or AGR; teal denotes positive growth or RGR. Points in a and b are binned proportions with approximate binomial 95% intervals; points in d and e are individual records. Solid curves are unadjusted GAM fits with pointwise 95% confidence ribbons; the dotted curve in a is the linear comparison. Growth responses use live-area change where available and total-area change otherwise; area includes the Neely index. Panel d and e axes display the central 98% of responses, while fits retain every fitted record. Primary growth fits exclude impossible values and proportional changes outside −50% to 200%; the variance display instead trims the extreme 0.5% tails and excludes high-variance Navassa records. The omitted lower-dimension positive-growth panel remains a repository diagnostic, not a second threshold estimate. [Uploaded as Online Resource 1, Fig. S1.]
 
-RESULTS:
-Colony sizes span more than four orders of magnitude, from <1 cm2 to >10,000
-cm2, with a concentration in the SC2 and SC5 ranges and relatively sparse
-coverage in SC1 and parts of SC3.
+METHODS AND RESULTS:
+Use the current canonical main manuscript and Online Resource 1.
+This caption index does not duplicate their numerical results.
 
 
 ================================================================================
@@ -201,24 +90,11 @@ SUPPLEMENTARY FIGURE S8
 ================================================================================
 
 LEGEND:
-Fig. S8 Study-level demographic comparison of Acropora palmata within the
-shared size range where both natural colonies and restoration fragments have
-data. Each study is displayed separately so study identity remains the primary
-visual channel. Survival is modeled with logistic regression and relative
-growth rate with ordinary least-squares regression. NOAA fragment records were
-excluded because they represent naturally broken colonies rather than
-outplants.
+Fig. S8. Natural-colony and restoration-origin comparisons are confounded by study identity and a narrow shared size range. Each facet shows one Tier 1 study within the size range shared by natural and restoration records; restoration origin includes nursery-held material as well as outplants. (a) Observed survival and (b) relative growth rate (RGR, yr^−1^) against initial area (cm²), including the Neely live-area index where available. Points are observations, coloured lines are study-specific binomial generalized linear model (a) or linear model (b) fits on log size, shaded bands are 95% confidence intervals, and labels give population type and sample size. The shared range (9–278 cm²) covers only a small part of the observed variation in colony area. Within it, survival slopes differed in sign among studies, so this comparison is descriptive rather than a causal estimate of restoration origin. [Uploaded as Online Resource 1, Fig. S2.]
 
-METHODS:
-We restricted this comparison to the overlap zone of the natural and
-restoration size distributions, then fit simple study-level size relationships
-for survival and growth within that shared range.
-
-RESULTS:
-Within the shared size range, heterogeneity among restoration studies is large
-enough that study identity cannot be collapsed into a single restoration
-effect. This figure should be read as a confounding diagnostic and overlap-zone
-comparison rather than as a clean causal estimate of restoration performance.
+METHODS AND RESULTS:
+Use the current canonical main manuscript and Online Resource 1.
+This caption index does not duplicate their numerical results.
 
 
 ================================================================================
@@ -240,24 +116,11 @@ SUPPLEMENTARY FIGURE S16
 ================================================================================
 
 LEGEND:
-Fig. S16 Shrinkage and retrogression in Acropora palmata. Panels summarize
-shrinkage frequency, tissue loss magnitude, and observed retrogression
-probabilities by size class, using the matrix-compatible subset for shrinkage
-metrics and observed transitions for retrogression estimates.
+Fig. S16. Large colonies commonly survived while losing tissue, and every class above SC1 included transitions to smaller classes. Tissue loss means any negative annual change in live area; shrinkage, or retrogression, means a transition to a smaller size class, following Vardi et al. [-@vardi2012]. (a) Tissue-loss frequency among surviving colonies by size class, rising from 22.5% in SC1 to 44.2% in SC5. (b) Mean annual tissue loss among colonies with negative area change (cm² yr^−1^). (c) Annualized transition probabilities: orange, movement to a larger class; gray, stasis; blue, retrogression. Labels give nonzero growth and retrogression percentages. SC5 has no larger destination class. (d) Tissue-loss frequency by natural-colony study; point colour gives mean tissue loss and point size the number of records. All panels use the transition matrix's 4,698 natural-colony records from NOAA and Neely, with measured initial live area or live-area index (LAI), annual live-area change, and a positive observed live endpoint. Restoration records are excluded to keep this figure aligned with that natural-colony transition model; the separate descriptive restoration comparisons are in Fig. S5. Records were restricted to 0.5–1.5-year intervals, excluding impossible growth and the upper 1% of absolute live-area changes. Panel c projects one-year area from annualized change, with a 0.1 cm² floor, rather than observing every colony after exactly one year. SC1–SC5 starting counts were 40, 637, 1,375, 1,269, and 1,377. [Uploaded as Online Resource 1, Fig. S3.]
 
-METHODS:
-Tissue loss was defined as negative annual change in live tissue area among
-surviving colonies. The main summary uses the matrix-compatible subset of the
-cleaned growth data; an all-clean sensitivity set is also retained in the
-output files. Retrogression was quantified directly from observed size-class
-transitions in the matrix-compatible data.
-
-RESULTS:
-Tissue loss is frequent in the near-annual natural-colony subset:
-42.6% of 4,370 growth records involve tissue loss. Tissue-loss frequency rises from
-21.6% in SC1 to 47.3% in SC5. Retrogression probabilities are 15.6% in SC2,
-16.9% in SC3, 17.0% in SC4, and 9.2% in SC5, showing that many colonies
-survive while moving backward demographically after partial mortality.
+METHODS AND RESULTS:
+Use the current canonical main manuscript and Online Resource 1.
+This caption index does not duplicate their numerical results.
 
 
 ================================================================================
@@ -265,26 +128,11 @@ SUPPLEMENTARY FIGURE S17
 ================================================================================
 
 LEGEND:
-Fig. S17 Disturbance-by-size interaction for Acropora palmata demographic
-performance. Panels compare size-dependent survival and positive-growth
-probability across three disturbance states: no curated disturbance,
-context-only pressure, and acute baseline-exclusion exposure. The figure is
-restricted to natural colonies to avoid confounding with restoration subtype.
+Fig. S17. Size associations differed among regional screening states, without identifying causal disturbance effects. Tiles show (a) observed interval survival (*n* = 6,523 natural-colony records) and (b) the proportion with positive reported areal growth (*n* = 5,346 natural-colony records), by starting size class and catalogue-overlap state. Labels give percentages and cell counts; blue encodes survival and orange positive growth, matching the outcome colors in Fig. S5. Both panels display percentages only for cells with at least five records. Gray “<5 obs.” tiles indicate sparse observations; white “No data” tiles indicate none. The no-curated-disturbance SC1 cell contains one survival record and no growth records. This display rule does not exclude records from the models or summary tables. The global size-by-state interaction had likelihood-ratio *p* = 0.001 for survival and *p* = 0.005 for positive growth; these are not pairwise tests of the displayed class-specific contrasts. Models included a study random intercept. The states follow the author-assigned windows in Table S2 and section 2, and remain confounded with study, site, and survey period. Growth uses live-area change where available and total-area change otherwise, unlike the strict live-area subset in Fig. S3. [Uploaded as Online Resource 1, Fig. S4.]
 
-METHODS:
-Prepared interval-level disturbance assignments were grouped into three states:
-none, context-only pressure, and acute baseline-exclusion events. Interaction
-models tested whether the relationship between log colony size and demographic
-performance differed across those disturbance states.
-
-RESULTS:
-The survival interaction is strong and manuscript-relevant: the overall
-size-by-disturbance comparison is significant (`LRT p = 6.93e-4`), and the
-size effect becomes steeper under both context-only pressure and acute
-baseline-exclusion exposure. The growth-side interaction is weaker and should
-be interpreted more cautiously: the model-comparison test is supportive
-(`LRT p = 0.010`), but the individual interaction coefficients are not
-consistently strong.
+METHODS AND RESULTS:
+Use the current canonical main manuscript and Online Resource 1.
+This caption index does not duplicate their numerical results.
 
 
 ================================================================================
@@ -317,25 +165,11 @@ SUPPLEMENTARY FIGURE S19
 ================================================================================
 
 LEGEND:
-Fig. S19 Restoration subtype sensitivity for Acropora palmata. Survival and
-growth summaries are shown for the defensible restoration subtypes identified
-from study metadata: natural fragments, nursery outplants, nursery outplants
-re-cemented after fragmentation, and outplanted colonies.
+Fig. S19. Seven propagation and observation groups define different descriptive comparisons. (a) Observed interval survival and (b) mean relative live-area growth (yr^−1^). Open circles are study–region summaries with point area proportional to records; filled diamonds, offset above each row, are record-weighted group means, blue for survival and orange for growth. Neither panel shows uncertainty bars because the available studies cannot establish comparable between-program uncertainty. The survival inventory comprises 1,257 records from six studies, displayed in the same order in both panels: 94 naturally occurring fragments (NOAA), 968 nursery outplants (Pausch), 53 block-mounted nursery fragments (Kuffner), 46 reef outplants of unspecified origin (USGS), 44 nursery-held fragments (FUNDEMAR), 35 sexually propagated reef outplants (Mendoza Quiroz), and 17 sexually propagated nursery juveniles (Mendoza Quiroz). Kuffner's nursery fragments were mounted on removable discs bolted to reef blocks, not reattached after post-planting breakage. NOAA fragment status was assigned among living endpoints, so its apparent 100% survival is withheld, not presented as cohort survival. The remaining 1,163 records support descriptive interval-survival points; differing interval durations prevent reading these as standardized annual rates. Growth includes 857 records from four studies, requiring measured initial live area and annual live-area change, positive duration, and a positive observed endpoint, without total-area substitution. Kuffner and Mendoza Quiroz lack the required live-change field; unavailable growth is labeled, not zero. Propagation, study, site, handling, and sample size are unbalanced, so these summaries cannot rank restoration practices. [Uploaded as Online Resource 1, Fig. S5.]
 
-METHODS:
-Broad restoration-fragment labels were decomposed into biologically distinct
-subtypes using project metadata and source-study descriptions. Subtype-specific
-survival and growth summaries were then computed across the subtype-coded
-subset.
-
-RESULTS:
-The subtype-coded dataset contains 5,079 records across 5 studies. Natural
-fragments have weighted survival of 0.871 (n = 3,968), nursery outplants 0.587
-(n = 1,012), nursery outplants re-cemented after fragmentation 0.811 (n = 53),
-and outplanted colonies 0.652 (n = 46). Excluding natural fragments reduces
-mean survival across subtype-coded records from 0.812 to 0.600, showing that
-the generic label “restoration fragment” obscures biologically important
-differences among intervention types.
+METHODS AND RESULTS:
+Use the current canonical main manuscript and Online Resource 1.
+This caption index does not duplicate their numerical results.
 
 
 ================================================================================
@@ -536,15 +370,11 @@ SUPPLEMENTARY FIGURE S22
 ================================================================================
 
 LEGEND:
-Fig. S22 Heatwave scenario projections for Acropora palmata based on
-Manzello et al. (2025). (a) Dose-response curve relating degree heating weeks
-(DHW) to colony mortality. (b) 50-year population trajectories under chronic
-and acute heatwave scenarios. (c) Effective population growth rate (lambda)
-across heatwave intensity scenarios, with the dotted line marking the
-unperturbed deterministic lambda (0.955). The saved baseline matrix and its
-bootstrap uncertainty describe a recruitment-free subsystem. Consult the
-regenerated heatwave summary for effective lambdas and year-50 threshold
-frequencies; these are prescribed Florida-like stress tests, not forecasts.
+Fig. S22. Recurrence of Florida-scale heatwave mortality drives effective lambda far below one in the recruitment-free transition subsystem. (a) Logistic mortality curve parameterized from the *A. palmata* DHW thresholds reported by Manzello et al. [-@manzello2025] (ED50 = 7.8 DHW; ED95 = 17.6 DHW); the shaded range marks the 16–20 DHW exposure in the Florida Keys in 2023. (b) Median 50-year trajectories and 95% simulation intervals without heatwaves and for the observed 2023 Florida endpoint (97.8–100% mortality) at four return intervals; the dashed line marks the quasi-extinction threshold of 10% of initial abundance. (c) Effective lambda across dose-response and observed-endpoint scenarios; bars are geometric means of annual abundance ratios from simulations that scale the fixed matrix structure by one bootstrap lambda per replicate, and the dotted line is the unperturbed deterministic lambda (0.955). Each scenario used 500 simulations. Without heatwaves, effective lambda was 0.938 and 81.0% of simulations were below the quasi-extinction threshold at year 50; every observed-endpoint scenario was below that threshold at year 50 in all simulations. The 5-, 10-, 20-, and 50-year intervals span frequent to rare recurrence and are sensitivity values, not estimated return periods. The pooled reference includes monitoring through 2024, not a fitted pre-2023 counterfactual. These additional Florida-like pulses are stress tests, not historical reconstructions or Caribbean-wide forecasts. [Uploaded as Online Resource 1, Fig. S6.]
+
+METHODS AND RESULTS:
+Use the current canonical main manuscript and Online Resource 1.
+This caption index does not duplicate their numerical results.
 
 
 ================================================================================

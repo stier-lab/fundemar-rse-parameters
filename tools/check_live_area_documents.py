@@ -34,6 +34,20 @@ for base, figures in PACKAGES:
             assert sha256(path.read_bytes()).hexdigest() in hashes, (base, "stale image", figure)
         document = ET.fromstring(archive.read("word/document.xml"))
         text = " ".join(node.text or "" for node in document.iter(W + "t"))
+        # Join within paragraphs before normalizing: formatting/citation runs
+        # can split a title without introducing a visible space in Word.
+        paragraphs = ["".join(t.text or "" for t in p.iter(W + "t"))
+                      for p in document.iter(W + "p")]
+        readable = re.sub(r"\s+", " ", " ".join(paragraphs))
+        tables = list(document.iter(W + "tbl"))
+        if base.endswith("ESM_1"):
+            assert len(tables) == 5, (base, "missing supplementary table")
+            with (ROOT / "05_data/standardized/apal_disturbance_stressor_timeline.csv").open() as f:
+                n_events = len(list(csv.DictReader(f)))
+            assert len(tables[1].findall(W + "tr")) == n_events + 1, (base, "incomplete event catalogue")
+            assert "60% decline in coral cover on reefs in the US Virgin Islands" in readable, (base, "truncated reference title")
+        else:
+            assert len(tables) == 1 and "five supporting tables" in readable, (base, "stale resource description")
         for key in ("lambda", "lambda_ci_lower", "lambda_ci_upper"):
             assert f'{params[key]:.3f}' in text, (base, "stale model result", key)
         assert "81.2% to 60.0%" not in text, (base, "invalid subtype comparison")

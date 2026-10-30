@@ -6,9 +6,9 @@
 # PURPOSE: Generate Figure 1 for the manuscript showing study locations and
 #          data availability across the Caribbean.
 #
-# Panel a: Caribbean map showing ALL studies in the meta-analysis:
-#   - Tier 1 (individual-level data, 6 studies): filled circles
-#   - Tier 2 (summary-level data, 10 studies): filled triangles
+# Panel a: Caribbean map showing the full synthesis inventory:
+#   - Regions with Tier 1 individual records: filled circles
+#   - Regions represented by Tier 2 summaries only: filled triangles
 # Bubble size = total sample size per region; shape = data tier
 # Also outputs supplementary size distribution histogram (unchanged)
 #
@@ -42,6 +42,16 @@ if (file.exists("utils/shared_utilities.R")) {
 
 pal <- MANUSCRIPT_PALETTE
 
+# Match the study inventory's geographic reporting unit. This is display-only:
+# original source regions/sites remain in the analysis inputs and provenance.
+display_region <- function(region) {
+  case_when(
+    region %in% c("Florida", "Florida Keys", "Dry Tortugas") ~ "Florida Keys",
+    region == "USVI" ~ "US Virgin Islands",
+    TRUE ~ region
+  )
+}
+
 # =============================================================================
 # LOAD DATA
 # =============================================================================
@@ -50,13 +60,13 @@ cat("Loading data...\n")
 
 project_root <- get_project_root()
 
-# Individual-level data (Tier 1 — 6 studies)
+# Individual-level data (Tier 1)
 surv_data <- readRDS(file.path(project_root, "06_analysis/output/prepared_survival_data.rds")) %>%
   filter(!is.na(size_class), !is.na(survived))
 
 growth_data <- readRDS(file.path(project_root, "06_analysis/output/prepared_growth_data.rds"))
 
-# Expanded meta-analysis study effects (all 16 studies with data tier)
+# Expanded meta-analysis study effects (parent study IDs distinguish effects)
 expanded_studies <- read.csv(file.path(project_root,
   "06_analysis/output/expanded_meta_analysis_study_effects.csv"))
 
@@ -66,7 +76,7 @@ summ_data <- read.csv(file.path(project_root,
 summ_data <- summ_data %>% filter(!study %in% AUDIT_EXCLUDED_STUDIES)
 
 n_studies_ind <- n_distinct(surv_data$study)
-n_studies_all <- n_distinct(expanded_studies$study)
+n_studies_all <- n_distinct(expanded_studies$study_id)
 
 cat("  Individual-level:", nrow(surv_data), "survival,", nrow(growth_data), "growth |",
     n_distinct(surv_data$region), "regions |", n_studies_ind, "studies\n")
@@ -74,7 +84,7 @@ cat("  All studies (meta-analysis):", n_studies_all, "studies |",
     n_distinct(expanded_studies$region), "regions\n")
 
 # =============================================================================
-# FIGURE 1: CARIBBEAN MAP — All 16 Studies
+# FIGURE 1: CARIBBEAN MAP — Full Synthesis Inventory
 # =============================================================================
 
 cat("Figure 1: Caribbean map (all studies)...\n")
@@ -86,6 +96,7 @@ bbox <- c(xmin = -90, xmax = -58, ymin = 10, ymax = 28)
 # --- Build Tier 1 region data from individual-level observations ---
 tier1_regions <- surv_data %>%
   filter(!is.na(latitude), !is.na(longitude)) %>%
+  mutate(region = display_region(region)) %>%
   group_by(region) %>%
   summarise(
     lat       = mean(latitude, na.rm = TRUE),
@@ -111,15 +122,16 @@ summ_coords <- summ_data %>%
 tier2_studies <- expanded_studies %>%
   filter(grepl("Tier 2", data_tier))
 
-# Merge Florida Keys into Florida for mapping
+# Use the same geographic reporting unit as the Tier 1 map and study inventory.
 tier2_studies <- tier2_studies %>%
-  mutate(map_region = if_else(region == "Florida Keys", "Florida", region))
+  mutate(map_region = display_region(region))
 
 # Create a join key that maps expanded study names back to summary study names
 # e.g., "vardi_2011_jamaica" -> "vardi_2011", others stay as-is
 tier2_studies <- tier2_studies %>%
   mutate(study_join = case_when(
     grepl("^vardi_2011_", study) ~ "vardi_2011",
+    grepl("^garrison_ward_2008_", study) ~ "garrison_ward_2008",
     TRUE ~ study
   ))
 
@@ -182,6 +194,8 @@ tier1_regions <- tier1_regions %>%
 
 # Combine into a single region_data for plotting
 region_data <- bind_rows(tier1_regions, tier2_only)
+stopifnot(all(is.finite(region_data$lat)), all(is.finite(region_data$lon)))
+stopifnot(sum(region_data$n) == nrow(surv_data) + sum(tier2_studies$n_total))
 
 # --- Nudge values for label placement ---
 # Strategy: spread overlapping Florida-region labels into the ocean (south/SW),
@@ -253,11 +267,11 @@ fig1 <- ggplot() +
              fill = pal$surv_mid, color = pal$surv_dark,
              stroke = 0.7, alpha = 0.9) +
   scale_shape_manual(
-    name = "Data type",
+    name = "Regional coverage",
     values = c("Individual + summary data" = 21,   # filled circle
                "Summary data only"         = 24),  # filled triangle
-    labels = c("Individual + summary data" = "Individual-level studies (Tier 1)",
-               "Summary data only"         = "Summary-level studies (Tier 2)")
+    labels = c("Individual + summary data" = "Individual records available",
+               "Summary data only"         = "Summary data only")
   ) +
   geom_text_repel(data = region_data,
                   aes(x = lon, y = lat, label = label),
@@ -284,14 +298,15 @@ fig1 <- ggplot() +
   coord_sf(xlim = c(bbox["xmin"], bbox["xmax"]),
            ylim = c(bbox["ymin"], bbox["ymax"]),
            expand = FALSE, datum = NA) +
-  # Manual scale bar (~500 km at ~18°N latitude)
-  # 500 km ≈ 5.1° longitude at 18°N (cos(18°) ≈ 0.951, 1° ≈ 111 km * 0.951 = 105.6 km)
+  # Manual scale bar: longitude degrees for 500 km at the displayed bar latitude.
   annotate("segment",
-           x = bbox["xmax"] - 7, xend = bbox["xmax"] - 7 + 5.1,
+           x = bbox["xmax"] - 7,
+           xend = bbox["xmax"] - 7 + 500 / (111.195 * cos((bbox["ymin"] + 1.5) * pi / 180)),
            y = bbox["ymin"] + 1.5, yend = bbox["ymin"] + 1.5,
            linewidth = 0.8, color = "grey30") +
   annotate("text",
-           x = bbox["xmax"] - 7 + 2.55, y = bbox["ymin"] + 2.5,
+           x = bbox["xmax"] - 7 + 250 / (111.195 * cos((bbox["ymin"] + 1.5) * pi / 180)),
+           y = bbox["ymin"] + 2.5,
            label = "500 km", size = 2.3, color = "grey30") +
   labs(x = NULL, y = NULL) +
   theme_manuscript() +
@@ -342,13 +357,14 @@ library(patchwork)
 # Build size_class x region matrix from survival data
 avail_data <- surv_data %>%
   filter(!is.na(size_class), !is.na(region)) %>%
+  mutate(region = display_region(region)) %>%
   group_by(size_class, region) %>%
   summarise(n = n(), .groups = "drop")
 
 # Ensure all SC x region combos exist (fill missing with 0)
 all_combos <- expand.grid(
   size_class = factor(SIZE_LABELS, levels = SIZE_LABELS),
-  region = sort(unique(surv_data$region[!is.na(surv_data$region)])),
+  region = sort(unique(display_region(surv_data$region[!is.na(surv_data$region)]))),
   stringsAsFactors = FALSE
 )
 avail_data <- all_combos %>%
@@ -365,8 +381,10 @@ avail_data$region <- factor(avail_data$region, levels = region_order_avail)
 
 fig1b <- ggplot(avail_data, aes(x = region, y = size_class, fill = n)) +
   geom_tile(color = "white", linewidth = 0.5) +
-  geom_text(aes(label = ifelse(n > 0, scales::comma(n), "")),
-            size = 2.3, color = "white", fontface = "bold") +
+  geom_text(aes(label = ifelse(n > 0, scales::comma(n), ""),
+                color = ifelse(sqrt(n / max(n)) >= 0.6, "grey10", "white")),
+            size = 2.3, fontface = "bold") +
+  scale_color_identity() +
   scale_fill_viridis_c(
     name = "n",
     option = "D",

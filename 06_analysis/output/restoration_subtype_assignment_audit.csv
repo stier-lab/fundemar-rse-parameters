@@ -37,11 +37,11 @@ survival,USGS_USVI_exp,NER,field,Y,outplanted_colony,Outplanted colonies (source
 survival,USGS_USVI_exp,NWR,field,Y,outplanted_colony,Outplanted colonies (source unspecified),post_outplant,15,study-specific subtype mapping rules and extraction_details.md
 survival,USGS_USVI_exp,SFR,field,Y,outplanted_colony,Outplanted colonies (source unspecified),post_outplant,17,study-specific subtype mapping rules and extraction_details.md
 survival,fundemar_fragments,Sombrero Reef,nursery_in,Y,nursery_fragment,Nursery-held fragments,nursery_held,44,extraction_details.md Study5; APAL_data_integration.rmd FUNDEMAR nursery/PVC tables
-survival,kuffner_et_al_2020,CRK,field,Y,nursery_outplant_recemented,"Nursery outplants, re-cemented",post_outplant,10,study-specific subtype mapping rules and extraction_details.md
-survival,kuffner_et_al_2020,FWY,field,Y,nursery_outplant_recemented,"Nursery outplants, re-cemented",post_outplant,9,study-specific subtype mapping rules and extraction_details.md
-survival,kuffner_et_al_2020,PLS,field,Y,nursery_outplant_recemented,"Nursery outplants, re-cemented",post_outplant,12,study-specific subtype mapping rules and extraction_details.md
-survival,kuffner_et_al_2020,PLW,field,Y,nursery_outplant_recemented,"Nursery outplants, re-cemented",post_outplant,12,study-specific subtype mapping rules and extraction_details.md
-survival,kuffner_et_al_2020,SMK,field,Y,nursery_outplant_recemented,"Nursery outplants, re-cemented",post_outplant,10,study-specific subtype mapping rules and extraction_details.md
+survival,kuffner_et_al_2020,CRK,field,Y,nursery_outplant_recemented,Block-mounted nursery fragments,post_outplant,10,study-specific subtype mapping rules and extraction_details.md
+survival,kuffner_et_al_2020,FWY,field,Y,nursery_outplant_recemented,Block-mounted nursery fragments,post_outplant,9,study-specific subtype mapping rules and extraction_details.md
+survival,kuffner_et_al_2020,PLS,field,Y,nursery_outplant_recemented,Block-mounted nursery fragments,post_outplant,12,study-specific subtype mapping rules and extraction_details.md
+survival,kuffner_et_al_2020,PLW,field,Y,nursery_outplant_recemented,Block-mounted nursery fragments,post_outplant,12,study-specific subtype mapping rules and extraction_details.md
+survival,kuffner_et_al_2020,SMK,field,Y,nursery_outplant_recemented,Block-mounted nursery fragments,post_outplant,10,study-specific subtype mapping rules and extraction_details.md
 survival,mendoza_quiroz_et_al_2023,Cuevones Reef,field,N,sexual_recruit_outplant,Sexually propagated outplants,post_outplant,19,extraction_details.md Study5b; source integration nursery/Cuevones/Picudas location
 survival,mendoza_quiroz_et_al_2023,Picudas Reef,field,N,sexual_recruit_outplant,Sexually propagated outplants,post_outplant,16,extraction_details.md Study5b; source integration nursery/Cuevones/Picudas location
 survival,mendoza_quiroz_et_al_2023,Puerto Morelos Nursery,nursery_in,N,sexual_recruit_nursery,Sexually propagated nursery juveniles,nursery_held,17,extraction_details.md Study5b; source integration nursery/Cuevones/Picudas location

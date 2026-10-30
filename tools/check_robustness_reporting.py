@@ -47,7 +47,7 @@ checks.append(("coordinated share", f'{fmt(co["fraction_below_one"],1,True)}% of
 checks.append(("coordinated interval", f'95% interval: {fmt(co["ci_lower"])}–{fmt(co["ci_upper"])}' in main))
 elasticity = next(r for r in rows("elasticity_bootstrap_ci.csv") if r["element"] == "SC5_stasis")
 checks.append(("SC5 elasticity interval", f'95% bootstrap interval: {fmt(elasticity["ci_lower"],1,True)}–{fmt(elasticity["ci_upper"],1,True)}%' in main))
-checks.append(("ESM tables dense", all(f"**Table S{i}." in esm for i in range(1,5))))
+checks.append(("ESM tables dense", all(f"**Table S{i}." in esm for i in range(1,6))))
 failures = [label for label, ok in checks if not ok]
 if failures:
     raise SystemExit("FAIL - robustness reporting: " + ", ".join(failures))

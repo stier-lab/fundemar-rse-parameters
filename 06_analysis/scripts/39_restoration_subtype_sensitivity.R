@@ -77,9 +77,11 @@ build_restoration_subtype_map <- function() {
     "Tagged outplanted colonies; source material not described as nursery fragments in the metadata.",
     "medium",
 
-    "kuffner_et_al_2020", "nursery_outplant_recemented", "Nursery outplants, re-cemented",
-    "Nursery-raised fragments outplanted after fragmentation and re-cementation",
-    "Nursery-raised fragments outplanted spring 2018; survival after fragmentation and re-cementation.",
+    # Retain the legacy internal key for consumers; the source does not support
+    # re-cementation after breakage as a treatment (Kuffner 2020, Methods p. 464).
+    "kuffner_et_al_2020", "nursery_outplant_recemented", "Block-mounted nursery fragments",
+    "Nursery-reared fragments epoxied to discs and bolted to blocks on offshore reefs",
+    "Nursery-reared fragments deployed spring 2018 on removable discs bolted to reef blocks; not a reattachment experiment.",
     "high",
 
     "fundemar_fragments", "nursery_fragment", "Nursery-held fragments",
@@ -337,30 +339,45 @@ surv_sensitivity <- bind_rows(
 
 write_csv(surv_sensitivity, file.path(output_dir, "restoration_subtype_sensitivity.csv"))
 
-# Shared factor ordering: descending n_records so largest bucket sits at top
-subtype_order <- surv_summary %>% arrange(n_records) %>% pull(subtype_label)
+# Plot-only labels preserve the analysis keys and source mapping while making
+# the same seven origin/handling groups explicit in both panels. Natural
+# fragments come first because they are the only group without an intervention.
+subtype_display <- c(
+  natural_fragment = "Naturally occurring fragments\n(NOAA)",
+  nursery_outplant = "Nursery outplants\n(Pausch et al. 2018)",
+  nursery_outplant_recemented = "Block-mounted nursery fragments\n(Kuffner et al. 2020)",
+  outplanted_colony = "Reef outplants, origin unspecified\n(USGS)",
+  nursery_fragment = "Nursery-held fragments\n(FUNDEMAR)",
+  sexual_recruit_outplant = "Sexually propagated reef outplants\n(Mendoza Quiroz et al. 2023)",
+  sexual_recruit_nursery = "Sexually propagated nursery juveniles\n(Mendoza Quiroz et al. 2023)"
+)
+stopifnot(setequal(names(subtype_display), surv_summary$restoration_subtype))
+subtype_order <- rev(names(subtype_display))
+with_display_order <- function(df) {
+  df %>% mutate(subtype_plot = factor(restoration_subtype, levels = subtype_order))
+}
 
 plot_survival <- surv_summary %>%
   filter(cohort_survival_estimable) %>%
-  mutate(subtype_label = factor(subtype_label, levels = subtype_order))
+  with_display_order()
 
 plot_growth <- growth_summary %>%
-  mutate(subtype_label = factor(subtype_label, levels = subtype_order))
+  with_display_order()
 
 surv_points <- surv_study_summary %>%
   filter(restoration_subtype != "natural_fragment") %>%
-  mutate(subtype_label = factor(subtype_label, levels = subtype_order))
+  with_display_order()
 
 growth_points <- growth_study_summary %>%
-  mutate(subtype_label = factor(subtype_label, levels = subtype_order))
+  with_display_order()
 
 no_growth <- surv_summary %>%
   filter(!restoration_subtype %in% growth_summary$restoration_subtype) %>%
-  mutate(subtype_label = factor(subtype_label, levels = subtype_order))
+  with_display_order()
 
 no_survival_estimate <- surv_summary %>%
   filter(!cohort_survival_estimable) %>%
-  mutate(subtype_label = factor(subtype_label, levels = subtype_order))
+  with_display_order()
 
 # Unified size scale breaks so the two panels can share a single legend.
 size_breaks <- c(20, 50, 200, 500)
@@ -372,20 +389,20 @@ size_limits <- c(
 p_surv <- ggplot() +
   geom_text(
     data = no_survival_estimate,
-    aes(x = 0.03, y = subtype_label,
+    aes(x = 0.03, y = subtype_plot,
         label = sprintf("Not estimable: live-endpoint selection\n(n = %d observations)", n_records)),
     hjust = 0, color = "grey45", size = 2.7,
     family = "Arial", fontface = "italic"
   ) +
   geom_point(
     data = plot_survival,
-    aes(x = weighted_survival, y = subtype_label),
+    aes(x = weighted_survival, y = subtype_plot),
     shape = 18, size = 3.2, color = "#1F4E79",
     position = position_nudge(y = 0.24)
   ) +
   geom_point(
     data = surv_points,
-    aes(x = mean_survival, y = subtype_label, size = n),
+    aes(x = mean_survival, y = subtype_plot, size = n),
     shape = 21,
     fill = "white",
     color = "grey25",
@@ -400,7 +417,7 @@ p_surv <- ggplot() +
     limits = size_limits
   ) +
   scale_y_discrete(limits = subtype_order, drop = FALSE,
-                   labels = function(x) stringr::str_wrap(x, width = 25)) +
+                   labels = subtype_display) +
   scale_x_continuous(
     labels = scales::percent_format(accuracy = 1),
     limits = c(0, 1),
@@ -417,13 +434,13 @@ p_surv <- ggplot() +
 p_growth <- ggplot() +
   geom_point(
     data = plot_growth,
-    aes(x = weighted_mean_rgr, y = subtype_label),
-    shape = 18, size = 3.2, color = "#2C7FB8",
+    aes(x = weighted_mean_rgr, y = subtype_plot),
+    shape = 18, size = 3.2, color = "#D55E00",
     position = position_nudge(y = 0.24)
   ) +
   geom_point(
     data = growth_points,
-    aes(x = mean_rgr, y = subtype_label, size = n),
+    aes(x = mean_rgr, y = subtype_plot, size = n),
     shape = 21,
     fill = "white",
     color = "grey25",
@@ -433,7 +450,7 @@ p_growth <- ggplot() +
   ) +
   geom_text(
     data = no_growth,
-    aes(x = 0.1, y = subtype_label),
+    aes(x = 0.1, y = subtype_plot),
     label = "No measured live-area data", hjust = 0,
     color = "grey45", size = 2.7, family = "Arial", fontface = "italic"
   ) +
@@ -444,7 +461,7 @@ p_growth <- ggplot() +
     limits = size_limits
   ) +
   scale_y_discrete(limits = subtype_order, drop = FALSE,
-                   labels = function(x) stringr::str_wrap(x, width = 25)) +
+                   labels = subtype_display) +
   scale_x_continuous(
     limits = c(0, max(c(growth_points$mean_rgr, plot_growth$weighted_mean_rgr), na.rm = TRUE) * 1.1),
     expand = expansion(mult = c(0.02, 0.02))
@@ -477,8 +494,8 @@ dir.create(legend_dir, showWarnings = FALSE, recursive = TRUE)
 writeLines(c(
   "# Fig. S5 (repository asset FigS19): population-source descriptions",
   "",
-  "(a) Observed interval survival and (b) relative live-area growth rate (yr⁻¹). Open circles are study–region summaries, with point area scaled to record counts; filled diamonds, offset above each row for visibility, are record-weighted subtype means. Survival percentages average binary colony-interval fates. The legacy per-record power transformation leaves 0/1 fates unchanged and does not annualize a cohort survival proportion. Survey durations differ among records, so these percentages are not comparable annual survival rates. Empty growth rows are labeled when no measured live-area data are available. Both panels are descriptive and show no inferential intervals. Legacy resampling intervals are retained in the survival-summary CSV only and do not estimate between-program uncertainty.",
-  sprintf("Naturally occurring fragments are only NOAA observations explicitly coded fragment = Y, not intact NOAA colonies. In the source integration this designation uses interval-end Colony.Type AF/SF; all such observations therefore have a live endpoint. Their survival estimate is withheld as not estimable from these endpoint-selected records; the %s observations remain in the inventory and growth summaries. FUNDEMAR fragments were nursery-held on PVC tables, not reef outplants. Pausch records are nursery outplants; Kuffner records are nursery outplants after fragmentation and re-cementation. The origin of USGS outplanted colonies is unspecified. Mendoza-Quiroz sexual cohorts are split between Puerto Morelos Nursery and Cuevones/Picudas reef outplants; they are not asexual fragments.",
+  "(a) Observed interval survival and (b) relative live-area growth rate (yr⁻¹). The same seven origin/handling groups appear in both panels, with naturally occurring fragments first and study names in parentheses. Open circles are study–region summaries, with point area scaled to record counts; filled diamonds, offset above each row for visibility, are record-weighted subtype means. Blue diamonds denote survival and orange diamonds growth, not population origin. Survival percentages average binary colony-interval fates. The legacy per-record power transformation leaves 0/1 fates unchanged and does not annualize a cohort survival proportion. Survey durations differ among records, so these percentages are not comparable annual survival rates. Empty growth rows are labeled when no measured live-area data are available. Both panels are descriptive and show no inferential intervals. Legacy resampling intervals are retained in the survival-summary CSV only and do not estimate between-program uncertainty.",
+  sprintf("Naturally occurring fragments are only NOAA observations explicitly coded fragment = Y, not intact NOAA colonies. In the source integration this designation uses interval-end Colony.Type AF/SF; all such observations therefore have a live endpoint. Their survival estimate is withheld as not estimable from these endpoint-selected records; the %s observations remain in the inventory and growth summaries. FUNDEMAR fragments were nursery-held on PVC tables, not reef outplants. Pausch records are nursery outplants; Kuffner records are nursery-reared fragments epoxied to removable discs and bolted to reef blocks, not a test of reattachment after breakage. The origin of USGS outplanted colonies is unspecified. Mendoza-Quiroz sexual cohorts are split between Puerto Morelos Nursery and Cuevones/Picudas reef outplants; they are not asexual fragments.",
           comma(sum(no_survival_estimate$n_records))),
   sprintf("The subtype inventory contains %s survival records from %d studies; descriptive survival estimates use %s records after withholding the endpoint-selected natural fragments. Live-area growth includes %s records from %d studies. Growth requires positive initial live area and observed live endpoints, available annual live-area change, and positive interval duration; this script makes no total-area substitution. Kuffner and Mendoza-Quiroz growth records lack the required live-area change field and do not enter panel b. The source integration treats surviving USGS colonies as having 100%% live cover based on the photographs.",
           comma(nrow(surv_rest)), n_distinct(surv_rest$study),

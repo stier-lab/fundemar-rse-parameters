@@ -12,7 +12,7 @@ test -f "$input"
 # exported from this formatted Word file so the two deliverables agree.
 sed 's|06_analysis/figures/manuscript/\([^)]*\)\.pdf|06_analysis/figures/manuscript/\1.png|g' \
   "$input" > "$word_input"
-pandoc "$word_input" --citeproc --csl="$csl" --resource-path="$root:$root/07_reporting/manuscript" \
+pandoc "$word_input" --citeproc --csl="$csl" --resource-path="$root:$root/07_reporting/manuscript:$root/paper" \
   --output="$out.docx"
 "${DOCX_PYTHON:-python3}" "$root/paper/scripts/format_main_docx.py" "$out.docx"
 "${DOCX_PYTHON:-python3}" "$root/paper/scripts/export_word_pdf.py" "$out.docx" "$out.pdf"

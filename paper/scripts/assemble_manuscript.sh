@@ -15,5 +15,6 @@ grep -q '^## References {#refs}$' "$source"
 # package. Keep the main manuscript focused on its four primary figures.
 python3 "$root/tools/check_matrix_reporting.py"
 python3 "$root/tools/check_robustness_reporting.py"
+"${DOCX_PYTHON:-python3}" "$root/tools/sync_manuscript_legends.py"
 cp "$source" "$output"
 echo "[OK] assembled $output from the canonical manuscript source"

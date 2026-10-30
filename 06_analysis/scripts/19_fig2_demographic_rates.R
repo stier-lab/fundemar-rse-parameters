@@ -147,7 +147,7 @@ fig2a <- ggplot() +
     tag = "a"
   ) +
   annotate("text", x = 1.5, y = 0.95,
-           label = sprintf("n = %s; deviance explained = %.1f%%",
+           label = sprintf("Natural colonies; n = %s\nDeviance explained = %.1f%%",
                            comma(nobs(surv_gam)), surv_deviance_explained * 100),
            hjust = 0, size = 2.5, color = "grey50") +
   theme_manuscript(base_size = 10) +
@@ -231,15 +231,15 @@ fig2b <- ggplot() +
     annotate("rect",
              xmin = ci_lo_cm2, xmax = ci_hi_cm2,
              ymin = -Inf, ymax = Inf,
-             fill = "#D55E00", alpha = 0.08) } +
+             fill = pal$grow_light, alpha = 0.10) } +
   # Threshold point estimate
   { if (!is.na(thresh_cm2))
     geom_vline(xintercept = thresh_cm2,
-               linetype = "dashed", color = "#D55E00", linewidth = 0.7) } +
+               linetype = "dashed", color = pal$grow_dark, linewidth = 0.7) } +
   # Scatter cloud
   geom_point(data = growth_rgr,
              aes(x = size_cm2, y = rgr),
-             color = pal$slate_light, alpha = 0.05, size = 0.8) +
+             color = pal$grow_mid, alpha = 0.05, size = 0.8) +
   # Zero reference line
   geom_hline(yintercept = 0, linetype = "dotted",
              color = pal$slate_light, linewidth = 0.4) +
@@ -253,7 +253,7 @@ fig2b <- ggplot() +
   # Binned medians
   geom_point(data = rgr_binned,
              aes(x = size_cm2, y = median_rgr),
-             fill = "#E69F00", color = "white", size = 2.5,
+             fill = pal$grow_mid, color = "white", size = 2.5,
              shape = 21, stroke = 0.4, alpha = 0.85) +
   scale_x_log10(
     breaks = c(1, 10, 100, 1000, 10000),
@@ -369,7 +369,7 @@ if (file.exists(synth_file) && file.exists(pooled_file)) {
       text = element_text(family = "Helvetica"),
       axis.text.x = element_text(lineheight = 0.85),
       legend.position = "bottom",
-      legend.box = "horizontal",
+      legend.box = "vertical",
       legend.text = element_text(size = rel(0.85)),
       legend.title = element_text(size = rel(0.9), face = "bold"),
       legend.key.size = unit(3, "mm"),
@@ -399,7 +399,7 @@ if (file.exists(synth_file) && file.exists(pooled_file)) {
 cat("Combining panels a / b / c...\n")
 
 fig2 <- (fig2a / fig2b / fig2c) +
-  plot_layout(heights = c(1, 1, 1.2), guides = "collect") &
+  plot_layout(heights = c(1, 1, 1.2), guides = "keep") &
   theme(legend.position = "bottom")
 
 save_manuscript_fig(fig2, "Fig2_demographic_rates", width_mm = 174, height_mm = 220)

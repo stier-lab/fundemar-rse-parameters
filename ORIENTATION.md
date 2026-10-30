@@ -5,6 +5,29 @@ _Last reviewed: 2026-10-19 · branch `codex-pipeline-refresh-automation`. Consul
 ## What this is
 PRISMA-structured systematic review + meta-analysis of **size-dependent demography in the Caribbean elkhorn coral *Acropora palmata***, targeting *Coral Reefs*. The synthesis includes 18 studies; the survival meta-analysis uses 17 studies and 22 effects across 13 Caribbean regions. Pooled annual survival is **0.789 (95% CI 0.707–0.852; PI 0.380–0.958)** under extreme heterogeneity (**I² = 97.6%**), from the interval-annualized three-level `rma.mv()`. The corrected recruitment-free transition matrix gives **λ = 0.955 (bootstrap interval: 0.916–0.998)**; **98.0%** of bootstrap replicates fall below one, not a real-world decline probability. SC5 stasis contributes **51.4%** of matrix-cell elasticity (interval: 38.8–64.5%). The primary growth panel has **4,698** records with observed positive live-area endpoints. It projects annualized live-area change over one year, with a 0.1-cm² projected endpoint floor. Consult `heatwave_scenario_summary.csv` and `heatwave_matrix_robustness_summary.csv` for output-backed projection results rather than legacy headline values. This repo supplies parameters to [Detmer-2025-coral-RSE](https://github.com/stier-lab/Detmer-2025-coral-RSE), but the neighboring RSE analyses/app have not been rerun as part of this correction.
 
+## Manuscript revision — October 30, 2026
+
+The current main and Online Resource 1 Word files are
+`paper/output/acropora_palmata_demography_manuscript.docx` and
+`paper/submission/supplement/ESM_1.docx`; their PDFs are exported from those
+formatted Word files (28 and 18 pages). All pages were visually checked.
+The supplement now includes the full 18-entry regional screening catalogue,
+with explicit analyst-assigned windows and source-qualified classifications,
+and five consecutively numbered tables. Seven propagation/observation groups
+are defined consistently; Kuffner's material is described from its source as
+block-mounted nursery fragments. Core fitted models, matrices and bootstrap
+samples are unchanged. The 24 Neely intervals without verified dates remain
+excluded from annualization; no replacement dates have been inferred.
+
+Pinned `make submit-check`, citation resolution, exact figure embeds and Word
+compatibility preflight passed. Rebuilds use `tools/build_disturbance_supplement.py`
+and `tools/sync_manuscript_legends.py` to keep the reader catalogue and maintained
+captions current. These manuscript revisions do not rerun the neighboring RSE
+application or establish submission/author approval. The revised Word files,
+their Word-derived PDFs, manuscript sources and supporting figure/build changes
+are published together on `codex-pipeline-refresh-automation`; consult Git history
+for the delivered snapshot and `git status` for any remaining local changes.
+
 ## Data
 | Dataset | Location | Range / sites | Notes |
 |---|---|---|---|

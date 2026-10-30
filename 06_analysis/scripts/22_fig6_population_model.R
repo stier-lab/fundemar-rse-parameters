@@ -247,6 +247,7 @@ fig4b <- ggplot(elast_core, aes(x = size_class, y = elasticity, fill = vital_rat
            label = "Fragmentation\n(non-additive)", hjust = 0,
            size = 2.4, color = "grey25", lineheight = 0.95) +
   scale_fill_manual(values = vr_colors, name = "Vital rate") +
+  guides(fill = guide_legend(nrow = 2, title.position = "top")) +
   scale_color_manual(values = vr_colors["Fragmentation"], name = "Fragmentation",
                      guide = "none") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.08))) +
@@ -420,7 +421,7 @@ cat("  Panel d complete.\n")
 cat("Combining panels (a | b) / (c | d)...\n")
 
 fig4 <- (fig4a | fig4b) / (fig4c | fig4d) +
-  plot_layout(heights = c(1, 1), guides = "collect") +
+  plot_layout(heights = c(1, 1), guides = "keep") +
   plot_annotation(theme = theme(plot.background = element_rect(fill = "white", color = NA))) &
   theme(legend.position = "bottom")
 
