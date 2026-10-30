@@ -7,10 +7,10 @@ catastrophic,baseline_exclusion,0.16666666666666666
 catastrophic,catastrophic,0.16666666666666666
 catastrophic,context_only,0.5
 catastrophic,none,0.16666666666666666
-context_only,baseline_exclusion,0.2692307692307692
-context_only,catastrophic,0.11538461538461539
-context_only,context_only,0.5769230769230769
-context_only,none,0.038461538461538464
+context_only,baseline_exclusion,0.2916666666666667
+context_only,catastrophic,0.125
+context_only,context_only,0.5416666666666666
+context_only,none,0.041666666666666664
 none,baseline_exclusion,0.25
 none,catastrophic,0.25
 none,context_only,0.25

@@ -19,7 +19,7 @@ British Virgin Islands,Category 4,8,0,123.5
 British Virgin Islands,Category 5,2,1,64.3
 British Virgin Islands,Subtropical,1,1,15.3
 British Virgin Islands,Post-tropical,0,0,NA
-British Virgin Islands,Miscellaneous,3,1,138.5
+British Virgin Islands,Miscellaneous,4,1,124.2
 British Virgin Islands,Unknown,0,0,NA
 Cuba,Tropical Depression,12,3,85.9
 Cuba,Tropical Storm,12,3,83.8
@@ -52,7 +52,7 @@ Dominican Republic,Category 4,0,0,NA
 Dominican Republic,Category 5,2,0,142.5
 Dominican Republic,Subtropical,0,0,NA
 Dominican Republic,Post-tropical,0,0,NA
-Dominican Republic,Miscellaneous,4,1,109.8
+Dominican Republic,Miscellaneous,5,1,102.6
 Dominican Republic,Unknown,0,0,NA
 Dry Tortugas,Tropical Depression,8,2,123.3
 Dry Tortugas,Tropical Storm,16,3,109
@@ -129,7 +129,7 @@ Puerto Rico,Category 4,0,0,NA
 Puerto Rico,Category 5,2,0,147.5
 Puerto Rico,Subtropical,1,1,35
 Puerto Rico,Post-tropical,0,0,NA
-Puerto Rico,Miscellaneous,5,0,103.8
+Puerto Rico,Miscellaneous,6,0,95.8
 Puerto Rico,Unknown,0,0,NA
 St. Croix,Tropical Depression,9,1,109.3
 St. Croix,Tropical Storm,18,5,94.8
@@ -140,7 +140,7 @@ St. Croix,Category 4,4,2,93.4
 St. Croix,Category 5,3,1,97.8
 St. Croix,Subtropical,1,0,78.6
 St. Croix,Post-tropical,0,0,NA
-St. Croix,Miscellaneous,5,0,112
+St. Croix,Miscellaneous,6,0,106.1
 St. Croix,Unknown,0,0,NA
 US Virgin Islands,Tropical Depression,8,1,96.6
 US Virgin Islands,Tropical Storm,20,3,101.9
@@ -151,7 +151,7 @@ US Virgin Islands,Category 4,4,2,91.4
 US Virgin Islands,Category 5,3,1,102.3
 US Virgin Islands,Subtropical,1,0,66.7
 US Virgin Islands,Post-tropical,0,0,NA
-US Virgin Islands,Miscellaneous,5,0,121.1
+US Virgin Islands,Miscellaneous,6,0,111.7
 US Virgin Islands,Unknown,0,0,NA
 Virgin Gorda,Tropical Depression,11,1,124.8
 Virgin Gorda,Tropical Storm,21,3,96.2
@@ -162,5 +162,5 @@ Virgin Gorda,Category 4,8,0,114.7
 Virgin Gorda,Category 5,2,1,62.2
 Virgin Gorda,Subtropical,1,1,33.5
 Virgin Gorda,Post-tropical,0,0,NA
-Virgin Gorda,Miscellaneous,3,0,147.2
+Virgin Gorda,Miscellaneous,4,0,128.8
 Virgin Gorda,Unknown,0,0,NA

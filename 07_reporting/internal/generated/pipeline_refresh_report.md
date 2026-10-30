@@ -1,23 +1,21 @@
 # Pipeline Refresh Report
 
-- Run ID: `20260930_155236`
-- Pipeline start: `2026-09-30 15:52:36`
-- Generated: `2026-10-30 10:44:25`
+- Run ID: `20261030_131553`
+- Pipeline start: `2026-10-30 13:15:53`
+- Generated: `2026-10-30 14:03:26`
 
 ## Artifact Freshness
 
 | Category | Status | Count |
 |---|---|---:|
 | core_results | fresh | 5 |
-| diagnostics | fresh | 21 |
-| diagnostics | stale | 11 |
+| diagnostics | fresh | 32 |
 | disturbance_results | fresh | 6 |
 | generated_reporting | fresh | 4 |
 | manuscript_figures | fresh | 4 |
 | pipeline_audit | fresh | 3 |
 | prepared_data | fresh | 2 |
-| supplementary_figures | fresh | 25 |
-| supplementary_figures | stale | 3 |
+| supplementary_figures | fresh | 28 |
 | supplementary_tables | fresh | 2 |
 | verification | fresh | 2 |
 
@@ -29,20 +27,7 @@
 
 ## Stale Artifacts
 
-- `heat_stress_model_diagnostics` (06_analysis/output/heat_stress_model_diagnostics.csv)
-- `joint_longitudinal_fit_metrics` (06_analysis/output/joint_longitudinal_fit_metrics.csv)
-- `multistate_model_diagnostics` (06_analysis/output/multistate_model_diagnostics.csv)
-- `recurrent_event_ph_diagnostics` (06_analysis/output/recurrent_event_ph_diagnostics.csv)
-- `spatiotemporal_data_coverage` (06_analysis/output/spatiotemporal_data_coverage.csv)
-- `spatiotemporal_growth_kcheck` (06_analysis/output/spatiotemporal_growth_kcheck.csv)
-- `spatiotemporal_region_blocked_cv` (06_analysis/output/spatiotemporal_region_blocked_cv.csv)
-- `spatiotemporal_spatial_residual_check` (06_analysis/output/spatiotemporal_spatial_residual_check.csv)
-- `spatiotemporal_survival_kcheck` (06_analysis/output/spatiotemporal_survival_kcheck.csv)
-- `stochastic_ipm_model_diagnostics` (06_analysis/output/stochastic_ipm_model_diagnostics.csv)
-- `stochastic_ipm_recruitment_scenarios` (06_analysis/output/stochastic_ipm_recruitment_scenarios.csv)
-- `FigS10_context_comparison` (06_analysis/figures/supplementary/FigS10_context_comparison.png)
-- `FigS11_climate_demography` (06_analysis/figures/supplementary/FigS11_climate_demography.png)
-- `FigS24_heat_stress_survival` (06_analysis/figures/supplementary/FigS24_heat_stress_survival.png)
+- None.
 
 ## Missing Artifacts
 

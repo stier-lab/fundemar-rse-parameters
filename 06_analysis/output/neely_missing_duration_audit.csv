@@ -1,7 +1,4 @@
 coral_id,location,source_interval_id,source_row,source_sheet,start_date_cell,end_date_cell,survey_start_date,survey_end_date,missing_start_date,missing_end_date,survived,disposition
-DT1-4,Palmata Patch,DT1-4:TP1-2,693,Sheet1,C693,E693,NA,2012-02-15,TRUE,FALSE,1,Known fate retained; no defensible annualization without source date
-MR3-115,Marker 3 Reef,MR3-115:TP5-6,513,Sheet1,K513,M513,2015-02-25,NA,FALSE,TRUE,0,Known fate retained; no defensible annualization without source date
-MR3-116,Marker 3 Reef,MR3-116:TP5-6,514,Sheet1,K514,M514,2015-02-25,NA,FALSE,TRUE,0,Known fate retained; no defensible annualization without source date
 SR2-1,Sombrero Reef,SR2-1:TP2-3,529,Sheet1,E529,G529,2012-02-07,NA,FALSE,TRUE,1,Known fate retained; no defensible annualization without source date
 SR2-1,Sombrero Reef,SR2-1:TP3-4,529,Sheet1,G529,I529,NA,2013-09-26,TRUE,FALSE,1,Known fate retained; no defensible annualization without source date
 SR2-2,Sombrero Reef,SR2-2:TP2-3,530,Sheet1,E530,G530,2012-02-07,NA,FALSE,TRUE,1,Known fate retained; no defensible annualization without source date

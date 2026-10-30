@@ -56,7 +56,7 @@ if (!file.exists(timeline_file)) stop("Missing disturbance timeline: ", timeline
 
 print_subheader("Section 1: Load and Prepare Data")
 
-surv_raw <- read_csv(surv_file, show_col_types = FALSE)
+surv_raw <- read_prepared_survival_data()
 timeline <- read_csv(timeline_file, show_col_types = FALSE) %>%
   mutate(
     Start_Year = as.integer(Start_Year),
@@ -71,7 +71,7 @@ surv <- surv_raw %>%
     size_live_cm2 = suppressWarnings(as.numeric(size_live_cm2)),
     size_for_model = coalesce(size_live_cm2, size_cm2),
     time_interval_yr = suppressWarnings(as.numeric(time_interval_yr)),
-    fragment = if_else(as.character(fragment) %in% c("Y", "y", "1", "TRUE", "T"), "Y", "N")
+    fragment = as.character(fragment)
   ) %>%
   filter(
     !is.na(survey_yr),
@@ -81,7 +81,7 @@ surv <- surv_raw %>%
     size_for_model > 0
   )
 
-surv <- attach_disturbance_timeline(
+if (!"timeline_event_count" %in% names(surv)) surv <- attach_disturbance_timeline(
   surv, timeline,
   region_col = "region",
   year_col = "survey_yr",
@@ -99,7 +99,7 @@ print_subheader("Section 2: Annual Demographic Condition Series")
 # Stage 1: structural covariate model without year effects.
 base_model <- glm(
   survived ~ splines::ns(log1p(size_for_model), df = 3) +
-    factor(region) + factor(study) + factor(fragment),
+    factor(region) + factor(study) + factor(population_type),
   data = surv,
   family = binomial()
 )

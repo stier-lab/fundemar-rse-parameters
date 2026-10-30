@@ -54,12 +54,18 @@ cat(sprintf("  Loaded %d survival observations from %d studies\n",
 #   - kuffner_et_al_2020 (USGS outplants in DRTO)
 #   - USGS_USVI_exp (USGS experimental outplants)
 #   - fundemar_fragments (FUNDEMAR nursery)
-# Natural: NOAA_survey, neely_et_al_2022, mendoza_quiroz_et_al_2023
-restoration_studies <- c("pausch_et_al_2018", "kuffner_et_al_2020",
-                          "USGS_USVI_exp", "fundemar_fragments")
-
-surv$is_restoration <- surv$study %in% restoration_studies |
-                        (!is.na(surv$fragment) & toupper(surv$fragment) == "Y")
+# Natural fragments are not outplants. Nursery-held restoration material also
+# has no post-outplant age. Sexual propagation does not make a cohort natural.
+surv$population_type <- classify_population_type(surv$study, surv$fragment)
+surv$is_restoration <- is_restoration_population(surv$population_type)
+surv$observation_context <- case_when(
+  surv$study == "fundemar_fragments" ~ "nursery_held",
+  surv$study == MENDOZA_QUIROZ_STUDY_ID & grepl("nursery", surv$location, ignore.case = TRUE) ~ "nursery_held",
+  surv$study %in% c("pausch_et_al_2018", "kuffner_et_al_2020", "USGS_USVI_exp", MENDOZA_QUIROZ_STUDY_ID) ~ "post_outplant",
+  surv$study %in% c("NOAA_survey", "neely_et_al_2022") ~ "natural_reef",
+  TRUE ~ "unverified")
+surv$is_outplant <- surv$observation_context == "post_outplant"
+stopifnot(!any(surv$is_outplant & surv$study %in% c("NOAA_survey", "neely_et_al_2022", "fundemar_fragments")))
 
 print_subheader("Restoration classification")
 rest_tbl <- table(surv$study, surv$is_restoration)
@@ -71,10 +77,10 @@ print(rest_tbl)
 print_subheader("Computing years since first observation per coral_id")
 
 surv_age <- surv %>%
-  group_by(study, coral_id) %>%
+  group_by(study, location, coral_id) %>%
   mutate(
     first_year = min(survey_yr, na.rm = TRUE),
-    years_since_outplant = ifelse(is_restoration,
+    years_since_outplant = ifelse(is_outplant,
                                    survey_yr - first_year,
                                    NA_real_),
     years_since_first_obs = survey_yr - first_year
@@ -92,8 +98,9 @@ surv_age <- surv_age %>%
       study == "USGS_USVI_exp" ~
         "USGS outplants, first-survey = outplant year",
       study == "fundemar_fragments" ~
-        "FUNDEMAR nursery fragments, first-survey = transplant year",
-      is_restoration ~ "Restoration assumed; first-survey = first tracking",
+        "Nursery-held fragments; no post-outplant age",
+      observation_context == "nursery_held" ~ "Nursery-held sexual juveniles; no post-outplant age",
+      is_outplant ~ "First observed reef year is an outplant-year proxy, not a documented planting date",
       TRUE ~ "Natural colony, years_since_first_obs tracks observation history"
     )
   )
@@ -113,9 +120,13 @@ summary_by_study <- surv_age %>%
 print(as.data.frame(summary_by_study))
 
 # --- Write output ---
-output_cols <- c("study", "region", "coral_id", "survey_yr",
+output_cols <- c("study", "region", "location", "coral_id", "survey_yr",
                  "years_since_outplant", "years_since_first_obs",
-                 "is_restoration", "derivation_note")
+                 "is_restoration", "is_outplant", "observation_context", "derivation_note")
+
+# Annual age is one value per source colony/site/year. Joining repeated
+# intervals on a nonunique annual key must not multiply survival observations.
+surv_age <- surv_age %>% distinct(study, location, coral_id, survey_yr, .keep_all = TRUE)
 
 out_path <- "05_data/standardized/apal_outplant_age.csv"
 write.csv(surv_age[, output_cols], out_path, row.names = FALSE)

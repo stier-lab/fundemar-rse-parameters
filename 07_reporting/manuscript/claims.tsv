@@ -5,10 +5,10 @@
 # metric_a / metric_b : metric names in 06_analysis/output/canonical_statistics.csv
 # predicate           : Python expression over numeric a and optional b
 id	claim	file	sentence_contains	metric_a	metric_b	predicate
-cl1	Tissue loss is common in matrix-compatible growth records	acropora_palmata_demography_manuscript_draft.md	lost live tissue in 39.3% of 4,698	matrix_compatible_shrinkage_pct	-	a >= 30
+cl1	Tissue loss is common in matrix-compatible growth records	acropora_palmata_demography_manuscript_draft.md	lost live tissue in 39.5% of 4,791	matrix_compatible_shrinkage_pct	-	a >= 30
 cl2	Size--survival associations differ among regional screening categories	acropora_palmata_demography_manuscript_draft.md	Size--survival relationships differed among the three screening categories	disturbance_size_interaction_lrt_p	-	a < 0.05
-cl3	The study-window audit has high overlap with the selected screening catalogue	acropora_palmata_demography_manuscript_draft.md	95.1% matched at least one regional screening window	study_window_pct_any_overlap	-	a >= 90
+cl3	The study-window audit has high overlap with the selected screening catalogue	acropora_palmata_demography_manuscript_draft.md	96.5% matched at least one regional screening window	study_window_pct_any_overlap	-	a >= 90
 # cl4 formerly asserted a pooled comparison invalidated by endpoint-selected
 # NOAA fragment coding. Replace it with the estimability and inclusion claim.
 cl4	Endpoint-selected fragments are withheld from cohort survival	acropora_palmata_demography_manuscript_draft.md	withholding 94 endpoint-selected naturally occurring fragments	endpoint_selected_fragments_n	subtype_survival_estimable_records	a == 94 and b == 1163
-cl6	The conditional transition subsystem has lambda below replacement	acropora_palmata_demography_manuscript_draft.md	deterministic lambda of 0.955	lambda_deterministic	p_decline_pct	a < 1 and b > 90
+cl6	The conditional transition subsystem has lambda below replacement	acropora_palmata_demography_manuscript_draft.md	deterministic lambda of 0.953	lambda_deterministic	p_decline_pct	a < 1 and b > 90

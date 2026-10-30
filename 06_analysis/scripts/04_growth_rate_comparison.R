@@ -140,11 +140,8 @@ growth_clean <- growth_clean %>%
     positive_growth = as.integer(growth_metric > 0),
     # Population type: use canonical labels matching prepared data from script 01
     # Only assign if not already present (prepared data uses "Restoration fragment"/"Natural colony")
-    population_type = if ("population_type" %in% names(.)) population_type else case_when(
-      fragment == "Y" ~ "Restoration fragment",
-      fragment == "N" ~ "Natural colony",
-      TRUE ~ "Unknown"
-    )
+    population_type = if ("population_type" %in% names(.)) population_type else
+      classify_population_type(study, fragment)
   ) %>%
   filter(!is.na(rgr))
 

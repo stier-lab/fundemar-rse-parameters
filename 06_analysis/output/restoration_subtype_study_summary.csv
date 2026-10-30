@@ -1,10 +1,10 @@
-restoration_subtype,subtype_label,study,region,n,mean_survival,mean_size_cm2,baseline_excluded
-natural_fragment,Naturally occurring fragments,NOAA_survey,Curacao,39,1,3882.078205128205,0
-natural_fragment,Naturally occurring fragments,NOAA_survey,Florida Keys,55,1,1027.5503636363635,13
-nursery_fragment,Nursery-held fragments,fundemar_fragments,Dominican Republic,44,0.8636363636363636,20.10218181818182,44
-nursery_outplant,Nursery outplants,pausch_et_al_2018,Florida Keys,968,0.5743801652892566,63.7812784679089,720
-nursery_outplant_recemented,Block-mounted nursery fragments,kuffner_et_al_2020,Dry Tortugas,24,1,20.333333333333332,0
-nursery_outplant_recemented,Block-mounted nursery fragments,kuffner_et_al_2020,Florida Keys,29,0.6551724137931035,15.306034482758621,0
-outplanted_colony,Outplanted colonies (source unspecified),USGS_USVI_exp,US Virgin Islands,46,0.6521739130434782,59.47391304347826,16
-sexual_recruit_nursery,Sexually propagated nursery juveniles,mendoza_quiroz_et_al_2023,Mexican Caribbean,17,1,NA,0
-sexual_recruit_outplant,Sexually propagated outplants,mendoza_quiroz_et_al_2023,Mexican Caribbean,35,1,NA,0
+restoration_subtype,subtype_label,study,region,n,n_cohort_survival_records,n_endpoint_selected_records,mean_survival,record_fate_fraction,cohort_survival_estimable,mean_size_cm2,baseline_excluded
+natural_fragment,Naturally occurring fragments,NOAA_survey,Curacao,39,0,39,NA,1,FALSE,3882.078205128205,0
+natural_fragment,Naturally occurring fragments,NOAA_survey,Florida Keys,55,0,55,NA,1,FALSE,1027.5503636363635,13
+nursery_fragment,Nursery-held fragments,fundemar_fragments,Dominican Republic,44,44,0,0.8636363636363636,0.8636363636363636,TRUE,20.10218181818182,44
+nursery_outplant,Nursery outplants,pausch_et_al_2018,Florida Keys,968,968,0,0.5743801652892566,0.5743801652892562,TRUE,63.7812784679089,720
+nursery_outplant_recemented,Block-mounted nursery fragments,kuffner_et_al_2020,Dry Tortugas,24,24,0,1,1,TRUE,20.333333333333332,0
+nursery_outplant_recemented,Block-mounted nursery fragments,kuffner_et_al_2020,Florida Keys,29,29,0,0.6551724137931035,0.6551724137931034,TRUE,15.306034482758621,0
+outplanted_colony,Outplanted colonies (source unspecified),USGS_USVI_exp,US Virgin Islands,46,46,0,0.6521739130434782,0.6521739130434783,TRUE,59.47391304347826,16
+sexual_recruit_nursery,Sexually propagated nursery juveniles,mendoza_quiroz_et_al_2023,Mexican Caribbean,17,17,0,1,1,TRUE,NA,0
+sexual_recruit_outplant,Sexually propagated outplants,mendoza_quiroz_et_al_2023,Mexican Caribbean,35,35,0,1,1,TRUE,NA,0

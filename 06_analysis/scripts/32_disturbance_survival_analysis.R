@@ -443,7 +443,7 @@ build_timeline_panel <- function(study_name, annual_data, events_data,
       breaks = seq(0, 1, by = 0.25),
       labels = scales::number_format(accuracy = 0.1)
     ) +
-    ggplot2::labs(x = if (show_x_axis) "Year" else NULL, y = "Annual survival") +
+    ggplot2::labs(x = if (show_x_axis) "Year" else NULL, y = "Interval survival") +
     theme_manuscript(base_size = 9) +
     ggplot2::theme(
       plot.margin = ggplot2::margin(2, 4, 2, 2, "mm"),
@@ -498,7 +498,7 @@ p_combined <- (p_noaa + ggplot2::labs(tag = "a", subtitle = "NOAA FL Keys (2004-
 p_combined <- p_combined +
   patchwork::plot_annotation(
     caption = paste(
-      "Points: annual survival (size ~ n). Shading: 95% CI.",
+      "Points: interval survival (size ~ n). Shading: 95% CI.",
       "Colored bars mark disturbance events; asterisks (*) flag major/catastrophic."
     ),
     theme = ggplot2::theme(

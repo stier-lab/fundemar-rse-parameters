@@ -207,7 +207,7 @@ p_a <- ggplot(surv_reliable, aes(x = survey_yr, y = survival)) +
                      limits = c(y_min_a, 1.02),
                      breaks = seq(0.5, 1, by = 0.1)) +
   labs(x = NULL,
-       y = "Annual survival") +
+       y = "Interval survival") +
   theme_manuscript(base_size = 10) +
   theme(
     axis.text.x = element_blank(),
@@ -249,7 +249,8 @@ cat("Combining panels...\n")
 p_combined <- p_a / p_b +
   plot_layout(heights = c(3, 1.2)) +
   plot_annotation(tag_levels = "a") &
-  theme(plot.tag = element_text(size = 12, face = "bold", color = pal$slate_dark))
+  theme(plot.tag = element_text(size = 12, face = "bold", color = pal$slate_dark),
+        plot.tag.position = "topleft")
 
 # =============================================================================
 # 7. SAVE

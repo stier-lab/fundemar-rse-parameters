@@ -123,9 +123,35 @@ colnames(raw) <- c("site", "coral_id",
                     "date_5", "lai_5", "date_6", "lai_6",
                     "date_7", "lai_7")
 
+# Source corrections are overlays; the received workbook remains immutable.
+# Keep durable colony/worksheet locators and stop on stale or ambiguous joins.
+raw$source_row <- seq_len(nrow(raw)) + 2L
+correction_dir <- file.path(project_root, "05_data/corrections")
+exclusions <- read_csv(file.path(correction_dir, "neely_species_exclusions.csv"),
+                       show_col_types = FALSE)
+stopifnot(!anyDuplicated(exclusions$coral_id),
+          all(exclusions$coral_id %in% raw$coral_id))
+excluded <- raw %>% inner_join(exclusions, by = c("coral_id", "source_row"))
+stopifnot(nrow(excluded) == nrow(exclusions))
+write_csv(excluded %>% select(coral_id, source_row, species_code, reason, source),
+          file.path(project_root, "06_analysis/output/neely_species_exclusion_audit.csv"))
+raw <- raw %>% filter(!coral_id %in% exclusions$coral_id)
+date_overrides <- read_csv(file.path(correction_dir, "neely_date_overrides.csv"),
+  col_types = cols(coral_id = col_character(), timepoint = col_integer(),
+                   source_row = col_integer(), date = col_date(), source = col_character()))
+stopifnot(!anyDuplicated(date_overrides[c("coral_id", "timepoint")]))
+for (i in seq_len(nrow(date_overrides))) {
+  x <- date_overrides[i, ]
+  j <- which(raw$coral_id == x$coral_id & raw$source_row == x$source_row)
+  stopifnot(length(j) == 1L, x$timepoint %in% 1:7, !is.na(x$date))
+  column <- paste0("date_", x$timepoint)
+  stopifnot(is.na(raw[[column]][j]) || as.Date(raw[[column]][j]) == x$date)
+  raw[[column]][j] <- as.POSIXct(x$date, tz = "UTC")
+}
+write_csv(date_overrides, file.path(project_root, "06_analysis/output/neely_date_correction_audit.csv"))
+
 # Preserve known fate separately from measurement availability. Karen's literal
 # "live" records are alive with unmeasured LAI, not missing survival or zero area.
-raw$source_row <- seq_len(nrow(raw)) + 2L
 for (tp in 1:7) {
   lai_col <- paste0("lai_", tp)
   value <- trimws(tolower(as.character(raw[[lai_col]])))
@@ -151,6 +177,23 @@ long <- raw %>%
   ) %>%
   filter(!is.na(alive)) %>%
   select(site, coral_id, source_row, timepoint, survey_date, survey_yr, lai, alive)
+
+# AF denotes a naturally attached fragment, never a restoration outplant.
+# The April 1 date/LAI extract omitted colony type. Unknown is not intact.
+# A type must be documented at the interval's START to define a fragment cohort.
+types <- read_csv(file.path(correction_dir, "neely_colony_types.csv"),
+                  col_types = cols(.default = col_character())) %>%
+  mutate(timepoint = as.integer(timepoint))
+stopifnot(!anyDuplicated(types[c("coral_id", "timepoint")]),
+          all(types$coral_id %in% raw$coral_id),
+          all(types$timepoint %in% 1:7),
+          all(types$status == "verified"),
+          all(types$fragment %in% c("Y", "N", "U")),
+          !any(types$colony_type == "AF" & types$fragment != "Y"))
+long <- long %>% left_join(types %>% select(coral_id, timepoint, colony_type,
+                                           source_fragment = fragment),
+                           by = c("coral_id", "timepoint")) %>%
+  mutate(fragment = coalesce(source_fragment, "U"))
 
 stopifnot(!anyDuplicated(long[c("site", "coral_id", "timepoint")]))
 
@@ -187,6 +230,10 @@ intervals <- long %>%
     # Extract site prefix for location mapping
     site_prefix = gsub("\\d+$", "", site)
   )
+
+if (any(!is.na(intervals$time_interval_yr) & intervals$time_interval_yr <= 0)) {
+  stop("Non-positive Neely interval: check source dates; do not silently annualize.")
+}
 
 cat(sprintf("  Intervals computed: %d\n", nrow(intervals)))
 cat(sprintf("  Survived: %d (%.1f%%)\n",
@@ -247,7 +294,7 @@ neely_surv <- intervals %>%
     data_type = "field",
     size_cm2 = lai_start,
     size_live_cm2 = lai_start,  # Source live-area index; not literal planar area.
-    fragment = "N",
+    fragment = fragment_start,
     study_notes = "Neely FKNMS; LAI=((L+W+H)/3)^2*live_fraction (cm2 index), not measured planar area; live=alive with LAI missing; 0=dead",
     study_N = study_n,
     group_N = NA_integer_
@@ -286,7 +333,7 @@ neely_growth <- intervals %>%
     size_cm2 = lai_start,
     size_live_cm2 = lai_start,
     growth_live_cm2_yr = growth_cm2_yr,
-    fragment = "N",
+    fragment = fragment_start,
     study_notes = "Neely FKNMS; LAI=((L+W+H)/3)^2*live_fraction (cm2 index); paired measured indices only; live code has no growth value",
     study_N = study_n,
     group_N = NA_integer_
@@ -336,6 +383,8 @@ cat(sprintf("  Existing growth: %d rows from %d studies\n",
 for (column in c("source_interval_id", "survey_start_date", "survey_end_date")) {
   if (!column %in% names(existing_surv)) existing_surv[[column]] <- NA_character_
   if (!column %in% names(existing_growth)) existing_growth[[column]] <- NA_character_
+  existing_surv[[column]] <- as.character(existing_surv[[column]])
+  existing_growth[[column]] <- as.character(existing_growth[[column]])
 }
 surv_cols <- names(existing_surv)
 growth_cols <- names(existing_growth)

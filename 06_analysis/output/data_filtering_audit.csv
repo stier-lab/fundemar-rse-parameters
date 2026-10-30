@@ -1,8 +1,9 @@
 stage,dataset,n_before,n_removed,n_after,reason
-load_raw,survival,7882,0,7882,Raw data loaded
-deduplication,survival,7882,66,7816,"Exact duplicate removal (study, coral_id, survey_yr, location)"
-load_raw,growth,6318,0,6318,Raw data loaded
-deduplication,growth,6318,19,6299,"Exact duplicate removal (study, coral_id, survey_yr, location)"
-cleaning,survival,7816,36,7780,Remove missing/zero size and missing survival
-cleaning,growth,6299,0,6299,Remove missing/zero size and missing growth
-impossible_flagging,growth,6299,261,6038,"Flagged impossible growth (not removed, flag only)"
+load_raw,survival,7880,0,7880,Raw data loaded
+deduplication,survival,7880,66,7814,"Duplicate key: study, coral_id, survey_yr, location, source_interval_id when available"
+load_raw,growth,6319,0,6319,Raw data loaded
+deduplication,growth,6319,19,6300,"Duplicate key: study, coral_id, survey_yr, location, source_interval_id when available"
+cleaning,survival,7814,36,7778,Remove missing/zero size and missing survival
+cleaning,growth,6300,0,6300,Remove missing/zero size and missing growth
+impossible_flagging,growth,6300,261,6039,"Flagged impossible growth (not removed, flag only)"
+survival_sampling_eligibility,survival,7778,115,7663,Exclude live-endpoint-selected fragments and unverified interval duration; retain in inventory

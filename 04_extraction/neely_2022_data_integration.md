@@ -2,9 +2,9 @@
 
 **Source:** `05_data/original/Neely_et_al_2022_FKNMS_APAL.xlsx`
 **Received:** 2026-04-01 (direct data sharing from K. Neely after email request)
-**Publication:** Neely KL, Lewis CL, Lunz KS, Kabay L (2022) *Rapid Population Decline of the Pillar Coral Dendrogyra cylindrus along the Florida Reef Tract.* Frontiers in Marine Science 8:799187. doi: 10.3389/fmars.2021.799187
+**Publication:** Neely KL, Macaulay KA, Lunz KS (2022) Population trajectory and stressors of Acropora palmata sites in the Florida Keys. Frontiers in Marine Science 9:978785. doi: 10.3389/fmars.2022.978785.
 
-> **Note:** The Neely lab's published work focuses on *Dendrogyra cylindrus*, but they also tracked *Acropora palmata* colonies at the same sites as part of their broader FKNMS demographic monitoring program. The APAL data were shared directly and have not been published separately.
+**Current source authority:** See `docs/neely_source_conventions.md` and the correction tables under `05_data/corrections/`. The October 30 collector update excludes MR3-115/MR3-116 (different species), supplies DT1-4's missing initial date, and identifies AF as naturally attached fragments rather than outplants. The shared date/LAI workbook has no Colony Type column, so physical fragment status is unknown until ID-linked metadata are supplied. The proposed Sombrero year conflicts with the chronological sequence and awaits clarification. The numerical descriptions below are the historical April extraction, not current analysis denominators; use regenerated inventories and source audits for the active data.
 
 ---
 
@@ -19,9 +19,9 @@
 | Data type | Individual-level (Tier 1) |
 | N colonies | 878 unique tagged colonies (502 with initial size at TP1) |
 | N timepoints | 7 (Winter 2010/2011 through Fall 2016) |
-| Size metric | LAI (Live Area Index) = live planar tissue area (cm^2) |
+| Size metric | LAI = ((L+W+H)/3)^2 × live fraction (cm² index), not measured planar area |
 | Mortality definition | LAI = 0 at a timepoint; absorbing state (once 0, always 0) |
-| Fragment | N (natural colonies, not outplants) |
+| Fragment | U in shared extract; natural population origin is independent of fragment status |
 
 ---
 

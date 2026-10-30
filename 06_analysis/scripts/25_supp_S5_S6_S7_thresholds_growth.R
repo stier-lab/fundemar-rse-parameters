@@ -135,11 +135,7 @@ growth_clean <- growth_clean %>%
     pct_change = (growth_cm2_yr / size_cm2) * 100,
     positive_growth = as.integer(growth_cm2_yr > 0),
     population_type = if ("population_type" %in% names(.)) population_type else
-      case_when(
-        fragment == "Y" ~ "Restoration fragment",
-        fragment == "N" ~ "Natural colony",
-        TRUE ~ "Unknown"
-      )
+      classify_population_type(study, fragment)
   )
 
 # RGR outlier trim (matching script 04)
@@ -587,6 +583,7 @@ fig_s6d <- ggplot(var_long, aes(x = log_size_mid, y = sd, color = metric)) +
   geom_line(linewidth = 0.7, alpha = 0.8) +
   scale_color_manual(
     values = c("AGR" = pal$surv_mid, "RGR" = pal$grow_mid),
+    labels = c(AGR = "AGR (cm² yr⁻¹)", RGR = "RGR (yr⁻¹)"),
     name = NULL
   ) +
   scale_x_continuous(
@@ -691,7 +688,7 @@ writeLines(c(
                  "rate (RGR, yr−1; n = %s) against colony size, from the stored threshold models."),
           comma(nobs(agr_gam)), comma(nobs(rgr_gam))),
   sprintf(paste0("(f) Standard deviation of AGR and RGR within size bins on a log scale ",
-                 "(n = %s); lines join bin summaries and are directly labeled."),
+                 "(n = %s); lines join bin summaries and are directly labeled. AGR SD is in cm² yr−1 and RGR SD in yr−1; their magnitudes are not directly comparable."),
           comma(nrow(growth_clean))),
   "",
   paste0("Panels a and b show binned means and approximate binomial 95% intervals; ",

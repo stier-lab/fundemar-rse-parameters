@@ -244,7 +244,7 @@ p_timeline <- ggplot(
     shape = 21, color = "white", stroke = 0.5
   ) +
   scale_color_manual(values = type_palette, name = "Event type") +
-  scale_fill_manual(values = severity_palette, name = "Severity") +
+  scale_fill_manual(values = severity_palette, name = "Catalogue severity") +
   scale_linetype_manual(values = c("Acute" = "solid", "Annual" = "22",
                                    "Chronic" = "solid"),
                         name = "Duration class") +
@@ -279,7 +279,8 @@ p_timeline <- ggplot(
     color = guide_legend(nrow = 2, order = 1, title.position = "top"),
     fill = guide_legend(nrow = 1, order = 2, title.position = "top"),
     linetype = guide_legend(nrow = 1, order = 3, title.position = "top"),
-    size = guide_legend(nrow = 1, order = 4, title.position = "top")
+    size = guide_legend(nrow = 1, order = 4, title.position = "top",
+                        override.aes = list(colour = "grey40", fill = "grey40"))
   )
 
 heatmap_data <- region_long %>%

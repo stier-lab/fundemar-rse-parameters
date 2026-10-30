@@ -36,7 +36,7 @@ checks = [
     ("bootstrap imputation", f'{int(imputed["n_imputed_iterations"])} imputed survival' in main),
     ("study exclusion lower", f'{params["loso_lambda_min"]:.3f} (excluding {study_labels[smallest_exclusion["excluded_study"]]}' in main),
     ("study exclusion upper", f'{params["loso_lambda_max"]:.3f} (excluding {study_labels[largest_exclusion["excluded_study"]]}' in main),
-    ("heatwave baseline", f'effective lambda was {float(base["effective_lambda"]):.3f}' in main and
+    ("heatwave baseline", f'Without heatwaves, {100*float(base["p_quasi_extinction_50yr"]):.1f}% of the 500 primary simulations were below the year-50 threshold, and effective lambda was {float(base["effective_lambda"]):.3f}.' in main and
                            f'effective lambda was {float(base["effective_lambda"]):.3f}' in esm),
     ("heatwave uncertainty", f'{100*float(base["p_quasi_extinction_50yr"]):.1f}% of the 500 primary simulations' in main and
                              f'{100*float(base["p_quasi_extinction_50yr"]):.1f}% of simulations' in esm),

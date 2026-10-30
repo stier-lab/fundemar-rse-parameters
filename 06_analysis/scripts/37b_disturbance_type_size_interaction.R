@@ -21,18 +21,17 @@
 #
 # DESIGN / DATA FOOTING (read before interpreting):
 #   - Storm & disease are attributed at the COLONY level via the `disturbance`
-#     column of apal_surv_ind.csv (storm = NOAA intervals; disease = Neely 2014
-#     FKNMS catastrophe + aftermath). Both studies ALSO contribute undisturbed
-#     ("none") intervals, so the disturbance effect is partly identified WITHIN
-#     study via the (1|study) random effect -- but type remains confounded with
-#     study/region/method. State this in the manuscript.
+#     column of the prepared source records (storm = NOAA intervals). Neely's
+#     2014 labels describe bleaching context, not diagnosed disease. There is
+#     currently no source-specific disease group; its contrasts remain NA.
+#     "none" means no source-specific storm/disease flag, not undisturbed.
+#     Source type remains confounded with study/region/method.
 #   - Heatwave is attributed OBSERVATIONALLY by overlapping survival study-years
 #     with documented bleaching events (caribbean_disturbance_events.csv) and
 #     their satellite DHW. Weaker causal footing than the colony flags:
 #       (i)  DHW is recorded as ranges -> midpoint used.
-#       (ii) 2014 FL Keys is BOTH the Neely disease event AND a bleaching year;
-#            disease-flagged colonies are EXCLUDED from the thermal model to
-#            avoid conflating the two.
+#       (ii) Source-specific disease flags, if supplied in future, are excluded
+#            from the thermal model; regional bleaching is not a diagnosis.
 #      (iii) This synthesis's 2023 FL Keys survival (~0.2-0.74) is far higher
 #            than Manzello's reported 98-100% mortality -- the monitoring data
 #            under-captures the true catastrophe (likely survivor-biased sites).
@@ -91,9 +90,8 @@ type_labs <- c(none = "No source-specific storm/disease flag", disease = "Source
 # =============================================================================
 # Load natural-colony survival, assign size classes and disturbance type
 # =============================================================================
-surv <- read_csv(file.path(project_root, "05_data/standardized/apal_surv_ind.csv"),
-                 show_col_types = FALSE) %>%
-  filter(is.na(fragment) | fragment != "Y") %>%                      # natural only
+surv <- read_prepared_survival_data() %>%
+  filter(population_type == "Natural colony") %>%                   # origin, not fragment shape
   mutate(size_use = ifelse(is.na(size_live_cm2), size_cm2, size_live_cm2)) %>%
   filter(!is.na(size_use), size_use > 0, !is.na(survived)) %>%
   mutate(
@@ -306,7 +304,7 @@ pa <- ggplot(pred_A, aes(size_use, pred, color = dist_type, fill = dist_type)) +
   scale_size_area(max_size = 4.5, name = "n colonies") +
   coord_cartesian(ylim = c(0, 1)) +
   labs(x = expression("Colony size (cm"^2*", log scale)"),
-       y = "Annual survival") +
+       y = "Interval survival") +
   guides(color = guide_legend(order = 1, nrow = 1),
          size  = guide_legend(order = 2, nrow = 1)) +
   theme_manuscript(base_size = 9) +
@@ -327,10 +325,10 @@ pb <- ggplot(diff_b, aes(size_class, delta, fill = dist_type, alpha = reliable))
   geom_text(aes(label = sprintf("%+.0f", delta),
                 vjust = ifelse(delta >= 0, -0.3, 1.2)),
             position = position_dodge(width = 0.7), size = 2.4, alpha = 1) +
-  scale_fill_manual(values = unname(type_cols[c("disease", "storm")]),
-                    labels = c("Disease", "Storm"), name = NULL) +
+  scale_fill_manual(values = type_cols[c("disease", "storm")],
+                    labels = c(disease = "Source-specific disease flag", storm = "Storm (NOAA)"), name = NULL) +
   scale_alpha_manual(values = c(`TRUE` = 1, `FALSE` = 0.3), guide = "none") +
-  coord_cartesian(ylim = c(-50, 12)) +
+  coord_cartesian(ylim = range(c(-50, diff_b$delta), na.rm = TRUE) + c(-5, 8)) +
   labs(x = "Size class", y = "Survival vs\nbaseline (pp)") +
   theme_manuscript(base_size = 9) +
   theme(legend.position = "top", legend.key.size = unit(3.5, "mm"))
@@ -343,7 +341,7 @@ pc <- ggplot(heat_summary,
   scale_color_manual(values = c("Moderate (DHW<10)" = "#E69F00",
                                 "Severe (DHW>=10)" = "#7A0403"), name = NULL) +
   coord_cartesian(ylim = c(0, 1)) +
-  labs(x = "Size class", y = "Annual survival") +
+  labs(x = "Size class", y = "Interval survival") +
   theme_manuscript(base_size = 9) +
   theme(legend.position = "top", legend.key.size = unit(3.5, "mm"))
 

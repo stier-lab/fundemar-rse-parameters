@@ -1,6 +1,6 @@
 "boundary_set","lambda"
-"Standard",0.955626930044297
-"Conservative",0.952155960430146
-"Liberal",0.959868711530118
-"Equal_log",0.966420912774073
-"Quantile_based",0.970455647992692
+"Standard",0.953874352730572
+"Conservative",0.950231726591953
+"Liberal",0.959145763804431
+"Equal_log",0.9652605727932
+"Quantile_based",0.967406578193174

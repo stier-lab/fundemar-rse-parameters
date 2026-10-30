@@ -114,7 +114,7 @@ analysis_df <- surv_data %>%
     year_end = survey_yr + time_interval_yr,
     dead = as.integer(survived == 0),
     log_live_size = log1p(pmax(size_live_cm2, 0)),
-    pop_type = population_type %||% ifelse(fragment == "Y", "Restoration fragment", "Natural colony"),
+    pop_type = population_type %||% classify_population_type(study, fragment),
     disturbance_state = disturbance_regime %||% "none",
     disturbance_state = ifelse(is.na(disturbance_state) | disturbance_state == "", "none", disturbance_state),
     disturbance_state = factor(disturbance_state),

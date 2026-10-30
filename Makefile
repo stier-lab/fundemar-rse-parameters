@@ -26,11 +26,13 @@ rebuild-live-area:
 	$(R) tools/rebuild_live_area.R
 
 verify:
+	$(R) tools/check_source_origin_contract.R
 	$(R) tools/check_live_area_contract.R
 	$(R) 06_analysis/scripts/49_matrix_concordance.R
 	$(R) 06_analysis/scripts/23_verification.R
 	$(R) 06_analysis/scripts/48_pipeline_refresh_audit.R
 	$(PY) tools/check_canonical_statistics.py
+	$(PY) tools/check_manuscript_inputs.py
 	$(PY) tools/check_matrix_reporting.py
 	$(PY) tools/check_robustness_reporting.py
 	$(PY) tools/check_claims.py

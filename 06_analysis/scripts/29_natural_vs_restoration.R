@@ -337,24 +337,12 @@ cat("Natural: NOAA_survey (Florida Keys subset)\n")
 cat("Restoration: pausch_et_al_2018\n\n")
 
 # Load individual-level survival data
-surv_ind <- read_csv(
-  file.path(get_project_root(), "05_data/standardized/apal_surv_ind.csv"),
-  show_col_types = FALSE
-)
+surv_ind <- read_prepared_survival_data()
 
-# Assign population type from study identity
+# Preserve the central source classification, including natural fragments and
+# sexually propagated restoration material; collapse only the reporting contrast.
 surv_ind <- surv_ind %>%
-  mutate(
-    population_type = case_when(
-      study == "NOAA_survey" ~ "Natural colony",
-      study == "pausch_et_al_2018" ~ "Restoration fragment",
-      study == "USGS_USVI_exp" ~ "Restoration fragment",
-      study == "kuffner_et_al_2020" ~ "Restoration fragment",
-      study == "fundemar_fragments" ~ "Restoration fragment",
-      study == "mendoza_quiroz_et_al_2023" ~ "Natural colony",
-      TRUE ~ NA_character_
-    )
-  )
+  mutate(population_type = collapse_population_type(population_type))
 
 # Filter to Florida Keys, NOAA vs Pausch
 fl_data <- surv_ind %>%

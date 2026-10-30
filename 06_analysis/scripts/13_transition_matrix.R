@@ -178,7 +178,7 @@ cat(sprintf("  Total growth records before filter: %s\n", scales::comma(nrow(gro
 if ("population_type" %in% names(growth_data)) {
   growth_data <- growth_data %>% filter(population_type == "Natural colony")
 } else if ("fragment" %in% names(growth_data)) {
-  growth_data <- growth_data %>% filter(fragment == "N")
+  growth_data <- growth_data %>% filter(classify_population_type(study, fragment) == "Natural colony")
 } else {
   cat("  WARNING: No population_type or fragment column found. Using all growth data.\n")
 }

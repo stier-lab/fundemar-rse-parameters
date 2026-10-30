@@ -1,6 +1,6 @@
 Model,AIC,R_squared,Description,response_type,within_response_rank,Delta_AIC
-LMM_full,88420.209480965,NA,LMM with study/location/year RE,AGR_gaussian,1,0
-GAM_abs,88638.47145972616,0.011226420845079632,"GAM (k=10), absolute growth",AGR_gaussian,2,218.26197876116203
-LM_abs,88653.60441853241,0.007519663339197747,"Linear, absolute growth",AGR_gaussian,3,233.39493756741285
-GAM_rgr,6125.526093258057,0.21075213469323184,"GAM (k=10), relative growth rate",RGR_gaussian,1,0
-GAM_pos,5929.533952245159,0.025895117308062432,"GAM, P(positive growth)",binomial,1,0
+LMM_full,88436.71641645614,NA,LMM with study/location/year RE,AGR_gaussian,1,0
+GAM_abs,88655.04107342026,0.011231662677227972,"GAM (k=10), absolute growth",AGR_gaussian,2,218.32465696411964
+LM_abs,88670.18697405157,0.0075229330205330465,"Linear, absolute growth",AGR_gaussian,3,233.47055759542855
+GAM_rgr,6128.066680576792,0.21062766272064126,"GAM (k=10), relative growth rate",RGR_gaussian,1,0
+GAM_pos,5932.388742229592,0.02582181379330923,"GAM, P(positive growth)",binomial,1,0

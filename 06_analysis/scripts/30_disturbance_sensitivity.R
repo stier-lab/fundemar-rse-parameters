@@ -922,7 +922,7 @@ if (!is.null(meta_full) && !is.null(meta_no_baseline_exclusion)) {
     scale_size_continuous(range = c(2, 6), guide = "none") +
     guides(color = guide_legend(
       override.aes = list(shape = 16, size = 3, linetype = 1, linewidth = 0.8, alpha = 1, fill = NA))) +
-    labs(x = "Annual survival", y = NULL) +
+    labs(x = "Interval survival", y = NULL) +
     theme_manuscript(base_size = 10) +
     theme(
       panel.grid.major.y = element_blank(),

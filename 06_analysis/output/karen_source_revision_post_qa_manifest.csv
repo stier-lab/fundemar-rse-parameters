@@ -1,0 +1,13 @@
+script,status,log,notes
+10_cross_validation.R,SUCCESS,temp/karen_source_update_2026-10-30/cv_repair.log,Targeted CV/origin/display verification after full segmented run
+20_fig_size_class_survival_synthesis.R,SUCCESS,temp/karen_source_update_2026-10-30/final2_20_fig_size_class_survival_synthesis.log,Targeted CV/origin/display verification after full segmented run
+25_supp_S5_S6_S7_thresholds_growth.R,SUCCESS,temp/karen_source_update_2026-10-30/final_25_supp_S5_S6_S7_thresholds_growth.log,Targeted CV/origin/display verification after full segmented run
+26_supp_S8_S9.R,SUCCESS,temp/karen_source_update_2026-10-30/final2_26_supp_S8_S9.log,Targeted CV/origin/display verification after full segmented run
+27_supp_S10_S11.R,SUCCESS,temp/karen_source_update_2026-10-30/final_27_supp_S10_S11.log,Targeted CV/origin/display verification after full segmented run
+28_supp_S12_S13_S14.R,SUCCESS,temp/karen_source_update_2026-10-30/final_28_supp_S12_S13_S14.log,Targeted CV/origin/display verification after full segmented run
+30_disturbance_sensitivity.R,SUCCESS,temp/karen_source_update_2026-10-30/final_30_disturbance_sensitivity.log,Targeted CV/origin/display verification after full segmented run
+31_heat_stress_overlay.R,SUCCESS,temp/karen_source_update_2026-10-30/final_31_heat_stress_overlay.log,Targeted CV/origin/display verification after full segmented run
+32_disturbance_survival_analysis.R,SUCCESS,temp/karen_source_update_2026-10-30/final2_32_disturbance_survival_analysis.log,Targeted CV/origin/display verification after full segmented run
+34_disturbance_summaries.R,SUCCESS,temp/karen_source_update_2026-10-30/final2_34_disturbance_summaries.log,Targeted CV/origin/display verification after full segmented run
+37b_disturbance_type_size_interaction.R,SUCCESS,temp/karen_source_update_2026-10-30/final_37b_disturbance_type_size_interaction.log,Targeted CV/origin/display verification after full segmented run
+49_annual_survival_timeseries.R,SUCCESS,temp/karen_source_update_2026-10-30/final_49_annual_survival_timeseries.log,Targeted CV/origin/display verification after full segmented run

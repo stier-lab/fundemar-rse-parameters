@@ -1,10 +1,10 @@
 model,model_class,family,nobs,df_residual,logLik,AIC,BIC,overdispersion_ratio,overdispersed,singular_fit,note
 within_region_meta_analysis,rma.uni,random-effects meta-analysis,2,NA,0.04457330983220903,3.910853380335582,-0.08914661966441806,NA,NA,NA,"OR = 2.14, p = 0.1039"
-florida_keys_glm_interaction,glm,binomial,1701,1697,-1040.870789039544,2089.741578079088,2111.4974644486715,1.0022861951041873,FALSE,NA,"Descriptive only: two studies, perfect study/population confounding, no valid small-cluster inference"
-florida_keys_glm_main_effects,glm,binomial,1701,1698,-1045.3993629234828,2096.7987258469657,2113.1156406241535,1.0013266573436261,FALSE,NA,Comparator without interaction term
-florida_keys_glm_study_fixed_effects,glm,binomial,1701,1697,-1040.870789039544,2089.741578079088,2111.4974644486715,NA,NA,NA,Study fixed-effects comparator for perfect confounding check
-florida_keys_glmm_interaction,glmerMod,binomial,1701,1696,-1040.8707890395456,2091.741578079091,2118.9364360410705,1.0028771657383118,FALSE,TRUE,Comparison model; expected singular fit because study and population type are aliased
-florida_keys_glmm_main_effects,glmerMod,binomial,1701,1697,-1045.3993629234828,2098.7987258469657,2120.5546122165492,NA,NA,TRUE,Main-effects random-intercept comparator
-size_class_SC1,glmerMod,binomial,63,NA,NA,87.67125161158653,94.10065579076112,0.9177043500858858,FALSE,FALSE,"OR = 0.89, p = 0.9346, studies = 5"
-size_class_SC2,glmerMod,binomial,1428,NA,NA,1780.605288075492,1796.3973785041906,0.9851263873798287,FALSE,FALSE,"OR = 0.37, p = 0.2214, studies = 6"
-size_class_SC3,glmerMod,binomial,1023,NA,NA,1072.195008775525,1086.9864930733797,1.0029411763523506,FALSE,TRUE,"OR = 0.30, p = 0.0000, studies = 4"
+florida_keys_glm_interaction,glm,binomial,1935,1931,-1164.9201789589451,2337.8403579178903,2360.111808339746,1.0024711089334661,FALSE,NA,"Descriptive only: two studies, perfect study/population confounding, no valid small-cluster inference"
+florida_keys_glm_main_effects,glm,binomial,1935,1932,-1170.497276346223,2346.994552692446,2363.6981405088377,1.0000653415718046,FALSE,NA,Comparator without interaction term
+florida_keys_glm_study_fixed_effects,glm,binomial,1935,1931,-1164.9201789589451,2337.8403579178903,2360.111808339746,NA,NA,NA,Study fixed-effects comparator for perfect confounding check
+florida_keys_glmm_interaction,glmerMod,binomial,1935,1930,-1164.9201789589422,2339.8403579178844,2367.6796709452037,1.0029905240160155,FALSE,TRUE,Comparison model; expected singular fit because study and population type are aliased
+florida_keys_glmm_main_effects,glmerMod,binomial,1935,1931,-1170.497276346216,2348.994552692432,2371.2660031142877,NA,NA,TRUE,Main-effects random-intercept comparator
+size_class_SC1,glmerMod,binomial,144,NA,NA,197.83248586513324,206.74192576386125,1.0212765842518596,FALSE,TRUE,"OR = 4.45, p = 0.0238, studies = 7"
+size_class_SC2,glmerMod,binomial,2144,NA,NA,2718.8248002956393,2735.8360858622113,0.9900518369313149,FALSE,FALSE,"OR = 1.90, p = 0.3488, studies = 7"
+size_class_SC3,glmerMod,binomial,2185,NA,NA,2319.52204128622,2336.590154608809,0.9941539095518457,FALSE,FALSE,"OR = 1.06, p = 0.9457, studies = 5"

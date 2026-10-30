@@ -167,14 +167,11 @@ surv_summ <- surv_summ %>%
     )
   )
 
-# Map population type: fragment=Y -> Restoration, fragment=N -> Natural
+# Apply source-specific origin rules independently of fragment morphology.
 surv_summ <- surv_summ %>%
   mutate(
-    pop_type = case_when(
-      fragment == "Y" ~ "Restoration",
-      fragment == "N" ~ "Natural",
-      TRUE            ~ "Unknown"
-    )
+    source_origin = classify_population_type(study, fragment),
+    pop_type = if_else(is_restoration_population(source_origin), "Restoration", "Natural")
   )
 
 # Aggregate within study × size_class: n-weighted mean survival, total n

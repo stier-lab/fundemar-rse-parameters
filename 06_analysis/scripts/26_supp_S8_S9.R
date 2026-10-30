@@ -431,6 +431,7 @@ p_c <- ggplot(interval_data, aes(y = type)) +
 
 # --- Panel (d): Moderator effects ---
 
+# Categorical tests have no single coefficient: state this on their row.
 mod_plot <- moderator_df %>%
   mutate(
     significant = p_value < 0.05,
@@ -448,6 +449,9 @@ p_d <- ggplot(mod_plot, aes(y = moderator)) +
                 orientation = "y") +
   # Point estimates
   geom_point(aes(x = coefficient, color = point_col), size = 3, shape = 16) +
+  geom_text(data = mod_plot %>% filter(!is.finite(coefficient)),
+            aes(x = Inf, label = "Categorical test;\nno single coefficient"),
+            hjust = 1.05, size = 2.2, color = pal$slate_mid) +
   scale_color_identity() +
   labs(
     x = "Regression coefficient\n(log-odds scale)",

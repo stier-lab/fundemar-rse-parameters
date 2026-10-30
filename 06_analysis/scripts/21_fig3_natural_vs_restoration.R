@@ -53,7 +53,7 @@ cat("==============================================================\n\n")
 # =============================================================================
 
 project_root <- get_project_root()
-surv_data <- readRDS(file.path(project_root, "06_analysis/output/prepared_survival_data.rds")) %>%
+surv_data <- read_prepared_survival_data() %>%
   filter(!is.na(size_cm2), size_cm2 > 0, !is.na(survived))
 
 # Harmonize population type
@@ -64,13 +64,10 @@ if ("population_type" %in% names(surv_data)) {
     mutate(population_type = classify_population_type(study, fragment))
 }
 
-# Remove NOAA "fragments" — naturally broken colonies, not outplants
-# (59 of 73 unique NOAA fragment IDs also appear as natural colonies)
-noaa_frags_n <- sum(surv_data$study == "NOAA_survey" &
-                     is_restoration_population(surv_data$population_type), na.rm = TRUE)
-cat(sprintf("  Removing %d NOAA 'fragment' records\n", noaa_frags_n))
-surv_data <- surv_data %>%
-  filter(!(study == "NOAA_survey" & is_restoration_population(population_type)))
+# Endpoint-selected fragment fates were excluded upstream. Natural-origin
+# fragments must not be relabeled as restoration in a plotting convenience.
+stopifnot(!any(surv_data$study == "NOAA_survey" &
+                is_restoration_population(surv_data$population_type)))
 
 surv_data <- surv_data %>%
   mutate(log_size = log10(size_cm2))
@@ -88,11 +85,8 @@ if ("population_type" %in% names(growth_data)) {
     mutate(population_type = classify_population_type(study, fragment))
 }
 
-noaa_frags_growth <- sum(growth_data$study == "NOAA_survey" &
-                          is_restoration_population(growth_data$population_type), na.rm = TRUE)
-cat(sprintf("  Removing %d NOAA growth 'fragment' records\n", noaa_frags_growth))
-growth_data <- growth_data %>%
-  filter(!(study == "NOAA_survey" & is_restoration_population(population_type)))
+stopifnot(!any(growth_data$study == "NOAA_survey" &
+                is_restoration_population(growth_data$population_type)))
 
 if (!"rgr" %in% names(growth_data) || all(is.na(growth_data$rgr))) {
   growth_data <- growth_data %>%
@@ -115,7 +109,7 @@ cat(sprintf("  Growth records (full, cleaned): %s\n", comma(nrow(growth_data))))
 
 # Clean study names
 study_names <- c(
-  "NOAA_survey"                = "NOAA NCRMP",
+  "NOAA_survey"                = "NOAA monitoring",
   "neely_et_al_2022"           = "Neely 2022",
   "mendoza_quiroz_et_al_2023"  = "Mendoza-Quiroz",
   "pausch_et_al_2018"          = "Pausch 2018",
@@ -172,7 +166,7 @@ cat(sprintf("  Growth in overlap zone: %s\n", comma(nrow(growth_overlap))))
 
 # Cool tones = natural studies, warm tones = restoration studies
 study_colors <- c(
-  "NOAA NCRMP"     = "#0072B2",  # Okabe-Ito blue
+  "NOAA monitoring"     = "#0072B2",  # Okabe-Ito blue
   "Neely 2022"     = "#000000",  # Black (natural, FL Keys)
   "Mendoza-Quiroz" = "#56B4E9",  # Okabe-Ito sky blue
   "Pausch 2018"    = "#D55E00",  # Okabe-Ito vermillion
@@ -185,7 +179,7 @@ type_shapes <- c("Natural colony" = 16, "Restoration fragment" = 17)
 type_lines  <- c("Natural colony" = "solid", "Restoration fragment" = "dashed")
 
 # Study ordering: natural first, then restoration
-study_order <- c("NOAA NCRMP", "Neely 2022", "Mendoza-Quiroz",
+study_order <- c("NOAA monitoring", "Neely 2022", "Mendoza-Quiroz",
                  "Pausch 2018", "FUNDEMAR", "Kuffner 2020", "USGS USVI")
 
 surv_overlap <- surv_overlap %>%
@@ -214,8 +208,10 @@ surv_preds <- surv_overlap %>%
     if (length(unique(df$survived)) == 1) {
       flat_val <- unique(df$survived)
       newdata$surv_pred <- flat_val
-      newdata$ci_lower  <- flat_val
-      newdata$ci_upper  <- flat_val
+      # An observed constant proportion does not identify a size slope or
+      # zero sampling uncertainty. Show the proportion without a fitted band.
+      newdata$ci_lower  <- NA_real_
+      newdata$ci_upper  <- NA_real_
       return(newdata)
     }
     fit <- glm(survived ~ log_size, family = binomial, data = df)

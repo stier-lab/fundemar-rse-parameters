@@ -83,6 +83,9 @@ name_map <- c(
   "NOAA_survey_florida_keys"   = "NOAA - Florida Keys",
   "NOAA_survey_curacao"        = "NOAA - Curacao",
   "NOAA_survey_navassa"        = "NOAA - Navassa",
+  "NOAA_survey__florida_keys"  = "NOAA monitoring",
+  "NOAA_survey__curacao"       = "NOAA monitoring",
+  "NOAA_survey__navassa"       = "NOAA monitoring",
   "pausch_et_al_2018"          = "Pausch et al. 2018",
   "USGS_USVI_exp"              = "USGS USVI",
   "kuffner_et_al_2020"         = "Kuffner et al. 2020",
@@ -225,7 +228,7 @@ label_rows <- bind_rows(
                          nat_surv * 100, nat_lower * 100, nat_upper * 100),
          style = "pooled_nat"),
   tibble(y = y_res_header,
-         left  = sprintf("Restoration fragment (k = %d)", n_res),
+         left  = sprintf("Restoration origin (k = %d)", n_res),
          right = "",
          style = "header_res"),
   tibble(y = y_res_pooled,
@@ -513,7 +516,8 @@ pb <- ggplot() +
            hjust = 0, vjust = 0.5, size = 2.6, color = pal$slate_mid, fontface = "italic") +
   scale_x_continuous(
     name = "Annual survival rate",
-    limits = c(0.40, 1.0),
+    # Match panel a so the relocated-cohort lower CI (35.8%) is retained.
+    limits = c(x_plot_min, x_plot_max),
     breaks = seq(0.4, 1.0, 0.1),
     labels = scales::percent_format(accuracy = 1),
     expand = expansion(mult = c(0.01, 0.02))

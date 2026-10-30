@@ -296,6 +296,8 @@ model_comp_plot <- cv_model_comp %>%
 p_s13b <- ggplot(model_comp_plot, aes(x = model, y = mean_brier)) +
   geom_segment(aes(xend = model, y = mean_brier - sd_brier, yend = mean_brier + sd_brier),
                color = pal$grow_mid, linewidth = 0.8) +
+  geom_text(data = model_comp_plot %>% filter(!is.finite(mean_brier)),
+            aes(y = 0.02, label = "Not estimable"), hjust = 0, size = 2.5) +
   geom_point(size = 3, color = pal$grow_dark, fill = pal$grow_mid, shape = 21,
              stroke = 0.8) +
   coord_flip() +
@@ -400,7 +402,7 @@ p_s14b <- ggplot(stoch_proj, aes(x = year)) +
   # Quasi-extinction threshold
   geom_hline(yintercept = qe_threshold, linetype = "dotted",
              color = "#c62828", linewidth = 0.5) +
-  annotate("text", x = 20, y = qe_threshold,
+  annotate("text", x = 18, y = qe_threshold,
            label = sprintf("quasi-extinction (%.0f)", qe_threshold),
            hjust = 1, vjust = -0.6, size = 2.5, color = "#c62828", fontface = "italic") +
   # Lambda annotation

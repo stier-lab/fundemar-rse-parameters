@@ -147,7 +147,7 @@ if ("population_type" %in% names(survival_data)) {
   cat(sprintf("  Survival: %d -> %d (natural colonies only)\n", n_before, nrow(survival_data)))
 } else if ("fragment" %in% names(survival_data)) {
   n_before <- nrow(survival_data)
-  survival_data <- survival_data %>% filter(fragment == "N")
+  survival_data <- survival_data %>% filter(classify_population_type(study, fragment) == "Natural colony")
   cat(sprintf("  Survival: %d -> %d (non-fragments only)\n", n_before, nrow(survival_data)))
 }
 
@@ -174,7 +174,7 @@ if ("population_type" %in% names(growth_data)) {
   cat(sprintf("  Growth: %d -> %d (natural colonies only)\n", n_before, nrow(growth_data)))
 } else if ("fragment" %in% names(growth_data)) {
   n_before <- nrow(growth_data)
-  growth_data <- growth_data %>% filter(fragment == "N")
+  growth_data <- growth_data %>% filter(classify_population_type(study, fragment) == "Natural colony")
   cat(sprintf("  Growth: %d -> %d (non-fragments only)\n", n_before, nrow(growth_data)))
 }
 

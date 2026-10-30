@@ -117,7 +117,7 @@ growth_metric_vec <- if ("growth_live_cm2_yr" %in% names(growth_raw)) {
 
 growth_nat <- growth_raw %>%
   mutate(growth_for_ipm = growth_metric_vec) %>%
-  filter(fragment == "N") %>%
+  filter(population_type == "Natural colony") %>%
   filter(is.finite(size_for_class), size_for_class > 0) %>%
   filter(is.finite(growth_for_ipm)) %>%
   filter(is.finite(time_interval_yr), time_interval_yr >= 0.5, time_interval_yr <= 1.5) %>%

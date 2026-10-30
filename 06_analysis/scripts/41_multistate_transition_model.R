@@ -146,7 +146,7 @@ surv <- surv_raw %>%
 if ("population_type" %in% names(surv)) {
   surv <- surv %>% filter(population_type == "Natural colony")
 } else if ("fragment" %in% names(surv)) {
-  surv <- surv %>% filter(fragment == "N")
+  surv <- surv %>% filter(classify_population_type(study, fragment) == "Natural colony")
 }
 
 # Keep near-annual intervals to reduce interval extrapolation bias
@@ -189,7 +189,7 @@ growth <- growth_raw %>%
 if ("population_type" %in% names(growth)) {
   growth <- growth %>% filter(population_type == "Natural colony")
 } else if ("fragment" %in% names(growth)) {
-  growth <- growth %>% filter(fragment == "N")
+  growth <- growth %>% filter(classify_population_type(study, fragment) == "Natural colony")
 }
 
 if ("impossible_growth" %in% names(growth)) {

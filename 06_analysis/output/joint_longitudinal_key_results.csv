@@ -1,3 +1,3 @@
 term,interpretation,estimate,std_error,statistic,p_value,hazard_ratio
-z_pred_log_live,1 SD higher latent live size at interval start,-0.7966843560496031,0.0431763401369875,-18.45187326026076,5.036848402409403e-76,0.45082125155862773
-z_pred_velocity,1 SD higher latent live-size velocity (log-scale per year),5.379990050329088,0.5548345644192014,9.69656613942363,3.11816523226588e-22,217.0201161354685
+z_pred_log_live,1 SD higher latent live size at interval start,-0.8342437778529933,NA,NA,NA,0.4342027110164696
+z_pred_velocity,1 SD higher latent live-size velocity (log-scale per year),-4.38466876759434,NA,NA,NA,0.012467016930508666

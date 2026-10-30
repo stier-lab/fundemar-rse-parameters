@@ -276,9 +276,18 @@ surv_clean <- surv_ind %>%
     # Fragment status records asexual fragmentation only.  It must not be used
     # as a proxy for restoration origin: Mendoza-Quiroz et al. (2023) contains
     # sexually propagated nursery/outplant cohorts with fragment == "N".
-    is_fragment = (fragment == "Y"),
+    is_fragment = case_when(fragment == "Y" ~ TRUE, fragment == "N" ~ FALSE,
+                            TRUE ~ NA),
     # Detailed, provenance-based population origin for stratification.
     population_type = classify_population_type(study, fragment),
+    survival_cohort_eligible = !(study == "NOAA_survey" & fragment == "Y") &
+      is.finite(time_interval_yr) & time_interval_yr > 0,
+    survival_sampling_basis = if_else(study == "NOAA_survey" & fragment == "Y",
+      "fragment_status_selected_at_live_endpoint", "observed_at_risk_interval"),
+    survival_exclusion_reason = case_when(
+      study == "NOAA_survey" & fragment == "Y" ~ "endpoint_selected_fragment",
+      !is.finite(time_interval_yr) | time_interval_yr <= 0 ~ "unverified_interval_duration",
+      TRUE ~ "eligible"),
     # Mortality definition varies by study (see docs/Data_Methodology_Reference.md)
     mortality_definition = case_when(
       study == "NOAA_survey" ~ "no_tissue_or_skeleton",
@@ -684,6 +693,22 @@ cat("═════════════════════════
 cat("  SAVING PREPARED DATA\n")
 cat("═══════════════════════════════════════════════════════════════\n\n")
 
+# Retain selected live endpoints for the inventory and conditional growth, but
+# never use them as at-risk survival observations in any downstream model.
+saveRDS(surv_clean, file.path(output_dir, "prepared_survival_inventory.rds"))
+write_csv(surv_clean %>% count(study, population_type, fragment,
+  survival_sampling_basis, survival_cohort_eligible, name = "n_intervals"),
+  file.path(output_dir, "population_origin_sampling_audit.csv"))
+n_inventory <- nrow(surv_clean)
+surv_clean <- surv_clean %>% filter(survival_cohort_eligible)
+filtering_audit <- rbind(filtering_audit, data.frame(
+  stage = "survival_sampling_eligibility", dataset = "survival", n_before = n_inventory,
+  n_removed = n_inventory - nrow(surv_clean), n_after = nrow(surv_clean),
+  reason = "Exclude live-endpoint-selected fragments and unverified interval duration; retain in inventory"))
+size_summary <- surv_clean %>% group_by(size_class) %>% summarise(
+  n = n(), n_survived = sum(survived), survival_rate = mean(survived),
+  mean_size = mean(size_cm2), .groups = "drop")
+
 # Save prepared data
 saveRDS(surv_clean, file.path(output_dir, "prepared_survival_data.rds"))
 cat(sprintf("✓ Saved: prepared_survival_data.rds (%d records)\n", nrow(surv_clean)))
@@ -710,7 +735,7 @@ cat("═════════════════════════
 # Group by study × size_class × time_interval_yr (matches script 13 grouping)
 ind_cells <- surv_clean %>%
   filter(!is.na(size_class)) %>%
-  mutate(time_interval_yr = coalesce(time_interval_yr, 1.0)) %>%
+  filter(is.finite(time_interval_yr), time_interval_yr > 0) %>%
   group_by(study, region, size_class, time_interval_yr, population_type,
            data_type, fragment) %>%
   summarise(

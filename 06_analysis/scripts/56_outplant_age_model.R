@@ -65,8 +65,7 @@ print_success(sprintf("Baseline S loaded: %s",
 # =============================================================================
 # Load + join survival and outplant age
 # =============================================================================
-surv <- read.csv("05_data/standardized/apal_surv_ind.csv",
-                 stringsAsFactors = FALSE)
+surv <- read_prepared_survival_data()
 outplant <- read.csv("05_data/standardized/apal_outplant_age.csv",
                      stringsAsFactors = FALSE)
 cat(sprintf("  Survival rows: %d\n", nrow(surv)))
@@ -74,13 +73,14 @@ cat(sprintf("  Outplant-age rows: %d\n", nrow(outplant)))
 
 df <- surv %>%
   dplyr::left_join(
-    dplyr::select(outplant, study, coral_id, survey_yr,
-                  years_since_outplant, is_restoration),
-    by = c("study", "coral_id", "survey_yr")
+    dplyr::select(outplant, study, location, coral_id, survey_yr,
+                  years_since_outplant, is_restoration, is_outplant),
+    by = c("study", "location", "coral_id", "survey_yr"),
+    relationship = "many-to-one"
   ) %>%
   dplyr::filter(!is.na(survived),
                 !is.na(size_cm2), size_cm2 > 0,
-                is_restoration %in% TRUE,
+                is_outplant %in% TRUE,
                 !is.na(years_since_outplant))
 
 cat(sprintf("  Restoration rows with outplant age + survival: %d\n", nrow(df)))

@@ -16,9 +16,10 @@ for (name in c("apal_surv_ind.csv", "apal_growth_ind.csv")) {
   cat(name, ": non-Neely rows unchanged (", nrow(x), ")\n", sep = "")
 }
 s <- readRDS(file.path(out, "prepared_survival_data.rds"))
+inventory <- readRDS(file.path(out, "prepared_survival_inventory.rds"))
 g <- readRDS(file.path(out, "prepared_growth_data.rds"))
 a <- read_csv(file.path(out, "neely_interval_source_audit.csv"), show_col_types = FALSE)
-n <- s %>% filter(study == "neely_et_al_2022")
+n <- inventory %>% filter(study == "neely_et_al_2022")
 stopifnot(!anyDuplicated(n$source_interval_id),
           all(n$size_cm2 > 0), all(n$survived %in% 0:1))
 missing <- n %>% filter(is.na(time_interval_yr) | time_interval_yr <= 0) %>%

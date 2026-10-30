@@ -139,7 +139,7 @@ p_s10a <- ggplot(context_survival,
     expand = expansion(mult = c(0, 0))
   ) +
   scale_fill_manual(values = context_colors) +
-  labs(x = NULL, y = "Annual survival probability") +
+  labs(x = NULL, y = "Observed interval survival") +
   theme_manuscript(base_size = 9) +
   theme(
     axis.text.x = element_text(size = 7),
@@ -182,7 +182,7 @@ p_s10b <- ggplot(context_by_size,
                "lab" = "Laboratory"),
     name = NULL
   ) +
-  labs(x = "Size class", y = "Annual survival probability") +
+  labs(x = "Size class", y = "Observed interval survival") +
   theme_manuscript(base_size = 9) +
   theme(
     legend.position = "bottom",
@@ -231,7 +231,7 @@ h_vals <- pairwise_plot$cohens_h
 h_min  <- min(h_vals, na.rm = TRUE)
 h_max  <- max(h_vals, na.rm = TRUE)
 xlim_lo <- if (h_min >= 0) 0 else floor(h_min * 10) / 10 - 0.1
-xlim_hi <- ceiling(h_max * 10) / 10 + 0.25  # headroom for sig stars
+xlim_hi <- max(0, ceiling(h_max * 10) / 10) + 0.25  # headroom for sig stars
 
 # Only draw Cohen's-h reference lines that fall inside the data range so
 # we don't leave an orphan dashed line hanging below zero when all
@@ -342,7 +342,7 @@ p_s11a <- ggplot(yearly_survival, aes(x = survey_yr, y = survival_rate)) +
     name = "n obs.",
     breaks = c(100, 300, 600, 900)
   ) +
-  labs(x = "Year", y = "Annual survival probability") +
+  labs(x = "Year", y = "Observed interval survival") +
   theme_manuscript(base_size = 9) +
   theme(
     legend.position = "right",
@@ -392,7 +392,7 @@ p_s11b <- ggplot(disturbance_df,
     labels = scales::percent_format(accuracy = 1),
     expand = expansion(mult = c(0, 0.02))
   ) +
-  labs(x = "Disturbance category", y = "Annual survival probability") +
+  labs(x = "Disturbance category", y = "Observed interval survival") +
   theme_manuscript(base_size = 9) +
   theme(
     axis.text.x = element_text(size = 7, lineheight = 0.9),
@@ -439,7 +439,7 @@ p_s11c <- ggplot(size_climate_vuln,
     expand = expansion(mult = c(0, 0.02))
   ) +
   scale_fill_manual(values = SIZE_CLASS_COLORS) +
-  labs(x = "Size class", y = "CV of annual survival") +
+  labs(x = "Size class", y = "CV of interval survival") +
   coord_cartesian(clip = "off") +
   theme_manuscript(base_size = 9) +
   theme(plot.margin = margin(5, 5, 5, 5, "mm"))
@@ -464,7 +464,7 @@ p_s11d <- ggplot(regional_var,
   scale_y_continuous(
     expand = expansion(mult = c(0, 0))
   ) +
-  labs(x = NULL, y = "CV of annual survival") +
+  labs(x = NULL, y = "CV of interval survival") +
   theme_manuscript(base_size = 9) +
   theme(
     axis.text.y = element_text(size = 8),

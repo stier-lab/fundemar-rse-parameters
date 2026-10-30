@@ -1,2 +1,2 @@
 "model","n_obs","n_studies","n_contexts","dispersion_ratio","overdispersed","is_singular","convergence_ok","optimizer_messages"
-"context_overlap_zone_glmm",2915,7,2,0.992818574592454,FALSE,FALSE,TRUE,NA
+"context_overlap_zone_glmm",2888,7,2,0.992908989814158,FALSE,FALSE,TRUE,NA

@@ -1,9 +1,9 @@
 outcome,model,smooth,k_index,k_prime,edf,p_value
-survival,baseline,s(log_size),0.9807458514548355,NA,2.7101048011790607,0.5575
-survival,baseline,s(study),NA,NA,5.616629886566842,NA
-survival,spatiotemporal,s(log_size),0.9681471603219675,NA,2.189166578321969,0.3175
-survival,spatiotemporal,s(survey_year_num),0.9512925456054269,NA,2.1486015402562515,0.03
-survival,spatiotemporal,s(survey_year_factor),NA,NA,14.019729383657747,NA
-survival,spatiotemporal,"s(longitude,latitude)",0.993359455073721,NA,4.874285022084077,0.9075
-survival,spatiotemporal,s(site_id),NA,NA,40.60159043071039,NA
-survival,spatiotemporal,s(study),NA,NA,0.9209149462691457,NA
+survival,baseline,s(log_size),0.9907351919399675,NA,2.6863163120176488,0.8275
+survival,baseline,s(study),NA,NA,3.55344214588355,NA
+survival,spatiotemporal,s(log_size),0.985591908603858,NA,2.3934381496194046,0.6575
+survival,spatiotemporal,s(survey_year_num),0.9821220318796366,NA,2.1389635796524686,0.5425
+survival,spatiotemporal,s(survey_year_factor),NA,NA,15.04035659536886,NA
+survival,spatiotemporal,"s(longitude,latitude)",0.9792389378261057,NA,2.8620371216757383,0.4525
+survival,spatiotemporal,s(site_id),NA,NA,53.00445146821691,NA
+survival,spatiotemporal,s(study),NA,NA,2.7337774961511494,NA

@@ -78,10 +78,7 @@ dir.create(fig_dir, showWarnings = FALSE, recursive = TRUE)
 print_header("1. Extracting unique site-year combinations")
 
 # --- Load individual survival data ---
-surv_ind <- read_csv(
-  file.path(get_project_root(), "05_data/standardized/apal_surv_ind.csv"),
-  show_col_types = FALSE
-)
+surv_ind <- read_prepared_survival_data()
 if (names(surv_ind)[1] %in% c("...1", "X1", "")) surv_ind <- surv_ind %>% dplyr::select(-1)
 
 # --- Load summary survival data ---
@@ -970,7 +967,7 @@ if (sum(!is.na(surv_with_dhw$heat_stress_category)) >= 20) {
       scale_x_discrete(labels = heat_labels) +
       scale_y_continuous(limits = c(0, 1), expand = expansion(mult = c(0, 0.02))) +
       labs(x = "Heat stress category (DHW, \u00B0C-weeks)",
-           y = "Annual survival rate") +
+           y = "Interval survival rate") +
       theme_manuscript(base_size = 10) +
       theme(axis.text.x = element_text(size = 8, lineheight = 0.85))
   } else {
@@ -1000,7 +997,7 @@ if (sum(!is.na(surv_with_dhw$heat_stress_category)) >= 20) {
       ) +
       scale_y_continuous(limits = c(0, 1)) +
       labs(x = "Mean annual max DHW (\u00B0C-weeks)",
-           y = "Annual survival rate") +
+           y = "Interval survival rate") +
       theme_manuscript(base_size = 10) +
       theme(legend.position = "bottom",
             legend.key.size = unit(4, "mm"))

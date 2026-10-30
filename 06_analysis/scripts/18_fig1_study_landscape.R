@@ -61,7 +61,7 @@ cat("Loading data...\n")
 project_root <- get_project_root()
 
 # Individual-level data (Tier 1)
-surv_data <- readRDS(file.path(project_root, "06_analysis/output/prepared_survival_data.rds")) %>%
+surv_data <- read_prepared_survival_data(include_endpoint_selected = TRUE) %>%
   filter(!is.na(size_class), !is.na(survived))
 
 growth_data <- readRDS(file.path(project_root, "06_analysis/output/prepared_growth_data.rds"))

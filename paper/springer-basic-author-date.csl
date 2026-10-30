@@ -111,10 +111,11 @@
       </group>
     </layout>
   </citation>
-  <bibliography et-al-min="5" et-al-use-first="3" hanging-indent="true">
+  <bibliography et-al-min="1000" et-al-use-first="1000" hanging-indent="true">
     <sort>
       <key macro="author"/>
-      <key variable="author" sort="ascending"/>
+      <key variable="issued" sort="ascending"/>
+      <key variable="title" sort="ascending"/>
     </sort>
     <layout>
       <group delimiter=" ">

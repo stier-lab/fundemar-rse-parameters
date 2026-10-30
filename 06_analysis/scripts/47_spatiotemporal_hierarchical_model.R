@@ -542,7 +542,10 @@ surv_panel <- surv_data %>%
   mutate(
     survey_year_num = as.numeric(survey_yr),
     survey_year_factor = factor(survey_yr),
-    site_id = factor(interaction(region, location, plot, drop = TRUE, lex.order = TRUE)),
+    # An unreported plot does not erase a known site or its whole study.
+    # Use the source's site unit in that case; do not invent separate plots.
+    site_id = factor(interaction(study, region, location,
+      coalesce(as.character(plot), "site_only"), drop = TRUE, lex.order = TRUE)),
     site_year = factor(interaction(site_id, survey_yr, drop = TRUE, lex.order = TRUE)),
     study = factor(study),
     disturbance_state = factor(
@@ -564,7 +567,8 @@ growth_panel <- growth_data %>%
   mutate(
     survey_year_num = as.numeric(survey_yr),
     survey_year_factor = factor(survey_yr),
-    site_id = factor(interaction(region, location, plot, drop = TRUE, lex.order = TRUE)),
+    site_id = factor(interaction(study, region, location,
+      coalesce(as.character(plot), "site_only"), drop = TRUE, lex.order = TRUE)),
     site_year = factor(interaction(site_id, survey_yr, drop = TRUE, lex.order = TRUE)),
     study = factor(study),
     disturbance_state = factor(

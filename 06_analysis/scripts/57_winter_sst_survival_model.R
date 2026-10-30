@@ -56,8 +56,7 @@ print_success(sprintf("Baseline S loaded: %s",
 # =============================================================================
 # Load + join survival and winter SST
 # =============================================================================
-surv <- read.csv("05_data/standardized/apal_surv_ind.csv",
-                 stringsAsFactors = FALSE)
+surv <- read_prepared_survival_data()
 wsst <- read.csv("05_data/standardized/winter_sst_anomalies.csv",
                  stringsAsFactors = FALSE)
 

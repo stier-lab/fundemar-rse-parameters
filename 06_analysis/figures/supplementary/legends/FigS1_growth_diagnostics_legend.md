@@ -1,10 +1,10 @@
 # Fig. S1. Size-dependent survival and growth diagnostics
 
-(a) Interval survival against log colony size (n = 5,711 fitted records); the label gives the improvement of the GAM over the linear model (delta AIC = 9.23; the pre-specified gate was 2).
-(b) Probability of positive growth from the threshold-analysis GAM (n = 5,048 fitted records). The nonlinearity gate did not support a threshold (delta AIC = -0.01); no threshold line is shown.
+(a) Interval survival against log colony size (n = 5,688 fitted records); the label gives the improvement of the GAM over the linear model (delta AIC = 9.59; the pre-specified gate was 2).
+(b) Probability of positive growth from the threshold-analysis GAM (n = 5,049 fitted records). The nonlinearity gate did not support a threshold (delta AIC = -0.01); no threshold line is shown.
 (c) Second derivative of the relative-growth-rate GAM; the dashed line marks the most negative second derivative (35 cm²).
-(d, e) Absolute growth rate (AGR, cm² yr−1; n = 5,048) and relative growth rate (RGR, yr−1; n = 4,997) against colony size, from the stored threshold models.
-(f) Standard deviation of AGR and RGR within size bins on a log scale (n = 5,884); lines join bin summaries and are directly labeled.
+(d, e) Absolute growth rate (AGR, cm² yr−1; n = 5,049) and relative growth rate (RGR, yr−1; n = 4,998) against colony size, from the stored threshold models.
+(f) Standard deviation of AGR and RGR within size bins on a log scale (n = 5,886); lines join bin summaries and are directly labeled. AGR SD is in cm² yr−1 and RGR SD in yr−1; their magnitudes are not directly comparable.
 
 Panels a and b show binned means and approximate binomial 95% intervals; panels d and e show individual records. Observations in a, b, d and e are exactly the rows used by their displayed models. Model ribbons show pointwise 95% confidence intervals; panels d/e display the central 98% of observed response values without excluding any additional rows from their fitted models. The dotted line in a is the linear-model comparison. Blue denotes survival/AGR and teal denotes positive growth/RGR. Panel a uses binary interval fates for natural colonies and excludes subannual intervals; remaining intervals are not uniformly annual. Growth models pool colony sources under script 03's filtering rules. Panel f and the exploratory lower-k display exclude the upper and lower 0.5% of RGR values and high-variance Navassa records. Growth metrics prefer measured live-area change, with total-area change retained only when live change is unavailable. Size includes study-specific area indices/proxies; these are not uniformly direct planar measurements. These diagnostic fits are not independent replications of the size relationship.
 

@@ -67,10 +67,24 @@ RESTORATION_POPULATION_TYPES <- c(
 )
 
 classify_population_type <- function(study, fragment) {
-  population_type <- ifelse(fragment == "Y", "Restoration fragment", "Natural colony")
+  # Origin and fragmentation are separate biological attributes. NOAA's AF/SF
+  # and Neely's AF are naturally occurring fragments, not restoration outplants.
+  population_type <- ifelse(!is.na(fragment) & fragment == "Y", "Restoration fragment", "Natural colony")
+  population_type[study %in% c("NOAA_survey", "neely_et_al_2022")] <- "Natural colony"
   population_type[study == MENDOZA_QUIROZ_STUDY_ID] <-
     "Restoration outplant (sexual recruit)"
   population_type
+}
+
+# Default analysis object excludes endpoint-selected NOAA fragments; their
+# natural origin does not make their all-survivor records a survival cohort.
+# Inventory/handling figures must opt in explicitly and withhold that survival.
+read_prepared_survival_data <- function(include_endpoint_selected = FALSE) {
+  name <- if (include_endpoint_selected) "prepared_survival_inventory.rds" else "prepared_survival_data.rds"
+  data <- readRDS(file.path(get_project_root(), "06_analysis/output", name))
+  stopifnot("survival_cohort_eligible" %in% names(data))
+  if (!include_endpoint_selected) stopifnot(all(data$survival_cohort_eligible))
+  data
 }
 
 is_restoration_population <- function(population_type) {

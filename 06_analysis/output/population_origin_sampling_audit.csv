@@ -1,0 +1,10 @@
+study,population_type,fragment,survival_sampling_basis,survival_cohort_eligible,n_intervals
+NOAA_survey,Natural colony,N,observed_at_risk_interval,TRUE,3874
+NOAA_survey,Natural colony,Y,fragment_status_selected_at_live_endpoint,FALSE,94
+USGS_USVI_exp,Restoration fragment,Y,observed_at_risk_interval,TRUE,46
+fundemar_fragments,Restoration fragment,Y,observed_at_risk_interval,TRUE,44
+kuffner_et_al_2020,Restoration fragment,Y,observed_at_risk_interval,TRUE,53
+mendoza_quiroz_et_al_2023,Restoration outplant (sexual recruit),N,observed_at_risk_interval,TRUE,52
+neely_et_al_2022,Natural colony,U,observed_at_risk_interval,FALSE,21
+neely_et_al_2022,Natural colony,U,observed_at_risk_interval,TRUE,2626
+pausch_et_al_2018,Restoration fragment,Y,observed_at_risk_interval,TRUE,968

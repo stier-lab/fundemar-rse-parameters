@@ -1,25 +1,25 @@
 scenario,excluded_study,k_scenario,k_remaining,pooled_survival_full,pooled_survival_refit,delta_pp,abs_delta_pp,refit_status,note,is_max_abs_delta
-All data (including Neely bleaching context),NOAA_survey,6,5,0.7665976733362849,0.732023604349124,-3.4574068987160977,3.4574068987160977,ok,Leave-one-study-out pooled survival shift.,FALSE
-All data (including Neely bleaching context),USGS_USVI_exp,6,5,0.7665976733362849,0.7848170081407757,1.8219334804490783,1.8219334804490783,ok,Leave-one-study-out pooled survival shift.,FALSE
-All data (including Neely bleaching context),fundemar_fragments,6,5,0.7665976733362849,0.7487227089532735,-1.7874964383011394,1.7874964383011394,ok,Leave-one-study-out pooled survival shift.,FALSE
-All data (including Neely bleaching context),kuffner_et_al_2020,6,5,0.7665976733362849,0.7587237492297662,-0.787392410651877,0.787392410651877,ok,Leave-one-study-out pooled survival shift.,FALSE
-All data (including Neely bleaching context),neely_et_al_2022,6,5,0.7665976733362849,0.7689449985636582,0.23473252273732426,0.23473252273732426,ok,Leave-one-study-out pooled survival shift.,FALSE
-All data (including Neely bleaching context),pausch_et_al_2018,6,5,0.7665976733362849,0.802236897277337,3.5639223941052123,3.5639223941052123,ok,Leave-one-study-out pooled survival shift.,TRUE
-Excluding Neely bleaching context intervals,NOAA_survey,6,5,0.7949138575349572,0.7737536937072274,-2.1160163827729894,2.1160163827729894,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding Neely bleaching context intervals,USGS_USVI_exp,6,5,0.7949138575349572,0.816215171131695,2.1301313596737703,2.1301313596737703,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding Neely bleaching context intervals,fundemar_fragments,6,5,0.7949138575349572,0.7817445809404246,-1.3169276594532597,1.3169276594532597,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding Neely bleaching context intervals,kuffner_et_al_2020,6,5,0.7949138575349572,0.7919654550414863,-0.29484024934709474,0.29484024934709474,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding Neely bleaching context intervals,neely_et_al_2022,6,5,0.7949138575349572,0.7689449985636582,-2.596885897129908,2.596885897129908,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding Neely bleaching context intervals,pausch_et_al_2018,6,5,0.7949138575349572,0.8342882317298631,3.937437419490586,3.937437419490586,ok,Leave-one-study-out pooled survival shift.,TRUE
-Excluding NOAA storm intervals,NOAA_survey,6,5,0.7667418302563735,0.732023604349124,-3.47182259072496,3.47182259072496,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding NOAA storm intervals,USGS_USVI_exp,6,5,0.7667418302563735,0.784987217823703,1.8245387567329407,1.8245387567329407,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding NOAA storm intervals,fundemar_fragments,6,5,0.7667418302563735,0.7488774552029013,-1.786437505347227,1.786437505347227,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding NOAA storm intervals,kuffner_et_al_2020,6,5,0.7667418302563735,0.7588934643883376,-0.7848365868035945,0.7848365868035945,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding NOAA storm intervals,neely_et_al_2022,6,5,0.7667418302563735,0.7691207864436137,0.23789561872401555,0.23789561872401555,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding NOAA storm intervals,pausch_et_al_2018,6,5,0.7667418302563735,0.8023767081155087,3.5634877859135106,3.5634877859135106,ok,Leave-one-study-out pooled survival shift.,TRUE
-Excluding baseline-exclusion events,NOAA_survey,5,4,0.7241619196730866,0.6694060686839903,-5.4755850989096295,5.4755850989096295,ok,Leave-one-study-out pooled survival shift.,TRUE
-Excluding baseline-exclusion events,USGS_USVI_exp,5,4,0.7241619196730866,0.7585467236009688,3.4384803927882124,3.4384803927882124,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding baseline-exclusion events,kuffner_et_al_2020,5,4,0.7241619196730866,0.7008427287941993,-2.331919087888734,2.331919087888734,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding baseline-exclusion events,neely_et_al_2022,5,4,0.7241619196730866,0.7133251455956917,-1.0836774077394917,1.0836774077394917,ok,Leave-one-study-out pooled survival shift.,FALSE
-Excluding baseline-exclusion events,pausch_et_al_2018,5,4,0.7241619196730866,0.7698836492238711,4.572172955078447,4.572172955078447,ok,Leave-one-study-out pooled survival shift.,FALSE
+All data (including Neely bleaching context),NOAA_survey,6,5,0.7653924358556047,0.7317425778886936,-3.364985796691111,3.364985796691111,ok,Leave-one-study-out pooled survival shift.,FALSE
+All data (including Neely bleaching context),USGS_USVI_exp,6,5,0.7653924358556047,0.7834545274847108,1.8062091629106103,1.8062091629106103,ok,Leave-one-study-out pooled survival shift.,FALSE
+All data (including Neely bleaching context),fundemar_fragments,6,5,0.7653924358556047,0.7473821484385544,-1.8010287417050241,1.8010287417050241,ok,Leave-one-study-out pooled survival shift.,FALSE
+All data (including Neely bleaching context),kuffner_et_al_2020,6,5,0.7653924358556047,0.7573246192669456,-0.8067816588659071,0.8067816588659071,ok,Leave-one-study-out pooled survival shift.,FALSE
+All data (including Neely bleaching context),neely_et_al_2022,6,5,0.7653924358556047,0.767742149305687,0.23497134500822803,0.23497134500822803,ok,Leave-one-study-out pooled survival shift.,FALSE
+All data (including Neely bleaching context),pausch_et_al_2018,6,5,0.7653924358556047,0.8009512592562686,3.5558823400663964,3.5558823400663964,ok,Leave-one-study-out pooled survival shift.,TRUE
+Excluding Neely bleaching context intervals,NOAA_survey,6,5,0.7938030601807314,0.773388114892015,-2.0414945288716457,2.0414945288716457,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding Neely bleaching context intervals,USGS_USVI_exp,6,5,0.7938030601807314,0.8149797453277283,2.1176685146996888,2.1176685146996888,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding Neely bleaching context intervals,fundemar_fragments,6,5,0.7938030601807314,0.7804576358572377,-1.3345424323493726,1.3345424323493726,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding Neely bleaching context intervals,kuffner_et_al_2020,6,5,0.7938030601807314,0.7906655303406205,-0.3137529840110953,0.3137529840110953,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding Neely bleaching context intervals,neely_et_al_2022,6,5,0.7938030601807314,0.767742149305687,-2.6060910875044474,2.6060910875044474,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding Neely bleaching context intervals,pausch_et_al_2018,6,5,0.7938030601807314,0.8332039553931383,3.940089521240686,3.940089521240686,ok,Leave-one-study-out pooled survival shift.,TRUE
+Excluding NOAA storm intervals,NOAA_survey,6,5,0.765457552812804,0.7317425778886936,-3.3714974924110463,3.3714974924110463,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding NOAA storm intervals,USGS_USVI_exp,6,5,0.765457552812804,0.7835349661870044,1.8077413374200324,1.8077413374200324,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding NOAA storm intervals,fundemar_fragments,6,5,0.765457552812804,0.7474496467353994,-1.8007906077404656,1.8007906077404656,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding NOAA storm intervals,kuffner_et_al_2020,6,5,0.765457552812804,0.7574026987015845,-0.8054854111219534,0.8054854111219534,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding NOAA storm intervals,neely_et_al_2022,6,5,0.765457552812804,0.767825357163894,0.23678043510899638,0.23678043510899638,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding NOAA storm intervals,pausch_et_al_2018,6,5,0.765457552812804,0.8010094519659343,3.5551899153130284,3.5551899153130284,ok,Leave-one-study-out pooled survival shift.,TRUE
+Excluding baseline-exclusion events,NOAA_survey,5,4,0.7226001260404075,0.6690421272937713,-5.355799874663614,5.355799874663614,ok,Leave-one-study-out pooled survival shift.,TRUE
+Excluding baseline-exclusion events,USGS_USVI_exp,5,4,0.7226001260404075,0.7566735596941238,3.407343365371629,3.407343365371629,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding baseline-exclusion events,kuffner_et_al_2020,5,4,0.7226001260404075,0.6989448197476524,-2.365530629275503,2.365530629275503,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding baseline-exclusion events,neely_et_al_2022,5,4,0.7226001260404075,0.7116014604252735,-1.0998665615133962,1.0998665615133962,ok,Leave-one-study-out pooled survival shift.,FALSE
+Excluding baseline-exclusion events,pausch_et_al_2018,5,4,0.7226001260404075,0.7682765894797602,4.567646343935272,4.567646343935272,ok,Leave-one-study-out pooled survival shift.,FALSE
 Excluding all timeline-linked context,NA,NA,NA,NA,NA,NA,NA,scenario_not_fit,Scenario did not yield a valid meta-analysis.,NA

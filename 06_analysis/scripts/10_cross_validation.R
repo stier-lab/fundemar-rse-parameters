@@ -70,7 +70,9 @@ survival_data <- survival_data %>%
       size_cm2 <= 2000 ~ "SC4",
       TRUE ~ "SC5"
     ),
-    log_size = log(size_cm2)
+    log_size = log(size_cm2),
+    # mgcv random-effect smooths require a factor, not a character vector.
+    study = factor(study)
   )
 
 cat(sprintf("  Survival data: %d observations, %d studies, %d regions\n",
@@ -609,6 +611,7 @@ model_comparison <- map_dfr(candidate_models, function(model_name) {
     tryCatch({
       predictions <- fit_survival_candidate(model_name, train, test)
       metrics <- calc_metrics(test$survived, predictions)
+      metrics$fit_error <- ""
       metrics$model <- model_name
       metrics$fold <- fold_num
       metrics
@@ -616,6 +619,7 @@ model_comparison <- map_dfr(candidate_models, function(model_name) {
       data.frame(
         model = model_name,
         fold = fold_num,
+        fit_error = conditionMessage(e),
         brier_score = NA,
         log_loss = NA,
         auc = NA,
@@ -648,6 +652,10 @@ model_summary <- model_comparison %>%
   ) %>%
   arrange(mean_brier)
 
+write.csv(model_comparison, file.path(output_dir, "cv_model_comparison_folds.csv"), row.names = FALSE)
+if (any(!is.finite(model_summary$mean_brier))) {
+  stop("A candidate has no estimable CV folds; inspect cv_model_comparison_folds.csv")
+}
 cat("\n  Model comparison (by Brier score):\n")
 print(model_summary)
 

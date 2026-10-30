@@ -1,28 +1,28 @@
 parameter,value,notes
-lambda,0.9551366586869802,deterministic dominant eigenvalue
-lambda_ci_lower,0.9157562257989657,percentile bootstrap 2.5%
-lambda_ci_upper,0.9984067446661554,percentile bootstrap 97.5%
-lambda_ci_bc_lower,0.9138169428862948,bias-corrected 2.5%
-lambda_ci_bc_upper,0.9939485528519948,bias-corrected 97.5%
-p_decline,0.9795,Bootstrap fraction with lambda < 1; not a probability of real-world decline
-generation_time_NOTE_unreliable,0.5238250812253469,Cochran-Ellner method; unreliable when fragmentation elasticity near zero
-damping_ratio,1.439457968901729,Mod(eigenvalue1) / Mod(eigenvalue2); rate of convergence to stable distribution
-elasticity_stasis,0.7820736150926241,diagonal elasticity sum
-elasticity_growth,0.128061749973359,below-diagonal elasticity sum
-elasticity_shrink,0.08986463493401692,above-diagonal elasticity sum
-elasticity_frag,0.05280640197068485,total fragmentation elasticity
-parametric_uncertainty_lambda,0.9115857235725984,NOT environmental stochasticity; parametric uncertainty only
-parametric_uncertainty_lambda_ci_lower,0.865631249682292,NOT environmental stochasticity; parametric uncertainty only
-parametric_uncertainty_lambda_ci_upper,0.9575464069763532,NOT environmental stochasticity; parametric uncertainty only
-jensens_inequality_effect,0.0435509351143819,lambda_deterministic minus parametric_uncertainty_lambda
-lambda_boot_se,0.02066994921613631,bootstrap standard error of lambda
-lambda_boot_cv,0.02159712982315026,bootstrap coefficient of variation of lambda
+lambda,0.9534292555726596,deterministic dominant eigenvalue
+lambda_ci_lower,0.91268385925386,percentile bootstrap 2.5%
+lambda_ci_upper,1.000140120781354,percentile bootstrap 97.5%
+lambda_ci_bc_lower,0.9097694619504972,bias-corrected 2.5%
+lambda_ci_bc_upper,0.9971587312265936,bias-corrected 97.5%
+p_decline,0.974,Bootstrap fraction with lambda < 1; not a probability of real-world decline
+generation_time_NOTE_unreliable,0.5496887467850372,Cochran-Ellner method; unreliable when fragmentation elasticity near zero
+damping_ratio,1.4299363239375424,Mod(eigenvalue1) / Mod(eigenvalue2); rate of convergence to stable distribution
+elasticity_stasis,0.7843221537124695,diagonal elasticity sum
+elasticity_growth,0.12665529789192803,below-diagonal elasticity sum
+elasticity_shrink,0.08902254839560261,above-diagonal elasticity sum
+elasticity_frag,0.0521886778455333,total fragmentation elasticity
+parametric_uncertainty_lambda,0.9102458399834448,NOT environmental stochasticity; parametric uncertainty only
+parametric_uncertainty_lambda_ci_lower,0.8705723550871112,NOT environmental stochasticity; parametric uncertainty only
+parametric_uncertainty_lambda_ci_upper,0.9572219471815154,NOT environmental stochasticity; parametric uncertainty only
+jensens_inequality_effect,0.04318341558921457,lambda_deterministic minus parametric_uncertainty_lambda
+lambda_boot_se,0.02173268215250074,bootstrap standard error of lambda
+lambda_boot_cv,0.02275349914947588,bootstrap coefficient of variation of lambda
 n_boot_valid,2000,bootstrap iterations that produced valid lambda
 n_boot_total,2000,total bootstrap iterations attempted
-lambda_no_fragmentation,0.8899431140752899,lambda without fragmentation matrix (G %*% diag(S) only)
-loso_lambda_min,0.8884797685985023,Matched script-13 estimator; script 49 study exclusion
-loso_lambda_max,0.9662620555435331,Matched script-13 estimator; script 49 study exclusion
-loso_lambda_range,0.07778228694503075,Matched script-13 estimator; script 49 study exclusion
-caveat_noaa_pct_data,62.65102433899492,NOAA percentage of filtered natural-colony individual survival records used for matrix support
+lambda_no_fragmentation,0.8891738315880935,lambda without fragmentation matrix (G %*% diag(S) only)
+loso_lambda_min,0.8876428126285428,Matched script-13 estimator; script 49 study exclusion
+loso_lambda_max,0.9657694052282229,Matched script-13 estimator; script 49 study exclusion
+loso_lambda_range,0.07812659259968002,Matched script-13 estimator; script 49 study exclusion
+caveat_noaa_pct_data,62.90436005625879,NOAA percentage of filtered natural-colony individual survival records used for matrix support
 caveat_sc5_single_study,0,SC5 survival supplied by one study (1=TRUE); not a cell-elasticity attribution
 caveat_frag_single_source,1,"All fragmentation from Vardi 2011 (13 rows, 1 study)"

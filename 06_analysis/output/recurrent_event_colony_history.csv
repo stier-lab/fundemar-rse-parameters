@@ -6,8 +6,7 @@ NOAA_survey::BB1-t240,NOAA_survey,Curacao,Natural colony,9,9.142465753424645,0,3
 NOAA_survey::BB1-t241,NOAA_survey,Curacao,Natural colony,9,9.142465753424645,0,1,1,0.7777777777777778,0
 NOAA_survey::BB1-t242,NOAA_survey,Curacao,Natural colony,9,9.142465753424645,0,0,0,0.7777777777777778,0
 NOAA_survey::BB1-t243,NOAA_survey,Curacao,Natural colony,9,9.142465753424645,0,2,1,0.7777777777777778,0
-NOAA_survey::BB1-t244,NOAA_survey,Curacao,Natural colony,3,9.142465753424645,0,0,0,1.6666666666666667,0
-NOAA_survey::BB1-t244,NOAA_survey,Curacao,Restoration fragment,6,6.136986301369856,0,3,1,0.3333333333333333,0
+NOAA_survey::BB1-t244,NOAA_survey,Curacao,Natural colony,3,3.00547945205479,0,0,0,1.6666666666666667,0
 NOAA_survey::BB1-t245,NOAA_survey,Curacao,Natural colony,9,9.142465753424645,0,5,1,0.7777777777777778,0
 NOAA_survey::BB1-t246,NOAA_survey,Curacao,Natural colony,3,3.221917808219175,1,1,1,0,0
 NOAA_survey::BB1-t247,NOAA_survey,Curacao,Natural colony,1,1.09041095890411,1,0,0,0,0
@@ -28,21 +27,17 @@ NOAA_survey::BB2-t257,NOAA_survey,Curacao,Natural colony,3,3.224657534246575,1,2
 NOAA_survey::BB2-t258,NOAA_survey,Curacao,Natural colony,3,3.224657534246575,1,0,0,0,0
 NOAA_survey::BB2-t259,NOAA_survey,Curacao,Natural colony,3,3.224657534246575,1,1,1,0,0
 NOAA_survey::BB2-t260,NOAA_survey,Curacao,Natural colony,8,8.109589041095896,1,7,1,0.625,0
-NOAA_survey::BB2-t261,NOAA_survey,Curacao,Natural colony,7,9.142465753424666,0,5,1,1,0
-NOAA_survey::BB2-t261,NOAA_survey,Curacao,Restoration fragment,2,4.0849315068493155,0,1,1,0,0
+NOAA_survey::BB2-t261,NOAA_survey,Curacao,Natural colony,7,7.032876712328776,0,5,1,1,0
 NOAA_survey::BB2-t262,NOAA_survey,Curacao,Natural colony,3,3.224657534246575,1,1,1,0,0
-NOAA_survey::BB2-t284,NOAA_survey,Curacao,Natural colony,1,2.03287671232877,1,0,0,1,0
-NOAA_survey::BB2-t284,NOAA_survey,Curacao,Restoration fragment,1,1.06301369863014,0,1,1,1,0
+NOAA_survey::BB2-t284,NOAA_survey,Curacao,Natural colony,1,0.96986301369863,1,0,0,1,0
 NOAA_survey::BB2-t285,NOAA_survey,Curacao,Natural colony,4,4.06849315068494,0,2,1,1.5,0
 NOAA_survey::BB2-t286,NOAA_survey,Curacao,Natural colony,4,4.06849315068494,0,0,0,1.5,0
 NOAA_survey::BB2-t287,NOAA_survey,Curacao,Natural colony,4,4.06849315068494,0,2,1,1.5,0
 NOAA_survey::BB2-t288,NOAA_survey,Curacao,Natural colony,4,4.06849315068494,1,1,1,1.5,0
 NOAA_survey::BB2-t388,NOAA_survey,Curacao,Natural colony,1,0.989041095890411,1,0,0,1,0
-NOAA_survey::BB2-t389,NOAA_survey,Curacao,Natural colony,2,4.024657534246581,1,0,0,1.5,0
-NOAA_survey::BB2-t389,NOAA_survey,Curacao,Restoration fragment,2,2.0520547945205507,0,2,1,1,0
+NOAA_survey::BB2-t389,NOAA_survey,Curacao,Natural colony,2,1.97260273972603,1,0,0,1.5,0
 NOAA_survey::BB2-t390,NOAA_survey,Curacao,Natural colony,1,0.989041095890411,1,0,0,1,0
-NOAA_survey::BB2-t391,NOAA_survey,Curacao,Natural colony,3,5.057534246575351,0,3,1,1.6666666666666667,0
-NOAA_survey::BB2-t391,NOAA_survey,Curacao,Restoration fragment,2,2.0520547945205507,0,2,1,1,0
+NOAA_survey::BB2-t391,NOAA_survey,Curacao,Natural colony,3,3.0054794520548,0,3,1,1.6666666666666667,0
 NOAA_survey::BB2-t392,NOAA_survey,Curacao,Natural colony,1,0.989041095890411,1,0,0,1,0
 NOAA_survey::BB2-t393,NOAA_survey,Curacao,Natural colony,5,5.057534246575351,0,0,0,1.4,0
 NOAA_survey::BB2-t394,NOAA_survey,Curacao,Natural colony,1,0.989041095890411,1,1,1,1,0
@@ -51,19 +46,16 @@ NOAA_survey::BB3-t264,NOAA_survey,Curacao,Natural colony,9,9.139726027397272,0,7
 NOAA_survey::BB3-t265,NOAA_survey,Curacao,Natural colony,9,9.139726027397272,0,8,1,0.7777777777777778,0
 NOAA_survey::BB3-t266,NOAA_survey,Curacao,Natural colony,9,9.139726027397272,0,2,1,0.7777777777777778,0
 NOAA_survey::BB3-t267,NOAA_survey,Curacao,Natural colony,9,9.139726027397272,0,5,1,0.7777777777777778,0
-NOAA_survey::BB3-t268,NOAA_survey,Curacao,Natural colony,2,3.22191780821918,1,0,0,0,0
-NOAA_survey::BB3-t268,NOAA_survey,Curacao,Restoration fragment,1,1.09041095890411,0,0,0,0,0
+NOAA_survey::BB3-t268,NOAA_survey,Curacao,Natural colony,2,2.1315068493150697,1,0,0,0,0
 NOAA_survey::BB3-t269,NOAA_survey,Curacao,Natural colony,9,9.139726027397272,0,1,1,0.7777777777777778,0
 NOAA_survey::BB3-t270,NOAA_survey,Curacao,Natural colony,1,1.09041095890411,1,0,0,0,0
 NOAA_survey::BB3-t271,NOAA_survey,Curacao,Natural colony,2,1.98082191780822,1,0,0,0,0
 NOAA_survey::BB3-t272,NOAA_survey,Curacao,Natural colony,2,1.98082191780822,1,0,0,0,0
 NOAA_survey::BB3-t300,NOAA_survey,Curacao,Natural colony,1,1.03287671232877,1,0,0,2,0
 NOAA_survey::BB3-t369,NOAA_survey,Curacao,Natural colony,2,2.0520547945205507,1,1,1,1,0
-NOAA_survey::BB3-t370,NOAA_survey,Curacao,Natural colony,2,5.057534246575351,0,0,0,2,0
-NOAA_survey::BB3-t370,NOAA_survey,Curacao,Restoration fragment,3,3.0219178082191807,0,1,1,1,0
+NOAA_survey::BB3-t370,NOAA_survey,Curacao,Natural colony,2,2.03561643835617,0,0,0,2,0
 NOAA_survey::BB3-t371,NOAA_survey,Curacao,Natural colony,3,3.0219178082191807,1,2,1,1,0
-NOAA_survey::BB3-t377,NOAA_survey,Curacao,Natural colony,3,5.057534246575351,0,1,1,1.6666666666666667,0
-NOAA_survey::BB3-t377,NOAA_survey,Curacao,Restoration fragment,2,2.0520547945205507,0,0,0,1,0
+NOAA_survey::BB3-t377,NOAA_survey,Curacao,Natural colony,3,3.0054794520548,0,1,1,1.6666666666666667,0
 NOAA_survey::BB3-t378,NOAA_survey,Curacao,Natural colony,5,5.057534246575351,0,2,1,1.4,0
 NOAA_survey::BB3-t379,NOAA_survey,Curacao,Natural colony,5,5.057534246575351,0,4,1,1.4,0
 NOAA_survey::CF1-t023,NOAA_survey,Florida Keys,Natural colony,2,1.8547945205479401,0,2,1,3.5,1
@@ -116,10 +108,8 @@ NOAA_survey::CF3-t093,NOAA_survey,Florida Keys,Natural colony,3,3.06849315068493
 NOAA_survey::CF3-t094,NOAA_survey,Florida Keys,Natural colony,1,1.13150684931507,0,1,1,4,1
 NOAA_survey::CF3-t095,NOAA_survey,Florida Keys,Natural colony,16,18.934246575342456,0,6,1,2.6875,0.4375
 NOAA_survey::CF3-t096,NOAA_survey,Florida Keys,Natural colony,1,1.13150684931507,1,0,0,4,1
-NOAA_survey::CF3-t098,NOAA_survey,Florida Keys,Restoration fragment,1,1.13150684931507,0,1,1,4,1
 NOAA_survey::CF3-t099,NOAA_survey,Florida Keys,Natural colony,1,1.09315068493151,1,0,0,4,1
-NOAA_survey::CF3-t390,NOAA_survey,Florida Keys,Natural colony,1,1.9945205479452022,1,0,0,3,0
-NOAA_survey::CF3-t390,NOAA_survey,Florida Keys,Restoration fragment,1,1.07671232876712,0,0,0,3,0
+NOAA_survey::CF3-t390,NOAA_survey,Florida Keys,Natural colony,1,0.917808219178082,1,0,0,3,0
 NOAA_survey::CF3-t391,NOAA_survey,Florida Keys,Natural colony,2,1.9945205479452022,1,0,0,3,0
 NOAA_survey::CF3-t408,NOAA_survey,Florida Keys,Natural colony,1,0.917808219178082,1,0,0,3,0
 NOAA_survey::CF3-t409,NOAA_survey,Florida Keys,Natural colony,1,0.917808219178082,0,1,1,3,0
@@ -134,7 +124,6 @@ NOAA_survey::CF3-t917,NOAA_survey,Florida Keys,Natural colony,2,2.15342465753425
 NOAA_survey::CF3-t918,NOAA_survey,Florida Keys,Natural colony,3,3.12328767123288,1,1,1,2.3333333333333335,0.3333333333333333
 NOAA_survey::CF3-t919,NOAA_survey,Florida Keys,Natural colony,3,3.12328767123288,0,1,1,2.3333333333333335,0.3333333333333333
 NOAA_survey::CF3-t973,NOAA_survey,Florida Keys,Natural colony,4,4.032876712328768,0,1,1,2.5,0
-NOAA_survey::CF3-t974,NOAA_survey,Florida Keys,Restoration fragment,2,1.9616438356164378,0,0,0,2,0
 NOAA_survey::CF4-t801,NOAA_survey,Florida Keys,Natural colony,3,3.1835616438356196,0,2,1,2.3333333333333335,0
 NOAA_survey::CF4-t802,NOAA_survey,Florida Keys,Natural colony,4,3.8191780821917836,1,3,1,2.5,0
 NOAA_survey::CF4-t803,NOAA_survey,Florida Keys,Natural colony,3,3.1835616438356196,0,3,1,2.3333333333333335,0
@@ -153,7 +142,6 @@ NOAA_survey::CF4-t908,NOAA_survey,Florida Keys,Natural colony,3,2.71506849315068
 NOAA_survey::EL1-t050,NOAA_survey,Florida Keys,Natural colony,3,3.19452054794521,1,0,0,3,0.6666666666666666
 NOAA_survey::EL1-t051,NOAA_survey,Florida Keys,Natural colony,13,12.813698630136987,0,8,1,2.923076923076923,0.46153846153846156
 NOAA_survey::EL1-t052,NOAA_survey,Florida Keys,Natural colony,16,18.309589041095897,0,7,1,2.8125,0.4375
-NOAA_survey::EL1-t053,NOAA_survey,Florida Keys,Restoration fragment,1,1.08767123287671,0,1,1,4,1
 NOAA_survey::EL1-t054,NOAA_survey,Florida Keys,Natural colony,16,18.309589041095897,0,6,1,2.8125,0.4375
 NOAA_survey::EL1-t055,NOAA_survey,Florida Keys,Natural colony,16,18.309589041095897,0,7,1,2.8125,0.4375
 NOAA_survey::EL1-t056,NOAA_survey,Florida Keys,Natural colony,16,18.309589041095897,0,5,1,2.8125,0.4375
@@ -171,8 +159,7 @@ NOAA_survey::EL1-t454,NOAA_survey,Florida Keys,Natural colony,2,2.02191780821918
 NOAA_survey::EL1-t977,NOAA_survey,Florida Keys,Natural colony,11,13.306849315068506,0,5,1,2.727272727272727,0.36363636363636365
 NOAA_survey::EL1-t978,NOAA_survey,Florida Keys,Natural colony,7,7.041095890410963,0,2,1,3,0.2857142857142857
 NOAA_survey::EL1-t979,NOAA_survey,Florida Keys,Natural colony,11,13.306849315068506,0,3,1,2.727272727272727,0.36363636363636365
-NOAA_survey::EL1-t986,NOAA_survey,Florida Keys,Natural colony,2,5.030136986301374,1,1,1,2.5,0.5
-NOAA_survey::EL1-t986,NOAA_survey,Florida Keys,Restoration fragment,1,0.931506849315068,0,0,0,2,0
+NOAA_survey::EL1-t986,NOAA_survey,Florida Keys,Natural colony,2,4.098630136986306,1,1,1,2.5,0.5
 NOAA_survey::EL1-t987,NOAA_survey,Florida Keys,Natural colony,4,5.871232876712332,0,1,1,2.25,0.5
 NOAA_survey::EL1-t988,NOAA_survey,Florida Keys,Natural colony,3,5.030136986301374,1,0,0,2.3333333333333335,0.3333333333333333
 NOAA_survey::EL2-t063,NOAA_survey,Florida Keys,Natural colony,1,1.08767123287671,0,0,0,4,1
@@ -190,8 +177,7 @@ NOAA_survey::EL2-t074,NOAA_survey,Florida Keys,Natural colony,1,0.53424657534246
 NOAA_survey::EL2-t149,NOAA_survey,Florida Keys,Natural colony,1,1.06301369863014,1,0,0,4,1
 NOAA_survey::EL2-t208,NOAA_survey,Florida Keys,Natural colony,1,0.654794520547945,1,0,0,2,0
 NOAA_survey::EL2-t211,NOAA_survey,Florida Keys,Natural colony,1,1.01095890410959,0,0,0,2,0
-NOAA_survey::EL2-t212,NOAA_survey,Florida Keys,Natural colony,1,1.676712328767124,1,0,0,2,0
-NOAA_survey::EL2-t212,NOAA_survey,Florida Keys,Restoration fragment,1,1.01095890410959,0,0,0,2,0
+NOAA_survey::EL2-t212,NOAA_survey,Florida Keys,Natural colony,1,0.665753424657534,1,0,0,2,0
 NOAA_survey::EL2-t213,NOAA_survey,Florida Keys,Natural colony,1,0.654794520547945,1,0,0,2,0
 NOAA_survey::EL2-t214,NOAA_survey,Florida Keys,Natural colony,3,5.068493150684937,1,1,1,2.3333333333333335,0.3333333333333333
 NOAA_survey::EL2-t244,NOAA_survey,Florida Keys,Natural colony,1,1.01643835616438,0,0,0,2,0
@@ -203,11 +189,9 @@ NOAA_survey::EL2-t439,NOAA_survey,Florida Keys,Natural colony,3,3.04931506849315
 NOAA_survey::EL2-t440,NOAA_survey,Florida Keys,Natural colony,3,3.049315068493153,0,2,1,3.6666666666666665,0.6666666666666666
 NOAA_survey::EL2-t452,NOAA_survey,Florida Keys,Natural colony,1,1.07397260273973,1,0,0,3,0
 NOAA_survey::EL2-t453,NOAA_survey,Florida Keys,Natural colony,2,2.021917808219182,1,1,1,3,0
-NOAA_survey::EL2-t485,NOAA_survey,Florida Keys,Natural colony,1,1.676712328767124,1,0,0,2,0
-NOAA_survey::EL2-t485,NOAA_survey,Florida Keys,Restoration fragment,1,1.01095890410959,0,1,1,2,0
+NOAA_survey::EL2-t485,NOAA_survey,Florida Keys,Natural colony,1,0.665753424657534,1,0,0,2,0
 NOAA_survey::EL2-t486,NOAA_survey,Florida Keys,Natural colony,5,6.726027397260278,0,1,1,2,0.4
-NOAA_survey::EL2-t487,NOAA_survey,Florida Keys,Natural colony,1,1.676712328767124,1,0,0,2,0
-NOAA_survey::EL2-t487,NOAA_survey,Florida Keys,Restoration fragment,1,1.01095890410959,0,1,1,2,0
+NOAA_survey::EL2-t487,NOAA_survey,Florida Keys,Natural colony,1,0.665753424657534,1,0,0,2,0
 NOAA_survey::EL2-t488,NOAA_survey,Florida Keys,Natural colony,3,5.068493150684937,1,2,1,2.3333333333333335,0.3333333333333333
 NOAA_survey::EL2-t767,NOAA_survey,Florida Keys,Natural colony,2,4.057534246575346,1,1,1,2.5,0.5
 NOAA_survey::EL2-t768,NOAA_survey,Florida Keys,Natural colony,4,5.715068493150689,0,0,0,2,0.5
@@ -252,7 +236,6 @@ NOAA_survey::EL4-t159,NOAA_survey,Florida Keys,Natural colony,4,4.03287671232877
 NOAA_survey::EL4-t160,NOAA_survey,Florida Keys,Natural colony,8,8.013698630136986,0,1,1,2.625,0.5
 NOAA_survey::EL4-t161,NOAA_survey,Florida Keys,Natural colony,1,1.05205479452055,0,1,1,4,1
 NOAA_survey::EL4-t162,NOAA_survey,Florida Keys,Natural colony,3,3.106849315068499,0,2,1,3,0.6666666666666666
-NOAA_survey::EL4-t163,NOAA_survey,Florida Keys,Restoration fragment,1,1.05205479452055,0,1,1,4,1
 NOAA_survey::EL4-t164,NOAA_survey,Florida Keys,Natural colony,5,5.060273972602743,0,4,1,2.8,0.6
 NOAA_survey::EL4-t165,NOAA_survey,Florida Keys,Natural colony,10,9.73698630136986,1,5,1,2.7,0.4
 NOAA_survey::EL4-t166,NOAA_survey,Florida Keys,Natural colony,1,1.05205479452055,0,0,0,4,1
@@ -263,16 +246,14 @@ NOAA_survey::EL4-t207,NOAA_survey,Florida Keys,Natural colony,1,0.65479452054794
 NOAA_survey::EL4-t210,NOAA_survey,Florida Keys,Natural colony,3,5.06849315068493,1,2,1,2.3333333333333335,0.3333333333333333
 NOAA_survey::EL4-t416,NOAA_survey,Florida Keys,Natural colony,2,2.01369863013699,0,1,1,3,0
 NOAA_survey::EL4-t417,NOAA_survey,Florida Keys,Natural colony,3,3.01369863013699,1,1,1,2.6666666666666665,0
-NOAA_survey::EL4-t418,NOAA_survey,Florida Keys,Natural colony,2,4.0602739726027455,1,1,1,3.5,0.5
-NOAA_survey::EL4-t418,NOAA_survey,Florida Keys,Restoration fragment,2,2.01369863013699,0,2,1,3,0
+NOAA_survey::EL4-t418,NOAA_survey,Florida Keys,Natural colony,2,2.046575342465756,1,1,1,3.5,0.5
 NOAA_survey::EL4-t419,NOAA_survey,Florida Keys,Natural colony,1,0.695890410958904,1,0,0,3,0
 NOAA_survey::EL4-t420,NOAA_survey,Florida Keys,Natural colony,2,2.01369863013699,0,1,1,3,0
 NOAA_survey::EL4-t489,NOAA_survey,Florida Keys,Natural colony,2,1.673972602739722,1,1,1,2,0
 NOAA_survey::EL4-t772,NOAA_survey,Florida Keys,Natural colony,2,4.03287671232877,0,0,0,2.5,0.5
 NOAA_survey::EL4-t922,NOAA_survey,Florida Keys,Natural colony,8,8.043835616438352,1,3,1,2.375,0.25
 NOAA_survey::EL4-t935,NOAA_survey,Florida Keys,Natural colony,7,7.084931506849308,0,5,1,3,0.2857142857142857
-NOAA_survey::EL4-t936,NOAA_survey,Florida Keys,Natural colony,2,3.016438356164379,0,2,1,2.5,0
-NOAA_survey::EL4-t936,NOAA_survey,Florida Keys,Restoration fragment,1,1.02739726027397,0,1,1,2,0
+NOAA_survey::EL4-t936,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904088,0,2,1,2.5,0
 NOAA_survey::EL4-t937,NOAA_survey,Florida Keys,Natural colony,3,2.726027397260271,1,1,1,2,0
 NOAA_survey::EL5-t170,NOAA_survey,Florida Keys,Natural colony,2,2.013698630136989,0,1,1,3.5,1
 NOAA_survey::EL5-t171,NOAA_survey,Florida Keys,Natural colony,1,1.05205479452055,0,0,0,4,1
@@ -287,13 +268,9 @@ NOAA_survey::EL5-t181,NOAA_survey,Florida Keys,Natural colony,1,1.05205479452055
 NOAA_survey::EL5-t182,NOAA_survey,Florida Keys,Natural colony,1,1.05205479452055,0,0,0,4,1
 NOAA_survey::EL5-t183,NOAA_survey,Florida Keys,Natural colony,12,11.830136986301365,1,2,1,2.75,0.3333333333333333
 NOAA_survey::EL5-t189,NOAA_survey,Florida Keys,Natural colony,1,0.747945205479452,1,0,0,4,1
-NOAA_survey::EL5-t460,NOAA_survey,Florida Keys,Natural colony,3,5.0602739726027455,1,1,1,3.3333333333333335,0.3333333333333333
-NOAA_survey::EL5-t460,NOAA_survey,Florida Keys,Restoration fragment,2,3.01369863013699,0,2,1,2.5,0
-NOAA_survey::EL5-t462,NOAA_survey,Florida Keys,Restoration fragment,1,1,0,1,1,2,0
-NOAA_survey::EL5-t939,NOAA_survey,Florida Keys,Natural colony,1,1.731506849315066,1,0,0,2,0
-NOAA_survey::EL5-t939,NOAA_survey,Florida Keys,Restoration fragment,1,1.02739726027397,0,1,1,2,0
-NOAA_survey::EL5-t940,NOAA_survey,Florida Keys,Natural colony,1,1.978082191780819,0,0,0,2,0
-NOAA_survey::EL5-t940,NOAA_survey,Florida Keys,Restoration fragment,1,1.02739726027397,0,0,0,2,0
+NOAA_survey::EL5-t460,NOAA_survey,Florida Keys,Natural colony,3,3.046575342465756,1,1,1,3.3333333333333335,0.3333333333333333
+NOAA_survey::EL5-t939,NOAA_survey,Florida Keys,Natural colony,1,0.704109589041096,1,0,0,2,0
+NOAA_survey::EL5-t940,NOAA_survey,Florida Keys,Natural colony,1,0.950684931506849,0,0,0,2,0
 NOAA_survey::FR1-t001,NOAA_survey,Florida Keys,Natural colony,5,5.180821917808224,0,3,1,2.8,0.6
 NOAA_survey::FR1-t002,NOAA_survey,Florida Keys,Natural colony,16,18.871232876712337,0,7,1,2.6875,0.4375
 NOAA_survey::FR1-t003,NOAA_survey,Florida Keys,Natural colony,13,12.835616438356176,0,5,1,2.8461538461538463,0.46153846153846156
@@ -329,8 +306,7 @@ NOAA_survey::FR2-t236,NOAA_survey,Florida Keys,Natural colony,9,11.4986301369862
 NOAA_survey::FR2-t250,NOAA_survey,Florida Keys,Natural colony,10,10.087671232876701,1,3,1,2.9,0.3
 NOAA_survey::FR2-t251,NOAA_survey,Florida Keys,Natural colony,11,11.142465753424652,1,3,1,2.8181818181818183,0.2727272727272727
 NOAA_survey::FR2-t252,NOAA_survey,Florida Keys,Natural colony,3,3.0739726027397203,0,1,1,3,0.6666666666666666
-NOAA_survey::FR2-t254,NOAA_survey,Florida Keys,Natural colony,1,2.0082191780821903,1,0,0,3,1
-NOAA_survey::FR2-t254,NOAA_survey,Florida Keys,Restoration fragment,1,1.0027397260274,0,0,0,2,0
+NOAA_survey::FR2-t254,NOAA_survey,Florida Keys,Natural colony,1,1.00547945205479,1,0,0,3,1
 NOAA_survey::FR2-t255,NOAA_survey,Florida Keys,Natural colony,14,16.12876712328766,1,6,1,2.7142857142857144,0.35714285714285715
 NOAA_survey::FR2-t256,NOAA_survey,Florida Keys,Natural colony,11,10.704109589041085,1,3,1,2.8181818181818183,0.2727272727272727
 NOAA_survey::FR2-t257,NOAA_survey,Florida Keys,Natural colony,7,7.035616438356158,1,3,1,2.7142857142857144,0.2857142857142857
@@ -401,10 +377,8 @@ NOAA_survey::GR1-t835,NOAA_survey,Florida Keys,Natural colony,5,4.52876712328767
 NOAA_survey::GR1-t836,NOAA_survey,Florida Keys,Natural colony,5,4.528767123287674,1,2,1,2.6,0
 NOAA_survey::GR1-t837,NOAA_survey,Florida Keys,Natural colony,2,2.07123287671233,0,0,0,2,0
 NOAA_survey::GR1-t838,NOAA_survey,Florida Keys,Natural colony,2,2.07123287671233,1,0,0,2,0
-NOAA_survey::GR1-t889,NOAA_survey,Florida Keys,Natural colony,1,2.049315068493152,1,1,1,3,0
-NOAA_survey::GR1-t889,NOAA_survey,Florida Keys,Restoration fragment,1,1.1013698630137,0,0,0,3,0
+NOAA_survey::GR1-t889,NOAA_survey,Florida Keys,Natural colony,1,0.947945205479452,1,1,1,3,0
 NOAA_survey::GR1-t890,NOAA_survey,Florida Keys,Natural colony,2,2.049315068493152,0,0,0,3,0
-NOAA_survey::GR1-t891,NOAA_survey,Florida Keys,Restoration fragment,2,2.049315068493152,0,1,1,3,0
 NOAA_survey::GR2-t415,NOAA_survey,Florida Keys,Natural colony,1,0.928767123287671,0,1,1,3,0
 NOAA_survey::GR2-t429,NOAA_survey,Florida Keys,Natural colony,1,1.03013698630137,0,1,1,3,0
 NOAA_survey::GR2-t430,NOAA_survey,Florida Keys,Natural colony,1,1.03013698630137,0,1,1,3,0
@@ -424,8 +398,7 @@ NOAA_survey::GR2-t849,NOAA_survey,Florida Keys,Natural colony,1,1.1013698630137,
 NOAA_survey::GR2-t850,NOAA_survey,Florida Keys,Natural colony,5,5.106849315068498,1,2,1,2.6,0
 NOAA_survey::GR2-t884,NOAA_survey,Florida Keys,Natural colony,2,2.052054794520551,1,2,1,3,0
 NOAA_survey::GR2-t885,NOAA_survey,Florida Keys,Natural colony,3,3.019178082191784,0,2,1,3,0
-NOAA_survey::GR2-t886,NOAA_survey,Florida Keys,Natural colony,2,3.019178082191784,1,1,1,3,0
-NOAA_survey::GR2-t886,NOAA_survey,Florida Keys,Restoration fragment,1,1.12328767123288,0,0,0,3,0
+NOAA_survey::GR2-t886,NOAA_survey,Florida Keys,Natural colony,2,1.8958904109589039,1,1,1,3,0
 NOAA_survey::GR3-t196,NOAA_survey,Florida Keys,Natural colony,1,1.09315068493151,1,0,0,4,1
 NOAA_survey::GR3-t197,NOAA_survey,Florida Keys,Natural colony,1,1.09315068493151,1,0,0,4,1
 NOAA_survey::GR3-t198,NOAA_survey,Florida Keys,Natural colony,1,1.09315068493151,1,0,0,4,1
@@ -442,7 +415,6 @@ NOAA_survey::GR3-t875,NOAA_survey,Florida Keys,Natural colony,3,3.01917808219178
 NOAA_survey::GR3-t876,NOAA_survey,Florida Keys,Natural colony,6,6.068493150684934,1,4,1,3,0.16666666666666666
 NOAA_survey::GR3-t877,NOAA_survey,Florida Keys,Natural colony,6,6.068493150684934,1,4,1,3,0.16666666666666666
 NOAA_survey::GR3-t878,NOAA_survey,Florida Keys,Natural colony,1,0.991780821917808,1,0,0,2,0
-NOAA_survey::GR3-t879,NOAA_survey,Florida Keys,Restoration fragment,1,0.991780821917808,0,0,0,2,0
 NOAA_survey::GR3-t880,NOAA_survey,Florida Keys,Natural colony,1,0.991780821917808,1,0,0,2,0
 NOAA_survey::GR3-t881,NOAA_survey,Florida Keys,Natural colony,10,11.835616438356174,0,7,1,2.7,0.3
 NOAA_survey::GR3-t901,NOAA_survey,Florida Keys,Natural colony,2,2.005479452054799,1,1,1,2,0
@@ -464,8 +436,7 @@ NOAA_survey::KL1-t113,NOAA_survey,Florida Keys,Natural colony,1,1.07123287671233
 NOAA_survey::KL1-t239,NOAA_survey,Florida Keys,Natural colony,3,3.043835616438356,1,1,1,2.6666666666666665,0
 NOAA_survey::KL1-t240,NOAA_survey,Florida Keys,Natural colony,1,0.994520547945206,1,0,0,2,0
 NOAA_survey::KL1-t241,NOAA_survey,Florida Keys,Natural colony,1,0.994520547945206,1,0,0,2,0
-NOAA_survey::KL1-t373,NOAA_survey,Florida Keys,Natural colony,1,2.04931506849315,1,1,1,3,0
-NOAA_survey::KL1-t373,NOAA_survey,Florida Keys,Restoration fragment,1,1.01917808219178,0,0,0,3,0
+NOAA_survey::KL1-t373,NOAA_survey,Florida Keys,Natural colony,1,1.03013698630137,1,1,1,3,0
 NOAA_survey::KL1-t374,NOAA_survey,Florida Keys,Natural colony,3,3.0301369863013687,0,1,1,3,0
 NOAA_survey::KL1-t375,NOAA_survey,Florida Keys,Natural colony,2,2.04931506849315,1,1,1,3,0
 NOAA_survey::KL1-t388,NOAA_survey,Florida Keys,Natural colony,3,3.0301369863013687,1,1,1,3,0
@@ -515,15 +486,12 @@ NOAA_survey::KL4-t245,NOAA_survey,Florida Keys,Natural colony,1,0.66575342465753
 NOAA_survey::KL4-t851,NOAA_survey,Florida Keys,Natural colony,5,4.517808219178085,1,0,0,2.4,0
 NOAA_survey::KL4-t852,NOAA_survey,Florida Keys,Natural colony,5,4.517808219178085,1,0,0,2.4,0
 NOAA_survey::KL4-t853,NOAA_survey,Florida Keys,Natural colony,7,6.824657534246578,0,3,1,2.7142857142857144,0.14285714285714285
-NOAA_survey::KL4-t854,NOAA_survey,Florida Keys,Natural colony,3,4.11232876712329,1,2,1,2.3333333333333335,0
-NOAA_survey::KL4-t854,NOAA_survey,Florida Keys,Restoration fragment,1,3.08219178082192,0,1,1,2,0
+NOAA_survey::KL4-t854,NOAA_survey,Florida Keys,Natural colony,3,3.11232876712329,1,2,1,2.3333333333333335,0
 NOAA_survey::KL4-t855,NOAA_survey,Florida Keys,Natural colony,4,4.11232876712329,1,1,1,2.25,0
 NOAA_survey::KL4-t856,NOAA_survey,Florida Keys,Natural colony,5,4.517808219178085,1,2,1,2.4,0
-NOAA_survey::KL4-t857,NOAA_survey,Florida Keys,Natural colony,1,2.08219178082192,1,0,0,2,0
-NOAA_survey::KL4-t857,NOAA_survey,Florida Keys,Restoration fragment,1,1.06849315068493,0,0,0,2,0
+NOAA_survey::KL4-t857,NOAA_survey,Florida Keys,Natural colony,1,1.01369863013699,1,0,0,2,0
 NOAA_survey::KL4-t858,NOAA_survey,Florida Keys,Natural colony,5,4.517808219178085,1,1,1,2.4,0
-NOAA_survey::KL4-t893,NOAA_survey,Florida Keys,Natural colony,4,5.1397260273972645,1,2,1,3.25,0.25
-NOAA_survey::KL4-t893,NOAA_survey,Florida Keys,Restoration fragment,1,1,0,0,0,2,0
+NOAA_survey::KL4-t893,NOAA_survey,Florida Keys,Natural colony,4,4.1397260273972645,1,2,1,3.25,0.25
 NOAA_survey::KL4-t894,NOAA_survey,Florida Keys,Natural colony,2,2.03013698630137,1,1,1,2.5,0
 NOAA_survey::LB1-t201,NOAA_survey,Navassa,Natural colony,2,5.37808219178082,0,0,0,1.5,0
 NOAA_survey::LB1-t202,NOAA_survey,Navassa,Natural colony,2,5.37808219178082,0,0,0,1.5,0
@@ -565,9 +533,7 @@ NOAA_survey::ML1-t235,NOAA_survey,Florida Keys,Natural colony,1,0.65205479452054
 NOAA_survey::ML1-t404,NOAA_survey,Florida Keys,Natural colony,2,2.008219178082192,0,1,1,3,0
 NOAA_survey::ML1-t405,NOAA_survey,Florida Keys,Natural colony,1,1.03013698630137,1,1,1,3,0
 NOAA_survey::ML1-t464,NOAA_survey,Florida Keys,Natural colony,2,2.016438356164386,1,0,0,3.5,0.5
-NOAA_survey::ML1-t882,NOAA_survey,Florida Keys,Natural colony,3,4.0109589041095886,0,3,1,3,0
-NOAA_survey::ML1-t882,NOAA_survey,Florida Keys,Restoration fragment,1,1.01917808219178,0,0,0,3,0
-NOAA_survey::ML1-t883,NOAA_survey,Florida Keys,Restoration fragment,1,1.01917808219178,0,1,1,3,0
+NOAA_survey::ML1-t882,NOAA_survey,Florida Keys,Natural colony,3,2.991780821917809,0,3,1,3,0
 NOAA_survey::ML1-t920,NOAA_survey,Florida Keys,Natural colony,6,5.805479452054795,1,4,1,2.5,0.5
 NOAA_survey::ML1-t921,NOAA_survey,Florida Keys,Natural colony,2,2.106849315068497,0,2,1,2.5,0.5
 NOAA_survey::ML1-t981,NOAA_survey,Florida Keys,Natural colony,2,1.873972602739727,1,0,0,2,0
@@ -584,7 +550,6 @@ NOAA_survey::ML2-t136,NOAA_survey,Florida Keys,Natural colony,1,1.0958904109589,
 NOAA_survey::ML2-t137,NOAA_survey,Florida Keys,Natural colony,11,10.909589041095886,1,7,1,2.6363636363636362,0.36363636363636365
 NOAA_survey::ML2-t138,NOAA_survey,Florida Keys,Natural colony,2,1.821917808219174,1,1,1,3.5,1
 NOAA_survey::ML2-t139,NOAA_survey,Florida Keys,Natural colony,2,2.1506849315068504,0,2,1,3.5,1
-NOAA_survey::ML2-t140,NOAA_survey,Florida Keys,Restoration fragment,1,1.0958904109589,0,1,1,4,1
 NOAA_survey::ML2-t141,NOAA_survey,Florida Keys,Natural colony,5,5.164383561643834,0,5,1,2.8,0.6
 NOAA_survey::ML2-t142,NOAA_survey,Florida Keys,Natural colony,3,3.2054794520547905,1,2,1,3,0.6666666666666666
 NOAA_survey::ML2-t143,NOAA_survey,Florida Keys,Natural colony,1,1.0958904109589,1,0,0,4,1
@@ -674,8 +639,7 @@ NOAA_survey::SI1-t253,NOAA_survey,Florida Keys,Natural colony,3,5.12876712328767
 NOAA_survey::SI1-t301,NOAA_survey,Florida Keys,Natural colony,2,1.6630136986301371,1,0,0,2.5,0.5
 NOAA_survey::SI1-t302,NOAA_survey,Florida Keys,Natural colony,6,5.9972602739725955,0,1,1,2.6666666666666665,0.16666666666666666
 NOAA_survey::SI1-t303,NOAA_survey,Florida Keys,Natural colony,4,4.057534246575335,0,1,1,2.75,0
-NOAA_survey::SI1-t304,NOAA_survey,Florida Keys,Natural colony,1,1.6630136986301371,1,0,0,2,0
-NOAA_survey::SI1-t304,NOAA_survey,Florida Keys,Restoration fragment,1,0.953424657534247,0,1,1,3,1
+NOAA_survey::SI1-t304,NOAA_survey,Florida Keys,Natural colony,1,0.70958904109589,1,0,0,2,0
 NOAA_survey::SI1-t305,NOAA_survey,Florida Keys,Natural colony,6,5.9972602739725955,0,2,1,2.6666666666666665,0.16666666666666666
 NOAA_survey::SI1-t307,NOAA_survey,Florida Keys,Natural colony,9,11.498630136986296,1,7,1,2.888888888888889,0.3333333333333333
 NOAA_survey::SI1-t308,NOAA_survey,Florida Keys,Natural colony,12,14.235616438356159,1,8,1,2.75,0.4166666666666667
@@ -692,8 +656,7 @@ NOAA_survey::SI1-t403,NOAA_survey,Florida Keys,Natural colony,4,4.03013698630136
 NOAA_survey::SI1-t436,NOAA_survey,Florida Keys,Natural colony,3,3.0520547945205534,1,0,0,3.6666666666666665,0.6666666666666666
 NOAA_survey::SI1-t476,NOAA_survey,Florida Keys,Natural colony,3,2.6465753424657548,1,1,1,3,0.3333333333333333
 NOAA_survey::SI1-t477,NOAA_survey,Florida Keys,Natural colony,6,7.901369863013699,0,4,1,2.6666666666666665,0.5
-NOAA_survey::SI1-t480,NOAA_survey,Florida Keys,Natural colony,1,2.027397260273971,1,0,0,2,0
-NOAA_survey::SI1-t480,NOAA_survey,Florida Keys,Restoration fragment,1,0.989041095890411,0,1,1,2,0
+NOAA_survey::SI1-t480,NOAA_survey,Florida Keys,Natural colony,1,1.03835616438356,1,0,0,2,0
 NOAA_survey::SI1-t755,NOAA_survey,Florida Keys,Natural colony,1,0.693150684931507,1,0,0,2,0
 NOAA_survey::SI1-t756,NOAA_survey,Florida Keys,Natural colony,3,4.936986301369863,0,3,1,2.3333333333333335,0.6666666666666666
 NOAA_survey::SI1-t757,NOAA_survey,Florida Keys,Natural colony,3,4.936986301369863,0,2,1,2.3333333333333335,0.6666666666666666
@@ -740,10 +703,8 @@ NOAA_survey::SI3-t344,NOAA_survey,Florida Keys,Natural colony,1,0.68219178082191
 NOAA_survey::SI3-t345,NOAA_survey,Florida Keys,Natural colony,6,6.063013698630123,0,3,1,2.8333333333333335,0.16666666666666666
 NOAA_survey::SI3-t346,NOAA_survey,Florida Keys,Natural colony,6,6.063013698630123,1,1,1,2.8333333333333335,0.16666666666666666
 NOAA_survey::SI3-t347,NOAA_survey,Florida Keys,Natural colony,1,1.03835616438356,0,0,0,4,1
-NOAA_survey::SI3-t760,NOAA_survey,Florida Keys,Natural colony,1,4.13972602739726,1,0,0,3,1
-NOAA_survey::SI3-t760,NOAA_survey,Florida Keys,Restoration fragment,1,1.03835616438356,0,0,0,2,0
-NOAA_survey::SI3-t761,NOAA_survey,Florida Keys,Natural colony,2,4.936986301369863,0,0,0,2.5,1
-NOAA_survey::SI3-t761,NOAA_survey,Florida Keys,Restoration fragment,1,1.03835616438356,0,1,1,2,0
+NOAA_survey::SI3-t760,NOAA_survey,Florida Keys,Natural colony,1,3.1013698630137,1,0,0,3,1
+NOAA_survey::SI3-t761,NOAA_survey,Florida Keys,Natural colony,2,3.898630136986303,0,0,0,2.5,1
 NOAA_survey::SI3-t762,NOAA_survey,Florida Keys,Natural colony,3,4.936986301369863,0,2,1,2.3333333333333335,0.6666666666666666
 NOAA_survey::SI3-t763,NOAA_survey,Florida Keys,Natural colony,3,4.936986301369863,1,1,1,2.3333333333333335,0.6666666666666666
 NOAA_survey::SI3-t764,NOAA_survey,Florida Keys,Natural colony,3,4.936986301369863,0,1,1,2.3333333333333335,0.6666666666666666
@@ -751,8 +712,7 @@ NOAA_survey::SI3-t765,NOAA_survey,Florida Keys,Natural colony,3,4.93698630136986
 NOAA_survey::SI3-t766,NOAA_survey,Florida Keys,Natural colony,3,4.936986301369863,0,2,1,2.3333333333333335,0.6666666666666666
 NOAA_survey::SI3-t964,NOAA_survey,Florida Keys,Natural colony,7,7.098630136986308,0,3,1,3,0.2857142857142857
 NOAA_survey::SI3-t965,NOAA_survey,Florida Keys,Natural colony,1,0.986301369863014,0,1,1,2,0
-NOAA_survey::SM1-t199,NOAA_survey,Curacao,Natural colony,1,1.980821917808217,1,0,0,0,0
-NOAA_survey::SM1-t199,NOAA_survey,Curacao,Restoration fragment,1,1.08767123287671,0,0,0,0,0
+NOAA_survey::SM1-t199,NOAA_survey,Curacao,Natural colony,1,0.893150684931507,1,0,0,0,0
 NOAA_survey::SM1-t289,NOAA_survey,Curacao,Natural colony,1,1.05479452054795,0,0,0,1,0
 NOAA_survey::SM1-t290,NOAA_survey,Curacao,Natural colony,1,1.05479452054795,0,0,0,1,0
 NOAA_survey::SM1-t291,NOAA_survey,Curacao,Natural colony,1,1.05479452054795,0,0,0,1,0
@@ -760,8 +720,7 @@ NOAA_survey::SM1-t292,NOAA_survey,Curacao,Natural colony,1,1.05479452054795,0,0,
 NOAA_survey::SM1-t293,NOAA_survey,Curacao,Natural colony,1,1.05479452054795,0,0,0,1,0
 NOAA_survey::SM1-t294,NOAA_survey,Curacao,Natural colony,1,1.05479452054795,0,0,0,1,0
 NOAA_survey::SM1-t340,NOAA_survey,Curacao,Natural colony,3,3.2191780821917773,1,1,1,0,0
-NOAA_survey::SM1-t341,NOAA_survey,Curacao,Natural colony,1,1.980821917808217,1,0,0,0,0
-NOAA_survey::SM1-t341,NOAA_survey,Curacao,Restoration fragment,1,1.08767123287671,0,0,0,0,0
+NOAA_survey::SM1-t341,NOAA_survey,Curacao,Natural colony,1,0.893150684931507,1,0,0,0,0
 NOAA_survey::SM1-t342,NOAA_survey,Curacao,Natural colony,6,6.1287671232876715,0,2,1,0.3333333333333333,0
 NOAA_survey::SM1-t343,NOAA_survey,Curacao,Natural colony,2,1.980821917808217,1,0,0,0,0
 NOAA_survey::SM1-t344,NOAA_survey,Curacao,Natural colony,2,1.980821917808217,1,0,0,0,0
@@ -779,15 +738,13 @@ NOAA_survey::SM1-t355,NOAA_survey,Curacao,Natural colony,6,6.1287671232876715,0,
 NOAA_survey::SM2-t200,NOAA_survey,Curacao,Natural colony,2,1.980821917808217,1,1,1,0,0
 NOAA_survey::SM2-t295,NOAA_survey,Curacao,Natural colony,2,2.024657534246574,0,1,1,1,0
 NOAA_survey::SM2-t296,NOAA_survey,Curacao,Natural colony,2,2.024657534246574,0,2,1,1,0
-NOAA_survey::SM2-t356,NOAA_survey,Curacao,Natural colony,2,3.2191780821917773,1,0,0,0,0
-NOAA_survey::SM2-t356,NOAA_survey,Curacao,Restoration fragment,1,1.980821917808217,0,1,1,0,0
+NOAA_survey::SM2-t356,NOAA_survey,Curacao,Natural colony,2,2.32602739726027,1,0,0,0,0
 NOAA_survey::SM2-t357,NOAA_survey,Curacao,Natural colony,3,3.2191780821917773,1,0,0,0,0
 NOAA_survey::SM2-t358,NOAA_survey,Curacao,Natural colony,3,3.2191780821917773,1,0,0,0,0
 NOAA_survey::SM2-t359,NOAA_survey,Curacao,Natural colony,7,7.098630136986296,0,5,1,0.42857142857142855,0
 NOAA_survey::SM2-t360,NOAA_survey,Curacao,Natural colony,3,3.2191780821917773,1,1,1,0,0
 NOAA_survey::SM2-t361,NOAA_survey,Curacao,Natural colony,3,3.2191780821917773,1,0,0,0,0
-NOAA_survey::SM3-t362,NOAA_survey,Curacao,Natural colony,2,3.216438356164387,1,0,0,0,0
-NOAA_survey::SM3-t362,NOAA_survey,Curacao,Restoration fragment,1,1.978082191780827,0,1,1,0,0
+NOAA_survey::SM3-t362,NOAA_survey,Curacao,Natural colony,2,2.32328767123288,1,0,0,0,0
 NOAA_survey::SM3-t363,NOAA_survey,Curacao,Natural colony,3,3.216438356164387,1,0,0,0,0
 NOAA_survey::SM3-t364,NOAA_survey,Curacao,Natural colony,3,3.216438356164387,1,1,1,0,0
 NOAA_survey::SM3-t365,NOAA_survey,Curacao,Natural colony,3,3.216438356164387,1,1,1,0,0
@@ -795,8 +752,7 @@ NOAA_survey::SM3-t366,NOAA_survey,Curacao,Natural colony,3,3.216438356164387,1,1
 NOAA_survey::SM3-t367,NOAA_survey,Curacao,Natural colony,3,3.216438356164387,1,1,1,0,0
 NOAA_survey::SM3-t368,NOAA_survey,Curacao,Natural colony,3,3.216438356164387,1,2,1,0,0
 NOAA_survey::SM3-t369,NOAA_survey,Curacao,Natural colony,3,3.216438356164387,1,0,0,0,0
-NOAA_survey::SM3-t370,NOAA_survey,Curacao,Natural colony,2,3.216438356164387,1,1,1,0,0
-NOAA_survey::SM3-t370,NOAA_survey,Curacao,Restoration fragment,1,1.08493150684932,0,0,0,0,0
+NOAA_survey::SM3-t370,NOAA_survey,Curacao,Natural colony,2,2.131506849315067,1,1,1,0,0
 NOAA_survey::SM3-t371,NOAA_survey,Curacao,Natural colony,3,3.216438356164387,1,0,0,0,0
 NOAA_survey::SM3-t372,NOAA_survey,Curacao,Natural colony,3,3.216438356164387,1,0,0,0,0
 NOAA_survey::SM3-t373,NOAA_survey,Curacao,Natural colony,1,1.08493150684932,1,0,0,0,0
@@ -808,8 +764,7 @@ NOAA_survey::SQ1-t202,NOAA_survey,Curacao,Natural colony,9,9.153424657534252,1,5
 NOAA_survey::SQ1-t203,NOAA_survey,Curacao,Natural colony,9,9.153424657534252,1,3,1,0.7777777777777778,0
 NOAA_survey::SQ1-t204,NOAA_survey,Curacao,Natural colony,7,7.112328767123289,1,3,1,0.42857142857142855,0
 NOAA_survey::SQ1-t205,NOAA_survey,Curacao,Natural colony,9,9.153424657534252,1,5,1,0.7777777777777778,0
-NOAA_survey::SQ1-t206,NOAA_survey,Curacao,Natural colony,3,4.093150684931512,1,0,0,0,0
-NOAA_survey::SQ1-t206,NOAA_survey,Curacao,Restoration fragment,1,1.986301369863017,0,1,1,0,0
+NOAA_survey::SQ1-t206,NOAA_survey,Curacao,Natural colony,3,3.2000000000000055,1,0,0,0,0
 NOAA_survey::SQ1-t207,NOAA_survey,Curacao,Natural colony,4,4.093150684931512,1,1,1,0,0
 NOAA_survey::SQ1-t208,NOAA_survey,Curacao,Natural colony,4,4.093150684931512,1,1,1,0,0
 NOAA_survey::SQ1-t209,NOAA_survey,Curacao,Natural colony,9,9.153424657534252,1,4,1,0.7777777777777778,0
@@ -830,8 +785,7 @@ NOAA_survey::SQ1-t499,NOAA_survey,Curacao,Natural colony,2,2.041095890410963,0,1
 NOAA_survey::SQ1-t500,NOAA_survey,Curacao,Natural colony,2,2.041095890410963,1,0,0,2,0
 NOAA_survey::SQ2-t213,NOAA_survey,Curacao,Natural colony,3,3.238356164383557,1,1,1,0,0
 NOAA_survey::SQ2-t214,NOAA_survey,Curacao,Natural colony,9,9.15068493150685,0,2,1,0.7777777777777778,0
-NOAA_survey::SQ2-t215,NOAA_survey,Curacao,Natural colony,1,1.983561643835617,1,0,0,0,0
-NOAA_survey::SQ2-t215,NOAA_survey,Curacao,Restoration fragment,1,1.09041095890411,0,1,1,0,0
+NOAA_survey::SQ2-t215,NOAA_survey,Curacao,Natural colony,1,0.893150684931507,1,0,0,0,0
 NOAA_survey::SQ2-t216,NOAA_survey,Curacao,Natural colony,6,6.150684931506849,1,1,1,0.3333333333333333,0
 NOAA_survey::SQ2-t217,NOAA_survey,Curacao,Natural colony,4,4.0958904109589,1,1,1,0,0
 NOAA_survey::SQ2-t218,NOAA_survey,Curacao,Natural colony,9,9.15068493150685,0,4,1,0.7777777777777778,0
@@ -839,18 +793,14 @@ NOAA_survey::SQ2-t219,NOAA_survey,Curacao,Natural colony,4,4.0958904109589,1,0,0
 NOAA_survey::SQ2-t220,NOAA_survey,Curacao,Natural colony,3,3.238356164383557,1,0,0,0,0
 NOAA_survey::SQ2-t221,NOAA_survey,Curacao,Natural colony,3,3.238356164383557,1,1,1,0,0
 NOAA_survey::SQ2-t222,NOAA_survey,Curacao,Natural colony,2,1.983561643835617,1,0,0,0,0
-NOAA_survey::SQ2-t223,NOAA_survey,Curacao,Natural colony,7,9.15068493150685,0,5,1,1,0
-NOAA_survey::SQ2-t223,NOAA_survey,Curacao,Restoration fragment,2,3.238356164383557,0,0,0,0,0
+NOAA_survey::SQ2-t223,NOAA_survey,Curacao,Natural colony,7,7.002739726027404,0,5,1,1,0
 NOAA_survey::SQ2-t224,NOAA_survey,Curacao,Natural colony,1,1.09041095890411,1,0,0,0,0
-NOAA_survey::SQ2-t279,NOAA_survey,Curacao,Natural colony,1,2.035616438356168,1,0,0,1,0
-NOAA_survey::SQ2-t279,NOAA_survey,Curacao,Restoration fragment,1,1.07397260273973,0,0,0,1,0
-NOAA_survey::SQ2-t380,NOAA_survey,Curacao,Natural colony,3,5.054794520547949,0,2,1,1.6666666666666667,0
-NOAA_survey::SQ2-t380,NOAA_survey,Curacao,Restoration fragment,2,2.054794520547949,0,2,1,1,0
+NOAA_survey::SQ2-t279,NOAA_survey,Curacao,Natural colony,1,0.961643835616438,1,0,0,1,0
+NOAA_survey::SQ2-t380,NOAA_survey,Curacao,Natural colony,3,3,0,2,1,1.6666666666666667,0
 NOAA_survey::SQ2-t381,NOAA_survey,Curacao,Natural colony,5,5.054794520547949,0,0,0,1.4,0
 NOAA_survey::SQ2-t382,NOAA_survey,Curacao,Natural colony,1,0.980821917808219,1,0,0,1,0
 NOAA_survey::SQ2-t383,NOAA_survey,Curacao,Natural colony,5,5.054794520547949,0,1,1,1.4,0
-NOAA_survey::SQ2-t384,NOAA_survey,Curacao,Natural colony,1,2.054794520547949,1,0,0,1,0
-NOAA_survey::SQ2-t384,NOAA_survey,Curacao,Restoration fragment,1,0.980821917808219,0,1,1,1,0
+NOAA_survey::SQ2-t384,NOAA_survey,Curacao,Natural colony,1,1.07397260273973,1,0,0,1,0
 NOAA_survey::SQ2-t385,NOAA_survey,Curacao,Natural colony,4,4.013698630136989,1,3,1,1.25,0
 NOAA_survey::SQ2-t386,NOAA_survey,Curacao,Natural colony,5,5.054794520547949,1,0,0,1.4,0
 NOAA_survey::SQ2-t387,NOAA_survey,Curacao,Natural colony,4,4.013698630136989,1,1,1,1.25,0
@@ -883,26 +833,21 @@ NOAA_survey::SQ3-t456,NOAA_survey,Curacao,Natural colony,2,2.0328767123287657,1,
 NOAA_survey::SQ3-t457,NOAA_survey,Curacao,Natural colony,2,2.0328767123287657,0,1,1,2,0
 NOAA_survey::TR1-t289,NOAA_survey,Florida Keys,Natural colony,1,0.93972602739726,1,0,0,3,1
 NOAA_survey::TR1-t291,NOAA_survey,Florida Keys,Natural colony,5,6.120547945205482,0,2,1,2.8,0.2
-NOAA_survey::TR1-t292,NOAA_survey,Florida Keys,Natural colony,1,4.13150684931507,1,0,0,3,0
-NOAA_survey::TR1-t292,NOAA_survey,Florida Keys,Restoration fragment,2,2.10958904109589,0,1,1,2.5,0.5
+NOAA_survey::TR1-t292,NOAA_survey,Florida Keys,Natural colony,1,2.02191780821918,1,0,0,3,0
 NOAA_survey::TR1-t293,NOAA_survey,Florida Keys,Natural colony,5,6.120547945205482,0,2,1,2.8,0.2
 NOAA_survey::TR1-t294,NOAA_survey,Florida Keys,Natural colony,5,6.120547945205482,1,2,1,2.8,0.2
 NOAA_survey::TR1-t295,NOAA_survey,Florida Keys,Natural colony,3,4.13150684931507,1,1,1,2.6666666666666665,0.3333333333333333
 NOAA_survey::TR1-t296,NOAA_survey,Florida Keys,Natural colony,3,4.13150684931507,1,2,1,2.6666666666666665,0.3333333333333333
-NOAA_survey::TR1-t297,NOAA_survey,Florida Keys,Natural colony,2,4.13150684931507,1,0,0,2.5,0
-NOAA_survey::TR1-t297,NOAA_survey,Florida Keys,Restoration fragment,1,0.93972602739726,0,0,0,3,1
+NOAA_survey::TR1-t297,NOAA_survey,Florida Keys,Natural colony,2,3.1917808219178103,1,0,0,2.5,0
 NOAA_survey::TR1-t298,NOAA_survey,Florida Keys,Natural colony,3,4.13150684931507,1,2,1,2.6666666666666665,0.3333333333333333
 NOAA_survey::TR1-t299,NOAA_survey,Florida Keys,Natural colony,3,4.13150684931507,1,0,0,2.6666666666666665,0.3333333333333333
 NOAA_survey::TR1-t300,NOAA_survey,Florida Keys,Natural colony,3,4.13150684931507,1,1,1,2.6666666666666665,0.3333333333333333
 NOAA_survey::TR1-t448,NOAA_survey,Florida Keys,Natural colony,1,1.01095890410959,0,0,0,3,0
-NOAA_survey::TR1-t449,NOAA_survey,Florida Keys,Restoration fragment,1,1.01095890410959,0,0,0,3,0
 NOAA_survey::TR1-t470,NOAA_survey,Florida Keys,Natural colony,1,0.978082191780822,1,0,0,3,0
-NOAA_survey::TR1-t471,NOAA_survey,Florida Keys,Natural colony,1,1.9890410958904121,0,1,1,3,0
-NOAA_survey::TR1-t471,NOAA_survey,Florida Keys,Restoration fragment,1,0.978082191780822,0,0,0,3,0
+NOAA_survey::TR1-t471,NOAA_survey,Florida Keys,Natural colony,1,1.01095890410959,0,1,1,3,0
 NOAA_survey::TR1-t472,NOAA_survey,Florida Keys,Natural colony,1,0.978082191780822,1,0,0,3,0
 NOAA_survey::TR1-t473,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904121,0,1,1,3,0
 NOAA_survey::TR1-t474,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904121,0,0,0,3,0
-NOAA_survey::TR1-t475,NOAA_survey,Florida Keys,Restoration fragment,2,1.9890410958904121,0,2,1,3,0
 NOAA_survey::TR1-t476,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904121,1,0,0,3,0
 NOAA_survey::TR1-t478,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904121,0,1,1,3,0
 NOAA_survey::TR1-t941,NOAA_survey,Florida Keys,Natural colony,4,5.180821917808223,0,4,1,2.75,0
@@ -913,67 +858,53 @@ NOAA_survey::TR2-t350,NOAA_survey,Florida Keys,Natural colony,5,6.16712328767123
 NOAA_survey::TR2-t351,NOAA_survey,Florida Keys,Natural colony,5,6.167123287671236,0,1,1,2.8,0.2
 NOAA_survey::TR2-t352,NOAA_survey,Florida Keys,Natural colony,2,2.1643835616438363,0,0,0,2.5,0.5
 NOAA_survey::TR2-t353,NOAA_survey,Florida Keys,Natural colony,2,2.1643835616438363,0,0,0,2.5,0.5
-NOAA_survey::TR2-t354,NOAA_survey,Florida Keys,Natural colony,1,2.1643835616438363,0,0,0,2,0
-NOAA_survey::TR2-t354,NOAA_survey,Florida Keys,Restoration fragment,1,0.934246575342466,0,0,0,3,1
+NOAA_survey::TR2-t354,NOAA_survey,Florida Keys,Natural colony,1,1.23013698630137,0,0,0,2,0
 NOAA_survey::TR2-t355,NOAA_survey,Florida Keys,Natural colony,2,2.1643835616438363,1,0,0,2.5,0.5
 NOAA_survey::TR2-t356,NOAA_survey,Florida Keys,Natural colony,5,6.167123287671236,0,0,0,2.8,0.2
 NOAA_survey::TR2-t357,NOAA_survey,Florida Keys,Natural colony,2,2.1643835616438363,0,0,0,2.5,0.5
 NOAA_survey::TR2-t358,NOAA_survey,Florida Keys,Natural colony,1,0.934246575342466,1,0,0,3,1
-NOAA_survey::TR2-t359,NOAA_survey,Florida Keys,Natural colony,1,2.1643835616438363,0,0,0,2,0
-NOAA_survey::TR2-t359,NOAA_survey,Florida Keys,Restoration fragment,1,0.934246575342466,0,0,0,3,1
+NOAA_survey::TR2-t359,NOAA_survey,Florida Keys,Natural colony,1,1.23013698630137,0,0,0,2,0
 NOAA_survey::TR2-t462,NOAA_survey,Florida Keys,Natural colony,2,2.04383561643836,0,0,0,3,0
 NOAA_survey::TR2-t463,NOAA_survey,Florida Keys,Natural colony,2,2.04383561643836,0,1,1,3,0
 NOAA_survey::TR2-t464,NOAA_survey,Florida Keys,Natural colony,2,2.04383561643836,0,1,1,3,0
 NOAA_survey::TR2-t465,NOAA_survey,Florida Keys,Natural colony,2,2.04383561643836,0,1,1,3,0
 NOAA_survey::TR2-t466,NOAA_survey,Florida Keys,Natural colony,2,2.04383561643836,0,0,0,3,0
 NOAA_survey::TR2-t467,NOAA_survey,Florida Keys,Natural colony,2,2.04383561643836,0,0,0,3,0
-NOAA_survey::TR2-t468,NOAA_survey,Florida Keys,Natural colony,1,2.04383561643836,0,1,1,3,0
-NOAA_survey::TR2-t468,NOAA_survey,Florida Keys,Restoration fragment,1,0.96986301369863,0,0,0,3,0
+NOAA_survey::TR2-t468,NOAA_survey,Florida Keys,Natural colony,1,1.07397260273973,0,1,1,3,0
 NOAA_survey::TR2-t469,NOAA_survey,Florida Keys,Natural colony,2,2.04383561643836,0,1,1,3,0
 NOAA_survey::TR2-t944,NOAA_survey,Florida Keys,Natural colony,1,1.23013698630137,1,0,0,2,0
-NOAA_survey::TR2-t945,NOAA_survey,Florida Keys,Restoration fragment,1,1.23013698630137,0,0,0,2,0
 NOAA_survey::TR3-t360,NOAA_survey,Florida Keys,Natural colony,2,2.164383561643838,0,0,0,2.5,0.5
-NOAA_survey::TR3-t361,NOAA_survey,Florida Keys,Natural colony,1,2.164383561643838,0,1,1,2,0
-NOAA_survey::TR3-t361,NOAA_survey,Florida Keys,Restoration fragment,1,0.931506849315068,0,0,0,3,1
-NOAA_survey::TR3-t362,NOAA_survey,Florida Keys,Natural colony,1,2.164383561643838,0,0,0,2,0
-NOAA_survey::TR3-t362,NOAA_survey,Florida Keys,Restoration fragment,1,0.931506849315068,0,0,0,3,1
-NOAA_survey::TR3-t363,NOAA_survey,Florida Keys,Natural colony,1,2.164383561643838,0,0,0,2,0
-NOAA_survey::TR3-t363,NOAA_survey,Florida Keys,Restoration fragment,1,0.931506849315068,0,0,0,3,1
+NOAA_survey::TR3-t361,NOAA_survey,Florida Keys,Natural colony,1,1.23287671232877,0,1,1,2,0
+NOAA_survey::TR3-t362,NOAA_survey,Florida Keys,Natural colony,1,1.23287671232877,0,0,0,2,0
+NOAA_survey::TR3-t363,NOAA_survey,Florida Keys,Natural colony,1,1.23287671232877,0,0,0,2,0
 NOAA_survey::TR3-t364,NOAA_survey,Florida Keys,Natural colony,5,6.112328767123288,0,2,1,2.8,0.2
 NOAA_survey::TR3-t365,NOAA_survey,Florida Keys,Natural colony,2,2.164383561643838,0,0,0,2.5,0.5
 NOAA_survey::TR3-t366,NOAA_survey,Florida Keys,Natural colony,1,2.16438356164384,0,0,0,2,0
 NOAA_survey::TR3-t367,NOAA_survey,Florida Keys,Natural colony,2,2.164383561643838,0,1,1,2.5,0.5
-NOAA_survey::TR3-t369,NOAA_survey,Florida Keys,Natural colony,1,2.164383561643838,0,0,0,2,0
-NOAA_survey::TR3-t369,NOAA_survey,Florida Keys,Restoration fragment,1,0.931506849315068,0,0,0,3,1
+NOAA_survey::TR3-t369,NOAA_survey,Florida Keys,Natural colony,1,1.23287671232877,0,0,0,2,0
 NOAA_survey::TR3-t370,NOAA_survey,Florida Keys,Natural colony,2,2.164383561643838,0,1,1,2.5,0.5
 NOAA_survey::TR3-t371,NOAA_survey,Florida Keys,Natural colony,2,2.164383561643838,0,0,0,2.5,0.5
 NOAA_survey::TR3-t450,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904101,1,0,0,3,0
-NOAA_survey::TR3-t451,NOAA_survey,Florida Keys,Restoration fragment,2,1.9890410958904101,0,1,1,3,0
-NOAA_survey::TR3-t452,NOAA_survey,Florida Keys,Natural colony,1,1.9890410958904101,0,0,0,3,0
-NOAA_survey::TR3-t452,NOAA_survey,Florida Keys,Restoration fragment,1,0.96986301369863,0,0,0,3,0
+NOAA_survey::TR3-t452,NOAA_survey,Florida Keys,Natural colony,1,1.01917808219178,0,0,0,3,0
 NOAA_survey::TR3-t453,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904101,0,0,0,3,0
 NOAA_survey::TR3-t454,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904101,0,1,1,3,0
 NOAA_survey::TR3-t455,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904101,0,1,1,3,0
-NOAA_survey::TR3-t456,NOAA_survey,Florida Keys,Natural colony,1,1.9890410958904101,0,0,0,3,0
-NOAA_survey::TR3-t456,NOAA_survey,Florida Keys,Restoration fragment,1,0.96986301369863,0,0,0,3,0
+NOAA_survey::TR3-t456,NOAA_survey,Florida Keys,Natural colony,1,1.01917808219178,0,0,0,3,0
 NOAA_survey::TR3-t457,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904101,0,1,1,3,0
 NOAA_survey::TR3-t458,NOAA_survey,Florida Keys,Natural colony,1,0.96986301369863,1,0,0,3,0
 NOAA_survey::TR3-t459,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904101,0,0,0,3,0
 NOAA_survey::TR3-t460,NOAA_survey,Florida Keys,Natural colony,2,1.9890410958904101,0,1,1,3,0
-NOAA_survey::TR3-t943,NOAA_survey,Florida Keys,Restoration fragment,1,1.23287671232877,0,0,0,2,0
 NOAA_survey::WF1-t401,NOAA_survey,Curacao,Natural colony,4,4.063013698630135,0,0,0,1.5,0
 NOAA_survey::WF1-t402,NOAA_survey,Curacao,Natural colony,4,4.063013698630135,0,0,0,1.5,0
 NOAA_survey::WF1-t403,NOAA_survey,Curacao,Natural colony,4,4.063013698630135,0,1,1,1.5,0
-NOAA_survey::WF1-t404,NOAA_survey,Curacao,Natural colony,3,4.063013698630135,1,0,0,1.6666666666666667,0
-NOAA_survey::WF1-t404,NOAA_survey,Curacao,Restoration fragment,1,1.05753424657534,0,0,0,1,0
+NOAA_survey::WF1-t404,NOAA_survey,Curacao,Natural colony,3,3.0054794520547947,1,0,0,1.6666666666666667,0
 NOAA_survey::WF1-t405,NOAA_survey,Curacao,Natural colony,4,4.063013698630135,0,0,0,1.5,0
 NOAA_survey::WF1-t406,NOAA_survey,Curacao,Natural colony,4,4.063013698630135,0,1,1,1.5,0
 NOAA_survey::WF1-t407,NOAA_survey,Curacao,Natural colony,4,4.063013698630135,1,0,0,1.5,0
 NOAA_survey::WF1-t408,NOAA_survey,Curacao,Natural colony,1,1.05753424657534,1,0,0,1,0
 NOAA_survey::WF1-t409,NOAA_survey,Curacao,Natural colony,4,4.063013698630135,0,0,0,1.5,0
 NOAA_survey::WF1-t410,NOAA_survey,Curacao,Natural colony,4,4.063013698630135,0,0,0,1.5,0
-NOAA_survey::WF1-t411,NOAA_survey,Curacao,Natural colony,3,4.063013698630135,1,0,0,1.3333333333333333,0
-NOAA_survey::WF1-t411,NOAA_survey,Curacao,Restoration fragment,1,3.021917808219175,0,0,0,2,0
+NOAA_survey::WF1-t411,NOAA_survey,Curacao,Natural colony,3,3.063013698630135,1,0,0,1.3333333333333333,0
 NOAA_survey::WF1-t412,NOAA_survey,Curacao,Natural colony,4,4.063013698630135,0,0,0,1.5,0
 NOAA_survey::WF1-t458,NOAA_survey,Curacao,Natural colony,2,2.04109589041096,0,0,0,2,0
 NOAA_survey::WF2-t416,NOAA_survey,Curacao,Natural colony,4,4.06575342465753,0,1,1,1.5,0
@@ -996,18 +927,14 @@ NOAA_survey::WF3-t433,NOAA_survey,Curacao,Natural colony,4,4.065753424657534,0,1
 NOAA_survey::WF3-t434,NOAA_survey,Curacao,Natural colony,4,4.065753424657534,1,0,0,1.5,0
 NOAA_survey::WF3-t435,NOAA_survey,Curacao,Natural colony,1,1.06575342465753,1,0,0,1,0
 NOAA_survey::WF3-t436,NOAA_survey,Curacao,Natural colony,4,4.065753424657534,1,0,0,1.5,0
-NOAA_survey::WF3-t437,NOAA_survey,Curacao,Natural colony,3,4.065753424657534,1,1,1,1.3333333333333333,0
-NOAA_survey::WF3-t437,NOAA_survey,Curacao,Restoration fragment,1,3.021917808219174,0,1,1,2,0
+NOAA_survey::WF3-t437,NOAA_survey,Curacao,Natural colony,3,3.065753424657534,1,1,1,1.3333333333333333,0
 NOAA_survey::WF3-t438,NOAA_survey,Curacao,Natural colony,1,1.06575342465753,1,0,0,1,0
 NOAA_survey::WF3-t439,NOAA_survey,Curacao,Natural colony,4,4.065753424657534,1,1,1,1.5,0
 NOAA_survey::WF3-t440,NOAA_survey,Curacao,Natural colony,2,2.021917808219174,1,0,0,1,0
 NOAA_survey::WF3-t441,NOAA_survey,Curacao,Natural colony,1,1.06575342465753,1,0,0,1,0
 NOAA_survey::WF3-t442,NOAA_survey,Curacao,Natural colony,2,2.021917808219174,1,0,0,1,0
-NOAA_survey::WF3-t461,NOAA_survey,Curacao,Natural colony,1,2.04383561643836,0,1,1,2,0
-NOAA_survey::WF3-t461,NOAA_survey,Curacao,Restoration fragment,1,1,0,0,0,2,0
-NOAA_survey::WF3-t462,NOAA_survey,Curacao,Restoration fragment,2,2.04383561643836,0,2,1,2,0
-NOAA_survey::WF3-t463,NOAA_survey,Curacao,Natural colony,1,2.04383561643836,0,0,0,2,0
-NOAA_survey::WF3-t463,NOAA_survey,Curacao,Restoration fragment,1,1,0,0,0,2,0
+NOAA_survey::WF3-t461,NOAA_survey,Curacao,Natural colony,1,1.04383561643836,0,1,1,2,0
+NOAA_survey::WF3-t463,NOAA_survey,Curacao,Natural colony,1,1.04383561643836,0,0,0,2,0
 NOAA_survey::WF3-t464,NOAA_survey,Curacao,Natural colony,2,2.04383561643836,0,0,0,2,0
 NOAA_survey::WF3-t465,NOAA_survey,Curacao,Natural colony,2,2.04383561643836,0,1,1,2,0
 NOAA_survey::WF3-t466,NOAA_survey,Curacao,Natural colony,2,2.04383561643836,0,0,0,2,0
@@ -1138,70 +1065,70 @@ kuffner_et_al_2020::550,kuffner_et_al_2020,Dry Tortugas,Restoration fragment,1,1
 kuffner_et_al_2020::551,kuffner_et_al_2020,Dry Tortugas,Restoration fragment,1,1,0,0,0,2,0
 kuffner_et_al_2020::555,kuffner_et_al_2020,Dry Tortugas,Restoration fragment,1,1,0,0,0,2,0
 kuffner_et_al_2020::558,kuffner_et_al_2020,Dry Tortugas,Restoration fragment,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::101/234,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::112,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,1,1,2,0
-mendoza_quiroz_et_al_2023::115/231,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,1,1,2,0
-mendoza_quiroz_et_al_2023::120,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::125,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,1,1,2,0
-mendoza_quiroz_et_al_2023::14,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::28/324,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::284/235,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,1,1,2,0
-mendoza_quiroz_et_al_2023::285/399/190,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::33,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,1,1,2,0
-mendoza_quiroz_et_al_2023::36/441,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,1,1,2,0
-mendoza_quiroz_et_al_2023::39/90,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::46/442,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,1,1,2,0
-mendoza_quiroz_et_al_2023::49,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::60/393/443,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::87,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,1,1,2,0
-mendoza_quiroz_et_al_2023::AP1108,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1111,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1117,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1119,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1120,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1123,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1126,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1128,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1191,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1203,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1206,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1207,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1210,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1221,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1226,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1231,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1236,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1238,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1241,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1243,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1248,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1252,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1264,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1265,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1270,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1276,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1277,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1278,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1280,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1286,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1289,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1290,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1293,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1294,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1295,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1.08219178082192,0,0,0,2,0
-mendoza_quiroz_et_al_2023::AP1297,mendoza_quiroz_et_al_2023,Mexican Caribbean,Natural colony,1,1,0,0,0,2,0
-neely_et_al_2022::BB1-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.586584531143053,0,2,1,2.5,0
+mendoza_quiroz_et_al_2023::101/234,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::112,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,1,1,2,0
+mendoza_quiroz_et_al_2023::115/231,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,1,1,2,0
+mendoza_quiroz_et_al_2023::120,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::125,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,1,1,2,0
+mendoza_quiroz_et_al_2023::14,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::28/324,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::284/235,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,1,1,2,0
+mendoza_quiroz_et_al_2023::285/399/190,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::33,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,1,1,2,0
+mendoza_quiroz_et_al_2023::36/441,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,1,1,2,0
+mendoza_quiroz_et_al_2023::39/90,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::46/442,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,1,1,2,0
+mendoza_quiroz_et_al_2023::49,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::60/393/443,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::87,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,1,1,2,0
+mendoza_quiroz_et_al_2023::AP1108,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1111,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1117,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1119,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1120,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1123,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1126,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1128,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1191,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1203,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1206,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1207,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1210,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1221,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1226,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1231,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1236,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1238,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1241,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1243,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1248,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1252,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1264,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1265,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1270,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1276,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1277,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1278,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1280,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1286,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1289,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1290,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1293,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1294,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1295,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1.08219178082192,0,0,0,2,0
+mendoza_quiroz_et_al_2023::AP1297,mendoza_quiroz_et_al_2023,Mexican Caribbean,Restoration outplant (sexual recruit),1,1,0,0,0,2,0
+neely_et_al_2022::BB1-1,neely_et_al_2022,Florida Keys,Natural colony,5,4.462696783025325,0,3,1,2.4,0
 neely_et_al_2022::BB1-10,neely_et_al_2022,Florida Keys,Natural colony,2,1.6071184120465434,1,0,0,2,0
 neely_et_al_2022::BB1-11,neely_et_al_2022,Florida Keys,Natural colony,2,1.6071184120465434,1,1,1,2,0
-neely_et_al_2022::BB1-12,neely_et_al_2022,Florida Keys,Natural colony,4,3.586584531143053,0,3,1,2.5,0
-neely_et_al_2022::BB1-13,neely_et_al_2022,Florida Keys,Natural colony,3,2.6611909650924024,1,1,1,2.3333333333333335,0
-neely_et_al_2022::BB1-14,neely_et_al_2022,Florida Keys,Natural colony,4,3.586584531143053,0,1,1,2.5,0
-neely_et_al_2022::BB1-15,neely_et_al_2022,Florida Keys,Natural colony,4,3.586584531143053,0,2,1,2.5,0
-neely_et_al_2022::BB1-16,neely_et_al_2022,Florida Keys,Natural colony,3,2.6611909650924024,1,2,1,2.3333333333333335,0
-neely_et_al_2022::BB1-17,neely_et_al_2022,Florida Keys,Natural colony,3,2.6611909650924024,1,0,0,2.3333333333333335,0
-neely_et_al_2022::BB1-18,neely_et_al_2022,Florida Keys,Natural colony,4,3.586584531143053,0,1,1,2.5,0
+neely_et_al_2022::BB1-12,neely_et_al_2022,Florida Keys,Natural colony,5,4.462696783025325,0,4,1,2.4,0
+neely_et_al_2022::BB1-13,neely_et_al_2022,Florida Keys,Natural colony,4,3.5373032169746748,1,2,1,2.25,0
+neely_et_al_2022::BB1-14,neely_et_al_2022,Florida Keys,Natural colony,5,4.462696783025325,0,2,1,2.4,0
+neely_et_al_2022::BB1-15,neely_et_al_2022,Florida Keys,Natural colony,5,4.462696783025325,0,2,1,2.4,0
+neely_et_al_2022::BB1-16,neely_et_al_2022,Florida Keys,Natural colony,4,3.5373032169746748,1,3,1,2.25,0
+neely_et_al_2022::BB1-17,neely_et_al_2022,Florida Keys,Natural colony,4,3.5373032169746748,1,0,0,2.25,0
+neely_et_al_2022::BB1-18,neely_et_al_2022,Florida Keys,Natural colony,5,4.462696783025325,0,2,1,2.4,0
 neely_et_al_2022::BB1-19,neely_et_al_2022,Florida Keys,Natural colony,1,0.459958932238193,1,0,0,2,0
-neely_et_al_2022::BB1-2,neely_et_al_2022,Florida Keys,Natural colony,4,3.586584531143053,0,1,1,2.5,0
+neely_et_al_2022::BB1-2,neely_et_al_2022,Florida Keys,Natural colony,5,4.462696783025325,0,1,1,2.4,0
 neely_et_al_2022::BB1-20,neely_et_al_2022,Florida Keys,Natural colony,1,0.459958932238193,1,0,0,2,0
 neely_et_al_2022::BB1-21,neely_et_al_2022,Florida Keys,Natural colony,1,0.459958932238193,1,0,0,2,0
 neely_et_al_2022::BB1-22,neely_et_al_2022,Florida Keys,Natural colony,1,0.459958932238193,1,0,0,2,0
@@ -1212,106 +1139,106 @@ neely_et_al_2022::BB1-26,neely_et_al_2022,Florida Keys,Natural colony,1,0.876112
 neely_et_al_2022::BB1-27,neely_et_al_2022,Florida Keys,Natural colony,3,2.855578370978782,1,1,1,2.6666666666666665,0
 neely_et_al_2022::BB1-28,neely_et_al_2022,Florida Keys,Natural colony,2,1.9794661190965095,1,1,1,3,0
 neely_et_al_2022::BB1-29,neely_et_al_2022,Florida Keys,Natural colony,2,1.9794661190965095,1,1,1,3,0
-neely_et_al_2022::BB1-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.586584531143053,0,0,0,2.5,0
+neely_et_al_2022::BB1-3,neely_et_al_2022,Florida Keys,Natural colony,5,4.462696783025325,0,0,0,2.4,0
 neely_et_al_2022::BB1-30,neely_et_al_2022,Florida Keys,Natural colony,2,1.9794661190965095,0,0,0,3,0
 neely_et_al_2022::BB1-31,neely_et_al_2022,Florida Keys,Natural colony,2,1.9794661190965095,0,1,1,3,0
 neely_et_al_2022::BB1-32,neely_et_al_2022,Florida Keys,Natural colony,1,0.9253935660506504,1,0,0,3,0
 neely_et_al_2022::BB1-33,neely_et_al_2022,Florida Keys,Natural colony,1,0.9253935660506504,0,1,1,3,0
-neely_et_al_2022::BB1-4,neely_et_al_2022,Florida Keys,Natural colony,4,3.586584531143053,0,2,1,2.5,0
+neely_et_al_2022::BB1-4,neely_et_al_2022,Florida Keys,Natural colony,5,4.462696783025325,0,2,1,2.4,0
 neely_et_al_2022::BB1-5,neely_et_al_2022,Florida Keys,Natural colony,1,1.1471594798083504,1,0,0,2,0
-neely_et_al_2022::BB1-6,neely_et_al_2022,Florida Keys,Natural colony,4,3.586584531143053,0,2,1,2.5,0
-neely_et_al_2022::BB1-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.586584531143053,0,3,1,2.5,0
+neely_et_al_2022::BB1-6,neely_et_al_2022,Florida Keys,Natural colony,5,4.462696783025325,0,3,1,2.4,0
+neely_et_al_2022::BB1-7,neely_et_al_2022,Florida Keys,Natural colony,5,4.462696783025325,0,4,1,2.4,0
 neely_et_al_2022::BB1-8,neely_et_al_2022,Florida Keys,Natural colony,1,1.1471594798083504,1,0,0,2,0
-neely_et_al_2022::BB1-9,neely_et_al_2022,Florida Keys,Natural colony,4,3.586584531143053,1,2,1,2.5,0
-neely_et_al_2022::BB2-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.3675564681724848,1,1,1,2.5,0
-neely_et_al_2022::BB2-10,neely_et_al_2022,Florida Keys,Natural colony,4,3.3675564681724848,0,2,1,2.5,0
-neely_et_al_2022::BB2-11,neely_et_al_2022,Florida Keys,Natural colony,3,2.4421629021218343,1,1,1,2.3333333333333335,0
-neely_et_al_2022::BB2-12,neely_et_al_2022,Florida Keys,Natural colony,3,2.4421629021218343,1,1,1,2.3333333333333335,0
+neely_et_al_2022::BB1-9,neely_et_al_2022,Florida Keys,Natural colony,5,4.462696783025325,1,3,1,2.4,0
+neely_et_al_2022::BB2-1,neely_et_al_2022,Florida Keys,Natural colony,5,4.243668720054757,1,2,1,2.4,0
+neely_et_al_2022::BB2-10,neely_et_al_2022,Florida Keys,Natural colony,5,4.243668720054757,0,3,1,2.4,0
+neely_et_al_2022::BB2-11,neely_et_al_2022,Florida Keys,Natural colony,4,3.3182751540041067,1,1,1,2.25,0
+neely_et_al_2022::BB2-12,neely_et_al_2022,Florida Keys,Natural colony,4,3.3182751540041067,1,1,1,2.25,0
 neely_et_al_2022::BB2-13,neely_et_al_2022,Florida Keys,Natural colony,1,0.917180013689254,1,0,0,2,0
-neely_et_al_2022::BB2-14,neely_et_al_2022,Florida Keys,Natural colony,4,3.3675564681724848,0,1,1,2.5,0
+neely_et_al_2022::BB2-14,neely_et_al_2022,Florida Keys,Natural colony,5,4.243668720054757,0,1,1,2.4,0
 neely_et_al_2022::BB2-15,neely_et_al_2022,Florida Keys,Natural colony,1,0.917180013689254,1,0,0,2,0
 neely_et_al_2022::BB2-16,neely_et_al_2022,Florida Keys,Natural colony,1,0.8761122518822724,1,0,0,2,0
 neely_et_al_2022::BB2-17,neely_et_al_2022,Florida Keys,Natural colony,1,0.47091033538672145,1,0,0,2,0
 neely_et_al_2022::BB2-18,neely_et_al_2022,Florida Keys,Natural colony,3,2.855578370978782,1,1,1,2.6666666666666665,0
 neely_et_al_2022::BB2-19,neely_et_al_2022,Florida Keys,Natural colony,1,0.9253935660506504,0,0,0,3,0
-neely_et_al_2022::BB2-2,neely_et_al_2022,Florida Keys,Natural colony,4,3.3675564681724848,0,2,1,2.5,0
+neely_et_al_2022::BB2-2,neely_et_al_2022,Florida Keys,Natural colony,5,4.243668720054757,0,2,1,2.4,0
 neely_et_al_2022::BB2-20,neely_et_al_2022,Florida Keys,Natural colony,1,0.9253935660506504,1,0,0,3,0
 neely_et_al_2022::BB2-21,neely_et_al_2022,Florida Keys,Natural colony,1,0.9253935660506504,1,0,0,3,0
 neely_et_al_2022::BB2-22,neely_et_al_2022,Florida Keys,Natural colony,1,0.9253935660506504,1,0,0,3,0
-neely_et_al_2022::BB2-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.3675564681724848,0,3,1,2.5,0
-neely_et_al_2022::BB2-4,neely_et_al_2022,Florida Keys,Natural colony,4,3.3675564681724848,0,3,1,2.5,0
+neely_et_al_2022::BB2-3,neely_et_al_2022,Florida Keys,Natural colony,5,4.243668720054757,0,4,1,2.4,0
+neely_et_al_2022::BB2-4,neely_et_al_2022,Florida Keys,Natural colony,5,4.243668720054757,0,4,1,2.4,0
 neely_et_al_2022::BB2-5,neely_et_al_2022,Florida Keys,Natural colony,2,1.3880903490759753,1,1,1,2,0
 neely_et_al_2022::BB2-6,neely_et_al_2022,Florida Keys,Natural colony,2,1.3880903490759753,1,1,1,2,0
-neely_et_al_2022::BB2-7,neely_et_al_2022,Florida Keys,Natural colony,3,2.4421629021218343,1,1,1,2.3333333333333335,0
-neely_et_al_2022::BB2-8,neely_et_al_2022,Florida Keys,Natural colony,4,3.3675564681724848,0,2,1,2.5,0
+neely_et_al_2022::BB2-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.3182751540041067,1,1,1,2.25,0
+neely_et_al_2022::BB2-8,neely_et_al_2022,Florida Keys,Natural colony,5,4.243668720054757,0,3,1,2.4,0
 neely_et_al_2022::BB2-9,neely_et_al_2022,Florida Keys,Natural colony,2,1.3880903490759753,1,0,0,2,0
 neely_et_al_2022::DT1-1,neely_et_al_2022,Florida Keys,Natural colony,2,1.590691307323751,1,0,0,2,0
-neely_et_al_2022::DT1-10,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,3,1,2.6,0
-neely_et_al_2022::DT1-11,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
-neely_et_al_2022::DT1-12,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,1,2,1,2.6,0
-neely_et_al_2022::DT1-13,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
+neely_et_al_2022::DT1-10,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
+neely_et_al_2022::DT1-11,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
+neely_et_al_2022::DT1-12,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,1,2,1,2.5,0
+neely_et_al_2022::DT1-13,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
 neely_et_al_2022::DT1-14,neely_et_al_2022,Florida Keys,Natural colony,1,0.9774127310061602,1,0,0,2,0
-neely_et_al_2022::DT1-15,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,3,1,2.6,0
+neely_et_al_2022::DT1-15,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
 neely_et_al_2022::DT1-16,neely_et_al_2022,Florida Keys,Natural colony,1,0.9774127310061602,1,0,0,2,0
-neely_et_al_2022::DT1-17,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
-neely_et_al_2022::DT1-18,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,3,1,2.6,0
-neely_et_al_2022::DT1-19,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,4,1,2.6,0
-neely_et_al_2022::DT1-2,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,1,1,2.6,0
-neely_et_al_2022::DT1-20,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,3,1,2.6,0
-neely_et_al_2022::DT1-21,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,1,0,0,2.6,0
-neely_et_al_2022::DT1-22,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,1,1,1,2.6,0
-neely_et_al_2022::DT1-23,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,3,1,2.6,0
-neely_et_al_2022::DT1-24,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
-neely_et_al_2022::DT1-25,neely_et_al_2022,Florida Keys,Natural colony,4,3.997262149212868,0,1,1,2.75,0
-neely_et_al_2022::DT1-26,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
-neely_et_al_2022::DT1-27,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
-neely_et_al_2022::DT1-28,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
+neely_et_al_2022::DT1-17,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
+neely_et_al_2022::DT1-18,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
+neely_et_al_2022::DT1-19,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,5,1,2.5,0
+neely_et_al_2022::DT1-2,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,1,1,2.5,0
+neely_et_al_2022::DT1-20,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
+neely_et_al_2022::DT1-21,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,1,0,0,2.5,0
+neely_et_al_2022::DT1-22,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,1,1,1,2.5,0
+neely_et_al_2022::DT1-23,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
+neely_et_al_2022::DT1-24,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
+neely_et_al_2022::DT1-25,neely_et_al_2022,Florida Keys,Natural colony,5,4.974674880219029,0,1,1,2.6,0
+neely_et_al_2022::DT1-26,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
+neely_et_al_2022::DT1-27,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
+neely_et_al_2022::DT1-28,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
 neely_et_al_2022::DT1-29,neely_et_al_2022,Florida Keys,Natural colony,2,1.590691307323751,1,0,0,2,0
 neely_et_al_2022::DT1-3,neely_et_al_2022,Florida Keys,Natural colony,2,1.590691307323751,1,0,0,2,0
-neely_et_al_2022::DT1-30,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,1,2,1,2.6,0
-neely_et_al_2022::DT1-31,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
+neely_et_al_2022::DT1-30,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,1,3,1,2.5,0
+neely_et_al_2022::DT1-31,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
 neely_et_al_2022::DT1-32,neely_et_al_2022,Florida Keys,Natural colony,1,0.9774127310061602,1,0,0,2,0
-neely_et_al_2022::DT1-33,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,3,1,2.6,0
-neely_et_al_2022::DT1-34,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,4,1,2.6,0
-neely_et_al_2022::DT1-35,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,3,1,2.6,0
-neely_et_al_2022::DT1-36,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,1,1,2.6,0
+neely_et_al_2022::DT1-33,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
+neely_et_al_2022::DT1-34,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,5,1,2.5,0
+neely_et_al_2022::DT1-35,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
+neely_et_al_2022::DT1-36,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,1,1,2.5,0
 neely_et_al_2022::DT1-37,neely_et_al_2022,Florida Keys,Natural colony,2,1.590691307323751,1,1,1,2,0
-neely_et_al_2022::DT1-38,neely_et_al_2022,Florida Keys,Natural colony,4,3.589322381930185,1,1,1,2.5,0
-neely_et_al_2022::DT1-39,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
-neely_et_al_2022::DT1-4,neely_et_al_2022,Florida Keys,Natural colony,2,1.6132785763175908,1,0,0,1,0
-neely_et_al_2022::DT1-40,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
-neely_et_al_2022::DT1-41,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,4,1,2.6,0
-neely_et_al_2022::DT1-42,neely_et_al_2022,Florida Keys,Natural colony,2,1.590691307323751,0,1,1,2,0
-neely_et_al_2022::DT1-43,neely_et_al_2022,Florida Keys,Natural colony,1,0.9390828199863108,1,0,0,2,0
+neely_et_al_2022::DT1-38,neely_et_al_2022,Florida Keys,Natural colony,5,4.528405201916495,1,1,1,2.4,0
+neely_et_al_2022::DT1-39,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
+neely_et_al_2022::DT1-4,neely_et_al_2022,Florida Keys,Natural colony,2,1.590691307323751,1,1,1,2,0
+neely_et_al_2022::DT1-40,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
+neely_et_al_2022::DT1-41,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,5,1,2.5,0
+neely_et_al_2022::DT1-42,neely_et_al_2022,Florida Keys,Natural colony,3,2.529774127310062,1,2,1,2,0
+neely_et_al_2022::DT1-43,neely_et_al_2022,Florida Keys,Natural colony,2,1.916495550992471,1,0,0,2,0
 neely_et_al_2022::DT1-44,neely_et_al_2022,Florida Keys,Natural colony,1,0.9774127310061602,1,0,0,2,0
 neely_et_al_2022::DT1-45,neely_et_al_2022,Florida Keys,Natural colony,1,0.9774127310061602,1,0,0,2,0
 neely_et_al_2022::DT1-46,neely_et_al_2022,Florida Keys,Natural colony,2,1.590691307323751,1,0,0,2,0
 neely_et_al_2022::DT1-47,neely_et_al_2022,Florida Keys,Natural colony,1,0.9774127310061602,1,0,0,2,0
-neely_et_al_2022::DT1-48,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
+neely_et_al_2022::DT1-48,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
 neely_et_al_2022::DT1-49,neely_et_al_2022,Florida Keys,Natural colony,1,0.9774127310061602,1,0,0,2,0
-neely_et_al_2022::DT1-5,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
+neely_et_al_2022::DT1-5,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
 neely_et_al_2022::DT1-50,neely_et_al_2022,Florida Keys,Natural colony,1,0.9774127310061602,1,0,0,2,0
-neely_et_al_2022::DT1-51,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.6,0
-neely_et_al_2022::DT1-52,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,1,2,1,2.6,0
+neely_et_al_2022::DT1-51,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
+neely_et_al_2022::DT1-52,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,1,2,1,2.5,0
 neely_et_al_2022::DT1-53,neely_et_al_2022,Florida Keys,Natural colony,1,0.9774127310061602,1,0,0,2,0
-neely_et_al_2022::DT1-54,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,1,3,1,2.6,0
+neely_et_al_2022::DT1-54,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,1,3,1,2.5,0
 neely_et_al_2022::DT1-55,neely_et_al_2022,Florida Keys,Natural colony,1,0.9774127310061602,1,0,0,2,0
 neely_et_al_2022::DT1-56,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
 neely_et_al_2022::DT1-57,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
 neely_et_al_2022::DT1-58,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
 neely_et_al_2022::DT1-59,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
-neely_et_al_2022::DT1-6,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,0,0,2.6,0
+neely_et_al_2022::DT1-6,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,0,0,2.5,0
 neely_et_al_2022::DT1-60,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
 neely_et_al_2022::DT1-61,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
-neely_et_al_2022::DT1-62,neely_et_al_2022,Florida Keys,Natural colony,4,3.671457905544148,0,2,1,2.75,0
+neely_et_al_2022::DT1-62,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,2,1,2.6,0
 neely_et_al_2022::DT1-63,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
-neely_et_al_2022::DT1-64,neely_et_al_2022,Florida Keys,Natural colony,4,3.671457905544148,0,3,1,2.75,0
+neely_et_al_2022::DT1-64,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,3,1,2.6,0
 neely_et_al_2022::DT1-65,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
 neely_et_al_2022::DT1-66,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
 neely_et_al_2022::DT1-67,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
 neely_et_al_2022::DT1-68,neely_et_al_2022,Florida Keys,Natural colony,4,3.997262149212868,0,1,1,2.75,0
 neely_et_al_2022::DT1-69,neely_et_al_2022,Florida Keys,Natural colony,2,1.9931553730321698,1,0,0,2.5,0
-neely_et_al_2022::DT1-7,neely_et_al_2022,Florida Keys,Natural colony,3,2.64476386036961,1,1,1,2.3333333333333335,0
+neely_et_al_2022::DT1-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.583846680355921,1,2,1,2.25,0
 neely_et_al_2022::DT1-70,neely_et_al_2022,Florida Keys,Natural colony,1,0.9390828199863108,1,0,0,2,0
 neely_et_al_2022::DT1-71,neely_et_al_2022,Florida Keys,Natural colony,2,1.9931553730321698,1,1,1,2.5,0
 neely_et_al_2022::DT1-72,neely_et_al_2022,Florida Keys,Natural colony,4,3.997262149212868,0,4,1,2.75,0
@@ -1322,39 +1249,39 @@ neely_et_al_2022::DT1-76,neely_et_al_2022,Florida Keys,Natural colony,4,3.997262
 neely_et_al_2022::DT1-77,neely_et_al_2022,Florida Keys,Natural colony,4,3.997262149212868,1,1,1,2.75,0
 neely_et_al_2022::DT1-78,neely_et_al_2022,Florida Keys,Natural colony,4,3.997262149212868,0,2,1,2.75,0
 neely_et_al_2022::DT1-79,neely_et_al_2022,Florida Keys,Natural colony,4,3.997262149212868,0,2,1,2.75,0
-neely_et_al_2022::DT1-8,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,3,1,2.6,0
+neely_et_al_2022::DT1-8,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
 neely_et_al_2022::DT1-80,neely_et_al_2022,Florida Keys,Natural colony,2,1.9931553730321698,1,1,1,2.5,0
 neely_et_al_2022::DT1-81,neely_et_al_2022,Florida Keys,Natural colony,4,3.997262149212868,0,1,1,2.75,0
 neely_et_al_2022::DT1-82,neely_et_al_2022,Florida Keys,Natural colony,1,0.9390828199863108,1,0,0,2,0
 neely_et_al_2022::DT1-83,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
-neely_et_al_2022::DT1-84,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,0,1,1,2,0
+neely_et_al_2022::DT1-84,neely_et_al_2022,Florida Keys,Natural colony,2,1.5523613963039016,1,2,1,2,0
 neely_et_al_2022::DT1-85,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
 neely_et_al_2022::DT1-86,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
 neely_et_al_2022::DT1-87,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
 neely_et_al_2022::DT1-88,neely_et_al_2022,Florida Keys,Natural colony,2,1.998631074606434,1,0,0,3,0
 neely_et_al_2022::DT1-89,neely_et_al_2022,Florida Keys,Natural colony,2,1.998631074606434,1,0,0,3,0
-neely_et_al_2022::DT1-9,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,4,1,2.6,0
+neely_et_al_2022::DT1-9,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,4,1,2.5,0
 neely_et_al_2022::DT1-90,neely_et_al_2022,Florida Keys,Natural colony,3,3.058179329226557,0,2,1,3,0
 neely_et_al_2022::DT1-91,neely_et_al_2022,Florida Keys,Natural colony,3,3.058179329226557,0,1,1,3,0
 neely_et_al_2022::DT1-92,neely_et_al_2022,Florida Keys,Natural colony,1,0.944558521560575,1,0,0,3,0
 neely_et_al_2022::DT1-93,neely_et_al_2022,Florida Keys,Natural colony,2,2.004106776180698,0,1,1,3,0
 neely_et_al_2022::DT1-94,neely_et_al_2022,Florida Keys,Natural colony,1,1.0595482546201231,1,0,0,3,0
 neely_et_al_2022::DT1-95,neely_et_al_2022,Florida Keys,Natural colony,1,1.0595482546201231,1,0,0,3,0
-neely_et_al_2022::DT2-1,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,4,1,2.6,0
-neely_et_al_2022::DT2-10,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,1,2,1,2.6,0
-neely_et_al_2022::DT2-11,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,1,1,2.6,0
-neely_et_al_2022::DT2-12,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,2,1,2.6,0
+neely_et_al_2022::DT2-1,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,5,1,2.5,0
+neely_et_al_2022::DT2-10,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,1,2,1,2.5,0
+neely_et_al_2022::DT2-11,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,1,1,2.5,0
+neely_et_al_2022::DT2-12,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
 neely_et_al_2022::DT2-13,neely_et_al_2022,Florida Keys,Natural colony,2,1.593429158110883,1,1,1,2,0
 neely_et_al_2022::DT2-14,neely_et_al_2022,Florida Keys,Natural colony,2,1.593429158110883,1,0,0,2,0
-neely_et_al_2022::DT2-15,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,4,1,2.6,0
+neely_et_al_2022::DT2-15,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,5,1,2.5,0
 neely_et_al_2022::DT2-16,neely_et_al_2022,Florida Keys,Natural colony,1,0.9801505817932924,1,0,0,2,0
-neely_et_al_2022::DT2-17,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,1,1,2.6,0
-neely_et_al_2022::DT2-18,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,2,1,2.6,0
+neely_et_al_2022::DT2-17,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,1,1,2.5,0
+neely_et_al_2022::DT2-18,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
 neely_et_al_2022::DT2-19,neely_et_al_2022,Florida Keys,Natural colony,1,0.9801505817932924,1,0,0,2,0
-neely_et_al_2022::DT2-2,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,1,1,2.6,0
-neely_et_al_2022::DT2-20,neely_et_al_2022,Florida Keys,Natural colony,2,1.593429158110883,0,1,1,2,0
+neely_et_al_2022::DT2-2,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,1,1,2.5,0
+neely_et_al_2022::DT2-20,neely_et_al_2022,Florida Keys,Natural colony,3,2.529774127310062,1,2,1,2,0
 neely_et_al_2022::DT2-21,neely_et_al_2022,Florida Keys,Natural colony,1,0.9801505817932924,1,0,0,2,0
-neely_et_al_2022::DT2-22,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,1,1,2.6,0
+neely_et_al_2022::DT2-22,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,1,1,2.5,0
 neely_et_al_2022::DT2-23,neely_et_al_2022,Florida Keys,Natural colony,1,0.9801505817932924,1,0,0,2,0
 neely_et_al_2022::DT2-24,neely_et_al_2022,Florida Keys,Natural colony,1,0.9801505817932924,1,0,0,2,0
 neely_et_al_2022::DT2-25,neely_et_al_2022,Florida Keys,Natural colony,1,0.6132785763175906,1,0,0,2,0
@@ -1371,47 +1298,47 @@ neely_et_al_2022::DT2-34,neely_et_al_2022,Florida Keys,Natural colony,2,2.006844
 neely_et_al_2022::DT2-35,neely_et_al_2022,Florida Keys,Natural colony,2,2.00684462696783,1,0,0,3,0
 neely_et_al_2022::DT2-36,neely_et_al_2022,Florida Keys,Natural colony,1,0.947296372347707,1,0,0,3,0
 neely_et_al_2022::DT2-4,neely_et_al_2022,Florida Keys,Natural colony,2,1.593429158110883,1,0,0,2,0
-neely_et_al_2022::DT2-5,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,4,1,2.6,0
-neely_et_al_2022::DT2-6,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,3,1,2.6,0
-neely_et_al_2022::DT2-7,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,3,1,2.6,0
-neely_et_al_2022::DT2-8,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,2,1,2.6,0
-neely_et_al_2022::DT2-9,neely_et_al_2022,Florida Keys,Natural colony,5,4.65160848733744,0,2,1,2.6,0
-neely_et_al_2022::LK1-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,0,0,2.5,0
-neely_et_al_2022::LK1-10,neely_et_al_2022,Florida Keys,Natural colony,3,2.8090349075975363,1,2,1,2.3333333333333335,0
-neely_et_al_2022::LK1-11,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,0,0,2.5,0
-neely_et_al_2022::LK1-12,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,4,1,2.5,0
-neely_et_al_2022::LK1-13,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,2,1,2.5,0
-neely_et_al_2022::LK1-14,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,3,1,2.5,0
-neely_et_al_2022::LK1-15,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
-neely_et_al_2022::LK1-16,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
+neely_et_al_2022::DT2-5,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,5,1,2.5,0
+neely_et_al_2022::DT2-6,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,4,1,2.5,0
+neely_et_al_2022::DT2-7,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,3,1,2.5,0
+neely_et_al_2022::DT2-8,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
+neely_et_al_2022::DT2-9,neely_et_al_2022,Florida Keys,Natural colony,6,5.587953456536619,0,2,1,2.5,0
+neely_et_al_2022::LK1-1,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,0,0,2.4,0
+neely_et_al_2022::LK1-10,neely_et_al_2022,Florida Keys,Natural colony,4,3.7125256673511293,1,3,1,2.25,0
+neely_et_al_2022::LK1-11,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,0,0,2.4,0
+neely_et_al_2022::LK1-12,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,5,1,2.4,0
+neely_et_al_2022::LK1-13,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,3,1,2.4,0
+neely_et_al_2022::LK1-14,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,4,1,2.4,0
+neely_et_al_2022::LK1-15,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,1,1,2.4,0
+neely_et_al_2022::LK1-16,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,1,1,2.4,0
 neely_et_al_2022::LK1-17,neely_et_al_2022,Florida Keys,Natural colony,2,1.7440109514031485,1,1,1,2,0
-neely_et_al_2022::LK1-18,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
-neely_et_al_2022::LK1-19,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,2,1,2.5,0
+neely_et_al_2022::LK1-18,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,1,1,2.4,0
+neely_et_al_2022::LK1-19,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,2,1,2.4,0
 neely_et_al_2022::LK1-2,neely_et_al_2022,Florida Keys,Natural colony,1,1.0924024640657084,1,0,0,2,0
-neely_et_al_2022::LK1-20,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,2,1,2.5,0
-neely_et_al_2022::LK1-21,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
+neely_et_al_2022::LK1-20,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,2,1,2.4,0
+neely_et_al_2022::LK1-21,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,1,1,2.4,0
 neely_et_al_2022::LK1-22,neely_et_al_2022,Florida Keys,Natural colony,2,1.998631074606434,0,0,0,3,0
-neely_et_al_2022::LK1-23,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,3,1,2.5,0
-neely_et_al_2022::LK1-24,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,0,0,2.5,0
-neely_et_al_2022::LK1-25,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
-neely_et_al_2022::LK1-26,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
-neely_et_al_2022::LK1-27,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,2,1,2.5,0
-neely_et_al_2022::LK1-28,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
-neely_et_al_2022::LK1-29,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,2,1,2.5,0
-neely_et_al_2022::LK1-3,neely_et_al_2022,Florida Keys,Natural colony,3,2.8090349075975363,1,1,1,2.3333333333333335,0
+neely_et_al_2022::LK1-23,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,3,1,2.4,0
+neely_et_al_2022::LK1-24,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,0,0,2.4,0
+neely_et_al_2022::LK1-25,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,1,1,2.4,0
+neely_et_al_2022::LK1-26,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,1,1,2.4,0
+neely_et_al_2022::LK1-27,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,2,1,2.4,0
+neely_et_al_2022::LK1-28,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,1,1,2.4,0
+neely_et_al_2022::LK1-29,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,2,1,2.4,0
+neely_et_al_2022::LK1-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.7125256673511293,1,1,1,2.25,0
 neely_et_al_2022::LK1-30,neely_et_al_2022,Florida Keys,Natural colony,2,1.7440109514031485,1,1,1,2,0
 neely_et_al_2022::LK1-31,neely_et_al_2022,Florida Keys,Natural colony,2,1.7440109514031485,1,1,1,2,0
-neely_et_al_2022::LK1-32,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,2,1,2.5,0
-neely_et_al_2022::LK1-33,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,0,0,2.5,0
-neely_et_al_2022::LK1-34,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
-neely_et_al_2022::LK1-35,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
-neely_et_al_2022::LK1-36,neely_et_al_2022,Florida Keys,Natural colony,2,1.7440109514031485,1,0,0,2,0
-neely_et_al_2022::LK1-37,neely_et_al_2022,Florida Keys,Natural colony,2,1.9685147159479808,1,0,0,2.5,0
-neely_et_al_2022::LK1-38,neely_et_al_2022,Florida Keys,Natural colony,2,1.7166324435318276,1,1,1,2.5,0
-neely_et_al_2022::LK1-39,neely_et_al_2022,Florida Keys,Natural colony,1,0.6516084873374401,0,1,1,2,0
-neely_et_al_2022::LK1-4,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
-neely_et_al_2022::LK1-40,neely_et_al_2022,Florida Keys,Natural colony,3,2.650239561943874,1,0,0,2.6666666666666665,0
-neely_et_al_2022::LK1-41,neely_et_al_2022,Florida Keys,Natural colony,3,2.650239561943874,1,0,0,2.6666666666666665,0
+neely_et_al_2022::LK1-32,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,2,1,2.4,0
+neely_et_al_2022::LK1-33,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,0,0,2.4,0
+neely_et_al_2022::LK1-34,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,1,1,2.4,0
+neely_et_al_2022::LK1-35,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,1,1,2.4,0
+neely_et_al_2022::LK1-36,neely_et_al_2022,Florida Keys,Natural colony,2,1.7440109514031485,1,1,1,2,0
+neely_et_al_2022::LK1-37,neely_et_al_2022,Florida Keys,Natural colony,3,3.060917180013689,1,0,0,2.3333333333333335,0
+neely_et_al_2022::LK1-38,neely_et_al_2022,Florida Keys,Natural colony,3,2.620123203285421,1,2,1,2.3333333333333335,0
+neely_et_al_2022::LK1-39,neely_et_al_2022,Florida Keys,Natural colony,2,1.5550992470910336,1,2,1,2,0
+neely_et_al_2022::LK1-4,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,1,1,2.4,0
+neely_et_al_2022::LK1-40,neely_et_al_2022,Florida Keys,Natural colony,4,3.5537303216974676,1,0,0,2.5,0
+neely_et_al_2022::LK1-41,neely_et_al_2022,Florida Keys,Natural colony,4,3.5537303216974676,1,0,0,2.5,0
 neely_et_al_2022::LK1-42,neely_et_al_2022,Florida Keys,Natural colony,1,0.9034907597535934,1,0,0,2,0
 neely_et_al_2022::LK1-43,neely_et_al_2022,Florida Keys,Natural colony,1,0.9034907597535934,1,0,0,2,0
 neely_et_al_2022::LK1-44,neely_et_al_2022,Florida Keys,Natural colony,1,1.0650239561943875,1,0,0,3,0
@@ -1420,40 +1347,40 @@ neely_et_al_2022::LK1-46,neely_et_al_2022,Florida Keys,Natural colony,2,1.998631
 neely_et_al_2022::LK1-47,neely_et_al_2022,Florida Keys,Natural colony,1,1.0650239561943875,1,0,0,3,0
 neely_et_al_2022::LK1-48,neely_et_al_2022,Florida Keys,Natural colony,1,1.0650239561943875,1,0,0,3,0
 neely_et_al_2022::LK1-49,neely_et_al_2022,Florida Keys,Natural colony,1,1.0650239561943875,1,0,0,3,0
-neely_et_al_2022::LK1-5,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,0,0,2.5,0
+neely_et_al_2022::LK1-5,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,0,0,2.4,0
 neely_et_al_2022::LK1-50,neely_et_al_2022,Florida Keys,Natural colony,1,1.0650239561943875,1,0,0,3,0
 neely_et_al_2022::LK1-51,neely_et_al_2022,Florida Keys,Natural colony,1,1.0650239561943875,1,0,0,3,0
 neely_et_al_2022::LK1-52,neely_et_al_2022,Florida Keys,Natural colony,2,1.998631074606434,0,1,1,3,0
 neely_et_al_2022::LK1-53,neely_et_al_2022,Florida Keys,Natural colony,1,0.9336071184120466,0,0,0,3,0
 neely_et_al_2022::LK1-54,neely_et_al_2022,Florida Keys,Natural colony,1,0.9336071184120466,0,0,0,3,0
 neely_et_al_2022::LK1-55,neely_et_al_2022,Florida Keys,Natural colony,1,0.9336071184120466,0,0,0,3,0
-neely_et_al_2022::LK1-6,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
+neely_et_al_2022::LK1-6,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,2,1,2.4,0
 neely_et_al_2022::LK1-7,neely_et_al_2022,Florida Keys,Natural colony,1,1.0951403148528405,1,0,0,2,0
-neely_et_al_2022::LK1-8,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,0,0,2.5,0
-neely_et_al_2022::LK1-9,neely_et_al_2022,Florida Keys,Natural colony,4,3.742642026009583,0,1,1,2.5,0
-neely_et_al_2022::LK2-1,neely_et_al_2022,Florida Keys,Natural colony,2,1.7494866529774127,0,1,1,2,0
-neely_et_al_2022::LK2-10,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,3,1,2.5,0
-neely_et_al_2022::LK2-11,neely_et_al_2022,Florida Keys,Natural colony,2,1.9657768651608487,1,0,0,2.5,0
-neely_et_al_2022::LK2-12,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,1,1,2.5,0
-neely_et_al_2022::LK2-13,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,2,1,2.5,0
-neely_et_al_2022::LK2-14,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,2,1,2.5,0
-neely_et_al_2022::LK2-15,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,2,1,2.5,0
+neely_et_al_2022::LK1-8,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,0,0,2.4,0
+neely_et_al_2022::LK1-9,neely_et_al_2022,Florida Keys,Natural colony,5,4.646132785763176,0,1,1,2.4,0
+neely_et_al_2022::LK2-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.7152635181382614,0,1,1,2.25,0
+neely_et_al_2022::LK2-10,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,4,1,2.4,0
+neely_et_al_2022::LK2-11,neely_et_al_2022,Florida Keys,Natural colony,3,3.0198494182067077,1,0,0,2.3333333333333335,0
+neely_et_al_2022::LK2-12,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,1,1,2.4,0
+neely_et_al_2022::LK2-13,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.4,0
+neely_et_al_2022::LK2-14,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.4,0
+neely_et_al_2022::LK2-15,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.4,0
 neely_et_al_2022::LK2-16,neely_et_al_2022,Florida Keys,Natural colony,1,1.054072553045859,1,0,0,2,0
-neely_et_al_2022::LK2-17,neely_et_al_2022,Florida Keys,Natural colony,3,2.6830937713894594,0,2,1,2.3333333333333335,0
-neely_et_al_2022::LK2-18,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,4,1,2.5,0
+neely_et_al_2022::LK2-17,neely_et_al_2022,Florida Keys,Natural colony,4,3.5838466803559204,0,3,1,2.25,0
+neely_et_al_2022::LK2-18,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,5,1,2.4,0
 neely_et_al_2022::LK2-19,neely_et_al_2022,Florida Keys,Natural colony,1,1.054072553045859,1,0,0,2,0
-neely_et_al_2022::LK2-2,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,3,1,2.5,0
-neely_et_al_2022::LK2-20,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,2,1,2.5,0
-neely_et_al_2022::LK2-21,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,2,1,2.5,0
-neely_et_al_2022::LK2-22,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,1,1,2.5,0
-neely_et_al_2022::LK2-23,neely_et_al_2022,Florida Keys,Natural colony,3,2.8145106091718004,1,1,1,2.3333333333333335,0
+neely_et_al_2022::LK2-2,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,4,1,2.4,0
+neely_et_al_2022::LK2-20,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.4,0
+neely_et_al_2022::LK2-21,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,2,1,2.4,0
+neely_et_al_2022::LK2-22,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,1,1,2.4,0
+neely_et_al_2022::LK2-23,neely_et_al_2022,Florida Keys,Natural colony,4,3.7152635181382614,1,1,1,2.25,0
 neely_et_al_2022::LK2-24,neely_et_al_2022,Florida Keys,Natural colony,1,1.054072553045859,1,0,0,2,0
-neely_et_al_2022::LK2-25,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,3,1,2.5,0
+neely_et_al_2022::LK2-25,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,3,1,2.4,0
 neely_et_al_2022::LK2-26,neely_et_al_2022,Florida Keys,Natural colony,1,0.6954140999315537,1,0,0,2,0
-neely_et_al_2022::LK2-27,neely_et_al_2022,Florida Keys,Natural colony,3,2.6940451745379876,0,1,1,2.6666666666666665,0
+neely_et_al_2022::LK2-27,neely_et_al_2022,Florida Keys,Natural colony,4,3.594798083504449,0,2,1,2.5,0
 neely_et_al_2022::LK2-28,neely_et_al_2022,Florida Keys,Natural colony,1,0.6954140999315537,1,0,0,2,0
-neely_et_al_2022::LK2-29,neely_et_al_2022,Florida Keys,Natural colony,3,2.6940451745379876,1,1,1,2.6666666666666665,0
-neely_et_al_2022::LK2-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,1,1,2.5,0
+neely_et_al_2022::LK2-29,neely_et_al_2022,Florida Keys,Natural colony,4,3.594798083504449,1,1,1,2.5,0
+neely_et_al_2022::LK2-3,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,1,1,2.4,0
 neely_et_al_2022::LK2-30,neely_et_al_2022,Florida Keys,Natural colony,3,2.8993839835728954,0,0,0,2.6666666666666665,0
 neely_et_al_2022::LK2-31,neely_et_al_2022,Florida Keys,Natural colony,3,2.8993839835728954,0,0,0,2.6666666666666665,0
 neely_et_al_2022::LK2-32,neely_et_al_2022,Florida Keys,Natural colony,2,1.998631074606434,0,0,0,3,0
@@ -1462,44 +1389,44 @@ neely_et_al_2022::LK2-34,neely_et_al_2022,Florida Keys,Natural colony,2,1.998631
 neely_et_al_2022::LK2-35,neely_et_al_2022,Florida Keys,Natural colony,1,0.9336071184120466,0,1,1,3,0
 neely_et_al_2022::LK2-36,neely_et_al_2022,Florida Keys,Natural colony,1,0.9336071184120466,0,1,1,3,0
 neely_et_al_2022::LK2-4,neely_et_al_2022,Florida Keys,Natural colony,2,1.7494866529774127,1,1,1,2,0
-neely_et_al_2022::LK2-5,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,1,1,2.5,0
-neely_et_al_2022::LK2-6,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,1,2,1,2.5,0
+neely_et_al_2022::LK2-5,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,1,1,2.4,0
+neely_et_al_2022::LK2-6,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,1,2,1,2.4,0
 neely_et_al_2022::LK2-7,neely_et_al_2022,Florida Keys,Natural colony,1,1.054072553045859,1,0,0,2,0
-neely_et_al_2022::LK2-8,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,0,0,2.5,0
-neely_et_al_2022::LK2-9,neely_et_al_2022,Florida Keys,Natural colony,4,3.748117727583847,0,1,1,2.5,0
-neely_et_al_2022::LK3-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
-neely_et_al_2022::LK3-10,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,1,1,2.25,0
+neely_et_al_2022::LK2-8,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,0,0,2.4,0
+neely_et_al_2022::LK2-9,neely_et_al_2022,Florida Keys,Natural colony,5,4.648870636550308,0,1,1,2.4,0
+neely_et_al_2022::LK3-1,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
+neely_et_al_2022::LK3-10,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,1,1,2.2,0
 neely_et_al_2022::LK3-11,neely_et_al_2022,Florida Keys,Natural colony,1,1.160848733744011,1,0,0,2,0
-neely_et_al_2022::LK3-12,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
+neely_et_al_2022::LK3-12,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
 neely_et_al_2022::LK3-13,neely_et_al_2022,Florida Keys,Natural colony,1,1.160848733744011,1,0,0,2,0
-neely_et_al_2022::LK3-14,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,1,1,2.25,0
-neely_et_al_2022::LK3-15,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
-neely_et_al_2022::LK3-16,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
-neely_et_al_2022::LK3-17,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,2,1,2.25,0
-neely_et_al_2022::LK3-18,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,2,1,2.25,0
-neely_et_al_2022::LK3-19,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
-neely_et_al_2022::LK3-2,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,1,1,2.25,0
+neely_et_al_2022::LK3-14,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,1,1,2.2,0
+neely_et_al_2022::LK3-15,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
+neely_et_al_2022::LK3-16,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
+neely_et_al_2022::LK3-17,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,3,1,2.2,0
+neely_et_al_2022::LK3-18,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,2,1,2.2,0
+neely_et_al_2022::LK3-19,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
+neely_et_al_2022::LK3-2,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,1,1,2.2,0
 neely_et_al_2022::LK3-20,neely_et_al_2022,Florida Keys,Natural colony,1,1.160848733744011,1,0,0,2,0
-neely_et_al_2022::LK3-21,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
-neely_et_al_2022::LK3-22,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,1,1,2.25,0
+neely_et_al_2022::LK3-21,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
+neely_et_al_2022::LK3-22,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,1,1,2.2,0
 neely_et_al_2022::LK3-23,neely_et_al_2022,Florida Keys,Natural colony,1,1.160848733744011,1,0,0,2,0
 neely_et_al_2022::LK3-24,neely_et_al_2022,Florida Keys,Natural colony,1,1.160848733744011,1,0,0,2,0
-neely_et_al_2022::LK3-25,neely_et_al_2022,Florida Keys,Natural colony,3,2.7323750855578375,0,0,0,2.3333333333333335,0
-neely_et_al_2022::LK3-26,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
-neely_et_al_2022::LK3-27,neely_et_al_2022,Florida Keys,Natural colony,3,2.6803559206023273,1,1,1,2,0
-neely_et_al_2022::LK3-28,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
-neely_et_al_2022::LK3-29,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
-neely_et_al_2022::LK3-30,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,2,1,2.25,0
+neely_et_al_2022::LK3-25,neely_et_al_2022,Florida Keys,Natural colony,4,3.6358658453114305,0,0,0,2.25,0
+neely_et_al_2022::LK3-26,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
+neely_et_al_2022::LK3-27,neely_et_al_2022,Florida Keys,Natural colony,4,3.583846680355921,1,1,1,2,0
+neely_et_al_2022::LK3-28,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
+neely_et_al_2022::LK3-29,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
+neely_et_al_2022::LK3-30,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,2,1,2.2,0
 neely_et_al_2022::LK3-31,neely_et_al_2022,Florida Keys,Natural colony,1,1.160848733744011,1,0,0,2,0
-neely_et_al_2022::LK3-32,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,2,1,2.25,0
+neely_et_al_2022::LK3-32,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,3,1,2.2,0
 neely_et_al_2022::LK3-33,neely_et_al_2022,Florida Keys,Natural colony,1,1.160848733744011,1,0,0,2,0
-neely_et_al_2022::LK3-34,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,2,1,2.25,0
-neely_et_al_2022::LK3-35,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,2,1,2.25,0
+neely_et_al_2022::LK3-34,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,2,1,2.2,0
+neely_et_al_2022::LK3-35,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,3,1,2.2,0
 neely_et_al_2022::LK3-36,neely_et_al_2022,Florida Keys,Natural colony,1,0.5448323066392882,1,0,0,2,0
 neely_et_al_2022::LK3-37,neely_et_al_2022,Florida Keys,Natural colony,1,0.5448323066392882,1,0,0,2,0
-neely_et_al_2022::LK3-38,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
-neely_et_al_2022::LK3-39,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,2,1,2.25,0
-neely_et_al_2022::LK3-4,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
+neely_et_al_2022::LK3-38,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
+neely_et_al_2022::LK3-39,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,2,1,2.2,0
+neely_et_al_2022::LK3-4,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
 neely_et_al_2022::LK3-40,neely_et_al_2022,Florida Keys,Natural colony,2,1.8781656399726214,1,0,0,2,0
 neely_et_al_2022::LK3-41,neely_et_al_2022,Florida Keys,Natural colony,3,2.9048596851471595,0,1,1,2.3333333333333335,0
 neely_et_al_2022::LK3-42,neely_et_al_2022,Florida Keys,Natural colony,2,2.001368925393566,1,0,0,2.5,0
@@ -1507,56 +1434,56 @@ neely_et_al_2022::LK3-43,neely_et_al_2022,Florida Keys,Natural colony,2,2.001368
 neely_et_al_2022::LK3-44,neely_et_al_2022,Florida Keys,Natural colony,1,0.974674880219028,1,0,0,2,0
 neely_et_al_2022::LK3-45,neely_et_al_2022,Florida Keys,Natural colony,2,2.001368925393566,1,1,1,2.5,0
 neely_et_al_2022::LK3-46,neely_et_al_2022,Florida Keys,Natural colony,1,1.026694045174538,0,1,1,3,0
-neely_et_al_2022::LK3-5,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
+neely_et_al_2022::LK3-5,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
 neely_et_al_2022::LK3-6,neely_et_al_2022,Florida Keys,Natural colony,1,1.160848733744011,1,0,0,2,0
-neely_et_al_2022::LK3-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,0,0,2.25,0
-neely_et_al_2022::LK3-8,neely_et_al_2022,Florida Keys,Natural colony,4,3.707049965776865,0,1,1,2.25,0
+neely_et_al_2022::LK3-7,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,0,0,2.2,0
+neely_et_al_2022::LK3-8,neely_et_al_2022,Florida Keys,Natural colony,5,4.610540725530459,0,1,1,2.2,0
 neely_et_al_2022::LK3-9,neely_et_al_2022,Florida Keys,Natural colony,1,1.160848733744011,1,0,0,2,0
-neely_et_al_2022::MR1-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
-neely_et_al_2022::MR1-10,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
+neely_et_al_2022::MR1-1,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
+neely_et_al_2022::MR1-10,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
 neely_et_al_2022::MR1-11,neely_et_al_2022,Florida Keys,Natural colony,1,1.4948665297741273,1,0,0,4,1
-neely_et_al_2022::MR1-12,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
-neely_et_al_2022::MR1-13,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,2,1,3,0.25
-neely_et_al_2022::MR1-14,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,1,1,3,0.25
-neely_et_al_2022::MR1-15,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,1,1,3,0.25
+neely_et_al_2022::MR1-12,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
+neely_et_al_2022::MR1-13,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,3,1,2.8,0.2
+neely_et_al_2022::MR1-14,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,2,1,2.8,0.2
+neely_et_al_2022::MR1-15,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,2,1,2.8,0.2
 neely_et_al_2022::MR1-16,neely_et_al_2022,Florida Keys,Natural colony,2,1.9548254620123202,1,0,0,3,0.5
-neely_et_al_2022::MR1-17,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,0,3,1,3,0.25
-neely_et_al_2022::MR1-18,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
-neely_et_al_2022::MR1-19,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,1,1,3,0.25
-neely_et_al_2022::MR1-2,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,2,1,3,0.25
-neely_et_al_2022::MR1-20,neely_et_al_2022,Florida Keys,Natural colony,3,2.8583162217659135,0,1,1,2.6666666666666665,0
-neely_et_al_2022::MR1-21,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,1,1,3,0.25
-neely_et_al_2022::MR1-22,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,1,1,3,0.25
-neely_et_al_2022::MR1-23,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,2,1,3,0.25
-neely_et_al_2022::MR1-24,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,1,1,3,0.25
-neely_et_al_2022::MR1-25,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,0,1,1,3,0.25
-neely_et_al_2022::MR1-26,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,0,1,1,3,0.25
-neely_et_al_2022::MR1-27,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
+neely_et_al_2022::MR1-17,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,0,3,1,2.8,0.2
+neely_et_al_2022::MR1-18,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
+neely_et_al_2022::MR1-19,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,2,1,2.8,0.2
+neely_et_al_2022::MR1-2,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,3,1,2.8,0.2
+neely_et_al_2022::MR1-20,neely_et_al_2022,Florida Keys,Natural colony,4,4.353182751540041,0,1,1,3,0.25
+neely_et_al_2022::MR1-21,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,1,1,2.8,0.2
+neely_et_al_2022::MR1-22,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,1,1,2.8,0.2
+neely_et_al_2022::MR1-23,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,3,1,2.8,0.2
+neely_et_al_2022::MR1-24,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,2,1,2.8,0.2
+neely_et_al_2022::MR1-25,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,0,1,1,2.8,0.2
+neely_et_al_2022::MR1-26,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,0,1,1,2.8,0.2
+neely_et_al_2022::MR1-27,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
 neely_et_al_2022::MR1-28,neely_et_al_2022,Florida Keys,Natural colony,2,1.9548254620123202,1,0,0,3,0.5
-neely_et_al_2022::MR1-29,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,1,1,3,0.25
-neely_et_al_2022::MR1-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,1,1,3,0.25
-neely_et_al_2022::MR1-30,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
+neely_et_al_2022::MR1-29,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,1,1,2.8,0.2
+neely_et_al_2022::MR1-3,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,2,1,2.8,0.2
+neely_et_al_2022::MR1-30,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
 neely_et_al_2022::MR1-31,neely_et_al_2022,Florida Keys,Natural colony,2,1.9548254620123202,1,0,0,3,0.5
-neely_et_al_2022::MR1-32,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,0,2,1,3,0.25
-neely_et_al_2022::MR1-33,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,2,1,3,0.25
-neely_et_al_2022::MR1-34,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
+neely_et_al_2022::MR1-32,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,0,3,1,2.8,0.2
+neely_et_al_2022::MR1-33,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,3,1,2.8,0.2
+neely_et_al_2022::MR1-34,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
 neely_et_al_2022::MR1-35,neely_et_al_2022,Florida Keys,Natural colony,1,1.4948665297741273,1,0,0,4,1
-neely_et_al_2022::MR1-36,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
+neely_et_al_2022::MR1-36,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
 neely_et_al_2022::MR1-37,neely_et_al_2022,Florida Keys,Natural colony,2,1.9548254620123202,1,0,0,3,0.5
-neely_et_al_2022::MR1-38,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
-neely_et_al_2022::MR1-39,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
+neely_et_al_2022::MR1-38,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
+neely_et_al_2022::MR1-39,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
 neely_et_al_2022::MR1-4,neely_et_al_2022,Florida Keys,Natural colony,2,1.9548254620123202,1,0,0,3,0.5
-neely_et_al_2022::MR1-40,neely_et_al_2022,Florida Keys,Natural colony,4,3.854893908281998,1,0,0,3,0.25
-neely_et_al_2022::MR1-41,neely_et_al_2022,Florida Keys,Natural colony,1,0.459958932238193,0,0,0,2,0
-neely_et_al_2022::MR1-42,neely_et_al_2022,Florida Keys,Natural colony,3,2.4394250513347018,1,0,0,2.6666666666666665,0
-neely_et_al_2022::MR1-43,neely_et_al_2022,Florida Keys,Natural colony,1,0.459958932238193,0,0,0,2,0
-neely_et_al_2022::MR1-44,neely_et_al_2022,Florida Keys,Natural colony,3,2.4394250513347018,0,2,1,2.6666666666666665,0
-neely_et_al_2022::MR1-45,neely_et_al_2022,Florida Keys,Natural colony,3,2.4394250513347018,0,1,1,2.6666666666666665,0
-neely_et_al_2022::MR1-46,neely_et_al_2022,Florida Keys,Natural colony,3,2.4394250513347018,1,1,1,2.6666666666666665,0
-neely_et_al_2022::MR1-47,neely_et_al_2022,Florida Keys,Natural colony,3,2.8583162217659135,0,0,0,2.6666666666666665,0
+neely_et_al_2022::MR1-40,neely_et_al_2022,Florida Keys,Natural colony,5,4.733744010951403,1,0,0,2.8,0.2
+neely_et_al_2022::MR1-41,neely_et_al_2022,Florida Keys,Natural colony,2,1.3388090349075976,1,0,0,2,0
+neely_et_al_2022::MR1-42,neely_et_al_2022,Florida Keys,Natural colony,4,3.3182751540041067,1,0,0,2.5,0
+neely_et_al_2022::MR1-43,neely_et_al_2022,Florida Keys,Natural colony,2,1.3388090349075976,1,0,0,2,0
+neely_et_al_2022::MR1-44,neely_et_al_2022,Florida Keys,Natural colony,4,3.3182751540041067,0,3,1,2.5,0
+neely_et_al_2022::MR1-45,neely_et_al_2022,Florida Keys,Natural colony,4,3.3182751540041067,0,1,1,2.5,0
+neely_et_al_2022::MR1-46,neely_et_al_2022,Florida Keys,Natural colony,4,3.3182751540041067,1,1,1,2.5,0
+neely_et_al_2022::MR1-47,neely_et_al_2022,Florida Keys,Natural colony,3,2.8583162217659135,0,1,1,2.6666666666666665,0
 neely_et_al_2022::MR1-48,neely_et_al_2022,Florida Keys,Natural colony,3,2.8583162217659135,1,0,0,2.6666666666666665,0
 neely_et_al_2022::MR1-49,neely_et_al_2022,Florida Keys,Natural colony,3,2.8583162217659135,1,1,1,2.6666666666666665,0
-neely_et_al_2022::MR1-5,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
+neely_et_al_2022::MR1-5,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
 neely_et_al_2022::MR1-50,neely_et_al_2022,Florida Keys,Natural colony,3,2.8583162217659135,1,0,0,2.6666666666666665,0
 neely_et_al_2022::MR1-51,neely_et_al_2022,Florida Keys,Natural colony,3,2.8583162217659135,0,1,1,2.6666666666666665,0
 neely_et_al_2022::MR1-52,neely_et_al_2022,Florida Keys,Natural colony,3,2.8583162217659135,1,0,0,2.6666666666666665,0
@@ -1567,7 +1494,7 @@ neely_et_al_2022::MR1-56,neely_et_al_2022,Florida Keys,Natural colony,3,2.858316
 neely_et_al_2022::MR1-57,neely_et_al_2022,Florida Keys,Natural colony,3,2.8583162217659135,1,2,1,2.6666666666666665,0
 neely_et_al_2022::MR1-58,neely_et_al_2022,Florida Keys,Natural colony,2,1.9356605065023955,1,0,0,2.5,0
 neely_et_al_2022::MR1-59,neely_et_al_2022,Florida Keys,Natural colony,2,1.979466119096509,1,1,1,3,0
-neely_et_al_2022::MR1-6,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,2,1,3,0.25
+neely_et_al_2022::MR1-6,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,3,1,2.8,0.2
 neely_et_al_2022::MR1-60,neely_et_al_2022,Florida Keys,Natural colony,2,1.979466119096509,1,1,1,3,0
 neely_et_al_2022::MR1-61,neely_et_al_2022,Florida Keys,Natural colony,1,1.056810403832991,1,0,0,3,0
 neely_et_al_2022::MR1-62,neely_et_al_2022,Florida Keys,Natural colony,2,1.979466119096509,1,0,0,3,0
@@ -1578,7 +1505,7 @@ neely_et_al_2022::MR1-66,neely_et_al_2022,Florida Keys,Natural colony,2,1.979466
 neely_et_al_2022::MR1-67,neely_et_al_2022,Florida Keys,Natural colony,2,1.979466119096509,1,0,0,3,0
 neely_et_al_2022::MR1-68,neely_et_al_2022,Florida Keys,Natural colony,2,1.979466119096509,1,0,0,3,0
 neely_et_al_2022::MR1-69,neely_et_al_2022,Florida Keys,Natural colony,1,0.922655715263518,0,1,1,3,0
-neely_et_al_2022::MR1-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
+neely_et_al_2022::MR1-7,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
 neely_et_al_2022::MR1-70,neely_et_al_2022,Florida Keys,Natural colony,1,0.922655715263518,1,0,0,3,0
 neely_et_al_2022::MR1-71,neely_et_al_2022,Florida Keys,Natural colony,1,0.922655715263518,1,0,0,3,0
 neely_et_al_2022::MR1-72,neely_et_al_2022,Florida Keys,Natural colony,1,0.922655715263518,1,0,0,3,0
@@ -1589,11 +1516,11 @@ neely_et_al_2022::MR1-76,neely_et_al_2022,Florida Keys,Natural colony,1,0.922655
 neely_et_al_2022::MR1-77,neely_et_al_2022,Florida Keys,Natural colony,1,0.922655715263518,1,0,0,3,0
 neely_et_al_2022::MR1-78,neely_et_al_2022,Florida Keys,Natural colony,1,0.922655715263518,0,1,1,3,0
 neely_et_al_2022::MR1-79,neely_et_al_2022,Florida Keys,Natural colony,1,0.922655715263518,1,0,0,3,0
-neely_et_al_2022::MR1-8,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,0,0,3,0.25
+neely_et_al_2022::MR1-8,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,0,0,2.8,0.2
 neely_et_al_2022::MR1-80,neely_et_al_2022,Florida Keys,Natural colony,1,0.922655715263518,1,0,0,3,0
-neely_et_al_2022::MR1-9,neely_et_al_2022,Florida Keys,Natural colony,4,3.934291581108829,1,1,1,3,0.25
-neely_et_al_2022::MR2-1,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-10,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR1-9,neely_et_al_2022,Florida Keys,Natural colony,5,4.813141683778234,1,2,1,2.8,0.2
+neely_et_al_2022::MR2-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-10,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
 neely_et_al_2022::MR2-100,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR2-101,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR2-102,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
@@ -1604,7 +1531,7 @@ neely_et_al_2022::MR2-106,neely_et_al_2022,Florida Keys,Natural colony,2,2.31348
 neely_et_al_2022::MR2-107,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR2-108,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR2-109,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,1,1,2.5,0
-neely_et_al_2022::MR2-11,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,2,1,2.3333333333333335,0
+neely_et_al_2022::MR2-11,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,3,1,2.25,0
 neely_et_al_2022::MR2-110,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR2-111,neely_et_al_2022,Florida Keys,Natural colony,1,1.0869267624914445,1,0,0,2,0
 neely_et_al_2022::MR2-112,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
@@ -1615,7 +1542,7 @@ neely_et_al_2022::MR2-116,neely_et_al_2022,Florida Keys,Natural colony,2,2.31348
 neely_et_al_2022::MR2-117,neely_et_al_2022,Florida Keys,Natural colony,1,1.0869267624914445,1,0,0,2,0
 neely_et_al_2022::MR2-118,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR2-119,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
-neely_et_al_2022::MR2-12,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-12,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
 neely_et_al_2022::MR2-120,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR2-121,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR2-122,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
@@ -1626,7 +1553,7 @@ neely_et_al_2022::MR2-126,neely_et_al_2022,Florida Keys,Natural colony,1,1.08692
 neely_et_al_2022::MR2-127,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,1,1,2.5,0
 neely_et_al_2022::MR2-128,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-129,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
-neely_et_al_2022::MR2-13,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
+neely_et_al_2022::MR2-13,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,2,1,2.25,0
 neely_et_al_2022::MR2-130,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-131,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-132,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
@@ -1637,7 +1564,7 @@ neely_et_al_2022::MR2-136,neely_et_al_2022,Florida Keys,Natural colony,1,1.22655
 neely_et_al_2022::MR2-137,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-138,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-139,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
-neely_et_al_2022::MR2-14,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
+neely_et_al_2022::MR2-14,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,2,1,2.25,0
 neely_et_al_2022::MR2-140,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-141,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-142,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
@@ -1648,7 +1575,7 @@ neely_et_al_2022::MR2-146,neely_et_al_2022,Florida Keys,Natural colony,1,1.22655
 neely_et_al_2022::MR2-147,neely_et_al_2022,Florida Keys,Natural colony,2,1.7713894592744694,1,1,1,3,0
 neely_et_al_2022::MR2-148,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-149,neely_et_al_2022,Florida Keys,Natural colony,2,1.7713894592744694,1,1,1,3,0
-neely_et_al_2022::MR2-15,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-15,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
 neely_et_al_2022::MR2-150,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-151,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-152,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
@@ -1659,7 +1586,7 @@ neely_et_al_2022::MR2-156,neely_et_al_2022,Florida Keys,Natural colony,1,1.22655
 neely_et_al_2022::MR2-157,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-158,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-159,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
-neely_et_al_2022::MR2-16,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-16,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
 neely_et_al_2022::MR2-160,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-161,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-162,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
@@ -1677,77 +1604,77 @@ neely_et_al_2022::MR2-172,neely_et_al_2022,Florida Keys,Natural colony,1,1.22655
 neely_et_al_2022::MR2-173,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-174,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR2-175,neely_et_al_2022,Florida Keys,Natural colony,2,1.7713894592744694,1,1,1,3,0
-neely_et_al_2022::MR2-18,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
-neely_et_al_2022::MR2-19,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-2,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-20,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-21,neely_et_al_2022,Florida Keys,Natural colony,4,3.381245722108145,0,1,1,2.5,0
-neely_et_al_2022::MR2-22,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-23,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-24,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-25,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-18,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,2,1,2.25,0
+neely_et_al_2022::MR2-19,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-2,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-20,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-21,neely_et_al_2022,Florida Keys,Natural colony,5,4.46817248459959,0,1,1,2.4,0
+neely_et_al_2022::MR2-22,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-23,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-24,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-25,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
 neely_et_al_2022::MR2-26,neely_et_al_2022,Florida Keys,Natural colony,2,1.6098562628336754,1,0,0,2,0
-neely_et_al_2022::MR2-27,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-27,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
 neely_et_al_2022::MR2-28,neely_et_al_2022,Florida Keys,Natural colony,1,1.1471594798083504,1,0,0,2,0
-neely_et_al_2022::MR2-29,neely_et_al_2022,Florida Keys,Natural colony,4,3.381245722108145,0,1,1,2.5,0
+neely_et_al_2022::MR2-29,neely_et_al_2022,Florida Keys,Natural colony,5,4.46817248459959,0,1,1,2.4,0
 neely_et_al_2022::MR2-3,neely_et_al_2022,Florida Keys,Natural colony,1,1.1471594798083504,1,0,0,2,0
-neely_et_al_2022::MR2-30,neely_et_al_2022,Florida Keys,Natural colony,4,3.381245722108145,0,2,1,2.5,0
-neely_et_al_2022::MR2-31,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-32,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-30,neely_et_al_2022,Florida Keys,Natural colony,5,4.46817248459959,0,2,1,2.4,0
+neely_et_al_2022::MR2-31,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-32,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
 neely_et_al_2022::MR2-33,neely_et_al_2022,Florida Keys,Natural colony,1,1.1471594798083504,1,0,0,2,0
-neely_et_al_2022::MR2-34,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-35,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-36,neely_et_al_2022,Florida Keys,Natural colony,4,3.381245722108145,0,1,1,2.5,0
-neely_et_al_2022::MR2-37,neely_et_al_2022,Florida Keys,Natural colony,4,3.381245722108145,0,3,1,2.5,0
-neely_et_al_2022::MR2-38,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
-neely_et_al_2022::MR2-39,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-4,neely_et_al_2022,Florida Keys,Natural colony,2,2.3737166324435317,1,0,0,2.5,0
-neely_et_al_2022::MR2-40,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-41,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-42,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-43,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-44,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-45,neely_et_al_2022,Florida Keys,Natural colony,4,3.381245722108145,0,2,1,2.5,0
-neely_et_al_2022::MR2-46,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-34,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-35,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-36,neely_et_al_2022,Florida Keys,Natural colony,5,4.46817248459959,0,1,1,2.4,0
+neely_et_al_2022::MR2-37,neely_et_al_2022,Florida Keys,Natural colony,5,4.46817248459959,0,4,1,2.4,0
+neely_et_al_2022::MR2-38,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,2,1,2.25,0
+neely_et_al_2022::MR2-39,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-4,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-40,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-41,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-42,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-43,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-44,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-45,neely_et_al_2022,Florida Keys,Natural colony,5,4.46817248459959,0,2,1,2.4,0
+neely_et_al_2022::MR2-46,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
 neely_et_al_2022::MR2-47,neely_et_al_2022,Florida Keys,Natural colony,2,1.6098562628336754,1,0,0,2,0
-neely_et_al_2022::MR2-48,neely_et_al_2022,Florida Keys,Natural colony,2,2.3737166324435317,1,0,0,2.5,0
-neely_et_al_2022::MR2-49,neely_et_al_2022,Florida Keys,Natural colony,2,2.3737166324435317,1,0,0,2.5,0
-neely_et_al_2022::MR2-5,neely_et_al_2022,Florida Keys,Natural colony,2,1.6098562628336754,0,0,0,2,0
-neely_et_al_2022::MR2-50,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-51,neely_et_al_2022,Florida Keys,Natural colony,4,3.381245722108145,0,2,1,2.5,0
-neely_et_al_2022::MR2-52,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-53,neely_et_al_2022,Florida Keys,Natural colony,2,2.3737166324435317,1,0,0,2.5,0
+neely_et_al_2022::MR2-48,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-49,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-5,neely_et_al_2022,Florida Keys,Natural colony,3,2.6967830253251197,1,0,0,2,0
+neely_et_al_2022::MR2-50,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-51,neely_et_al_2022,Florida Keys,Natural colony,5,4.46817248459959,0,2,1,2.4,0
+neely_et_al_2022::MR2-52,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-53,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
 neely_et_al_2022::MR2-54,neely_et_al_2022,Florida Keys,Natural colony,2,1.6098562628336754,1,0,0,2,0
-neely_et_al_2022::MR2-55,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
-neely_et_al_2022::MR2-56,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-57,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-58,neely_et_al_2022,Florida Keys,Natural colony,4,3.381245722108145,0,2,1,2.5,0
-neely_et_al_2022::MR2-59,neely_et_al_2022,Florida Keys,Natural colony,4,3.381245722108145,0,2,1,2.5,0
-neely_et_al_2022::MR2-6,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-60,neely_et_al_2022,Florida Keys,Natural colony,4,3.381245722108145,0,3,1,2.5,0
-neely_et_al_2022::MR2-61,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,0,0,2.5,0
-neely_et_al_2022::MR2-62,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,0,0,2.5,0
-neely_et_al_2022::MR2-63,neely_et_al_2022,Florida Keys,Natural colony,3,2.2340862422997945,1,1,1,2.6666666666666665,0
-neely_et_al_2022::MR2-64,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,0,0,2.5,0
-neely_et_al_2022::MR2-65,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,0,0,2.5,0
+neely_et_al_2022::MR2-55,neely_et_al_2022,Florida Keys,Natural colony,3,3.4606433949349764,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-56,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-57,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-58,neely_et_al_2022,Florida Keys,Natural colony,5,4.46817248459959,0,2,1,2.4,0
+neely_et_al_2022::MR2-59,neely_et_al_2022,Florida Keys,Natural colony,5,4.46817248459959,0,2,1,2.4,0
+neely_et_al_2022::MR2-6,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-60,neely_et_al_2022,Florida Keys,Natural colony,5,4.46817248459959,0,4,1,2.4,0
+neely_et_al_2022::MR2-61,neely_et_al_2022,Florida Keys,Natural colony,3,2.7761806981519506,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-62,neely_et_al_2022,Florida Keys,Natural colony,3,2.7761806981519506,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-63,neely_et_al_2022,Florida Keys,Natural colony,4,3.3210130047912387,1,1,1,2.5,0
+neely_et_al_2022::MR2-64,neely_et_al_2022,Florida Keys,Natural colony,3,2.7761806981519506,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-65,neely_et_al_2022,Florida Keys,Natural colony,3,2.7761806981519506,1,0,0,2.3333333333333335,0
 neely_et_al_2022::MR2-66,neely_et_al_2022,Florida Keys,Natural colony,1,0.46269678302532513,1,0,0,2,0
-neely_et_al_2022::MR2-67,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,1,1,2.5,0
+neely_et_al_2022::MR2-67,neely_et_al_2022,Florida Keys,Natural colony,3,2.7761806981519506,1,2,1,2.3333333333333335,0
 neely_et_al_2022::MR2-68,neely_et_al_2022,Florida Keys,Natural colony,1,0.46269678302532513,1,0,0,2,0
 neely_et_al_2022::MR2-69,neely_et_al_2022,Florida Keys,Natural colony,1,0.46269678302532513,1,0,0,2,0
-neely_et_al_2022::MR2-7,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR2-70,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,0,0,2.5,0
+neely_et_al_2022::MR2-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR2-70,neely_et_al_2022,Florida Keys,Natural colony,3,2.7761806981519506,1,0,0,2.3333333333333335,0
 neely_et_al_2022::MR2-71,neely_et_al_2022,Florida Keys,Natural colony,1,0.46269678302532513,1,0,0,2,0
-neely_et_al_2022::MR2-72,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,0,0,2.5,0
-neely_et_al_2022::MR2-73,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,0,0,2.5,0
-neely_et_al_2022::MR2-74,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,0,0,2.5,0
+neely_et_al_2022::MR2-72,neely_et_al_2022,Florida Keys,Natural colony,3,2.7761806981519506,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-73,neely_et_al_2022,Florida Keys,Natural colony,3,2.7761806981519506,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR2-74,neely_et_al_2022,Florida Keys,Natural colony,3,2.7761806981519506,1,0,0,2.3333333333333335,0
 neely_et_al_2022::MR2-75,neely_et_al_2022,Florida Keys,Natural colony,1,0.46269678302532513,1,0,0,2,0
 neely_et_al_2022::MR2-76,neely_et_al_2022,Florida Keys,Natural colony,1,0.46269678302532513,1,0,0,2,0
 neely_et_al_2022::MR2-77,neely_et_al_2022,Florida Keys,Natural colony,1,0.46269678302532513,1,0,0,2,0
-neely_et_al_2022::MR2-78,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
-neely_et_al_2022::MR2-79,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,0,0,2.5,0
+neely_et_al_2022::MR2-78,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,0,0,2.5,0
+neely_et_al_2022::MR2-79,neely_et_al_2022,Florida Keys,Natural colony,3,2.7761806981519506,1,0,0,2.3333333333333335,0
 neely_et_al_2022::MR2-8,neely_et_al_2022,Florida Keys,Natural colony,2,1.6098562628336754,1,0,0,2,0
 neely_et_al_2022::MR2-80,neely_et_al_2022,Florida Keys,Natural colony,1,0.46269678302532513,1,0,0,2,0
-neely_et_al_2022::MR2-81,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
+neely_et_al_2022::MR2-81,neely_et_al_2022,Florida Keys,Natural colony,2,1.6892539356605063,1,0,0,2.5,0
 neely_et_al_2022::MR2-82,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR2-83,neely_et_al_2022,Florida Keys,Natural colony,1,1.0869267624914445,1,0,0,2,0
 neely_et_al_2022::MR2-84,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
@@ -1767,8 +1694,8 @@ neely_et_al_2022::MR2-96,neely_et_al_2022,Florida Keys,Natural colony,1,1.086926
 neely_et_al_2022::MR2-97,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR2-98,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR2-99,neely_et_al_2022,Florida Keys,Natural colony,3,2.858316221765914,0,1,1,2.6666666666666665,0
-neely_et_al_2022::MR3-1,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-10,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR3-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-10,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
 neely_et_al_2022::MR3-100,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR3-101,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR3-102,neely_et_al_2022,Florida Keys,Natural colony,2,1.7686516084873374,0,2,1,3,0
@@ -1779,78 +1706,76 @@ neely_et_al_2022::MR3-106,neely_et_al_2022,Florida Keys,Natural colony,1,1.22655
 neely_et_al_2022::MR3-107,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR3-108,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR3-109,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
-neely_et_al_2022::MR3-11,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR3-11,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
 neely_et_al_2022::MR3-110,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR3-111,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR3-112,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR3-113,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR3-114,neely_et_al_2022,Florida Keys,Natural colony,1,0.5420944558521561,0,0,0,3,0
-neely_et_al_2022::MR3-115,neely_et_al_2022,Florida Keys,Natural colony,1,1,1,0,0,3,0
-neely_et_al_2022::MR3-116,neely_et_al_2022,Florida Keys,Natural colony,1,1,1,0,0,3,0
-neely_et_al_2022::MR3-12,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-13,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
-neely_et_al_2022::MR3-14,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-15,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
-neely_et_al_2022::MR3-16,neely_et_al_2022,Florida Keys,Natural colony,4,3.378507871321013,0,1,1,2.5,0
-neely_et_al_2022::MR3-17,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-18,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-19,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-2,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
-neely_et_al_2022::MR3-20,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-21,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-22,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-23,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-24,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-25,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-26,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-27,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-28,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-29,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
-neely_et_al_2022::MR3-3,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-30,neely_et_al_2022,Florida Keys,Natural colony,2,1.6098562628336754,0,0,0,2,0
-neely_et_al_2022::MR3-31,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-32,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
-neely_et_al_2022::MR3-33,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-34,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-35,neely_et_al_2022,Florida Keys,Natural colony,4,3.378507871321013,0,0,0,2.5,0
-neely_et_al_2022::MR3-36,neely_et_al_2022,Florida Keys,Natural colony,4,3.378507871321013,0,0,0,2.5,0
-neely_et_al_2022::MR3-37,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-38,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-39,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
-neely_et_al_2022::MR3-4,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-40,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,1,1,2.5,0
-neely_et_al_2022::MR3-41,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-42,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-43,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-44,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-45,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-46,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
-neely_et_al_2022::MR3-47,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-48,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-49,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-5,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-50,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-51,neely_et_al_2022,Florida Keys,Natural colony,1,0.3860369609856263,0,0,0,2,0
-neely_et_al_2022::MR3-52,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,0,0,2.5,0
-neely_et_al_2022::MR3-53,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,1,1,2.5,0
-neely_et_al_2022::MR3-54,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,0,0,2.5,0
-neely_et_al_2022::MR3-55,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,0,0,2.5,0
-neely_et_al_2022::MR3-56,neely_et_al_2022,Florida Keys,Natural colony,3,2.1546885694729636,0,1,1,2.6666666666666665,0
-neely_et_al_2022::MR3-57,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,1,1,2.5,0
+neely_et_al_2022::MR3-12,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-13,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,2,1,2.25,0
+neely_et_al_2022::MR3-14,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-15,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,2,1,2.25,0
+neely_et_al_2022::MR3-16,neely_et_al_2022,Florida Keys,Natural colony,5,4.465434633812457,0,1,1,2.4,0
+neely_et_al_2022::MR3-17,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-18,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-19,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-2,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,2,1,2.25,0
+neely_et_al_2022::MR3-20,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-21,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-22,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-23,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-24,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-25,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-26,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-27,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-28,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-29,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,2,1,2.25,0
+neely_et_al_2022::MR3-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-30,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,0,0,0,2.25,0
+neely_et_al_2022::MR3-31,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-32,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,2,1,2.25,0
+neely_et_al_2022::MR3-33,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-34,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-35,neely_et_al_2022,Florida Keys,Natural colony,5,4.465434633812457,0,0,0,2.4,0
+neely_et_al_2022::MR3-36,neely_et_al_2022,Florida Keys,Natural colony,5,4.465434633812457,0,0,0,2.4,0
+neely_et_al_2022::MR3-37,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-38,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-39,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,1,1,2.25,0
+neely_et_al_2022::MR3-4,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-40,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,2,1,2.3333333333333335,0
+neely_et_al_2022::MR3-41,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-42,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-43,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-44,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-45,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-46,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,2,1,2.25,0
+neely_et_al_2022::MR3-47,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-48,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-49,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-5,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-50,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-51,neely_et_al_2022,Florida Keys,Natural colony,2,1.4729637234770707,1,0,0,2,0
+neely_et_al_2022::MR3-52,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR3-53,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,2,1,2.3333333333333335,0
+neely_et_al_2022::MR3-54,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR3-55,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR3-56,neely_et_al_2022,Florida Keys,Natural colony,4,3.241615331964408,0,1,1,2.5,0
+neely_et_al_2022::MR3-57,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,2,1,2.3333333333333335,0
 neely_et_al_2022::MR3-58,neely_et_al_2022,Florida Keys,Natural colony,1,0.3860369609856263,1,0,0,2,0
 neely_et_al_2022::MR3-59,neely_et_al_2022,Florida Keys,Natural colony,1,0.3860369609856263,1,0,0,2,0
-neely_et_al_2022::MR3-6,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
-neely_et_al_2022::MR3-60,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,0,0,2.5,0
-neely_et_al_2022::MR3-61,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,1,1,2.5,0
-neely_et_al_2022::MR3-62,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,0,0,2.5,0
-neely_et_al_2022::MR3-63,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,1,1,2.5,0
-neely_et_al_2022::MR3-64,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,1,1,2.5,0
-neely_et_al_2022::MR3-65,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,0,0,2.5,0
-neely_et_al_2022::MR3-66,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,0,0,2.5,0
-neely_et_al_2022::MR3-67,neely_et_al_2022,Florida Keys,Natural colony,2,1.6125941136208075,1,0,0,2.5,0
+neely_et_al_2022::MR3-6,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
+neely_et_al_2022::MR3-60,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR3-61,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,2,1,2.3333333333333335,0
+neely_et_al_2022::MR3-62,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR3-63,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,2,1,2.3333333333333335,0
+neely_et_al_2022::MR3-64,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,2,1,2.3333333333333335,0
+neely_et_al_2022::MR3-65,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR3-66,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR3-67,neely_et_al_2022,Florida Keys,Natural colony,3,2.6995208761122518,1,0,0,2.3333333333333335,0
 neely_et_al_2022::MR3-68,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR3-69,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
-neely_et_al_2022::MR3-7,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,1,1,2.3333333333333335,0
+neely_et_al_2022::MR3-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,2,1,2.25,0
 neely_et_al_2022::MR3-70,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR3-71,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR3-72,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
@@ -1861,7 +1786,7 @@ neely_et_al_2022::MR3-76,neely_et_al_2022,Florida Keys,Natural colony,2,2.313483
 neely_et_al_2022::MR3-77,neely_et_al_2022,Florida Keys,Natural colony,1,1.0869267624914445,1,0,0,2,0
 neely_et_al_2022::MR3-78,neely_et_al_2022,Florida Keys,Natural colony,1,1.0869267624914445,1,0,0,2,0
 neely_et_al_2022::MR3-79,neely_et_al_2022,Florida Keys,Natural colony,1,1.0869267624914445,1,0,0,2,0
-neely_et_al_2022::MR3-8,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,0,0,2.3333333333333335,0
+neely_et_al_2022::MR3-8,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,0,0,2.25,0
 neely_et_al_2022::MR3-80,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR3-81,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,1,1,2.5,0
 neely_et_al_2022::MR3-82,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
@@ -1872,7 +1797,7 @@ neely_et_al_2022::MR3-86,neely_et_al_2022,Florida Keys,Natural colony,2,2.313483
 neely_et_al_2022::MR3-87,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR3-88,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR3-89,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
-neely_et_al_2022::MR3-9,neely_et_al_2022,Florida Keys,Natural colony,3,2.836413415468857,1,2,1,2.3333333333333335,0
+neely_et_al_2022::MR3-9,neely_et_al_2022,Florida Keys,Natural colony,4,3.923340177960301,1,3,1,2.25,0
 neely_et_al_2022::MR3-90,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,1,1,2.5,0
 neely_et_al_2022::MR3-91,neely_et_al_2022,Florida Keys,Natural colony,2,2.3134839151266258,1,0,0,2.5,0
 neely_et_al_2022::MR3-92,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
@@ -1883,167 +1808,167 @@ neely_et_al_2022::MR3-96,neely_et_al_2022,Florida Keys,Natural colony,1,1.226557
 neely_et_al_2022::MR3-97,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
 neely_et_al_2022::MR3-98,neely_et_al_2022,Florida Keys,Natural colony,2,1.7686516084873374,0,0,0,3,0
 neely_et_al_2022::MR3-99,neely_et_al_2022,Florida Keys,Natural colony,1,1.2265571526351813,1,0,0,3,0
-neely_et_al_2022::RK1-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.8658453114305273,1,1,1,2.75,0.25
-neely_et_al_2022::RK1-11,neely_et_al_2022,Florida Keys,Natural colony,4,3.8658453114305273,0,1,1,2.75,0.25
+neely_et_al_2022::RK1-1,neely_et_al_2022,Florida Keys,Natural colony,5,4.826830937713895,1,1,1,2.6,0.2
+neely_et_al_2022::RK1-11,neely_et_al_2022,Florida Keys,Natural colony,5,4.826830937713895,0,1,1,2.6,0.2
 neely_et_al_2022::RK1-12,neely_et_al_2022,Florida Keys,Natural colony,1,0.9253935660506504,1,0,0,2,0
-neely_et_al_2022::RK1-2,neely_et_al_2022,Florida Keys,Natural colony,4,3.8658453114305273,1,0,0,2.75,0.25
-neely_et_al_2022::RK1-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.8658453114305273,1,2,1,2.75,0.25
-neely_et_al_2022::RK1-4,neely_et_al_2022,Florida Keys,Natural colony,4,3.8658453114305273,1,2,1,2.75,0.25
-neely_et_al_2022::RK1-5,neely_et_al_2022,Florida Keys,Natural colony,4,3.8658453114305273,1,2,1,2.75,0.25
-neely_et_al_2022::RK1-6,neely_et_al_2022,Florida Keys,Natural colony,4,3.8658453114305273,0,1,1,2.75,0.25
-neely_et_al_2022::RK1-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.8658453114305273,1,3,1,2.75,0.25
-neely_et_al_2022::RK1-8,neely_et_al_2022,Florida Keys,Natural colony,4,3.8658453114305273,1,2,1,2.75,0.25
-neely_et_al_2022::RK1-9,neely_et_al_2022,Florida Keys,Natural colony,4,3.8658453114305273,0,2,1,2.75,0.25
-neely_et_al_2022::SK1-1,neely_et_al_2022,Florida Keys,Natural colony,3,2.9103353867214237,1,0,0,2.3333333333333335,0
+neely_et_al_2022::RK1-2,neely_et_al_2022,Florida Keys,Natural colony,5,4.826830937713895,1,0,0,2.6,0.2
+neely_et_al_2022::RK1-3,neely_et_al_2022,Florida Keys,Natural colony,5,4.826830937713895,1,3,1,2.6,0.2
+neely_et_al_2022::RK1-4,neely_et_al_2022,Florida Keys,Natural colony,5,4.826830937713895,1,2,1,2.6,0.2
+neely_et_al_2022::RK1-5,neely_et_al_2022,Florida Keys,Natural colony,5,4.826830937713895,1,3,1,2.6,0.2
+neely_et_al_2022::RK1-6,neely_et_al_2022,Florida Keys,Natural colony,5,4.826830937713895,0,1,1,2.6,0.2
+neely_et_al_2022::RK1-7,neely_et_al_2022,Florida Keys,Natural colony,5,4.826830937713895,1,4,1,2.6,0.2
+neely_et_al_2022::RK1-8,neely_et_al_2022,Florida Keys,Natural colony,5,4.826830937713895,1,3,1,2.6,0.2
+neely_et_al_2022::RK1-9,neely_et_al_2022,Florida Keys,Natural colony,5,4.826830937713895,0,2,1,2.6,0.2
+neely_et_al_2022::SK1-1,neely_et_al_2022,Florida Keys,Natural colony,4,4.42984257357974,1,0,0,2.75,0.25
 neely_et_al_2022::SK1-10,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
 neely_et_al_2022::SK1-11,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
 neely_et_al_2022::SK1-12,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
 neely_et_al_2022::SK1-13,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
-neely_et_al_2022::SK1-14,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,2,1,2.75,0.25
-neely_et_al_2022::SK1-15,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,2,1,2.75,0.25
-neely_et_al_2022::SK1-16,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,0,1,1,2.75,0.25
+neely_et_al_2022::SK1-14,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,3,1,2.6,0.2
+neely_et_al_2022::SK1-15,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,3,1,2.6,0.2
+neely_et_al_2022::SK1-16,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,0,1,1,2.6,0.2
 neely_et_al_2022::SK1-17,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
-neely_et_al_2022::SK1-18,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,1,1,2.75,0.25
+neely_et_al_2022::SK1-18,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,1,1,2.6,0.2
 neely_et_al_2022::SK1-19,neely_et_al_2022,Florida Keys,Natural colony,2,1.913757700205339,1,1,1,3,0.5
 neely_et_al_2022::SK1-2,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
-neely_et_al_2022::SK1-20,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,2,1,2.75,0.25
+neely_et_al_2022::SK1-20,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,3,1,2.6,0.2
 neely_et_al_2022::SK1-21,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
 neely_et_al_2022::SK1-22,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
-neely_et_al_2022::SK1-23,neely_et_al_2022,Florida Keys,Natural colony,3,2.9103353867214237,1,0,0,2.3333333333333335,0
+neely_et_al_2022::SK1-23,neely_et_al_2022,Florida Keys,Natural colony,4,4.42984257357974,1,0,0,2.75,0.25
 neely_et_al_2022::SK1-24,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
 neely_et_al_2022::SK1-25,neely_et_al_2022,Florida Keys,Natural colony,2,1.8863791923340179,1,0,0,2,0
-neely_et_al_2022::SK1-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,3,1,2.75,0.25
-neely_et_al_2022::SK1-4,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,2,1,2.75,0.25
-neely_et_al_2022::SK1-5,neely_et_al_2022,Florida Keys,Natural colony,2,1.913757700205339,0,2,1,3,0.5
+neely_et_al_2022::SK1-3,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,4,1,2.6,0.2
+neely_et_al_2022::SK1-4,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,3,1,2.6,0.2
+neely_et_al_2022::SK1-5,neely_et_al_2022,Florida Keys,Natural colony,3,2.874743326488707,1,3,1,2.6666666666666665,0.3333333333333333
 neely_et_al_2022::SK1-6,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
 neely_et_al_2022::SK1-7,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
 neely_et_al_2022::SK1-8,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
 neely_et_al_2022::SK1-9,neely_et_al_2022,Florida Keys,Natural colony,1,1.5195071868583163,1,0,0,4,1
-neely_et_al_2022::SK2-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,1,1,2.75,0.25
+neely_et_al_2022::SK2-1,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,1,1,2.6,0.2
 neely_et_al_2022::SK2-10,neely_et_al_2022,Florida Keys,Natural colony,1,1.377138945927447,1,0,0,4,1
-neely_et_al_2022::SK2-11,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,0,3,1,2.75,0.25
-neely_et_al_2022::SK2-12,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,1,1,2.75,0.25
-neely_et_al_2022::SK2-13,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,3,1,2.75,0.25
-neely_et_al_2022::SK2-14,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,3,1,2.75,0.25
+neely_et_al_2022::SK2-11,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,0,4,1,2.6,0.2
+neely_et_al_2022::SK2-12,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,1,1,2.6,0.2
+neely_et_al_2022::SK2-13,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,4,1,2.6,0.2
+neely_et_al_2022::SK2-14,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,4,1,2.6,0.2
 neely_et_al_2022::SK2-15,neely_et_al_2022,Florida Keys,Natural colony,1,1.377138945927447,1,0,0,4,1
 neely_et_al_2022::SK2-16,neely_et_al_2022,Florida Keys,Natural colony,1,1.377138945927447,1,0,0,4,1
-neely_et_al_2022::SK2-17,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,3,1,2.75,0.25
-neely_et_al_2022::SK2-18,neely_et_al_2022,Florida Keys,Natural colony,3,2.8391512662559895,1,2,1,2.6666666666666665,0.3333333333333333
-neely_et_al_2022::SK2-19,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,1,1,2.75,0.25
+neely_et_al_2022::SK2-17,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,4,1,2.6,0.2
+neely_et_al_2022::SK2-18,neely_et_al_2022,Florida Keys,Natural colony,4,3.8001368925393573,1,3,1,2.5,0.25
+neely_et_al_2022::SK2-19,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,1,1,2.6,0.2
 neely_et_al_2022::SK2-2,neely_et_al_2022,Florida Keys,Natural colony,1,1.377138945927447,1,0,0,4,1
-neely_et_al_2022::SK2-20,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,3,1,2.75,0.25
-neely_et_al_2022::SK2-21,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,1,1,2.75,0.25
+neely_et_al_2022::SK2-20,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,4,1,2.6,0.2
+neely_et_al_2022::SK2-21,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,1,1,2.6,0.2
 neely_et_al_2022::SK2-22,neely_et_al_2022,Florida Keys,Natural colony,1,1.377138945927447,1,0,0,4,1
-neely_et_al_2022::SK2-23,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,2,1,2.75,0.25
-neely_et_al_2022::SK2-24,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,1,1,2.75,0.25
-neely_et_al_2022::SK2-25,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,1,1,2.75,0.25
-neely_et_al_2022::SK2-26,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,2,1,2.75,0.25
-neely_et_al_2022::SK2-27,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,2,1,2.75,0.25
-neely_et_al_2022::SK2-28,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,1,1,2.75,0.25
-neely_et_al_2022::SK2-29,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,2,1,2.75,0.25
-neely_et_al_2022::SK2-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,2,1,2.75,0.25
-neely_et_al_2022::SK2-30,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,0,0,2.75,0.25
-neely_et_al_2022::SK2-31,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,1,1,2.75,0.25
-neely_et_al_2022::SK2-32,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,3,1,2.75,0.25
-neely_et_al_2022::SK2-33,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,3,1,2.75,0.25
-neely_et_al_2022::SK2-34,neely_et_al_2022,Florida Keys,Natural colony,3,2.485968514715948,1,1,1,2.3333333333333335,0
-neely_et_al_2022::SK2-4,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,2,1,2.75,0.25
-neely_et_al_2022::SK2-5,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,3,1,2.75,0.25
-neely_et_al_2022::SK2-6,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,1,1,2.75,0.25
-neely_et_al_2022::SK2-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,1,1,2.75,0.25
+neely_et_al_2022::SK2-23,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,2,1,2.6,0.2
+neely_et_al_2022::SK2-24,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,1,1,2.6,0.2
+neely_et_al_2022::SK2-25,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,1,1,2.6,0.2
+neely_et_al_2022::SK2-26,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,3,1,2.6,0.2
+neely_et_al_2022::SK2-27,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,2,1,2.6,0.2
+neely_et_al_2022::SK2-28,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,1,1,2.6,0.2
+neely_et_al_2022::SK2-29,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,2,1,2.6,0.2
+neely_et_al_2022::SK2-3,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,3,1,2.6,0.2
+neely_et_al_2022::SK2-30,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,0,0,2.6,0.2
+neely_et_al_2022::SK2-31,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,2,1,2.6,0.2
+neely_et_al_2022::SK2-32,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,4,1,2.6,0.2
+neely_et_al_2022::SK2-33,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,4,1,2.6,0.2
+neely_et_al_2022::SK2-34,neely_et_al_2022,Florida Keys,Natural colony,4,3.4469541409993156,1,2,1,2.25,0
+neely_et_al_2022::SK2-4,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,2,1,2.6,0.2
+neely_et_al_2022::SK2-5,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,4,1,2.6,0.2
+neely_et_al_2022::SK2-6,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,1,1,2.6,0.2
+neely_et_al_2022::SK2-7,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,1,1,2.6,0.2
 neely_et_al_2022::SK2-8,neely_et_al_2022,Florida Keys,Natural colony,1,1.377138945927447,1,0,0,4,1
-neely_et_al_2022::SK2-9,neely_et_al_2022,Florida Keys,Natural colony,4,3.8631074606433953,1,2,1,2.75,0.25
-neely_et_al_2022::SR1-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.8056125941136205,0,1,1,2.75,0.25
-neely_et_al_2022::SR1-10,neely_et_al_2022,Florida Keys,Natural colony,4,3.8056125941136205,0,0,0,2.75,0.25
+neely_et_al_2022::SK2-9,neely_et_al_2022,Florida Keys,Natural colony,5,4.824093086926763,1,3,1,2.6,0.2
+neely_et_al_2022::SR1-1,neely_et_al_2022,Florida Keys,Natural colony,5,4.741957563312799,0,1,1,2.6,0.2
+neely_et_al_2022::SR1-10,neely_et_al_2022,Florida Keys,Natural colony,5,4.741957563312799,0,0,0,2.6,0.2
 neely_et_al_2022::SR1-11,neely_et_al_2022,Florida Keys,Natural colony,1,1.1553730321697468,1,0,0,4,1
 neely_et_al_2022::SR1-12,neely_et_al_2022,Florida Keys,Natural colony,3,2.888432580424367,0,2,1,2.3333333333333335,0
 neely_et_al_2022::SR1-13,neely_et_al_2022,Florida Keys,Natural colony,3,2.888432580424367,0,0,0,2.3333333333333335,0
 neely_et_al_2022::SR1-14,neely_et_al_2022,Florida Keys,Natural colony,2,1.9520876112251881,1,0,0,2.5,0
-neely_et_al_2022::SR1-2,neely_et_al_2022,Florida Keys,Natural colony,4,3.8056125941136205,0,0,0,2.75,0.25
-neely_et_al_2022::SR1-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.8056125941136205,0,2,1,2.75,0.25
-neely_et_al_2022::SR1-4,neely_et_al_2022,Florida Keys,Natural colony,4,3.8056125941136205,0,1,1,2.75,0.25
-neely_et_al_2022::SR1-5,neely_et_al_2022,Florida Keys,Natural colony,4,3.8056125941136205,0,1,1,2.75,0.25
-neely_et_al_2022::SR1-6,neely_et_al_2022,Florida Keys,Natural colony,4,3.8056125941136205,0,1,1,2.75,0.25
-neely_et_al_2022::SR1-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.8056125941136205,0,1,1,2.75,0.25
-neely_et_al_2022::SR1-8,neely_et_al_2022,Florida Keys,Natural colony,4,3.8056125941136205,0,1,1,2.75,0.25
-neely_et_al_2022::SR1-9,neely_et_al_2022,Florida Keys,Natural colony,4,3.8056125941136205,0,0,0,2.75,0.25
-neely_et_al_2022::SR2-1,neely_et_al_2022,Florida Keys,Natural colony,5,5.107460643394935,0,2,1,2.2,0.2
-neely_et_al_2022::SR2-2,neely_et_al_2022,Florida Keys,Natural colony,4,4.108145106091718,1,0,0,2,0.25
-neely_et_al_2022::SR2-3,neely_et_al_2022,Florida Keys,Natural colony,5,5.107460643394935,0,1,1,2.2,0.2
-neely_et_al_2022::SR2-4,neely_et_al_2022,Florida Keys,Natural colony,5,5.107460643394935,0,0,0,2.2,0.2
-neely_et_al_2022::SR2-5,neely_et_al_2022,Florida Keys,Natural colony,5,5.107460643394935,0,1,1,2.2,0.2
-neely_et_al_2022::SR2-6,neely_et_al_2022,Florida Keys,Natural colony,2,2.155373032169747,1,1,1,3,0.5
-neely_et_al_2022::SR3-1,neely_et_al_2022,Florida Keys,Natural colony,5,5.006160164271047,0,1,1,1.8,0
-neely_et_al_2022::SR3-2,neely_et_al_2022,Florida Keys,Natural colony,5,5.006160164271047,0,3,1,1.8,0
-neely_et_al_2022::SR3-3,neely_et_al_2022,Florida Keys,Natural colony,4,4.00684462696783,1,1,1,1.5,0
-neely_et_al_2022::SR3-4,neely_et_al_2022,Florida Keys,Natural colony,4,4.00684462696783,1,0,0,1.5,0
-neely_et_al_2022::SR3-5,neely_et_al_2022,Florida Keys,Natural colony,5,5.006160164271047,0,2,1,1.8,0
-neely_et_al_2022::WS1-1,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,2,1,3,0.3333333333333333
-neely_et_al_2022::WS1-10,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,0,0,3,0.3333333333333333
-neely_et_al_2022::WS1-11,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,0,0,3,0.3333333333333333
-neely_et_al_2022::WS1-12,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,1,1,3,0.3333333333333333
+neely_et_al_2022::SR1-2,neely_et_al_2022,Florida Keys,Natural colony,5,4.741957563312799,0,0,0,2.6,0.2
+neely_et_al_2022::SR1-3,neely_et_al_2022,Florida Keys,Natural colony,5,4.741957563312799,0,2,1,2.6,0.2
+neely_et_al_2022::SR1-4,neely_et_al_2022,Florida Keys,Natural colony,5,4.741957563312799,0,1,1,2.6,0.2
+neely_et_al_2022::SR1-5,neely_et_al_2022,Florida Keys,Natural colony,5,4.741957563312799,0,1,1,2.6,0.2
+neely_et_al_2022::SR1-6,neely_et_al_2022,Florida Keys,Natural colony,5,4.741957563312799,0,1,1,2.6,0.2
+neely_et_al_2022::SR1-7,neely_et_al_2022,Florida Keys,Natural colony,5,4.741957563312799,0,1,1,2.6,0.2
+neely_et_al_2022::SR1-8,neely_et_al_2022,Florida Keys,Natural colony,5,4.741957563312799,0,1,1,2.6,0.2
+neely_et_al_2022::SR1-9,neely_et_al_2022,Florida Keys,Natural colony,5,4.741957563312799,0,0,0,2.6,0.2
+neely_et_al_2022::SR2-1,neely_et_al_2022,Florida Keys,Natural colony,3,3.107460643394935,0,2,1,3,0.3333333333333333
+neely_et_al_2022::SR2-2,neely_et_al_2022,Florida Keys,Natural colony,2,2.108145106091718,1,0,0,3,0.5
+neely_et_al_2022::SR2-3,neely_et_al_2022,Florida Keys,Natural colony,3,3.107460643394935,0,1,1,3,0.3333333333333333
+neely_et_al_2022::SR2-4,neely_et_al_2022,Florida Keys,Natural colony,3,3.107460643394935,0,0,0,3,0.3333333333333333
+neely_et_al_2022::SR2-5,neely_et_al_2022,Florida Keys,Natural colony,3,3.107460643394935,0,1,1,3,0.3333333333333333
+neely_et_al_2022::SR2-6,neely_et_al_2022,Florida Keys,Natural colony,1,1.1553730321697468,0,1,1,4,1
+neely_et_al_2022::SR3-1,neely_et_al_2022,Florida Keys,Natural colony,3,3.006160164271047,0,1,1,2.3333333333333335,0
+neely_et_al_2022::SR3-2,neely_et_al_2022,Florida Keys,Natural colony,3,3.006160164271047,0,3,1,2.3333333333333335,0
+neely_et_al_2022::SR3-3,neely_et_al_2022,Florida Keys,Natural colony,2,2.00684462696783,1,1,1,2,0
+neely_et_al_2022::SR3-4,neely_et_al_2022,Florida Keys,Natural colony,2,2.00684462696783,1,0,0,2,0
+neely_et_al_2022::SR3-5,neely_et_al_2022,Florida Keys,Natural colony,3,3.006160164271047,0,2,1,2.3333333333333335,0
+neely_et_al_2022::WS1-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,3,1,2.75,0.25
+neely_et_al_2022::WS1-10,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,0,0,2.75,0.25
+neely_et_al_2022::WS1-11,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,0,0,2.75,0.25
+neely_et_al_2022::WS1-12,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,1,1,2.75,0.25
 neely_et_al_2022::WS1-13,neely_et_al_2022,Florida Keys,Natural colony,1,1.5824777549623543,1,0,0,4,1
 neely_et_al_2022::WS1-14,neely_et_al_2022,Florida Keys,Natural colony,1,1.5824777549623543,1,0,0,4,1
-neely_et_al_2022::WS1-15,neely_et_al_2022,Florida Keys,Natural colony,2,1.921971252566735,0,1,1,3,0.5
-neely_et_al_2022::WS1-16,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,0,0,3,0.3333333333333333
-neely_et_al_2022::WS1-17,neely_et_al_2022,Florida Keys,Natural colony,2,1.9685147159479808,1,0,0,2.5,0
-neely_et_al_2022::WS1-18,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,1,1,3,0.3333333333333333
+neely_et_al_2022::WS1-15,neely_et_al_2022,Florida Keys,Natural colony,3,2.8254620123203282,1,2,1,2.6666666666666665,0.3333333333333333
+neely_et_al_2022::WS1-16,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,0,0,2.75,0.25
+neely_et_al_2022::WS1-17,neely_et_al_2022,Florida Keys,Natural colony,3,3.5509924709103355,1,0,0,3,0.3333333333333333
+neely_et_al_2022::WS1-18,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,2,1,2.75,0.25
 neely_et_al_2022::WS1-19,neely_et_al_2022,Florida Keys,Natural colony,1,1.5824777549623543,1,0,0,4,1
 neely_et_al_2022::WS1-2,neely_et_al_2022,Florida Keys,Natural colony,2,1.921971252566735,1,1,1,3,0.5
-neely_et_al_2022::WS1-20,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,0,0,3,0.3333333333333333
+neely_et_al_2022::WS1-20,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,0,0,2.75,0.25
 neely_et_al_2022::WS1-21,neely_et_al_2022,Florida Keys,Natural colony,1,1.5824777549623543,1,0,0,4,1
-neely_et_al_2022::WS1-22,neely_et_al_2022,Florida Keys,Natural colony,2,1.4045174537987681,1,0,0,2.5,0
-neely_et_al_2022::WS1-23,neely_et_al_2022,Florida Keys,Natural colony,2,1.4045174537987681,1,1,1,2.5,0
+neely_et_al_2022::WS1-22,neely_et_al_2022,Florida Keys,Natural colony,3,2.3080082135523616,1,0,0,2.3333333333333335,0
+neely_et_al_2022::WS1-23,neely_et_al_2022,Florida Keys,Natural colony,3,2.3080082135523616,1,2,1,2.3333333333333335,0
 neely_et_al_2022::WS1-24,neely_et_al_2022,Florida Keys,Natural colony,2,1.9685147159479808,1,1,1,2.5,0
 neely_et_al_2022::WS1-25,neely_et_al_2022,Florida Keys,Natural colony,2,1.9685147159479808,1,0,0,2.5,0
 neely_et_al_2022::WS1-26,neely_et_al_2022,Florida Keys,Natural colony,1,1.0650239561943875,1,0,0,3,0
 neely_et_al_2022::WS1-27,neely_et_al_2022,Florida Keys,Natural colony,1,0.9390828199863108,1,0,0,3,0
-neely_et_al_2022::WS1-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.9260780287474333,0,2,1,3,0.25
+neely_et_al_2022::WS1-3,neely_et_al_2022,Florida Keys,Natural colony,5,4.829568788501026,0,2,1,2.8,0.2
 neely_et_al_2022::WS1-4,neely_et_al_2022,Florida Keys,Natural colony,1,1.5824777549623543,1,0,0,4,1
-neely_et_al_2022::WS1-5,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,1,1,3,0.3333333333333333
+neely_et_al_2022::WS1-5,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,1,1,2.75,0.25
 neely_et_al_2022::WS1-6,neely_et_al_2022,Florida Keys,Natural colony,1,1.5824777549623543,1,0,0,4,1
-neely_et_al_2022::WS1-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.9260780287474333,1,3,1,3,0.25
-neely_et_al_2022::WS1-8,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,1,1,3,0.3333333333333333
-neely_et_al_2022::WS1-9,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,0,0,3,0.3333333333333333
-neely_et_al_2022::WS2-1,neely_et_al_2022,Florida Keys,Natural colony,4,3.9260780287474333,1,2,1,3,0.25
-neely_et_al_2022::WS2-10,neely_et_al_2022,Florida Keys,Natural colony,3,2.343600273785079,1,1,1,2.6666666666666665,0
-neely_et_al_2022::WS2-2,neely_et_al_2022,Florida Keys,Natural colony,4,3.9260780287474333,1,3,1,3,0.25
-neely_et_al_2022::WS2-3,neely_et_al_2022,Florida Keys,Natural colony,4,3.9260780287474333,1,2,1,3,0.25
-neely_et_al_2022::WS2-4,neely_et_al_2022,Florida Keys,Natural colony,4,3.9260780287474333,1,3,1,3,0.25
-neely_et_al_2022::WS2-5,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,2,1,3,0.3333333333333333
-neely_et_al_2022::WS2-6,neely_et_al_2022,Florida Keys,Natural colony,4,3.9260780287474333,1,3,1,3,0.25
-neely_et_al_2022::WS2-7,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,0,0,3,0.3333333333333333
-neely_et_al_2022::WS2-8,neely_et_al_2022,Florida Keys,Natural colony,3,2.9869952087611225,1,2,1,3,0.3333333333333333
+neely_et_al_2022::WS1-7,neely_et_al_2022,Florida Keys,Natural colony,5,4.829568788501026,1,4,1,2.8,0.2
+neely_et_al_2022::WS1-8,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,1,1,2.75,0.25
+neely_et_al_2022::WS1-9,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,0,0,2.75,0.25
+neely_et_al_2022::WS2-1,neely_et_al_2022,Florida Keys,Natural colony,5,4.829568788501026,1,2,1,2.8,0.2
+neely_et_al_2022::WS2-10,neely_et_al_2022,Florida Keys,Natural colony,4,3.2470910335386725,1,1,1,2.5,0
+neely_et_al_2022::WS2-2,neely_et_al_2022,Florida Keys,Natural colony,5,4.829568788501026,1,4,1,2.8,0.2
+neely_et_al_2022::WS2-3,neely_et_al_2022,Florida Keys,Natural colony,5,4.829568788501026,1,3,1,2.8,0.2
+neely_et_al_2022::WS2-4,neely_et_al_2022,Florida Keys,Natural colony,5,4.829568788501026,1,4,1,2.8,0.2
+neely_et_al_2022::WS2-5,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,3,1,2.75,0.25
+neely_et_al_2022::WS2-6,neely_et_al_2022,Florida Keys,Natural colony,5,4.829568788501026,1,4,1,2.8,0.2
+neely_et_al_2022::WS2-7,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,0,0,2.75,0.25
+neely_et_al_2022::WS2-8,neely_et_al_2022,Florida Keys,Natural colony,4,3.8904859685147155,1,3,1,2.75,0.25
 neely_et_al_2022::WS3-1,neely_et_al_2022,Florida Keys,Natural colony,1,1.514031485284052,1,0,0,4,1
-neely_et_al_2022::WS3-10,neely_et_al_2022,Florida Keys,Natural colony,3,2.91854893908282,1,0,0,3,0.3333333333333333
-neely_et_al_2022::WS3-11,neely_et_al_2022,Florida Keys,Natural colony,3,2.91854893908282,1,2,1,3,0.3333333333333333
+neely_et_al_2022::WS3-10,neely_et_al_2022,Florida Keys,Natural colony,4,3.822039698836414,1,0,0,2.75,0.25
+neely_et_al_2022::WS3-11,neely_et_al_2022,Florida Keys,Natural colony,4,3.822039698836414,1,3,1,2.75,0.25
 neely_et_al_2022::WS3-12,neely_et_al_2022,Florida Keys,Natural colony,1,1.514031485284052,1,0,0,4,1
 neely_et_al_2022::WS3-13,neely_et_al_2022,Florida Keys,Natural colony,1,1.514031485284052,1,0,0,4,1
-neely_et_al_2022::WS3-14,neely_et_al_2022,Florida Keys,Natural colony,4,3.8576317590691307,1,2,1,3,0.25
+neely_et_al_2022::WS3-14,neely_et_al_2022,Florida Keys,Natural colony,5,4.761122518822725,1,2,1,2.8,0.2
 neely_et_al_2022::WS3-15,neely_et_al_2022,Florida Keys,Natural colony,1,1.514031485284052,1,0,0,4,1
-neely_et_al_2022::WS3-16,neely_et_al_2022,Florida Keys,Natural colony,3,2.91854893908282,1,1,1,3,0.3333333333333333
-neely_et_al_2022::WS3-17,neely_et_al_2022,Florida Keys,Natural colony,3,2.91854893908282,1,1,1,3,0.3333333333333333
-neely_et_al_2022::WS3-18,neely_et_al_2022,Florida Keys,Natural colony,3,2.91854893908282,1,2,1,3,0.3333333333333333
-neely_et_al_2022::WS3-19,neely_et_al_2022,Florida Keys,Natural colony,4,3.8576317590691307,1,2,1,3,0.25
+neely_et_al_2022::WS3-16,neely_et_al_2022,Florida Keys,Natural colony,4,3.822039698836414,1,1,1,2.75,0.25
+neely_et_al_2022::WS3-17,neely_et_al_2022,Florida Keys,Natural colony,4,3.822039698836414,1,1,1,2.75,0.25
+neely_et_al_2022::WS3-18,neely_et_al_2022,Florida Keys,Natural colony,4,3.822039698836414,1,3,1,2.75,0.25
+neely_et_al_2022::WS3-19,neely_et_al_2022,Florida Keys,Natural colony,5,4.761122518822725,1,2,1,2.8,0.2
 neely_et_al_2022::WS3-2,neely_et_al_2022,Florida Keys,Natural colony,1,1.514031485284052,1,0,0,4,1
-neely_et_al_2022::WS3-20,neely_et_al_2022,Florida Keys,Natural colony,3,2.91854893908282,1,1,1,3,0.3333333333333333
-neely_et_al_2022::WS3-21,neely_et_al_2022,Florida Keys,Natural colony,3,2.91854893908282,1,2,1,3,0.3333333333333333
+neely_et_al_2022::WS3-20,neely_et_al_2022,Florida Keys,Natural colony,4,3.822039698836414,1,1,1,2.75,0.25
+neely_et_al_2022::WS3-21,neely_et_al_2022,Florida Keys,Natural colony,4,3.822039698836414,1,3,1,2.75,0.25
 neely_et_al_2022::WS3-22,neely_et_al_2022,Florida Keys,Natural colony,1,1.514031485284052,1,0,0,4,1
 neely_et_al_2022::WS3-23,neely_et_al_2022,Florida Keys,Natural colony,1,1.514031485284052,1,0,0,4,1
 neely_et_al_2022::WS3-24,neely_et_al_2022,Florida Keys,Natural colony,1,1.514031485284052,1,0,0,4,1
 neely_et_al_2022::WS3-25,neely_et_al_2022,Florida Keys,Natural colony,1,1.514031485284052,1,0,0,4,1
-neely_et_al_2022::WS3-26,neely_et_al_2022,Florida Keys,Natural colony,4,3.8576317590691307,1,3,1,3,0.25
+neely_et_al_2022::WS3-26,neely_et_al_2022,Florida Keys,Natural colony,5,4.761122518822725,1,4,1,2.8,0.2
 neely_et_al_2022::WS3-27,neely_et_al_2022,Florida Keys,Natural colony,1,0.3394934976043806,1,0,0,2,0
-neely_et_al_2022::WS3-28,neely_et_al_2022,Florida Keys,Natural colony,2,1.4045174537987681,1,0,0,2.5,0
-neely_et_al_2022::WS3-29,neely_et_al_2022,Florida Keys,Natural colony,2,1.4045174537987681,1,1,1,2.5,0
+neely_et_al_2022::WS3-28,neely_et_al_2022,Florida Keys,Natural colony,3,2.3080082135523616,1,0,0,2.3333333333333335,0
+neely_et_al_2022::WS3-29,neely_et_al_2022,Florida Keys,Natural colony,3,2.3080082135523616,1,2,1,2.3333333333333335,0
 neely_et_al_2022::WS3-3,neely_et_al_2022,Florida Keys,Natural colony,1,1.514031485284052,1,0,0,4,1
 neely_et_al_2022::WS3-30,neely_et_al_2022,Florida Keys,Natural colony,3,2.9075975359342916,1,2,1,2.6666666666666665,0
-neely_et_al_2022::WS3-4,neely_et_al_2022,Florida Keys,Natural colony,2,2.5790554414784395,1,1,1,3.5,0.5
-neely_et_al_2022::WS3-5,neely_et_al_2022,Florida Keys,Natural colony,4,3.8576317590691307,1,3,1,3,0.25
-neely_et_al_2022::WS3-6,neely_et_al_2022,Florida Keys,Natural colony,3,2.91854893908282,1,2,1,3,0.3333333333333333
+neely_et_al_2022::WS3-4,neely_et_al_2022,Florida Keys,Natural colony,3,2.91854893908282,1,1,1,3,0.3333333333333333
+neely_et_al_2022::WS3-5,neely_et_al_2022,Florida Keys,Natural colony,5,4.761122518822725,1,4,1,2.8,0.2
+neely_et_al_2022::WS3-6,neely_et_al_2022,Florida Keys,Natural colony,4,3.822039698836414,1,3,1,2.75,0.25
 neely_et_al_2022::WS3-7,neely_et_al_2022,Florida Keys,Natural colony,2,1.8535249828884326,1,1,1,3,0.5
-neely_et_al_2022::WS3-8,neely_et_al_2022,Florida Keys,Natural colony,4,3.8576317590691307,1,2,1,3,0.25
-neely_et_al_2022::WS3-9,neely_et_al_2022,Florida Keys,Natural colony,4,3.8576317590691307,1,2,1,3,0.25
+neely_et_al_2022::WS3-8,neely_et_al_2022,Florida Keys,Natural colony,5,4.761122518822725,1,2,1,2.8,0.2
+neely_et_al_2022::WS3-9,neely_et_al_2022,Florida Keys,Natural colony,5,4.761122518822725,1,2,1,2.8,0.2
 pausch_et_al_2018::AA1-131-B,pausch_et_al_2018,Florida Keys,Restoration fragment,1,1.02827564571787,1,0,0,4,1
 pausch_et_al_2018::AA1-131-P,pausch_et_al_2018,Florida Keys,Restoration fragment,1,1.0958904109589,0,0,0,4,1
 pausch_et_al_2018::AA1-131-W,pausch_et_al_2018,Florida Keys,Restoration fragment,1,1.0958904109589,0,0,0,4,1

@@ -50,8 +50,7 @@ print_success(sprintf("Baseline S loaded: %s",
 # =============================================================================
 # Load survival data with depth
 # =============================================================================
-surv <- read.csv("05_data/standardized/apal_surv_ind.csv",
-                 stringsAsFactors = FALSE)
+surv <- read_prepared_survival_data()
 cat(sprintf("  Survival rows: %d\n", nrow(surv)))
 
 df <- surv %>%

@@ -1,8 +1,8 @@
 outcome,model,smooth,k_index,k_prime,edf,p_value
-positive_growth,baseline,s(log_size),1.012365353499987,NA,3.281158688150862,0.865
-positive_growth,baseline,s(study),NA,NA,5.060686930618759,NA
-positive_growth,spatiotemporal,s(log_size),0.9976530701575977,NA,3.341717638194775,0.455
-positive_growth,spatiotemporal,s(survey_year_factor),NA,NA,14.745781590926955,NA
-positive_growth,spatiotemporal,"s(longitude,latitude)",0.9747953379356755,NA,1.5814257603330535,0.0275
-positive_growth,spatiotemporal,s(site_id),NA,NA,48.28803211324254,NA
-positive_growth,spatiotemporal,s(study),NA,NA,1.8171991693231946e-4,NA
+positive_growth,baseline,s(log_size),1.0180767237833077,NA,3.177355889264624,0.9275
+positive_growth,baseline,s(study),NA,NA,2.6234865535447693,NA
+positive_growth,spatiotemporal,s(log_size),1.0054707986934166,NA,3.455037162977193,0.7325
+positive_growth,spatiotemporal,s(survey_year_factor),NA,NA,15.375710981265534,NA
+positive_growth,spatiotemporal,"s(longitude,latitude)",0.988779670922981,NA,1.1635863441834282,0.2275
+positive_growth,spatiotemporal,s(site_id),NA,NA,57.592618185340264,NA
+positive_growth,spatiotemporal,s(study),NA,NA,3.6847235741737e-4,NA
