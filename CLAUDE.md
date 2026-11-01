@@ -27,7 +27,7 @@ add or update a row whenever a maintained script gains a model/test family.
 
 A synthesis of all existing *Acropora palmata* (Elkhorn Coral) demographic data across the Caribbean. The central question: **how do survival and growth vary as a function of colony size in restored vs. natural populations?**
 
-Seven individual-record and eleven summary studies support the synthesis; 17 contribute 22 survival effects across 13 Caribbean regions. Prepared inputs contain 7,780 survival and 6,299 growth intervals, including Neely's 878 Florida Keys colonies. Size includes live area and the Neely index `((L+W+H)/3)^2 × live fraction`, not uniformly planar measurements. GAMs, GLMMs, meta-analysis and the recruitment-free matrix address distinct questions; do not conflate their sample sizes or estimands.
+Seven individual-record and eleven summary studies support the synthesis; 17 contribute 22 survival effects across 13 Caribbean regions. Prepared inputs contain 7,776 survival and 6,319 growth intervals. The original Neely extract contains 878 colony IDs before three species exclusions. Size includes live area and the Neely index `((L+W+H)/3)^2 × live fraction`, not uniformly planar measurements. GAMs, GLMMs, meta-analysis and the recruitment-free matrix address distinct questions; do not conflate their sample sizes or estimands.
 
 This repo is the **empirical parameter source** for the restoration decision-support work. The sibling repo [stier-lab/Detmer-2025-coral-RSE](https://github.com/stier-lab/Detmer-2025-coral-RSE) holds the Restoration Strategy Evaluation model and the interactive web app (`coral-app/`); its R analyses read the demographic parameters produced here and expect this repo cloned alongside it at `../Detmer-2025-coral-parameters/`. (The earlier `Detmer-2025-coral-platform` first-pass app is archived — point readers to coral-RSE, not it.)
 
@@ -38,9 +38,9 @@ This repo is the **empirical parameter source** for the restoration decision-sup
 These apply to **every** analysis change:
 
 - **I^2 = 97.6%** (interval-annualized expanded meta, 2026-09-29) — extreme heterogeneity across studies. Any bootstrap must use **hierarchical resampling** (study -> observation).
-- **Uneven coverage:** Florida Keys supplies 85.6% of prepared survival intervals; NOAA supplies 79.6% of SC5 survival support. Check matched-estimator LOSO rather than retaining legacy source shares.
-- **Natural vs restoration confounded with study identity** — individual natural records are mostly NOAA + Neely. The expanded meta has 10 natural and 12 restoration-origin effects (85.7% vs 74.5%; moderator p=0.165). Restoration origin includes nursery-held material as well as reef outplants.
-- **Neely source conventions:** see `docs/neely_source_conventions.md`. Apply source corrections as overlays without changing the original workbook. Exclude every interval for misidentified MR3-115/MR3-116. Literal `live` means alive with unmeasured LAI. Fragment status is U when unreported; AF is a naturally attached fragment, not an outplant. NOAA endpoint-selected AF/SF remain in the inventory/conditional growth, but cannot enter survival models. Unverified durations are excluded from annual-survival inputs, never replaced by one year. Preserve interval IDs and both 2012 rounds. The 2014 source context is bleaching/site dependence; flags remain `bleaching_2014_context` and `bleaching_2014_aftermath_context`, not diagnosed disease.
+- **Uneven coverage:** Florida Keys supplies 85.5% of prepared survival intervals; NOAA supplies 79.6% of SC5 survival support. Check matched-estimator LOSO rather than retaining legacy source shares.
+- **Natural vs restoration confounded with study identity** — individual natural records are mostly NOAA + Neely. The expanded meta has 10 natural and 12 restoration-origin effects (85.7% vs 74.5%; moderator p=0.163). Restoration origin includes nursery-held material as well as reef outplants.
+- **Neely source conventions:** see `docs/neely_source_conventions.md`. Apply collector corrections as overlays; original workbook immutable. Sombrero date is confirmed October 19, 2012. Exclude all observations for MR1-58/MR3-115/MR3-116 (ACER). All Neely colonies are wild. AF at first sighting defines a known natural-fragment cohort; BR/EN/remnant do not prove nonfragment origin and must not be analyzed as stable states. Four unmatched original IDs retain unknown type but have no eligible interval pairs. First-round loose-fragment deaths remain in inventory but are withheld from the consistently monitored attached-colony protocol. NOAA endpoint-selected AF/SF cannot enter survival models. Unverified duration is never replaced with one year. Literal `live` means alive with unmeasured LAI. Preserve both 2012 rounds; 2014 flags describe bleaching context, not diagnosed disease.
 - **Fragmentation data from one study** (Vardi 2011, 13 rows). Cannot be improved without new data.
 - **Heatwave reference is pooled, not pre-2023:** NOAA monitoring includes intervals through 2024. Scripts 40/51 apply additional Florida-like mortality pulses to this pooled reference matrix; they are not hindcasts or fitted between-event counterfactuals. Observed endpoint bounds (97.8–100% mortality) are distinct from the dose-response sensitivity.
 - Any new binomial GLMM needs an **overdispersion check** (`sum(pearson_resid^2) / rdf`).
@@ -163,7 +163,7 @@ Never use `"SC1_recruit"`, `"SC1 (0-10)"`, or other variants in analysis code.
 | pausch_et_al_2018 | Restoration | Florida | 969 | Fragment experiments |
 | USGS_USVI_exp | Restoration | USVI | 46 | Outplanted 2019 |
 | kuffner_et_al_2020 | Restoration | Florida | 52 | Mortality = >=50% tissue loss |
-| mendoza_quiroz_et_al_2023 | Natural | Mexico | 52 | Some sizes from diameter only |
+| mendoza_quiroz_et_al_2023 | Restoration (sexual cohorts) | Mexico | 52 | Some sizes from diameter only |
 | fundemar_fragments | Restoration | Dominican Rep. | 43 | Nursery fragments |
 
 10 additional studies contribute summary-level data only (17 unique studies, 22 study-level effects in expanded meta; NOAA, Vardi, and Garrison each split into sub-effects). Summary-level survival data is integrated into the transition matrix (script 13) and parameter lists (script 17) via `prepared_survival_cells.rds` — a cell-level dataset that combines individual and summary data with sample-size weighting. See `04_extraction/data_integration_issues.md` and `04_extraction/data_flow_diagram.md` for details.
@@ -209,7 +209,7 @@ if (ratio > 1.5) warning("Potential overdispersion")
 - No titles/captions in figures | Color: RGB
 - Export: `save_manuscript_fig(plot, filename, width_mm, height_mm)` handles PNG + PDF at 300 DPI
 - Palette: `MANUSCRIPT_PALETTE` (blues for survival, teals for growth, Okabe-Ito for qualitative)
-- Layout: `patchwork` with `plot_layout(guides = "collect")`
+- Artwork has no embedded titles, subtitles, legends/colorbars or explanatory prose; keys, sample sizes and methods belong in separate captions. Preserve data, uncertainty, axes, units and panel letters. The shared export helper enforces this default.
 - Theme: `theme_manuscript()` from shared utilities
 
 ---

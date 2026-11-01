@@ -1,23 +1,23 @@
 model,term,estimate,std_error,statistic,p_value,effect_type,hazard_ratio
-longitudinal_lme,(Intercept),6.782923950281486,0.07657079534409114,88.58369460315282,0,mean_log_live_size,NA
-longitudinal_lme,year_center,-0.09524077818425779,0.014173873538542997,-6.719460133834951,2.0072576504733498e-11,mean_log_live_size,NA
-longitudinal_lme,I(year_center^2),1.0145492612013446e-4,7.456522164416882e-4,0.1360619922841314,0.8917772290390495,mean_log_live_size,NA
-longitudinal_lme,disturbance_statenone,0.37601092708084144,0.09819489203236935,3.8292310251422417,1.2996659023217593e-4,mean_log_live_size,NA
-longitudinal_lme,disturbance_statepollution,-0.9938651272740188,0.7608978867920969,-1.3061741194526097,0.191597623867853,mean_log_live_size,NA
-longitudinal_lme,disturbance_statesargassum,-0.1550045870208673,0.06876522453532044,-2.254113006513213,0.024228063862531405,mean_log_live_size,NA
-longitudinal_lme,disturbance_statestorm,0.7773212464586725,0.12273370957313234,6.333396498502283,2.587605459942268e-10,mean_log_live_size,NA
-longitudinal_lme,pop_typeRestoration fragment,-1.6885106687489355,0.06570774787930043,-25.697284159709547,2.694223273601238e-131,mean_log_live_size,NA
-hazard_cloglog_glmmTMB,(Intercept),-1.6340180487455622,NA,NA,NA,log_hazard_ratio,0.19514389904480067
-hazard_cloglog_glmmTMB,z_pred_log_live,-0.8342437778529933,NA,NA,NA,log_hazard_ratio,0.4342027110164696
-hazard_cloglog_glmmTMB,z_pred_velocity,-4.38466876759434,NA,NA,NA,log_hazard_ratio,0.012467016930508666
-hazard_cloglog_glmmTMB,disturbance_statenone,1.0967913389689237,NA,NA,NA,log_hazard_ratio,2.994542121671521
-hazard_cloglog_glmmTMB,disturbance_statepollution,10.660568945759223,NA,NA,NA,log_hazard_ratio,42640.890627548564
-hazard_cloglog_glmmTMB,disturbance_statesargassum,0.3361722134657458,NA,NA,NA,log_hazard_ratio,1.3995800305857706
-hazard_cloglog_glmmTMB,disturbance_statestorm,3.0259847322315774,NA,NA,NA,log_hazard_ratio,20.614294279668858
-hazard_cloglog_glmmTMB,pop_typeRestoration fragment,-0.6820954076123171,NA,NA,NA,log_hazard_ratio,0.505556534696809
-hazard_cloglog_glmmTMB,z_year,4.878667551679167,NA,NA,NA,log_hazard_ratio,131.45538962664372
-hazard_cloglog_glmmTMB,regionDominican Republic,-2.541565470543212,NA,NA,NA,log_hazard_ratio,0.07874303335340975
-hazard_cloglog_glmmTMB,regionDry Tortugas,-17.76253889171743,NA,NA,NA,log_hazard_ratio,1.9312005424235697e-8
-hazard_cloglog_glmmTMB,regionFlorida Keys,-0.3262715081809519,NA,NA,NA,log_hazard_ratio,0.7216092380204124
-hazard_cloglog_glmmTMB,regionNavassa,-0.2650319159224925,NA,NA,NA,log_hazard_ratio,0.7671814642809643
-hazard_cloglog_glmmTMB,regionUS Virgin Islands,-1.1844124620647756,NA,NA,NA,log_hazard_ratio,0.3059258697599706
+longitudinal_lme,(Intercept),6.788109470510759,0.07644375368566174,88.79874604828541,0,mean_log_live_size,NA
+longitudinal_lme,year_center,-0.09532391782782133,0.014147338044549058,-6.737940206677217,1.7684913548996202e-11,mean_log_live_size,NA
+longitudinal_lme,I(year_center^2),1.0100035259641901e-4,7.442439244076667e-4,0.13570866927372469,0.8920565006665169,mean_log_live_size,NA
+longitudinal_lme,disturbance_statenone,0.37396405666189264,0.09801471254553008,3.8153869653821384,1.3744296296339012e-4,mean_log_live_size,NA
+longitudinal_lme,disturbance_statepollution,-0.9990506475033377,0.7594005609858804,-1.3155779687683338,0.18842052243861804,mean_log_live_size,NA
+longitudinal_lme,disturbance_statesargassum,-0.1563098719622684,0.06863932640954795,-2.277264072051342,0.02280822454618123,mean_log_live_size,NA
+longitudinal_lme,disturbance_statestorm,0.7753651009371597,0.12250930315779215,6.329030375256386,2.6599000841190904e-10,mean_log_live_size,NA
+longitudinal_lme,pop_typeRestoration fragment,-1.6925807584309127,0.06558734933593242,-25.80651262123231,2.8127579075582284e-132,mean_log_live_size,NA
+hazard_cloglog_glmmTMB,(Intercept),-1.6407999020926856,NA,NA,NA,log_hazard_ratio,0.19382493929100142
+hazard_cloglog_glmmTMB,z_pred_log_live,-0.8357302710013738,NA,NA,NA,log_hazard_ratio,0.43355775114451267
+hazard_cloglog_glmmTMB,z_pred_velocity,-4.410458004521717,NA,NA,NA,log_hazard_ratio,0.012149612477967529
+hazard_cloglog_glmmTMB,disturbance_statenone,1.1032870943150352,NA,NA,NA,log_hazard_ratio,3.014057248793438
+hazard_cloglog_glmmTMB,disturbance_statepollution,10.572391020304636,NA,NA,NA,log_hazard_ratio,39041.91221734739
+hazard_cloglog_glmmTMB,disturbance_statesargassum,0.3363125833183358,NA,NA,NA,log_hazard_ratio,1.3997765032174465
+hazard_cloglog_glmmTMB,disturbance_statestorm,3.0343963778566128,NA,NA,NA,log_hazard_ratio,20.788425757368046
+hazard_cloglog_glmmTMB,pop_typeRestoration fragment,-0.6823758733680579,NA,NA,NA,log_hazard_ratio,0.5054147632831781
+hazard_cloglog_glmmTMB,z_year,4.906361060860703,NA,NA,NA,log_hazard_ratio,135.14672780649707
+hazard_cloglog_glmmTMB,regionDominican Republic,-2.550434414778589,NA,NA,NA,log_hazard_ratio,0.0780477535380763
+hazard_cloglog_glmmTMB,regionDry Tortugas,-17.846781338648867,NA,NA,NA,log_hazard_ratio,1.7751757024131894e-8
+hazard_cloglog_glmmTMB,regionFlorida Keys,-0.3286854915960725,NA,NA,NA,log_hazard_ratio,0.7198693861193391
+hazard_cloglog_glmmTMB,regionNavassa,-0.2547076447477451,NA,NA,NA,log_hazard_ratio,0.7751430819892203
+hazard_cloglog_glmmTMB,regionUS Virgin Islands,-1.1913728221302813,NA,NA,NA,log_hazard_ratio,0.3038039089256251

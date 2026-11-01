@@ -1,5 +1,6 @@
 restoration_subtype,subtype_label,n_records,n_studies,n_regions,weighted_mean_growth_cm2_yr,weighted_mean_rgr,weighted_pct_positive,mean_of_study_means
 nursery_outplant,Nursery outplants,556,1,1,50.104578444373004,1.0324011416259093,82.73381294964028,50.104578444373004
+natural_fragment_neely,Naturally attached fragments (Neely),414,1,1,53.36548879937797,0.43998669825937864,71.98067632850241,53.36548879937797
 nursery_fragment,Nursery-held fragments,177,1,1,75.94103823655131,3.564184660613129,96.045197740113,75.94103823655131
 natural_fragment,Naturally occurring fragments,94,1,2,-586.1117365071899,0.1123878377860564,53.191489361702125,-668.4636585584719
 outplanted_colony,Outplanted colonies (source unspecified),30,1,1,100.69166666666666,1.860649909211893,100,100.69166666666666

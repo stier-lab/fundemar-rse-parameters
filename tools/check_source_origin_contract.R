@@ -8,7 +8,7 @@ inventory <- read_prepared_survival_data(include_endpoint_selected = TRUE)
 g <- readRDS(file.path(out, "prepared_growth_data.rds"))
 raw_s <- read_csv("05_data/standardized/apal_surv_ind.csv", show_col_types = FALSE)
 raw_g <- read_csv("05_data/standardized/apal_growth_ind.csv", show_col_types = FALSE)
-excluded <- c("MR3-115", "MR3-116")
+excluded <- read_csv("05_data/corrections/neely_species_exclusions.csv", show_col_types = FALSE)$coral_id
 for (x in list(s, inventory, g, raw_s, raw_g)) {
   stopifnot(!any(x$study == "neely_et_al_2022" & x$coral_id %in% excluded))
 }
@@ -35,12 +35,16 @@ for (x in list(raw_s, raw_g)) {
 dt <- raw_s %>% filter(study == "neely_et_al_2022", source_interval_id == "DT1-4:TP1-2")
 stopifnot(nrow(dt) == 1L, as.Date(dt$survey_start_date) == as.Date("2011-02-23"),
   as.Date(dt$survey_end_date) == as.Date("2012-02-15"), dt$survived == 1L)
-# A metadata omission cannot become a claim that all colonies were intact.
+# First-sighting forms cannot become claims of nonfragment origin.
 types <- read_csv("05_data/corrections/neely_colony_types.csv",
                    col_types = cols(.default = col_character()))
-if (nrow(types) == 0L) {
-  stopifnot(all(raw_s$fragment[raw_s$study == "neely_et_al_2022"] == "U"))
-}
+n <- raw_s %>% filter(study == "neely_et_al_2022")
+stopifnot(all(n$fragment[n$neely_colony_type_first_sighting == "AF" &
+  !is.na(n$neely_colony_type_first_sighting)] == "Y"),
+  !any(n$fragment == "N"), all(is.finite(n$time_interval_yr)),
+  !any(s$study == "neely_et_al_2022" & s$coral_id %in% c("WS1-6", "WS1-21")))
+loose <- inventory %>% filter(study == "neely_et_al_2022", coral_id %in% c("WS1-6", "WS1-21"))
+stopifnot(nrow(loose) == 2L, all(loose$survived == 0), !any(loose$survival_cohort_eligible))
 age <- read_csv("05_data/standardized/apal_outplant_age.csv", show_col_types = FALSE)
 stopifnot(all(c("is_outplant", "observation_context", "location") %in% names(age)),
   !anyDuplicated(age[c("study", "location", "coral_id", "survey_yr")]),

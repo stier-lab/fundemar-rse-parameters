@@ -224,13 +224,21 @@
           </group>
         </else-if>
         <else>
-          <!--    None of the provided formats need to add manually (some data provided) -->
-          <group prefix=". " delimiter=" ">
-            <text variable="container-title" form="short"/>
+          <!-- Generic records retain their supplied source and persistent identifier. -->
+          <group prefix=". " delimiter=". ">
+            <choose>
+              <if variable="container-title">
+                <text variable="container-title" form="short"/>
+              </if>
+              <else>
+                <text variable="publisher"/>
+              </else>
+            </choose>
             <group delimiter=":">
               <text variable="volume"/>
               <text variable="page"/>
             </group>
+            <text prefix="https://doi.org/" variable="DOI"/>
           </group>
         </else>
       </choose>

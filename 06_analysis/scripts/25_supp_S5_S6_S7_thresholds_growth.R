@@ -237,17 +237,6 @@ fig_s5a <- ggplot() +
     color = pal$slate_mid, linewidth = 0.6, linetype = "dotted"
   ) +
   # Annotate gate result
-  annotate(
-    "label",
-    x = min(surv_pred$log_size) + 0.3,
-    y = 0.15,
-    label = sprintf("Gate: \u0394%s = %.2f\n(threshold = 2)",
-                    surv_gate_criterion, surv_gate_delta),
-    size = 2.5, hjust = 0, vjust = 0,
-    fill = "white", alpha = 0.85,
-    label.r = unit(1, "mm"),
-    color = pal$slate_dark, family = "sans"
-  ) +
   log_size_axis() +
   scale_y_continuous(
     name = "Interval survival probability",
@@ -318,21 +307,11 @@ fig_s5b <- ggplot() +
   } +
   {
     if (!is.na(pos_thresh_cm2))
-      annotate("label",
-               x = pos_thresh_log + 0.2,
-               y = 0.10,
-               label = sprintf("T = %.0f cm\u00B2", pos_thresh_cm2),
-               size = 2.5, hjust = 0,
-               fill = "white", alpha = 0.85,
-               label.r = unit(1, "mm"),
-               color = pal$accent, family = "sans")
+      NULL
   } +
   {
     if (!pos_gate_passed)
-      annotate("label", x = min(pos_fit_data$log_size) + 0.2, y = 0.10,
-               label = "No supported threshold", hjust = 0, size = 2.5,
-               fill = "white", alpha = 0.85, label.r = unit(1, "mm"),
-               color = pal$slate_dark, family = "sans")
+      NULL
   } +
   log_size_axis() +
   scale_y_continuous(
@@ -368,14 +347,7 @@ fig_s5c <- if (!is.null(rgr_deriv_df)) {
     } +
     {
       if (!is.na(rgr_thresh_cm2))
-        annotate("label",
-                 x = max(rgr_deriv_df$x, na.rm = TRUE) - 0.2,
-                 y = max(rgr_deriv_df$d2_upper, na.rm = TRUE) * 0.9,
-                 label = sprintf("T\u2082 = %.0f cm\u00B2", rgr_thresh_cm2),
-                 size = 2.5, hjust = 1,
-                 fill = "white", alpha = 0.85,
-                 label.r = unit(1, "mm"),
-                 color = pal$accent, family = "sans")
+        NULL
     } +
     log_size_axis() +
     scale_y_continuous(name = expression("Second derivative s''(x)")) +
@@ -386,8 +358,6 @@ fig_s5c <- if (!is.null(rgr_deriv_df)) {
     )
 } else {
   ggplot() +
-    annotate("text", x = 0.5, y = 0.5, label = "RGR derivatives unavailable",
-             size = 4) +
     theme_void()
 }
 
@@ -461,14 +431,6 @@ fig_s6a <- ggplot() +
   geom_line(data = pred_agr_s6,
             aes(x = log_size, y = agr_fit),
             color = pal$surv_mid, linewidth = 0.8) +
-  annotate("label",
-           x = max(pred_agr_s6$log_size) - 0.3,
-           y = quantile(agr_fit_data$agr, 0.02, na.rm = TRUE),
-           label = sprintf("R\u00B2 = %.1f%%", agr_r2 * 100),
-           size = 2.8, hjust = 1,
-           fill = "white", alpha = 0.85,
-           label.r = unit(1, "mm"),
-           color = pal$slate_dark, family = "sans") +
   log_size_axis() +
   coord_cartesian(ylim = quantile(agr_fit_data$agr, c(0.01, 0.99), na.rm = TRUE)) +
   scale_y_continuous(name = expression(paste("AGR (cm"^2, " yr"^-1, ")"))) +
@@ -489,14 +451,6 @@ fig_s6b <- ggplot() +
   geom_line(data = pred_rgr_s6,
             aes(x = log_size, y = rgr_fit),
             color = pal$grow_mid, linewidth = 0.8) +
-  annotate("label",
-           x = max(pred_rgr_s6$log_size) - 0.3,
-           y = quantile(rgr_fit_data$rgr, 0.02, na.rm = TRUE),
-           label = sprintf("R\u00B2 = %.1f%%", rgr_r2 * 100),
-           size = 2.8, hjust = 1,
-           fill = "white", alpha = 0.85,
-           label.r = unit(1, "mm"),
-           color = pal$slate_dark, family = "sans") +
   log_size_axis() +
   coord_cartesian(ylim = quantile(rgr_fit_data$rgr, c(0.01, 0.99), na.rm = TRUE)) +
   scale_y_continuous(name = expression(paste("RGR (yr"^-1, ")"))) +
@@ -532,14 +486,6 @@ fig_s6c <- ggplot() +
   geom_line(data = pred_grid_s6,
             aes(x = log_size, y = pos_fit),
             color = pal$grow_mid, linewidth = 0.8) +
-  annotate("label",
-           x = min(pred_grid_s6$log_size) + 0.3,
-           y = 20,
-           label = sprintf("Dev. expl. = %.1f%%", pos_dev * 100),
-           size = 2.8, hjust = 0,
-           fill = "white", alpha = 0.85,
-           label.r = unit(1, "mm"),
-           color = pal$slate_dark, family = "sans") +
   log_size_axis() +
   scale_y_continuous(name = "P(positive growth) (%)",
                      limits = c(0, 100), breaks = seq(0, 100, 20)) +
@@ -676,7 +622,7 @@ pos_legend <- if (pos_gate_passed && !is.na(pos_thresh_cm2)) {
 writeLines(c(
   "# Fig. S1. Size-dependent survival and growth diagnostics",
   "",
-  sprintf(paste0("(a) Interval survival against log colony size (n = %s fitted records); the label gives ",
+  sprintf(paste0("(a) Interval survival against log colony size (n = %s fitted records); ",
                  "the improvement of the GAM over the linear model (delta %s = %.2f; ",
                  "the pre-specified gate was 2)."), comma(nobs(surv_gam)),
           surv_gate_criterion, surv_gate_delta),
@@ -741,14 +687,6 @@ fig_s7a <- ggplot(growth_clean, aes(x = log_size, y = log_final_size)) +
               color = "grey60", linewidth = 0.4) +
   geom_line(data = pred_allom, aes(x = log_size, y = fit),
             color = pal$surv_dark, linewidth = 0.8) +
-  annotate("label",
-           x = min(growth_clean$log_size) + 0.3,
-           y = max(growth_clean$log_final_size, na.rm = TRUE) - 0.5,
-           label = sprintf("slope = %.3f\nR\u00B2 = %.1f%%", allom_slope, allom_r2 * 100),
-           size = 2.8, hjust = 0, vjust = 1,
-           fill = "white", alpha = 0.85,
-           label.r = unit(1, "mm"),
-           color = pal$slate_dark, family = "sans") +
   coord_equal(ratio = 1) +
   scale_x_continuous(name = expression(paste("Log initial size (log cm"^2, ")"))) +
   scale_y_continuous(name = expression(paste("Log final size (log cm"^2, ")"))) +

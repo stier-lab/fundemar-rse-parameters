@@ -1,6 +1,7 @@
 restoration_subtype,subtype_label,study,region,n,n_cohort_survival_records,n_endpoint_selected_records,mean_survival,record_fate_fraction,cohort_survival_estimable,mean_size_cm2,baseline_excluded
 natural_fragment,Naturally occurring fragments,NOAA_survey,Curacao,39,0,39,NA,1,FALSE,3882.078205128205,0
 natural_fragment,Naturally occurring fragments,NOAA_survey,Florida Keys,55,0,55,NA,1,FALSE,1027.5503636363635,13
+natural_fragment_neely,Naturally attached fragments (Neely),neely_et_al_2022,Florida Keys,677,677,0,0.6189069423929101,0.6189069423929099,TRUE,243.79091252256688,13
 nursery_fragment,Nursery-held fragments,fundemar_fragments,Dominican Republic,44,44,0,0.8636363636363636,0.8636363636363636,TRUE,20.10218181818182,44
 nursery_outplant,Nursery outplants,pausch_et_al_2018,Florida Keys,968,968,0,0.5743801652892566,0.5743801652892562,TRUE,63.7812784679089,720
 nursery_outplant_recemented,Block-mounted nursery fragments,kuffner_et_al_2020,Dry Tortugas,24,24,0,1,1,TRUE,20.333333333333332,0

@@ -68,9 +68,9 @@ build_restoration_subtype_map <- function() {
     "medium",
 
     "neely_et_al_2022", "natural_fragment_neely", "Naturally attached fragments (Neely)",
-    "Only records with source-verified fragment == 'Y'; unknown colony type is not recoded from site or survival",
-    "AF denotes a naturally attached fragment, not a restoration outplant. The shared LAI-only workbook does not identify AF colonies; source-linked colony-type metadata are required before any Neely record enters this subgroup.",
-    "source-verification-required",
+    "Collector-verified AF at first sighting, linked by colony ID; no classification from late appearance or changing morphology",
+    "All Neely colonies are wild. First-sighting AF defines the naturally attached-fragment cohort; BR/EN/remnant are not verified nonfragments, and loose fragments are a separate sampling protocol.",
+    "high",
 
     "pausch_et_al_2018", "nursery_outplant", "Nursery outplants",
     "Nursery-cultured fragments outplanted to reef habitat",
@@ -197,7 +197,7 @@ surv_rest <- surv_data %>%
   # A study-level map must not turn NOAA's intact natural colonies into
   # naturally occurring fragments merely because NOAA is a mapped study.
   filter(study != "NOAA_survey" | fragment == "Y") %>%
-  filter(study != "neely_et_al_2022" | fragment == "Y") %>%
+  filter(study != "neely_et_al_2022" | coalesce(neely_colony_type_first_sighting, "") == "AF") %>%
   assign_restoration_subtype(restore_mapping)
 
 growth_population_restoration <- if ("population_type" %in% names(growth_data)) {
@@ -211,7 +211,7 @@ growth_rest <- growth_data %>%
       growth_population_restoration
   ) %>%
   filter(study != "NOAA_survey" | fragment == "Y") %>%
-  filter(study != "neely_et_al_2022" | fragment == "Y") %>%
+  filter(study != "neely_et_al_2022" | coalesce(neely_colony_type_first_sighting, "") == "AF") %>%
   assign_restoration_subtype(restore_mapping)
 
 unknown_survival <- sum(surv_rest$restoration_subtype == "unknown", na.rm = TRUE)
@@ -384,11 +384,11 @@ write_csv(surv_sensitivity, file.path(output_dir, "restoration_subtype_sensitivi
 # the same observed origin/handling groups explicit in both panels. NOAA's
 # endpoint-selected fragments never pool with verified Neely natural fragments.
 subtype_display <- c(
-  natural_fragment = "Natural fragments\n(NOAA; live-endpoint selected)",
+  natural_fragment = "Natural fragments\n(NOAA)",
   natural_fragment_neely = "Naturally attached fragments\n(Neely)",
   nursery_outplant = "Nursery outplants\n(Pausch et al. 2018)",
   nursery_outplant_recemented = "Block-mounted nursery fragments\n(Kuffner et al. 2020)",
-  outplanted_colony = "Reef outplants, origin unspecified\n(USGS)",
+  outplanted_colony = "Reef outplants\n(USGS)",
   nursery_fragment = "Nursery-held fragments\n(FUNDEMAR)",
   sexual_recruit_outplant = "Sexually propagated reef outplants\n(Mendoza Quiroz et al. 2023)",
   sexual_recruit_nursery = "Sexually propagated nursery juveniles\n(Mendoza Quiroz et al. 2023)"
@@ -431,13 +431,6 @@ size_limits <- c(
 )
 
 p_surv <- ggplot() +
-  geom_text(
-    data = no_survival_estimate,
-    aes(x = 0.03, y = subtype_plot,
-        label = sprintf("Not estimable: live-endpoint selection\n(n = %d observations)", n_records)),
-    hjust = 0, color = "grey45", size = 2.7,
-    family = "Arial", fontface = "italic"
-  ) +
   geom_point(
     data = plot_survival,
     aes(x = weighted_survival, y = subtype_plot),
@@ -492,12 +485,6 @@ p_growth <- ggplot() +
     alpha = 0.9,
     position = position_jitter(height = 0.04, width = 0, seed = 39)
   ) +
-  geom_text(
-    data = no_growth,
-    aes(x = 0.1, y = subtype_plot),
-    label = "No measured live-area data", hjust = 0,
-    color = "grey45", size = 2.7, family = "Arial", fontface = "italic"
-  ) +
   scale_size_continuous(
     name = "Study–region records",
     range = c(1.2, 4.5),
@@ -538,9 +525,9 @@ dir.create(legend_dir, showWarnings = FALSE, recursive = TRUE)
 writeLines(c(
   "# Fig. S5 (repository asset FigS19): population-source descriptions",
   "",
-  sprintf("(a) Observed interval survival and (b) relative live-area growth rate (yr⁻¹). The same %s observed origin/handling groups appear in both panels, with naturally occurring fragments first and study names in parentheses. Open circles are study–region summaries, with point area scaled to record counts; filled diamonds, offset above each row for visibility, are record-weighted subtype means. Blue diamonds denote survival and orange diamonds growth, not population origin. Survival percentages average binary colony-interval fates. The legacy per-record power transformation leaves 0/1 fates unchanged and does not annualize a cohort survival proportion. Survey durations differ among records, so these percentages are not comparable annual survival rates. Empty growth rows are labeled when no measured live-area data are available. Both panels are descriptive and show no inferential intervals. Legacy resampling intervals are retained in the survival-summary CSV only and do not estimate between-program uncertainty.",
+  sprintf("(a) Observed interval survival and (b) relative live-area growth rate (yr⁻¹). The same %s observed origin/handling groups appear in both panels, with naturally occurring fragments first and study names in parentheses. Open circles are study–region summaries, with point area scaled to record counts; filled diamonds, offset above each row for visibility, are record-weighted subtype means. Blue diamonds denote survival and orange diamonds growth, not population origin. Survival percentages average binary colony-interval fates. The legacy per-record power transformation leaves 0/1 fates unchanged and does not annualize a cohort survival proportion. Survey durations differ among records, so these percentages are not comparable annual survival rates. Empty growth rows indicate unavailable measured live-area data, not a zero growth rate. Both panels are descriptive and show no inferential intervals. Legacy resampling intervals are retained in the survival-summary CSV only and do not estimate between-program uncertainty.",
           length(subtype_display)),
-  sprintf("NOAA naturally occurring fragments are observations explicitly coded fragment = Y, not intact NOAA colonies or restoration outplants. In the source integration this designation uses interval-end Colony.Type AF/SF; all such observations therefore have a live endpoint. Their survival estimate is withheld as not estimable from these endpoint-selected records; the %s observations remain in the inventory and growth summaries. Neely's AF code also denotes naturally attached fragments, not outplants. Neely records enter a separate natural-fragment row only when source-linked colony-type metadata identify them; unknown colony type is not inferred from site, colony size, or fate. The current inventory contains %s Neely intervals with unknown fragment status. FUNDEMAR fragments were nursery-held on PVC tables, not reef outplants. Pausch records are nursery outplants; Kuffner records are nursery-reared fragments epoxied to removable discs and bolted to reef blocks, not a test of reattachment after breakage. The origin of USGS outplanted colonies is unspecified. Mendoza-Quiroz sexual cohorts are split between Puerto Morelos Nursery and Cuevones/Picudas reef outplants; they are not asexual fragments.",
+  sprintf("NOAA naturally occurring fragments are observations explicitly coded fragment = Y, not intact NOAA colonies or restoration outplants. In the source integration this designation uses interval-end Colony.Type AF/SF; all such observations therefore have a live endpoint. Their survival estimate is withheld as not estimable from these endpoint-selected records; the %s observations remain in the inventory and growth summaries. Neely's AF code also denotes naturally attached fragments, not outplants. Neely records enter their separate row only for collector-verified AF at first sighting, followed subsequently as an origin cohort. BR/EN/remnant are not stable states or proof of nonfragment origin; the %s other Neely intervals retain unknown physical fragment origin. Late appearance, site, size and fate do not define AF. The two initially loose fragments are retained with both deaths in the full inventory but excluded from the consistent attached-colony primary protocol and from the AF row. FUNDEMAR fragments were nursery-held on PVC tables, not reef outplants. Pausch records are nursery outplants; Kuffner records are nursery-reared fragments epoxied to removable discs and bolted to reef blocks, not a test of reattachment after breakage. The origin of USGS outplanted colonies is unspecified. Mendoza-Quiroz sexual cohorts are split between Puerto Morelos Nursery and Cuevones/Picudas reef outplants; they are not asexual fragments.",
           comma(sum(surv_rest$endpoint_selected_fragment)),
           comma(sum(surv_data$study == "neely_et_al_2022" &
                       (is.na(surv_data$fragment) | surv_data$fragment == "U")))),

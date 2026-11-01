@@ -1,5 +1,5 @@
 scenario,n_records,n_studies,n_natural_fragments,n_endpoint_selected_records,n_cohort_survival_records,n_nursery_held,n_post_outplant,mean_survival,cohort_survival_estimable,comparison_scope
-All subtype-coded records,1257,6,94,94,1163,61,1102,0.6182287188306109,TRUE,inventory_retains_endpoint_selected_fragments_but_survival_estimate_excludes_them
+All subtype-coded records,1934,7,771,94,1840,61,1102,0.6184782608695656,TRUE,inventory_retains_endpoint_selected_fragments_but_survival_estimate_excludes_them
 Exclude natural fragments,1163,5,0,0,1163,61,1102,0.6182287188306109,TRUE,descriptive_observational_survival_not_treatment_efficacy
 All restoration subtypes,1163,5,0,0,1163,61,1102,0.6182287188306109,TRUE,descriptive_observational_survival_not_treatment_efficacy
 Post-outplant records only (excludes natural fragments and nursery-held),1102,4,0,0,1102,0,1102,0.6025408348457354,TRUE,descriptive_observational_survival_not_treatment_efficacy

@@ -2,7 +2,7 @@ region,location,plot,site_id,latitude,longitude,n_site_years,total_survival_obs,
 Florida Keys,Marker 3 Reef,MR2,neely_et_al_2022.Florida Keys.Marker 3 Reef.MR2,25.37328,-80.16062,4,407,0.5995085995085995,0.8391304347826087,2011,2015
 Florida Keys,Palmata Patch,DT1,neely_et_al_2022.Florida Keys.Palmata Patch.DT1,24.62098,-82.86745,5,331,0.8368580060422961,0.5551470588235294,2011,2015
 Florida Keys,Marker 3 Reef,MR3,neely_et_al_2022.Florida Keys.Marker 3 Reef.MR3,25.37328,-80.16062,4,319,0.6677115987460815,0.8926829268292683,2011,2015
-Florida Keys,Marker 3 Reef,MR1,neely_et_al_2022.Florida Keys.Marker 3 Reef.MR1,25.37328,-80.16062,4,261,0.7394636015325671,0.7631578947368421,2010,2014
+Florida Keys,Marker 3 Reef,MR1,neely_et_al_2022.Florida Keys.Marker 3 Reef.MR1,25.37328,-80.16062,4,259,0.7413127413127413,0.7619047619047619,2010,2014
 Florida Keys,French Reef,FR1,NOAA_survey.Florida Keys.French Reef.FR1,25.033886,-80.349365,17,195,0.9179487179487179,0.5314285714285715,2005,2023
 Florida Keys,Looe Key,LK1,neely_et_al_2022.Florida Keys.Looe Key.LK1,24.54593,-81.40731,4,188,0.8776595744680851,0.6981132075471698,2011,2014
 Florida Keys,Elbow Reef,EL2,NOAA_survey.Florida Keys.Elbow Reef.EL2,25.142899,-80.258221,19,186,0.9032258064516129,0.5059523809523809,2004,2024
@@ -37,7 +37,7 @@ Florida Keys,Sand Island,SI3,NOAA_survey.Florida Keys.Sand Island.SI3,25.018128,
 Florida Keys,Grecian Rocks,GR3,NOAA_survey.Florida Keys.Grecian Rocks.GR3,25.109261,-80.306191,10,81,0.8395061728395061,0.3582089552238806,2012,2023
 Florida Keys,French Reef,NA,pausch_et_al_2018.Florida Keys.French Reef.site_only,25.03438,-80.34888,1,80,0.875,0.989010989010989,2016,2016
 Curacao,Blue Baai,BB3,NOAA_survey.Curacao.Blue Baai.BB3,12.135267,-68.987104,9,76,0.8947368421052632,0.5205479452054794,2007,2015
-Florida Keys,West Sambo Key,WS1,neely_et_al_2022.Florida Keys.West Sambo Key.WS1,24.47987,-81.71284,4,76,0.6578947368421053,0.6595744680851063,2010,2014
+Florida Keys,West Sambo Key,WS1,neely_et_al_2022.Florida Keys.West Sambo Key.WS1,24.47987,-81.71284,4,74,0.6756756756756757,0.6595744680851063,2010,2014
 Curacao,Boca Santa Marta,SM1,NOAA_survey.Curacao.Boca Santa Marta.SM1,12.268331,-69.129461,6,67,0.8208955223880597,0.6956521739130435,2007,2012
 Florida Keys,Ball Buoy Reef,BB2,neely_et_al_2022.Florida Keys.Ball Buoy Reef.BB2,25.31618,-80.18725,4,64,0.765625,0.5652173913043478,2011,2014
 Florida Keys,Sand Key,SK1,neely_et_al_2022.Florida Keys.Sand Key.SK1,24.45244,-81.87706,4,63,0.6190476190476191,0.5172413793103449,2010,2014
@@ -78,8 +78,10 @@ Florida Keys,Molasses Reef,NA,pausch_et_al_2018.Florida Keys.Molasses Reef.site_
 Florida Keys,Pickles Reef,NA,pausch_et_al_2018.Florida Keys.Pickles Reef.site_only,24.98577,-80.41569,1,27,0.5925925925925926,0.40540540540540543,2015,2015
 Florida Keys,French Reef,NA,pausch_et_al_2018.Florida Keys.French Reef.site_only,25.03333,-80.35012,1,26,0.5769230769230769,0.8947368421052632,2015,2015
 Florida Keys,Molasses Reef,NA,pausch_et_al_2018.Florida Keys.Molasses Reef.site_only,25.00984,-80.37395,1,26,0.34615384615384615,0.6764705882352942,2015,2015
+Florida Keys,Sombrero Reef,SR2,neely_et_al_2022.Florida Keys.Sombrero Reef.SR2,24.62592,-81.11045,4,26,0.9230769230769231,0.7391304347826086,2010,2014
 Florida Keys,Key Largo Dry Rocks,KL2,NOAA_survey.Florida Keys.Key Largo Dry Rocks.KL2,25.122897,-80.297886,4,24,0.5,0.3333333333333333,2004,2007
 Navassa,LuLu Bay,LB1,NOAA_survey.Navassa.LuLu Bay.LB1,18.396638,-75.018962,2,24,1,0.7916666666666666,2009,2012
+Florida Keys,Sombrero Reef,SR3,neely_et_al_2022.Florida Keys.Sombrero Reef.SR3,24.62592,-81.11045,4,23,0.9130434782608695,0.55,2011,2014
 Navassa,LuLu Bay,LB2,NOAA_survey.Navassa.LuLu Bay.LB2,18.396387,-75.018835,2,23,1,0.7391304347826086,2009,2012
 Navassa,Northwest Point,NW1,NOAA_survey.Navassa.Northwest Point.NW1,18.413855,-75.029866,2,23,0.8695652173913043,0.7368421052631579,2009,2012
 Navassa,Northwest Point,NW3,NOAA_survey.Navassa.Northwest Point.NW3,18.413687,-75.029231,2,23,0.782608695652174,0.8333333333333334,2009,2012
@@ -87,10 +89,8 @@ Mexican Caribbean,Cuevones Reef,NA,mendoza_quiroz_et_al_2023.Mexican Caribbean.C
 Mexican Caribbean,Puerto Morelos Nursery,NA,mendoza_quiroz_et_al_2023.Mexican Caribbean.Puerto Morelos Nursery.site_only,20.88,-86.85,1,17,1,1,2016,2016
 US Virgin Islands,SFR,NA,USGS_USVI_exp.US Virgin Islands.SFR.site_only,17.78408,-64.61416,2,17,0.7647058823529411,1,2020,2021
 Mexican Caribbean,Picudas Reef,NA,mendoza_quiroz_et_al_2023.Mexican Caribbean.Picudas Reef.site_only,20.88,-86.85,1,16,1,0.4666666666666667,2021,2021
-Florida Keys,Sombrero Reef,SR2,neely_et_al_2022.Florida Keys.Sombrero Reef.SR2,24.62592,-81.11045,3,15,0.9333333333333333,0.6428571428571429,2010,2014
 US Virgin Islands,NWR,NA,USGS_USVI_exp.US Virgin Islands.NWR.site_only,17.79081,-64.62122,2,15,0.6,1,2020,2021
 US Virgin Islands,NER,NA,USGS_USVI_exp.US Virgin Islands.NER.site_only,17.78967,-64.61143,2,14,0.5714285714285714,1,2020,2021
-Florida Keys,Sombrero Reef,SR3,neely_et_al_2022.Florida Keys.Sombrero Reef.SR3,24.62592,-81.11045,3,13,0.8461538461538461,0.36363636363636365,2011,2014
 Dry Tortugas,PLS,NA,kuffner_et_al_2020.Dry Tortugas.PLS.site_only,24.69355,-82.7728,1,12,1,1,2019,2019
 Dry Tortugas,PLW,NA,kuffner_et_al_2020.Dry Tortugas.PLW.site_only,24.7028,-82.79883,1,12,1,1,2019,2019
 Florida Keys,French Reef,FR4,NOAA_survey.Florida Keys.French Reef.FR4,25.03438,-80.34888,1,12,0.8333333333333334,1,2022,2022

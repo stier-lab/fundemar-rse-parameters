@@ -1,0 +1,2 @@
+# FigS9 heterogeneity — variance-panel interpretation
+Panel b compares the total reported heterogeneity variance with the arithmetic mean of the effect sampling variances. Each is divided by their sum solely for this display. These bars are neither I-squared nor a partition of between-study and within-study heterogeneity; the three-level variance components are reported separately in the model outputs. Numerical labels give the displayed percentage and the underlying variance.

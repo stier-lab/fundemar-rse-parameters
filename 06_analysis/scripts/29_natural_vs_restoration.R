@@ -95,6 +95,7 @@ cat(sprintf("Studies: %s\n\n", paste(study_effects$study, collapse = ", ")))
 # Map each study to its region for subsetting
 paired_regions <- c("Florida Keys", "Puerto Rico", "US Virgin Islands")
 
+study_effects <- standardize_effect_reporting_regions(study_effects)
 region_data <- study_effects %>%
   filter(region %in% paired_regions) %>%
   select(study, study_id, region, population_type, n_total, n_survived,
@@ -788,7 +789,7 @@ region_plot_data <- within_region_df %>%
     or_lower = exp(log_or - 1.96 * se_log_or),
     or_upper = exp(log_or + 1.96 * se_log_or),
     # Label
-    label = sprintf("%s\n(nat=%d, rest=%d)", region, nat_n, rest_n)
+    label = region
   )
 
 # Add overall row
@@ -840,10 +841,6 @@ p_a <- ggplot(forest_a_data, aes(x = or, y = label)) +
     x = "Odds Ratio (Natural / Restoration)",
     y = NULL
   ) +
-  annotate("text", x = 0.1, y = Inf, label = "Restoration\nfavoured",
-           hjust = 0, vjust = 1.5, size = 2.8, color = "grey50", fontface = "italic") +
-  annotate("text", x = 10, y = Inf, label = "Natural\nfavoured",
-           hjust = 1, vjust = 1.5, size = 2.8, color = "grey50", fontface = "italic") +
   theme_manuscript(base_size = 10) +
   theme(
     plot.margin = margin(10, 15, 5, 10, "mm"),
@@ -855,7 +852,7 @@ p_a <- ggplot(forest_a_data, aes(x = or, y = label)) +
 
 sc_plot_data <- sc_results_df %>%
   mutate(
-    label = sprintf("%s\n(nat=%d, rest=%d)", size_class, nat_n, rest_n),
+    label = size_class,
     # Ensure OR CIs don't explode
     or_lower_plot = pmax(or_lower, 0.01),
     or_upper_plot = pmin(or_upper, 100)
@@ -877,10 +874,6 @@ p_b <- ggplot(sc_plot_data, aes(x = or, y = label)) +
     x = "Odds Ratio (Restoration vs Natural)",
     y = NULL
   ) +
-  annotate("text", x = 0.1, y = Inf, label = "Natural\nfavoured",
-           hjust = 0, vjust = 1.5, size = 2.8, color = "grey50", fontface = "italic") +
-  annotate("text", x = 10, y = Inf, label = "Restoration\nfavoured",
-           hjust = 1, vjust = 1.5, size = 2.8, color = "grey50", fontface = "italic") +
   theme_manuscript(base_size = 10) +
   theme(
     plot.margin = margin(5, 15, 10, 10, "mm"),

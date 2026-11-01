@@ -1,9 +1,9 @@
 stage,dataset,n_before,n_removed,n_after,reason
-load_raw,survival,7880,0,7880,Raw data loaded
-deduplication,survival,7880,66,7814,"Duplicate key: study, coral_id, survey_yr, location, source_interval_id when available"
-load_raw,growth,6319,0,6319,Raw data loaded
-deduplication,growth,6319,19,6300,"Duplicate key: study, coral_id, survey_yr, location, source_interval_id when available"
-cleaning,survival,7814,36,7778,Remove missing/zero size and missing survival
-cleaning,growth,6300,0,6300,Remove missing/zero size and missing growth
-impossible_flagging,growth,6300,261,6039,"Flagged impossible growth (not removed, flag only)"
-survival_sampling_eligibility,survival,7778,115,7663,Exclude live-endpoint-selected fragments and unverified interval duration; retain in inventory
+load_raw,survival,7878,0,7878,Raw data loaded
+deduplication,survival,7878,66,7812,"Duplicate key: study, coral_id, survey_yr, location, source_interval_id when available"
+load_raw,growth,6338,0,6338,Raw data loaded
+deduplication,growth,6338,19,6319,"Duplicate key: study, coral_id, survey_yr, location, source_interval_id when available"
+cleaning,survival,7812,36,7776,Remove missing/zero size and missing survival
+cleaning,growth,6319,0,6319,Remove missing/zero size and missing growth
+impossible_flagging,growth,6319,263,6056,"Flagged impossible growth (not removed, flag only)"
+survival_sampling_eligibility,survival,7776,96,7680,"Exclude endpoint-selected fragments, inconsistent loose-fragment protocol and unverified duration; retain in inventory"

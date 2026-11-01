@@ -463,15 +463,6 @@ p_dose <- ggplot(dose_response_df, aes(x = dhw, y = mortality * 100)) +
   geom_hline(yintercept = 50, linetype = "dotted", color = "grey70") +
   geom_hline(yintercept = 95, linetype = "dotted", color = "grey70") +
   # Separate y-positions to prevent overlap
-  annotate("text", x = ED50 + 0.4, y = 42,
-           label = paste0("ED50 = ", ED50, " DHW"),
-           hjust = 0, size = 2.6, color = "grey30") +
-  annotate("text", x = ED95 - 0.4, y = 88,
-           label = paste0("ED95 = ", ED95, " DHW"),
-           hjust = 1, size = 2.6, color = "grey30") +
-  annotate("text", x = 18.2, y = 22,
-           label = "2023 FL Keys\n(16-20 DHW)",
-           size = 2.4, color = "red4", lineheight = 0.9) +
   scale_x_continuous(breaks = seq(0, 25, 5)) +
   scale_y_continuous(breaks = seq(0, 100, 25)) +
   labs(x = "Degree Heating Weeks (DHW, °C-weeks)",
@@ -512,8 +503,6 @@ p_traj <- ggplot(catastrophic_data, aes(x = year, y = pct_initial_median,
               alpha = 0.15, color = NA) +
   geom_line(linewidth = 0.8) +
   geom_hline(yintercept = 10, linetype = "dashed", color = "grey60") +
-  annotate("text", x = 48, y = 12, label = "Quasi-extinction",
-           hjust = 1, size = 2.5, color = "grey50") +
   scale_color_manual(values = ri_colors) +
   scale_fill_manual(values = ri_colors) +
   scale_y_continuous(breaks = seq(0, 200, 25)) +
@@ -553,15 +542,6 @@ p_lambda <- ggplot(lambda_data, aes(x = severity, y = effective_lambda,
   geom_col(position = position_dodge(0.8), width = 0.7) +
   geom_hline(yintercept = 1, linetype = "dashed", color = "grey50") +
   geom_hline(yintercept = lambda_det, linetype = "dotted", color = pal$surv_dark) +
-  annotate("label", x = 2.5, y = 0.975,
-           label = sprintf("Baseline lambda = %.3f", lambda_det),
-           hjust = 0.5, vjust = 0.5, size = 2.5, color = pal$surv_dark,
-           fill = "white", label.size = 0, label.padding = unit(0.1, "lines"),
-           fontface = "italic") +
-  annotate("text", x = 4.45, y = 1,
-           label = "stable",
-           hjust = 1, vjust = -0.6, size = 2.5, color = "grey40",
-           fontface = "italic") +
   scale_fill_manual(
     values = c("5" = "#CC79A7", "10" = "#D55E00", "20" = "#E69F00", "50" = "#56B4E9"),
     name = "Heatwave return interval (yr)"

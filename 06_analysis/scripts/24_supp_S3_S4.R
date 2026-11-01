@@ -112,10 +112,6 @@ p_s3a <- ggplot(surv_resid_df, aes(x = fitted, y = residual)) +
   geom_hline(yintercept = 0, linetype = "dashed", color = "grey40", linewidth = 0.4) +
   geom_line(data = surv_lowess_df, aes(x = x, y = y),
             color = pal$accent, linewidth = 0.8) +
-  annotate("label", x = min(surv_resid_df$fitted) + 0.02,
-           y = min(surv_resid_df$residual) * 0.85,
-           label = disp_label, hjust = 0, size = 3.0, color = pal$slate_dark,
-           fill = "white", label.padding = unit(2, "mm")) +
   labs(x = "Fitted values (predicted probability)",
        y = "Pearson residuals") +
   theme_manuscript() +
@@ -164,13 +160,6 @@ p_s3b <- ggplot(growth_display_df, aes(x = fitted, y = residual)) +
   geom_hline(yintercept = 0, linetype = "dashed", color = "grey40", linewidth = 0.4) +
   geom_line(data = growth_lowess_df, aes(x = x, y = y),
             color = pal$accent, linewidth = 0.8) +
-  annotate("text", x = min(growth_display_df$fitted) + diff(range(growth_display_df$fitted)) * 0.02,
-           y = y_upper * 0.95,
-           label = r2_label, hjust = 0, size = 3.0, color = pal$slate_mid) +
-  annotate("text", x = max(growth_display_df$fitted) - diff(range(growth_display_df$fitted)) * 0.02,
-           y = y_lower * 0.95,
-           label = trim_label, hjust = 1, size = 2.5, color = pal$slate_light,
-           fontface = "italic") +
   labs(x = expression(paste("Fitted values (", cm^2, "/yr)")),
        y = "Residuals") +
   theme_manuscript() +
@@ -311,19 +300,15 @@ p_legend_src <- ggplot(legend_df, aes(x = type, y = y, fill = type)) +
 # font-capable Cairo device there, without adding a Cairo-package dependency.
 old_null_device <- cowplot::set_null_device(function(width, height)
   grDevices::cairo_pdf(tempfile(fileext = ".pdf"), width = width, height = height))
-shared_legend <- cowplot::get_legend(p_legend_src)
+
+# No extracted legend grob: keys are in the companion caption.
 
 # --- Combine S4 with shared legend ---
 p_s4_panels <- (p_s4a / p_s4b) +
   plot_annotation(tag_levels = "a") &
   theme(plot.tag = element_text(size = 12, face = "bold", family = "Arial"))
 
-p_s4_final <- cowplot::plot_grid(
-  p_s4_panels,
-  shared_legend,
-  ncol = 1,
-  rel_heights = c(1, 0.06)
-)
+p_s4_final <- p_s4_panels
 cowplot::set_null_device(old_null_device)
 
 # Save S4

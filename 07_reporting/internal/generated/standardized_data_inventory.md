@@ -1,11 +1,11 @@
 # Standardized Data Inventory
 
-Generated from pipeline run `20261030_131553` on 2026-10-30 14:03:26.
+Generated from pipeline run `20261101_104630` on 2026-11-01 11:58:31.
 
 | File | Role | Rows | Studies | Regions | Year Range | Duplicate Keys |
 |---|---:|---:|---:|---:|---|---:|
-| `apal_surv_ind.csv` | canonical_input | 7,880 | 7 | 7 | 2004-2024 | 498 |
-| `apal_growth_ind.csv` | canonical_input | 6,319 | 7 | 7 | 2004-2024 | 423 |
+| `apal_surv_ind.csv` | canonical_input | 7,878 | 7 | 7 | 2004-2024 | 508 |
+| `apal_growth_ind.csv` | canonical_input | 6,338 | 7 | 7 | 2004-2024 | 433 |
 | `apal_surv_summ.csv` | canonical_input | 332 | 19 | 12 | 1980-2022 | 272 |
 | `apal_growth_summ.csv` | canonical_input | 15 | 5 | 5 | 2013-2021 | 3 |
 | `apal_fragmentation.csv` | canonical_input | 13 | 1 | 4 | 2007-2011 | 0 |

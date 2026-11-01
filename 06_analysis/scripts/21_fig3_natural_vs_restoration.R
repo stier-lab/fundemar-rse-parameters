@@ -275,11 +275,6 @@ surv_row <- ggplot() +
             aes(x = log_size, y = surv_pred, color = study_label),
             linewidth = 1.0, show.legend = FALSE) +
   # Type + n annotation (bottom-right of each panel)
-  geom_text(data = surv_annot,
-            aes(label = annot_text),
-            x = display_hi - 0.02, y = 0.12,
-            hjust = 1, vjust = 0, size = 2.5,
-            color = "grey40", family = "Helvetica") +
   facet_wrap(~study_label, nrow = 1) +
   scale_color_manual(values = study_colors) +
   scale_fill_manual(values = study_colors) +
@@ -377,11 +372,6 @@ rgr_row <- ggplot() +
             aes(x = log_size, y = rgr_pred, color = study_label),
             linewidth = 1.0, show.legend = FALSE) +
   # n annotation (top-left)
-  geom_text(data = growth_annot,
-            aes(label = annot_text),
-            x = display_lo + 0.02, y = 2.9,
-            hjust = 0, vjust = 1, size = 2.5,
-            color = "grey40", family = "Helvetica") +
   facet_wrap(~study_label, nrow = 1) +
   scale_color_manual(values = study_colors) +
   scale_fill_manual(values = study_colors) +

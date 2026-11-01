@@ -173,11 +173,6 @@ p_s12a <- ggplot(sensitivity_all, aes(x = lambda, y = label, color = category)) 
     x = expression(lambda),
     y = NULL
   ) +
-  annotate("text", x = lambda_det, y = n_labels + 0.4,
-           label = paste0("baseline (", sprintf("%.3f", lambda_det), ")"),
-           hjust = 0.5, vjust = 0, size = 2.8, color = pal$slate_mid, fontface = "italic") +
-  annotate("text", x = 1.0, y = n_labels + 0.4, label = "stable",
-           hjust = 0.5, vjust = 0, size = 2.8, color = "grey50", fontface = "italic") +
   coord_cartesian(clip = "off") +
   theme_manuscript(base_size = 10) +
   theme(
@@ -212,9 +207,6 @@ p_s12b <- ggplot(boot_ci_plot, aes(x = size_class, y = mean)) +
     labels = scales::percent_format(accuracy = 1)
   ) +
   scale_x_discrete(labels = SIZE_LABELS_DESCRIPTIVE) +
-  annotate("text", x = 0.6, y = overall_surv + 0.02,
-           label = sprintf("overall mean (%.0f%%)", overall_surv * 100),
-           hjust = 0, size = 2.8, color = pal$slate_mid, fontface = "italic") +
   labs(
     x = "Size class",
     y = "Survival probability (95% CI)"
@@ -273,8 +265,6 @@ p_s13a <- ggplot(loso_data, aes(x = fold_label, y = brier_score)) +
     y = "Brier score",
     tag = "a"
   ) +
-  annotate("text", y = 0.26, x = nrow(loso_data) + 0.3, label = "poor prediction",
-           hjust = 0.1, size = 2.5, color = pal$slate_mid, fontface = "italic") +
   theme_manuscript(base_size = 10) +
   theme(
     legend.position = c(0.85, 0.3),
@@ -296,8 +286,6 @@ model_comp_plot <- cv_model_comp %>%
 p_s13b <- ggplot(model_comp_plot, aes(x = model, y = mean_brier)) +
   geom_segment(aes(xend = model, y = mean_brier - sd_brier, yend = mean_brier + sd_brier),
                color = pal$grow_mid, linewidth = 0.8) +
-  geom_text(data = model_comp_plot %>% filter(!is.finite(mean_brier)),
-            aes(y = 0.02, label = "Not estimable"), hjust = 0, size = 2.5) +
   geom_point(size = 3, color = pal$grow_dark, fill = pal$grow_mid, shape = 21,
              stroke = 0.8) +
   coord_flip() +
@@ -364,9 +352,6 @@ p_s14a <- ggplot(proj_df, aes(x = year, y = n, fill = size_class)) +
   annotate("text", x = 18, y = proj_total$total[proj_total$year == 20] + 5,
            label = sprintf("%.0f", proj_total$total[proj_total$year == 20]),
            size = 2.8, color = pal$slate_mid, fontface = "italic") +
-  annotate("text", x = 1, y = sum(initial_pop) + 5,
-           label = sprintf("n = %d", sum(initial_pop)),
-           size = 2.8, color = pal$slate_mid, fontface = "italic", hjust = 0) +
   labs(
     x = "Year",
     y = "Number of individuals",
@@ -402,13 +387,7 @@ p_s14b <- ggplot(stoch_proj, aes(x = year)) +
   # Quasi-extinction threshold
   geom_hline(yintercept = qe_threshold, linetype = "dotted",
              color = "#c62828", linewidth = 0.5) +
-  annotate("text", x = 18, y = qe_threshold,
-           label = sprintf("quasi-extinction (%.0f)", qe_threshold),
-           hjust = 1, vjust = -0.6, size = 2.5, color = "#c62828", fontface = "italic") +
   # Lambda annotation
-  annotate("text", x = 1, y = max(stoch_proj$ci_upper_95) * 0.95,
-           label = sprintf("lambda == %.3f", lambda_det),
-           parse = TRUE, hjust = 0, size = 3, color = pal$slate_mid) +
   scale_linetype_manual(
     values = c("Deterministic" = "dashed",
                "Median (parametric uncertainty)" = "solid"),

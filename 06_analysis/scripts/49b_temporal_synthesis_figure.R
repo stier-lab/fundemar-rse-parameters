@@ -144,8 +144,6 @@ regime_colors <- c(
 panel_b <- ggplot(regime_plot, aes(x = survey_yr, y = 1, fill = regime)) +
   geom_tile(height = 0.8, color = "white", linewidth = 0.3) +
   # Overlay sample size as points below tiles
-  geom_point(aes(y = 0.35, size = n_obs), shape = 21, fill = "white",
-             color = pal$slate_dark, stroke = 0.4, alpha = 0.8) +
   scale_fill_manual(values = regime_colors, name = NULL) +
   scale_size_continuous(name = "n obs", range = c(0.5, 3),
                         breaks = c(50, 200, 500, 1000)) +
@@ -220,8 +218,6 @@ panel_c <- ggplot(hw_plot, aes(x = label, y = effective_lambda)) +
   scale_color_manual(values = dhw_colors, name = NULL) +
   scale_y_continuous(limits = c(0, 1.05), breaks = seq(0, 1.0, by = 0.2)) +
   labs(x = NULL, y = expression("Effective " * lambda)) +
-  annotate("text", x = Inf, y = 1.02, label = expression(lambda * " = 1"),
-           hjust = 1.1, vjust = 0, size = 3, color = pal$slate_mid) +
   theme_manuscript(base_size = 10) +
   theme(
     axis.text.x = element_text(size = 7, lineheight = 0.9, angle = 40, hjust = 1),

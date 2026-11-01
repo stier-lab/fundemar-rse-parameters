@@ -1,11 +1,11 @@
 check,passed,details
-Survival n > 3500 (got 6500),TRUE,PASS
+Survival n > 3500 (got 6517),TRUE,PASS
 Number of studies >= 2 (got 2),TRUE,PASS
 "Survival OR in [1.0, 3.0] (got 1.447)",TRUE,PASS
-"Tjur D in [0.01, 0.30] (got 0.0835)",TRUE,PASS
+"Tjur D in [0.01, 0.30] (got 0.0830)",TRUE,PASS
 Size-survival p < 0.05 (got 0.0000),TRUE,PASS
-"Lambda in [0.90, 1.05] (got 0.9551)",TRUE,PASS
-"P(decline) in [50, 100]% (got 97.4%)",TRUE,PASS
+"Lambda in [0.90, 1.05] (got 0.9567)",TRUE,PASS
+"P(decline) in [50, 100]% (got 97.5%)",TRUE,PASS
 Bootstrap n >= 500 (got 2000),TRUE,PASS
 I-squared > 80% (got 97.6%),TRUE,PASS
 k >= 15 (got 17),TRUE,PASS

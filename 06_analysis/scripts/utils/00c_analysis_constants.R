@@ -79,6 +79,17 @@ classify_population_type <- function(study, fragment) {
 # Default analysis object excludes endpoint-selected NOAA fragments; their
 # natural origin does not make their all-survivor records a survival cohort.
 # Inventory/handling figures must opt in explicitly and withhold that survival.
+standardize_effect_reporting_regions <- function(data) {
+  # Study-wide placeholder labels must not drop verified single-region studies
+  # from a regional display or an existing within-region comparison.
+  dplyr::mutate(data, region = dplyr::case_when(
+    study %in% c("neely_et_al_2022", "pausch_et_al_2018", "kuffner_et_al_2020") ~ "Florida Keys",
+    study == "USGS_USVI_exp" ~ "US Virgin Islands",
+    study == "fundemar_fragments" ~ "Dominican Republic",
+    region == "USVI" ~ "US Virgin Islands",
+    TRUE ~ region))
+}
+
 read_prepared_survival_data <- function(include_endpoint_selected = FALSE) {
   name <- if (include_endpoint_selected) "prepared_survival_inventory.rds" else "prepared_survival_data.rds"
   data <- readRDS(file.path(get_project_root(), "06_analysis/output", name))

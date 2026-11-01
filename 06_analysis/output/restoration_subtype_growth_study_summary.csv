@@ -1,6 +1,7 @@
 restoration_subtype,subtype_label,study,region,n,mean_growth_cm2_yr,mean_rgr,pct_positive,mean_size_cm2
 natural_fragment,Naturally occurring fragments,NOAA_survey,Curacao,39,-1152.2812006097536,0.05637995003482733,46.15384615384615,3882.078205128205
 natural_fragment,Naturally occurring fragments,NOAA_survey,Florida Keys,55,-184.64611650719016,0.152102521827837,58.18181818181818,1027.5503636363635
+natural_fragment_neely,Naturally attached fragments (Neely),neely_et_al_2022,Florida Keys,414,53.36548879937797,0.43998669825937864,71.98067632850241,266.6022624798712
 nursery_fragment,Nursery-held fragments,fundemar_fragments,Dominican Republic,177,75.94103823655131,3.5641846606131287,96.045197740113,25.922694915254237
 nursery_outplant,Nursery outplants,pausch_et_al_2018,Florida Keys,556,50.104578444373004,1.0324011416259093,82.73381294964028,61.50636690647483
 outplanted_colony,Outplanted colonies (source unspecified),USGS_USVI_exp,US Virgin Islands,30,100.69166666666666,1.860649909211893,100,73.47583333333333

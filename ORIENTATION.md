@@ -1,41 +1,21 @@
 # Orientation — Detmer-2025-coral-parameters
 
-_Last reviewed: 2026-10-30 · branch `codex-pipeline-refresh-automation`. Consult `git status` for the working-tree state; this repository intentionally tracks regenerated analysis outputs._
+_Last reviewed: 2026-11-01 · branch `codex-pipeline-refresh-automation`. Consult `git status` for the working-tree state; this repository intentionally tracks regenerated analysis outputs._
 
 ## What this is
-PRISMA-structured systematic review + meta-analysis of **size-dependent demography in the Caribbean elkhorn coral *Acropora palmata***, targeting *Coral Reefs*. The synthesis includes 18 studies; the survival meta-analysis uses 17 studies and 22 effects across 13 Caribbean regions. Pooled annual survival is **0.789 (95% CI 0.707–0.852; PI 0.380–0.958)** under extreme heterogeneity (**I² = 97.6%**), from the interval-annualized three-level `rma.mv()`. The corrected recruitment-free transition matrix gives **λ = 0.953 (bootstrap interval: 0.913–1.000)**; **97.4%** of bootstrap replicates fall below one, not a real-world decline probability. SC5 stasis contributes **51.5%** of matrix-cell elasticity (interval: 38.8–64.7%). The primary growth panel has **4,791** records with observed positive live-area endpoints. It projects annualized live-area change over one year, with a 0.1-cm² projected endpoint floor. Consult `heatwave_scenario_summary.csv` and `heatwave_matrix_robustness_summary.csv` for output-backed projection results rather than legacy headline values. This repo supplies parameters to [Detmer-2025-coral-RSE](https://github.com/stier-lab/Detmer-2025-coral-RSE), but the neighboring RSE analyses/app have not been rerun as part of this correction.
+PRISMA-structured systematic review + meta-analysis of **size-dependent demography in the Caribbean elkhorn coral *Acropora palmata***, targeting *Coral Reefs*. The synthesis includes 18 studies; the survival meta-analysis uses 17 studies and 22 effects across 13 Caribbean regions. Pooled annual survival is **0.789 (95% CI 0.708–0.853; PI 0.380–0.958)** under extreme heterogeneity (**I² = 97.6%**), from the interval-annualized three-level `rma.mv()`. The corrected recruitment-free transition matrix gives **λ = 0.955 (bootstrap interval: 0.913407–0.999870)**; **97.5%** of bootstrap replicates fall below one, not a real-world decline probability. SC5 stasis contributes **51.4%** of matrix-cell elasticity (interval: 38.8–64.5%). The primary growth panel has **4,808** records with observed positive live-area endpoints. It projects annualized live-area change over one year, with a 0.1-cm² projected endpoint floor. Consult `heatwave_scenario_summary.csv` and `heatwave_matrix_robustness_summary.csv` for output-backed projection results rather than legacy headline values. This repo supplies parameters to [Detmer-2025-coral-RSE](https://github.com/stier-lab/Detmer-2025-coral-RSE), but the neighboring RSE analyses/app have not been rerun as part of this correction.
 
-## Source-data revision — October 30, 2026
+## Source-data revision — November 1, 2026
 
-The latest local revision separates natural fragmentation from restoration
-origin, excludes two collector-identified non-APAL colonies, and applies one
-verified survey-date correction without changing the original workbook.
-The inventory contains 7,778 survival intervals; primary survival inputs exclude
-94 live-endpoint-selected natural-fragment records and 21 intervals without
-verified duration, leaving 7,663. Valid survivor growth remains eligible by its
-measurement/duration rules. Neely's unreported physical colony types are U;
-they retain natural origin. Nursery-held material and natural fragments have no
-post-outplant age in the age model. Source conventions and correction provenance
-are in `docs/neely_source_conventions.md` and `05_data/corrections/`.
+Karen's October 31 inline answers and first-sighting colony-type workbook supersede the earlier date/type holds. Sombrero is explicitly October 19, 2012; twelve verified date-cell corrections are applied as overlays. All observations for MR1-58, MR3-115 and MR3-116 are excluded as ACER. The original workbook is unchanged.
 
-All 73 maintained analysis stages were rerun across logged fail-fast segments;
-source/eligibility fixes and display repairs were verified before continuing.
-The updated deterministic lambda is 0.953429255573; the bootstrap interval
-includes replacement (0.912684–1.000140), with 97.4% of replicates below one.
-The sources, figures, tables, main Word manuscript (29 pages), supplement Word
-document (19 pages), and PDFs exported from those Word files are synchronized
-to these results. All 48 final document pages and 34 distinct publication/registered
-figure images have visual coverage; exact hashes and review evidence are private
-in `temp/karen_source_update_2026-10-30/`. Source/coherence, citation, display,
-Word-package and pinned-environment checks pass. The diagnostic CV study grouping
-is now a factor: all 25 candidate-model folds fit, including the formerly failing
-GAM. `06_analysis/output/karen_source_revision_pipeline_manifest.csv` records the
-73 successful stages across five fail-fast segments; final display/CV reruns are
-listed in the source-update ledger. The October 30 source-data rebuild supersedes the earlier
-manuscript-only snapshot `bf8bd59`. Correction overlays, pipeline outputs and
-manuscript artifacts are maintained together on this branch; consult Git history
-for the publication state. Neighboring RSE application analyses were
-not rerun by this demographic-synthesis update.
+All Neely colonies are wild. First-sighting AF defines a known naturally attached-fragment origin cohort, not outplants or a time-varying morphotype. BR/EN/remnant do not establish nonfragment origin. Two initially loose fragments and both observed deaths remain in the full inventory; they are excluded from the consistently monitored attached-colony primary protocol and the AF subgroup. The descriptive protocol sensitivity retains both deaths. Of 902 named metadata IDs, 874 match the 878-ID extract; four unmatched original IDs have no eligible interval pairs, and 28 metadata-only IDs generate no observations. No AF inference from late appearance, size, site or fate. No new fragmentation-production rate is inferred; Vardi remains the sole matrix production source.
+
+The inventory contains 7,776 survival intervals; primary survival excludes 94 endpoint-selected NOAA fragments and two loose Neely fragments, leaving 7,680. There are no intervals without verified duration. Prepared growth contains 6,319 intervals; the matrix-compatible live-area subset contains 4,808. The separate Neely AF subgroup contributes 677 survival intervals and 414 growth records. All eight subtype groups together have 1,840 survival-estimable intervals and 1,271 growth records; interval survival is descriptive, not an annual or causal origin comparison.
+
+All 73 maintained stages completed successfully in a single fail-fast run, recorded in `06_analysis/output/karen_source_revision_pipeline_manifest.csv` (local execution log: `pipeline_log_20261101_104630.csv`). Targeted display repairs also corrected verified regional labels, restored the lower Garrison CI in the regional forest plot, and clarified the variance-display labels. The deterministic lambda is 0.954753729087; its primary bootstrap interval ends just below replacement (0.913407–0.999870), while some alternative resampling intervals include one. The proportion below one is 97.5%, not a real-world decline probability.
+
+The main Word manuscript (29 pages), supplement (19 pages), and PDFs exported from those Word files are rebuilt. All 48 final document pages have visual coverage: every original page individually inspected, seven revised pages reinspected and 41 unchanged page images verified by exact hashes. Caption/reference fixes are verified; no layout holds remain. All 34 distinct publication/registered figure images have visual coverage. Private current evidence is in `temp/karen_update_2026-11-01/` and `07_reporting/internal/karen_feedback_update_2026-11-01.md`. Source conventions are maintained in `docs/neely_source_conventions.md`. This November 1 revision supersedes the October 30 snapshot (`346f7a4`). The empirical manuscript, supplement and parameter pipeline were updated; the neighboring RSE model/application was not edited or rerun. No journal submission was made.
 
 ## Data
 | Dataset | Location | Range / sites | Notes |
@@ -47,7 +27,7 @@ not rerun by this demographic-synthesis update.
 | `apal_life_history_parameters.csv` | in-repo | ~30 params | Fecundity (oocyte density 63.6/cm², fertilization 95% wild / 15% sibling), maturity threshold 4000 cm², settlement, recruit survival |
 | `caribbean_disturbance_events.csv` | in-repo | event-level | Typed events: bleaching 29, disease 31, hurricane 29, cold_snap 1 (region × year) |
 | `05_data/original/` | in-repo | 14 raw files | **DO NOT MODIFY** — NOAA, Neely 2022 FKNMS, Kuffner 2020, Fundemar, USGS, Mendoza-Quiroz |
-| Florida = 85.5% of survival inventory | — | 6,654 of 7,778 intervals | Generalizability caveat; matched-estimator LOSO retained |
+| Florida = 85.5% of survival inventory | — | 6,652 of 7,776 intervals | Generalizability caveat; matched-estimator LOSO retained |
 
 ## Pipeline (run order — `06_analysis/scripts/`, all wired into `run_all.R`)
 1. **01** data prep → cell-level survival backbone (`prepared_survival_cells.rds`)
@@ -55,7 +35,7 @@ not rerun by this demographic-synthesis update.
 3. **08–12** robustness (climate, power, cross-validation, context, model selection) — exploratory/supplementary
 4. **13** transition matrix + 2000-iter hierarchical bootstrap λ ← **headline population model**
 5. **14 / 14b** meta-analysis: Tier-1 `rma()` (k=6) and expanded three-level `rma.mv()` (k=17, 22 effects) ← **headline meta**
-6. **15–17** heterogeneity, sensitivity (matched-estimator LOSO λ 0.888–0.966), parameter-list regeneration; RSE growth exports use live-area endpoints with their own documented eligibility
+6. **15–17** heterogeneity, sensitivity (matched-estimator LOSO λ 0.888–0.969), parameter-list regeneration; RSE growth exports use live-area endpoints with their own documented eligibility
 7. **18, 19, 20b, 22** → **Fig 1–4** (main text)
 8. **20c, 21, 23–39, 49/49b** → supplementary figs S1–S28 (disturbance, temporal, regional)
 9. **40** Manzello heatwave dose-response scenarios (FigS22)
@@ -65,7 +45,7 @@ not rerun by this demographic-synthesis update.
 
 - **Entry point:** `make pipeline` (wraps `06_analysis/scripts/run_all.R`)
 - **Verification gate:** `make verify` refreshes canonical statistics and runs source/prose/model-inventory checks; `make display-check` validates the figure/table index.
-- **Headline outputs:** `output/transition_matrix.csv`, `output/population_parameters.csv` (λ=0.953429255573), `output/expanded_meta_analysis_results.csv` (survival 0.789, I²=97.6%), `output/biological_realism_scenarios.csv`
+- **Headline outputs:** `output/transition_matrix.csv`, `output/population_parameters.csv` (λ=0.954753729087), `output/expanded_meta_analysis_results.csv` (survival 0.789, I²=97.6%), `output/biological_realism_scenarios.csv`
 
 ## Current state
 - **Done:** full pipeline runs; 4 main figs + S1–S30 (S27 vacant); expanded meta, heatwave, and 10-scenario biological-realism framework all integrated. Recent commits fixed SC1 survival mean (use rma point estimate), SC5 midpoint, and figure-legend sync.

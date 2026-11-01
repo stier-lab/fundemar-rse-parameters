@@ -146,10 +146,6 @@ fig2a <- ggplot() +
     y = "Interval survival probability",
     tag = "a"
   ) +
-  annotate("text", x = 1.5, y = 0.95,
-           label = sprintf("Natural colonies; n = %s\nDeviance explained = %.1f%%",
-                           comma(nobs(surv_gam)), surv_deviance_explained * 100),
-           hjust = 0, size = 2.5, color = "grey50") +
   theme_manuscript(base_size = 10) +
   theme(
     text         = element_text(family = "Helvetica"),
@@ -260,10 +256,6 @@ fig2b <- ggplot() +
     labels = comma, limits = c(1, 15000)
   ) +
   coord_cartesian(ylim = c(rgr_y_lower, rgr_y_upper)) +
-  annotate("text", x = 1.5, y = rgr_y_upper * 0.92,
-           label = sprintf("All colony sources; n = %s\nDeviance explained = %.1f%%",
-                           comma(nobs(rgr_gam)), rgr_deviance_explained * 100),
-           hjust = 0, size = 2.5, color = "grey50") +
   labs(x = expression("Colony size (cm"^2*")"),
        y = expression("Relative growth rate (yr"^-1*")"),
        tag = "b") +
@@ -349,11 +341,6 @@ if (file.exists(synth_file) && file.exists(pooled_file)) {
                aes(x = x_num, y = pooled_surv),
                color = "black", fill = "white", size = 3.5, shape = 23, stroke = 1.0) +
     # k annotations
-    annotate("text",
-             x = pooled_data$x_num,
-             y = rep(y_max_c - 0.005, nrow(pooled_data)),
-             label = paste0("italic(k)==", pooled_data$k),
-             parse = TRUE, size = 2.5, color = "grey30", vjust = 1) +
     scale_size_continuous(name = "n", range = c(1.2, 6),
                           breaks = sqrt(c(50, 500)), labels = c("50", "500")) +
     scale_color_manual(name = "Population type", values = pop_colors) +
@@ -389,7 +376,7 @@ if (file.exists(synth_file) && file.exists(pooled_file)) {
 } else {
   cat("  WARNING: Synthesis data not found, skipping panel c\n")
   fig2c <- ggplot() + theme_void() +
-    annotate("text", x = 0.5, y = 0.5, label = "Run script 20 first", size = 4)
+    NULL
 }
 
 # =============================================================================

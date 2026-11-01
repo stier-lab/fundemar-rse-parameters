@@ -280,12 +280,18 @@ surv_clean <- surv_ind %>%
                             TRUE ~ NA),
     # Detailed, provenance-based population origin for stratification.
     population_type = classify_population_type(study, fragment),
+    loose_neely_fragment = study == "neely_et_al_2022" &
+      coalesce(neely_colony_type_first_sighting, "") == "LOOSE_FRAG",
     survival_cohort_eligible = !(study == "NOAA_survey" & fragment == "Y") &
+      !loose_neely_fragment &
       is.finite(time_interval_yr) & time_interval_yr > 0,
-    survival_sampling_basis = if_else(study == "NOAA_survey" & fragment == "Y",
-      "fragment_status_selected_at_live_endpoint", "observed_at_risk_interval"),
+    survival_sampling_basis = case_when(
+      study == "NOAA_survey" & fragment == "Y" ~ "fragment_status_selected_at_live_endpoint",
+      loose_neely_fragment ~ "loose_fragment_outside_consistent_attached_monitoring",
+      TRUE ~ "observed_at_risk_interval"),
     survival_exclusion_reason = case_when(
       study == "NOAA_survey" & fragment == "Y" ~ "endpoint_selected_fragment",
+      loose_neely_fragment ~ "loose_fragment_outside_consistent_attached_monitoring",
       !is.finite(time_interval_yr) | time_interval_yr <= 0 ~ "unverified_interval_duration",
       TRUE ~ "eligible"),
     # Mortality definition varies by study (see docs/Data_Methodology_Reference.md)
@@ -696,6 +702,18 @@ cat("═════════════════════════
 # Retain selected live endpoints for the inventory and conditional growth, but
 # never use them as at-risk survival observations in any downstream model.
 saveRDS(surv_clean, file.path(output_dir, "prepared_survival_inventory.rds"))
+# Both first-round loose-fragment deaths remain visible. Their protocol differs
+# from the attached-colony monitoring used subsequently; do not pool them with AF.
+neely_sampling_sensitivity <- bind_rows(
+  surv_clean %>% filter(study == "neely_et_al_2022", survival_cohort_eligible) %>%
+    mutate(scenario = "Consistently monitored attached colonies"),
+  surv_clean %>% filter(study == "neely_et_al_2022",
+    survival_cohort_eligible | loose_neely_fragment) %>%
+    mutate(scenario = "Including two first-round loose fragments")) %>%
+  group_by(scenario) %>% summarise(n_intervals = n(), n_deaths = sum(survived == 0),
+    observed_interval_survival = mean(survived), .groups = "drop")
+write_csv(neely_sampling_sensitivity,
+  file.path(output_dir, "neely_attachment_protocol_sensitivity.csv"))
 write_csv(surv_clean %>% count(study, population_type, fragment,
   survival_sampling_basis, survival_cohort_eligible, name = "n_intervals"),
   file.path(output_dir, "population_origin_sampling_audit.csv"))
@@ -704,7 +722,7 @@ surv_clean <- surv_clean %>% filter(survival_cohort_eligible)
 filtering_audit <- rbind(filtering_audit, data.frame(
   stage = "survival_sampling_eligibility", dataset = "survival", n_before = n_inventory,
   n_removed = n_inventory - nrow(surv_clean), n_after = nrow(surv_clean),
-  reason = "Exclude live-endpoint-selected fragments and unverified interval duration; retain in inventory"))
+  reason = "Exclude endpoint-selected fragments, inconsistent loose-fragment protocol and unverified duration; retain in inventory"))
 size_summary <- surv_clean %>% group_by(size_class) %>% summarise(
   n = n(), n_survived = sum(survived), survival_rate = mean(survived),
   mean_size = mean(size_cm2), .groups = "drop")

@@ -961,8 +961,6 @@ if (sum(!is.na(surv_with_dhw$heat_stress_category)) >= 20) {
       geom_col(width = 0.7, color = "grey30", linewidth = 0.3) +
       geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper),
                     width = 0.2, linewidth = 0.4) +
-      geom_text(aes(y = 0.03, label = paste0("n=", n)),
-                size = 3, color = "grey40") +
       scale_fill_manual(values = heat_colors, guide = "none") +
       scale_x_discrete(labels = heat_labels) +
       scale_y_continuous(limits = c(0, 1), expand = expansion(mult = c(0, 0.02))) +
@@ -971,7 +969,7 @@ if (sum(!is.na(surv_with_dhw$heat_stress_category)) >= 20) {
       theme_manuscript(base_size = 10) +
       theme(axis.text.x = element_text(size = 8, lineheight = 0.85))
   } else {
-    p_a <- ggplot() + annotate("text", x = 0.5, y = 0.5, label = "Insufficient data") +
+    p_a <- ggplot() + NULL +
       theme_void()
   }
 
@@ -1010,12 +1008,10 @@ if (sum(!is.na(surv_with_dhw$heat_stress_category)) >= 20) {
         sprintf("rho = %.2f, p = %.3f", dhw_cor$estimate, dhw_cor$p.value)
       }
       p_b <- p_b +
-        annotate("text", x = Inf, y = Inf,
-                 label = cor_label,
-                 hjust = 1.1, vjust = 1.5, size = 3.5, color = "grey30")
+        NULL
     }
   } else {
-    p_b <- ggplot() + annotate("text", x = 0.5, y = 0.5, label = "Insufficient data") +
+    p_b <- ggplot() + NULL +
       theme_void()
   }
 
@@ -1059,19 +1055,13 @@ if (sum(!is.na(surv_with_dhw$heat_stress_category)) >= 20) {
         name = "Region",
         guide = guide_legend(title.position = "top", nrow = 2, byrow = TRUE)
       ) +
-      annotate("text", x = min(dhw_timeline$survey_yr) - 0.5, y = 6,
-               label = "Bleaching likely", size = 2.5, hjust = 0,
-               fontface = "italic", color = "grey40") +
-      annotate("text", x = min(dhw_timeline$survey_yr) - 0.5, y = 10,
-               label = "Mass bleaching expected", size = 2.5, hjust = 0,
-               fontface = "italic", color = "grey40") +
       labs(x = "Year", y = "Max annual DHW (\u00B0C-weeks)") +
       theme_manuscript(base_size = 10) +
       theme(legend.position = "bottom",
             legend.key.size = unit(3, "mm"),
             legend.text = element_text(size = 7))
   } else {
-    p_c <- ggplot() + annotate("text", x = 0.5, y = 0.5, label = "Insufficient data") +
+    p_c <- ggplot() + NULL +
       theme_void()
   }
 

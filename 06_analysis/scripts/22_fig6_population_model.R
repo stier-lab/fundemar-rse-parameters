@@ -236,11 +236,6 @@ fig4b <- ggplot(elast_core, aes(x = size_class, y = elasticity, fill = vital_rat
     stroke = 0.4
   ) +
   # SC5 stasis annotation — place in upper-left corner, away from bars
-  annotate("text",
-           x = 1, y = sc5_stasis * 1.02,
-           label = sprintf("SC5 stasis: %.1f%%", sc5_pct),
-           hjust = 0, vjust = 1, size = 2.6, color = "grey25",
-           fontface = "italic", lineheight = 0.9) +
   scale_fill_manual(values = vr_colors, name = "Vital rate") +
   guides(fill = guide_legend(nrow = 1, title.position = "top", order = 1),
          color = guide_legend(order = 2, override.aes = list(size = 2.6))) +
@@ -324,9 +319,6 @@ fig4c <- ggplot(boot_df, aes(x = lambda, fill = status)) +
                 "at/above replacement" = expression(lambda >= 1)),
     name = NULL
   ) +
-  annotate("text", x = 1.015, y = Inf,
-           label = "Replacement", vjust = 1.5, hjust = 0,
-           size = 2.2, color = "grey40", fontface = "italic") +
   labs(x = expression(lambda ~ "(population growth rate)"),
        y = "Bootstrap replicates",
        tag = "c",

@@ -1,0 +1,3 @@
+scenario,n_intervals,n_deaths,observed_interval_survival
+Consistently monitored attached colonies,2643,629,0.7620128641695043
+Including two first-round loose fragments,2645,631,0.7614366729678639

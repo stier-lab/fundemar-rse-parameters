@@ -2,35 +2,35 @@ size_class,region,n,survival,certainty
 SC1,Curacao,4,0.5,Very Low
 SC1,Dominican Republic,2,0.5,Very Low
 SC1,Dry Tortugas,3,1,Very Low
-SC1,Florida Keys,125,0.512,Moderate
+SC1,Florida Keys,124,0.5080645161290323,Moderate
 SC1,Mexican Caribbean,9,1,Very Low
 SC1,Navassa,0,NA,No Data
 SC1,US Virgin Islands,1,0,Very Low
 SC2,Curacao,67,0.6417910447761194,Low
 SC2,Dominican Republic,42,0.8809523809523809,Low
 SC2,Dry Tortugas,21,1,Very Low
-SC2,Florida Keys,1942,0.6318228630278064,High
+SC2,Florida Keys,1941,0.6326635754765585,High
 SC2,Mexican Caribbean,22,1,Very Low
 SC2,Navassa,16,0.75,Very Low
 SC2,US Virgin Islands,34,0.6176470588235294,Low
 SC3,Curacao,168,0.7857142857142857,Moderate
 SC3,Dominican Republic,0,NA,No Data
 SC3,Dry Tortugas,0,NA,No Data
-SC3,Florida Keys,1967,0.7666497203863752,High
+SC3,Florida Keys,1974,0.7674772036474165,High
 SC3,Mexican Caribbean,17,1,Very Low
 SC3,Navassa,22,0.8181818181818182,Very Low
 SC3,US Virgin Islands,11,0.8181818181818182,Very Low
 SC4,Curacao,258,0.8837209302325582,Moderate
 SC4,Dominican Republic,0,NA,No Data
 SC4,Dry Tortugas,0,NA,No Data
-SC4,Florida Keys,1287,0.8857808857808858,High
+SC4,Florida Keys,1295,0.8864864864864865,High
 SC4,Mexican Caribbean,4,1,Very Low
 SC4,Navassa,22,1,Very Low
 SC4,US Virgin Islands,0,NA,No Data
 SC5,Curacao,320,0.875,High
 SC5,Dominican Republic,0,NA,No Data
 SC5,Dry Tortugas,0,NA,No Data
-SC5,Florida Keys,1257,0.9657915672235481,High
+SC5,Florida Keys,1261,0.9659000793021412,High
 SC5,Mexican Caribbean,0,NA,No Data
 SC5,Navassa,42,1,Low
 SC5,US Virgin Islands,0,NA,No Data

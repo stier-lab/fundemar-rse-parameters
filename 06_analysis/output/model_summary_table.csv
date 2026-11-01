@@ -1,7 +1,7 @@
 "Response","Model","df","AIC","Delta_AIC","Best","analysis_scope","canonical_for_manuscript"
-"Annual Survival","Baseline null (intercept only)",1,7819.60370862835,696.409456471675,"","classical_baseline_reference",FALSE
-"Annual Survival","Baseline linear (log size)",2,7123.19425215668,0,"✓","classical_baseline_reference",FALSE
-"Annual Survival","Baseline threshold hinge",3,7123.6483852399,0.454133083226225,"","classical_baseline_reference",FALSE
-"Annual Growth","Baseline null (intercept only)",1,120170.227493512,7.20825989975128,"","classical_baseline_reference",FALSE
-"Annual Growth","Baseline linear (log size)",2,120163.019233613,0,"✓","classical_baseline_reference",FALSE
-"Annual Growth","Baseline categorical (5 classes)",5,120173.734836013,10.7156024002325,"","classical_baseline_reference",FALSE
+"Annual Survival","Baseline null (intercept only)",1,7822.09945298092,696.133224810579,"","classical_baseline_reference",FALSE
+"Annual Survival","Baseline linear (log size)",2,7125.96622817034,0,"✓","classical_baseline_reference",FALSE
+"Annual Survival","Baseline threshold hinge",3,7126.49236637497,0.526138204625568,"","classical_baseline_reference",FALSE
+"Annual Growth","Baseline null (intercept only)",1,120525.494632939,7.10224209724402,"","classical_baseline_reference",FALSE
+"Annual Growth","Baseline linear (log size)",2,120518.392390842,0,"✓","classical_baseline_reference",FALSE
+"Annual Growth","Baseline categorical (5 classes)",5,120529.078082357,10.6856915152748,"","classical_baseline_reference",FALSE

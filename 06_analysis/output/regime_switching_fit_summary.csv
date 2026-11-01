@@ -1,2 +1,2 @@
 model,n_years,n_years_modeled,n_years_low_support,low_support_threshold_n,n_states,logLik,AIC,BIC,best_start,em_iterations,catastrophic_state,background_state,post_disturbance_state
-gaussian_hmm_3state_on_annual_logit_deviation,21,19,2,20,3,-11.763130344273542,51.52626068854708,64.74840639687724,22,70,1,3,2
+gaussian_hmm_3state_on_annual_logit_deviation,21,19,2,20,3,-11.783819556024431,51.567639112048866,64.78978482037903,10,53,1,3,2

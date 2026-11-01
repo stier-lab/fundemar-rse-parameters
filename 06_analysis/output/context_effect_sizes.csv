@@ -1,4 +1,4 @@
 "comparison","parameter","cohens_h","effect_size","p_value"
-"Field vs Nursery (in-situ)","Survival",-0.303527621981906,"small",0.0561013124584152
-"Field vs Nursery (ex-situ)","Survival",-0.303527621981906,"small",0.0561013124584152
-"Nursery in-situ vs ex-situ","Survival",-0.303527621981906,"small",0.0561013124584152
+"Field vs Nursery (in-situ)","Survival",-0.301767397579829,"small",0.0575662831997817
+"Field vs Nursery (ex-situ)","Survival",-0.301767397579829,"small",0.0575662831997817
+"Nursery in-situ vs ex-situ","Survival",-0.301767397579829,"small",0.0575662831997817

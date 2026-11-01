@@ -1,46 +1,61 @@
-# Neely source conventions and October 2026 corrections
+# Neely source conventions and collector corrections
 
-The original April 1, 2026 workbook is immutable. Its SHA256 matches the original
-email attachment. It has Site, Coral #, seven date/LAI pairs, and a locations
-sheet; it does not contain Colony Type. Corrections are applied by durable
-colony ID, timepoint and original worksheet row from `05_data/corrections/`.
+The original April 1, 2026 date/LAI workbook is immutable. Collector corrections
+are maintained as overlays in `05_data/corrections/`, joined by durable colony ID
+and original worksheet locator. The October 31 colony-type workbook is preserved
+unchanged in the private review archive (SHA256
+`33931c7d26753ac1d4dd9180c00923871cd63397656a92f190e0ecb2b0ae9cad`).
 
 - LAI is `((L+W+H)/3)^2 × live fraction`, an index rather than measured planar
-  tissue area. Literal `live` establishes a live colony with unknown LAI; zero
-  records death. Missing LAI is not zero. Growth needs two measured positive
-  endpoints and a positive verified duration.
-- Unknown dates are not filled from neighboring colonies without source
-  confirmation. Karen's October 30 correction confirms DT1-4 TP1 as February
-  23, 2011. Her Sombrero entries say October 19, 2021 while her email says the
-  same survey as SR1, whose original TP3 date is October 19, 2012. The 2021
-  literal would reverse the subsequent 2013 interval; these entries await
-  clarification and are not applied. The proposed date is never silently
-  replaced with a plausible year.
-- MR3-115 and MR3-116 were identified by the collector as ACER rather than APAL.
-  All timepoints/intervals for these two colony IDs are excluded, not merely
-  the two missing-date cells. The original rows remain untouched.
-- `fragment` describes physical origin, not restoration: Y is a verified
-  fragment, N a verified nonfragment, U an unreported type. Karen states that
-  AF means a naturally attached fragment. The shared extract lacks the column,
-  so Neely records remain U until an ID/timepoint-linked source is supplied.
-  Site identity, small size and later recruitment do not identify a fragment.
-- A verified type must apply at an interval's start to define a prospective
-  fragment cohort. End-of-interval attachment alone cannot establish cohort
-  survival. Colony IDs/timepoints are unique; metadata joins fail on duplicates,
-  missing IDs, changed worksheet locators or unrecognized codes.
-- NOAA AF/SF records and any verified Neely AF are natural-origin material,
-  never restoration outplants. NOAA's current AF/SF designation is selected at
-  a live interval endpoint, so those records cannot estimate fragment survival.
-  Their measured survivor growth remains usable under the stated growth rules.
-- `prepared_survival_inventory.rds` retains known fates and source sampling
-  metadata. `prepared_survival_data.rds` and the individual-derived survival
-  cells exclude endpoint-selected fragment records and unverified durations.
-  Thus no downstream model can assign those records to restoration or silently
-  give a missing duration the value one year. Inventory figures opt in to the
-  full source record set; subtype figures must withhold non-estimable survival.
+  tissue area. Literal `live` establishes survival with unmeasured LAI; zero
+  records death. Missing LAI is not zero. Growth requires paired measurements
+  and a positive, source-verified duration.
+- Karen confirmed on October 31 that the Sombrero correction is October 19,
+  **2012**, not 2021. The 11 affected date cells are now applied along with the
+  previously confirmed DT1-4 date (February 23, 2011). The 21 Sombrero intervals
+  no longer require duration withholding. Both distinct 2012 rounds remain.
+- MR1-58, MR3-115 and MR3-116 are collector-identified ACER rather than APAL.
+  Every observation/interval for all three is excluded. Original rows remain
+  untouched; the species-exclusion audit preserves the exact locators.
+- **Every colony in the Neely study is wild.** Natural fragmentation and
+  restoration origin are separate attributes. No Neely record is a restoration
+  outplant or receives a post-outplant age.
+- The new metadata are explicitly **status at first sighting**, not morphology
+  measured repeatedly. BR, EN and REMNANT can change through time and are not
+  analyzed as stable morphotypes or evidence of nonfragment/sexual origin.
+  Those records keep `fragment = U`. AF identifies a collector-verified newly
+  attached natural-fragment cohort (`fragment = Y`) followed from first sighting;
+  follow-up intervals remain in that origin cohort without claiming that their
+  current morphology is still AF. No fragment status is inferred from a late
+  first appearance, site identity, size, fate or suspected clonality.
+- Metadata have 902 named IDs; only exact matches to the 878-ID demographic
+  extract are used. Four extract IDs lack a match and retain unknown type:
+  SK2-29e, LK3-3, SR2-7 and SR3-6. The 28 metadata-only IDs do not create new
+  demographic observations. Two blank-ID metadata rows cannot be linked.
+  `neely_colony_type_source_audit.csv` records matched, unmatched, metadata-only
+  and excluded-species cases. Duplicate IDs or unrecognized codes stop ingestion.
+- The two initially loose fragments (WS1-6, WS1-21) both died before the next
+  survey. They remain in the raw and prepared inventories. Primary Neely
+  survival is restricted to the consistently monitored attached-colony protocol:
+  loose fragments were tagged only during the first round, whereas later
+  fragments entered monitoring after attachment. These two records are withheld
+  by protocol, not recoded as attached or silently deleted because they died.
+  `neely_attachment_protocol_sensitivity.csv` shows their effect on the observed
+  interval-survival proportion when included. They never enter the AF subgroup.
+- NOAA AF/SF records are also natural, not outplants, but their designation is
+  selected at a live interval endpoint. Their survival cannot estimate an
+  at-risk fragment cohort. Measured survivor growth remains usable. This differs
+  from the Neely first-sighting cohort; their survival summaries stay separate.
+- `prepared_survival_inventory.rds` retains known fates and sampling metadata.
+  Primary `prepared_survival_data.rds` and individual-derived survival cells
+  exclude endpoint-selected NOAA fragments, the inconsistent loose-fragment
+  protocol, and any unverified durations. Missing duration never becomes one year.
+- Newly sighted AF records provide subsequent survival/growth information, not
+  parent-specific fragment production. They do not provide the parentage,
+  detection or at-risk parent denominator needed to estimate fecundity. Vardi
+  remains the single fragmentation-production source; the collector's narrative
+  site increase is not inserted as a quantitative production rate.
 
-Raw correspondence and the returned unaltered CSV are held in the local private
-review archive. The correction tables contain only the source-backed actions
-needed to reproduce ingestion. Original study/plot/colony identifiers and both
-2012 monitoring rounds are preserved. Biological conclusions are rebuilt from
-the corrected objects rather than carried over from the preceding manuscript.
+The 2014 source flags remain bleaching/site context, not diagnosed disease.
+All biological outputs and manuscript values are rebuilt from these corrected
+records; private correspondence is not part of the public analytical inputs.

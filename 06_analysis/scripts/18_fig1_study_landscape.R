@@ -246,7 +246,7 @@ region_data <- region_data %>%
       region == "Jamaica"              ~ -1.8,
       TRUE ~ 1.2
     ),
-    label = sprintf("%s\n(n = %s)", region, comma(n))
+    label = region
   )
 
 # Count total studies and regions for annotation
@@ -439,22 +439,8 @@ fig_size_dist <- ggplot(size_data, aes(x = size_cm2)) +
              linewidth = 0.7, linetype = "solid") +
   # Median label: placed ABOVE the histogram peak, well clear of the vertical
   # line; an arrow points from the label down to the line.
-  annotate("text", x = median_size * 0.28, y = 560,
-           label = sprintf("Median = %s cm\u00B2", comma(round(median_size))),
-           hjust = 0.5, vjust = 0.5, size = 2.85, color = "#D55E00",
-           fontface = "bold") +
-  annotate("curve", x = median_size * 0.42, xend = median_size * 0.98,
-           y = 540, yend = 440,
-           color = "#D55E00", linewidth = 0.35, curvature = -0.25,
-           arrow = arrow(length = unit(0.06, "inches"), type = "closed")) +
   # Sample size annotation: placed at lower-left of the plot (SC1-SC2 region,
   # low frequency area) to avoid collision with the SC5 boundary label.
-  annotate("text", x = 1.1, y = 520,
-           label = sprintf("N = %s\n%d studies, %d regions",
-                           comma(nrow(size_data)), n_studies_ind,
-                           n_distinct(surv_data$region)),
-           hjust = 0, vjust = 1, size = 3.0, color = pal$slate_dark,
-           lineheight = 0.95, fontface = "plain") +
   scale_x_log10(
     breaks = c(1, 10, 100, 1000, 10000),
     labels = comma,

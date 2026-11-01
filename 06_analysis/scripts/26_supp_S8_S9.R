@@ -127,7 +127,7 @@ study_name_map <- c(
   "vardi_2011_virgin_gorda"      = "Vardi 2011 (Virgin Gorda)",
   "bruckner_bruckner_2001"       = "Bruckner & Bruckner 2001",
   "ortiz_prosper_2005"           = "Ortiz-Prosper 2005",
-  "forrester_et_al_2013"         = "Forrester et al. 2013",
+  "forrester_et_al_2013"         = "Forrester et al. 2014",
   "rosales_et_al_2024"           = "Rosales et al. 2024",
   "maurer_et_al_2022"            = "Maurer et al. 2022",
   "williams_miller_2010"         = "Williams & Miller 2010",
@@ -178,7 +178,7 @@ study_effects <- study_effects %>%
 forest_a <- study_effects %>%
   arrange(desc(survival_rate)) %>%
   mutate(
-    study_label = sprintf("%s (n = %s)", study_cite, trimws(format(n_total, big.mark = ","))),
+    study_label = study_cite,
     study_label = factor(study_label, levels = rev(study_label))
   )
 
@@ -244,7 +244,7 @@ strat_pooled <- meta_strat %>%
 forest_b <- study_effects %>%
   arrange(desc(population_type == "Natural colony"), desc(survival_rate)) %>%
   mutate(
-    study_label = sprintf("%s (n = %s)", study_cite, trimws(format(n_total, big.mark = ","))),
+    study_label = study_cite,
     study_label = factor(study_label, levels = rev(study_label))
   )
 
@@ -331,10 +331,6 @@ p_a <- ggplot(i_sq_bars) +
            fill = "white", size = 3.5, fontface = "bold",
            label.padding = unit(0.2, "lines")) +
   # Category labels at bottom
-  annotate("text",
-           x = c(12.5, 37.5, 62.5, 87.5), y = -0.22,
-           label = c("Low", "Moderate", "Substantial", "Consid."),
-           size = 2.2, color = pal$slate_mid) +
   scale_fill_identity() +
   scale_x_continuous(breaks = c(0, 25, 50, 75, 100),
                      labels = paste0(c(0, 25, 50, 75, 100), "%"),
@@ -355,14 +351,14 @@ p_a <- ggplot(i_sq_bars) +
     plot.margin  = margin(2, 3, 2, 3, "mm")
   )
 
-# --- Panel (b): Variance decomposition ---
+# --- Panel (b): Variance comparison, not a study-level decomposition ---
 
 mean_within_var <- mean(study_effects$var_log_odds)
 total_var <- tau_sq + mean_within_var
 
 var_data <- data.frame(
-  component = factor(c("Between-study", "Within-study"),
-                     levels = c("Between-study", "Within-study")),
+  component = factor(c("Total heterogeneity", "Mean sampling variance"),
+                     levels = c("Total heterogeneity", "Mean sampling variance")),
   variance  = c(tau_sq, mean_within_var),
   pct       = c(tau_sq / total_var * 100, mean_within_var / total_var * 100),
   fill_col  = c(pal$accent, pal$surv_mid)
@@ -377,7 +373,7 @@ p_b <- ggplot(var_data, aes(x = pct, y = component, fill = fill_col)) +
                      labels = paste0(seq(0, 100, 25), "%"),
                      expand = c(0, 0)) +
   labs(
-    x = "Proportion of total variance",
+    x = "Share of displayed variance sum",
     y = NULL
   ) +
   theme_manuscript() +
@@ -433,6 +429,7 @@ p_c <- ggplot(interval_data, aes(y = type)) +
 
 # Categorical tests have no single coefficient: state this on their row.
 mod_plot <- moderator_df %>%
+  filter(is.finite(coefficient)) %>%
   mutate(
     significant = p_value < 0.05,
     moderator = factor(moderator, levels = rev(moderator)),
@@ -449,9 +446,6 @@ p_d <- ggplot(mod_plot, aes(y = moderator)) +
                 orientation = "y") +
   # Point estimates
   geom_point(aes(x = coefficient, color = point_col), size = 3, shape = 16) +
-  geom_text(data = mod_plot %>% filter(!is.finite(coefficient)),
-            aes(x = Inf, label = "Categorical test;\nno single coefficient"),
-            hjust = 1.05, size = 2.2, color = pal$slate_mid) +
   scale_color_identity() +
   labs(
     x = "Regression coefficient\n(log-odds scale)",
@@ -487,6 +481,14 @@ p_S9 <- (p_a + p_b) / (p_c + p_d) +
 save_manuscript_fig(p_S9, "FigS9_heterogeneity",
                     width_mm = 174, height_mm = 120,
                     fig_dir = supp_dir)
+
+# External companion note; explanatory prose stays outside the artwork.
+legend_dir <- file.path(supp_dir, "legends")
+dir.create(legend_dir, showWarnings = FALSE, recursive = TRUE)
+writeLines(c(
+  "# FigS9 heterogeneity — variance-panel interpretation",
+  "Panel b compares the total reported heterogeneity variance with the arithmetic mean of the effect sampling variances. Each is divided by their sum solely for this display. These bars are neither I-squared nor a partition of between-study and within-study heterogeneity; the three-level variance components are reported separately in the model outputs. Numerical labels give the displayed percentage and the underlying variance."
+), file.path(legend_dir, "FigS9_heterogeneity_legend.md"))
 
 # ==============================================================================
 # SUMMARY

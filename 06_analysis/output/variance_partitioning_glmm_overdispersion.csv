@@ -1,8 +1,6 @@
 model,dispersion_ratio,flag,is_singular,convergence_ok,optimizer_messages
-Size only,0.9845946768828722,OK,FALSE,TRUE,NA
-Region only,0.9887348973494356,OK,FALSE,FALSE,"unable to evaluate scaled gradient | Model failed to converge: degenerate  Hessian with 1 negative eigenvalues
+Size only,0.9846098697893733,OK,FALSE,TRUE,NA
+Region only,0.9887625465296312,OK,FALSE,FALSE,unable to evaluate scaled gradient |  Hessian is numerically singular: parameters are not uniquely determined
+Year only,1.009406098026514,OK,FALSE,FALSE,"unable to evaluate scaled gradient | Model failed to converge: degenerate  Hessian with 1 negative eigenvalues
   See ?lme4::convergence and ?lme4::troubleshooting."
-Year only,1.0091815783270632,OK,FALSE,FALSE,"unable to evaluate scaled gradient | Model failed to converge: degenerate  Hessian with 1 negative eigenvalues
-  See ?lme4::convergence and ?lme4::troubleshooting."
-Full (Size + Region + Year),0.9734917080658656,OK,FALSE,FALSE,"unable to evaluate scaled gradient | Model failed to converge: degenerate  Hessian with 1 negative eigenvalues
-  See ?lme4::convergence and ?lme4::troubleshooting."
+Full (Size + Region + Year),0.9736677091686688,OK,FALSE,FALSE,unable to evaluate scaled gradient |  Hessian is numerically singular: parameters are not uniquely determined

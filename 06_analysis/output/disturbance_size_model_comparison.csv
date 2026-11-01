@@ -1,5 +1,5 @@
 response,model,aic,lrt_p
-survival,additive,5419.966834306929,NA
-survival,interaction,5413.016303968773,0.00418911757824827
-positive_growth,additive,7224.608576160181,NA
-positive_growth,interaction,7216.947628417321,0.002936685039309873
+survival,additive,5424.471976503386,NA
+survival,interaction,5418.007404284604,0.0053413005370892075
+positive_growth,additive,7247.567825305349,NA
+positive_growth,interaction,7239.709277808746,0.002660413417102774

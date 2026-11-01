@@ -126,6 +126,7 @@ colnames(raw) <- c("site", "coral_id",
 # Source corrections are overlays; the received workbook remains immutable.
 # Keep durable colony/worksheet locators and stop on stale or ambiguous joins.
 raw$source_row <- seq_len(nrow(raw)) + 2L
+source_colonies <- raw %>% select(coral_id, original_source_row = source_row)
 correction_dir <- file.path(project_root, "05_data/corrections")
 exclusions <- read_csv(file.path(correction_dir, "neely_species_exclusions.csv"),
                        show_col_types = FALSE)
@@ -178,21 +179,27 @@ long <- raw %>%
   filter(!is.na(alive)) %>%
   select(site, coral_id, source_row, timepoint, survey_date, survey_yr, lai, alive)
 
-# AF denotes a naturally attached fragment, never a restoration outplant.
-# The April 1 date/LAI extract omitted colony type. Unknown is not intact.
-# A type must be documented at the interval's START to define a fragment cohort.
+# Collector metadata describe first-sighting categories, not changing morphology.
+# AF defines a known naturally attached-fragment cohort from first sighting.
+# BR/EN/remnant do not prove nonfragment origin. All Neely colonies are wild.
 types <- read_csv(file.path(correction_dir, "neely_colony_types.csv"),
-                  col_types = cols(.default = col_character())) %>%
-  mutate(timepoint = as.integer(timepoint))
-stopifnot(!anyDuplicated(types[c("coral_id", "timepoint")]),
-          all(types$coral_id %in% raw$coral_id),
-          all(types$timepoint %in% 1:7),
+                  col_types = cols(.default = col_character()))
+stopifnot(!anyDuplicated(types$coral_id),
+          all(types$classification_basis == "first_sighting"),
+          all(types$colony_type %in% c("AF", "BR", "EN", "REMNANT", "LOOSE_FRAG", "NO_ACER")),
           all(types$status == "verified"),
-          all(types$fragment %in% c("Y", "N", "U")),
-          !any(types$colony_type == "AF" & types$fragment != "Y"))
-long <- long %>% left_join(types %>% select(coral_id, timepoint, colony_type,
+          all(types$fragment == ifelse(types$colony_type %in% c("AF", "LOOSE_FRAG"), "Y", "U")))
+type_audit <- full_join(source_colonies, types %>% rename(metadata_source_row = source_row),
+                       by = "coral_id") %>% mutate(disposition = case_when(
+  coral_id %in% exclusions$coral_id ~ "different_species_excluded",
+  is.na(original_source_row) ~ "metadata_only_no_demographic_record_added",
+  is.na(colony_type) ~ "demographic_ID_without_metadata_retained_unknown",
+  TRUE ~ "matched_by_durable_colony_ID"))
+write_csv(type_audit, file.path(project_root, "06_analysis/output/neely_colony_type_source_audit.csv"))
+long <- long %>% left_join(types %>% select(coral_id,
+                                           neely_colony_type_first_sighting = colony_type,
                                            source_fragment = fragment),
-                           by = c("coral_id", "timepoint")) %>%
+                           by = "coral_id") %>%
   mutate(fragment = coalesce(source_fragment, "U"))
 
 stopifnot(!anyDuplicated(long[c("site", "coral_id", "timepoint")]))
@@ -295,6 +302,7 @@ neely_surv <- intervals %>%
     size_cm2 = lai_start,
     size_live_cm2 = lai_start,  # Source live-area index; not literal planar area.
     fragment = fragment_start,
+    neely_colony_type_first_sighting = neely_colony_type_first_sighting_start,
     study_notes = "Neely FKNMS; LAI=((L+W+H)/3)^2*live_fraction (cm2 index), not measured planar area; live=alive with LAI missing; 0=dead",
     study_N = study_n,
     group_N = NA_integer_
@@ -307,7 +315,7 @@ neely_surv <- intervals %>%
     study, region, location, plot, treatment_1, treatment_2,
     latitude, longitude, depth_m, survey_yr = survey_yr_start,
     data_type, coral_id, size_cm2, size_live_cm2, survived,
-    fragment, time_interval_yr, disturbance, study_notes, study_N, group_N,
+    fragment, neely_colony_type_first_sighting, time_interval_yr, disturbance, study_notes, study_N, group_N,
     source_interval_id, survey_start_date, survey_end_date
   )
 
@@ -334,6 +342,7 @@ neely_growth <- intervals %>%
     size_live_cm2 = lai_start,
     growth_live_cm2_yr = growth_cm2_yr,
     fragment = fragment_start,
+    neely_colony_type_first_sighting = neely_colony_type_first_sighting_start,
     study_notes = "Neely FKNMS; LAI=((L+W+H)/3)^2*live_fraction (cm2 index); paired measured indices only; live code has no growth value",
     study_N = study_n,
     group_N = NA_integer_
@@ -346,7 +355,7 @@ neely_growth <- intervals %>%
     latitude, longitude, depth_m, survey_yr = survey_yr_start,
     data_type, coral_id, size_cm2, size_live_cm2,
     growth_cm2_yr, growth_live_cm2_yr,
-    fragment, time_interval_yr, disturbance, study_notes, study_N, group_N,
+    fragment, neely_colony_type_first_sighting, time_interval_yr, disturbance, study_notes, study_N, group_N,
     source_interval_id, survey_start_date, survey_end_date
   )
 
@@ -380,7 +389,7 @@ cat(sprintf("  Existing growth: %d rows from %d studies\n",
             nrow(existing_growth), n_distinct(existing_growth$study)))
 
 # Ensure column alignment
-for (column in c("source_interval_id", "survey_start_date", "survey_end_date")) {
+for (column in c("source_interval_id", "survey_start_date", "survey_end_date", "neely_colony_type_first_sighting")) {
   if (!column %in% names(existing_surv)) existing_surv[[column]] <- NA_character_
   if (!column %in% names(existing_growth)) existing_growth[[column]] <- NA_character_
   existing_surv[[column]] <- as.character(existing_surv[[column]])

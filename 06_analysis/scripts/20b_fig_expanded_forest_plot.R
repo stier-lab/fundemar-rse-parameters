@@ -9,7 +9,7 @@
 # LAYOUT STRATEGY (Option A rebuild, 2026-04-17):
 #   Panel a is a 3-column patchwork: left text (study labels), centre forest
 #   (points + CIs + diamonds + reference line), right text (% [CI]  N).
-#   This eliminates the annotate("text") + extreme plot.margin hack that was
+#   This eliminates the NULL + extreme plot.margin hack that was
 #   crashing labels into the plot area when stacked with panel b.
 #   Panel b is a standard ggplot with normal margins -- no more collapsed bars.
 #
@@ -95,7 +95,7 @@ name_map <- c(
   "vardi_2011_virgin_gorda"    = "Vardi 2011 - Virgin Gorda",
   "bruckner_bruckner_2001"     = "Bruckner & Bruckner 2001",
   "ortiz_prosper_2005"         = "Ortiz-Prosper 2005",
-  "forrester_et_al_2013"       = "Forrester et al. 2013",
+  "forrester_et_al_2013"       = "Forrester et al. 2014",
   "rosales_et_al_2024"         = "Rosales et al. 2024",
   "maurer_et_al_2022"          = "Maurer et al. 2022",
   "williams_miller_2010"       = "Williams & Miller 2010",
@@ -131,9 +131,8 @@ study_effects <- study_effects %>%
     clean_name = ifelse(study %in% names(name_map), name_map[study], study),
     label = paste0(clean_name, " (", region_short, ")"),
     tier_shape = ifelse(grepl("Tier 1", data_tier), "Individual", "Summary"),
-    annot_right = sprintf("%.1f [%.1f, %.1f]  %s",
-                          survival_rate * 100, surv_lower * 100, surv_upper * 100,
-                          format(n_total, big.mark = ","))
+    annot_right = sprintf("%.1f [%.1f, %.1f]",
+                          survival_rate * 100, surv_lower * 100, surv_upper * 100)
   )
 
 natural_studies <- study_effects %>%
@@ -205,7 +204,7 @@ y_heterogen    <- y_overall - 1.3
 y_pi           <- y_overall - 2.2
 y_legend       <- y_overall - 3.4
 
-y_min <- y_legend - 1.0
+y_min <- y_overall - 0.8
 y_max <- y_nat_header + 0.8
 
 plot_studies <- bind_rows(
@@ -218,7 +217,7 @@ plot_studies <- bind_rows(
 # Build the text-row data for left and right label panels
 label_rows <- bind_rows(
   tibble(y = y_nat_header,
-         left  = sprintf("Natural colony (k = %d)", n_nat),
+         left  = "Natural colony",
          right = "",
          style = "header_nat"),
   plot_studies %>% transmute(y = y, left = label, right = annot_right, style = "study"),
@@ -228,7 +227,7 @@ label_rows <- bind_rows(
                          nat_surv * 100, nat_lower * 100, nat_upper * 100),
          style = "pooled_nat"),
   tibble(y = y_res_header,
-         left  = sprintf("Restoration origin (k = %d)", n_res),
+         left  = "Restoration origin",
          right = "",
          style = "header_res"),
   tibble(y = y_res_pooled,
@@ -237,8 +236,7 @@ label_rows <- bind_rows(
                          res_surv * 100, res_lower * 100, res_upper * 100),
          style = "pooled_res"),
   tibble(y = y_overall,
-         left  = sprintf("Overall pooled (k = %d)",
-                         as.integer(results_list[["Number of studies (k)"]] %||% 17)),
+         left  = "Overall pooled",
          right = sprintf("%.1f [%.1f, %.1f]",
                          overall_surv * 100, overall_lower * 100, overall_upper * 100),
          style = "overall")
@@ -248,7 +246,7 @@ label_rows <- bind_rows(
 col_header_y <- y_nat_header + 0.65
 label_rows_full <- bind_rows(
   tibble(y = col_header_y, left = "Study (Region)",
-         right = "% Surv [95% CI]   N", style = "col_header"),
+         right = "% Surv [95% CI]", style = "col_header"),
   label_rows
 )
 
@@ -373,30 +371,8 @@ p_forest <- ggplot() +
                  y_overall, y_overall - 0.35),
            fill = col_overall, color = col_overall, linewidth = 0.5) +
   # Heterogeneity annotation (short, fits inside forest x-range)
-  annotate("text",
-           x = (x_plot_min + x_plot_max) / 2, y = y_heterogen,
-           label = sprintf(
-             "I² = %.0f%%, tau² = %.2f, Q = %.0f (p<0.001)",
-             i_sq, tau_sq, q_stat
-           ),
-           hjust = 0.5, size = 2.2, color = "grey40") +
   # Prediction interval
-  annotate("text",
-           x = (x_plot_min + x_plot_max) / 2, y = y_pi,
-           label = sprintf("95%% PI: %.0f-%.0f%% (k=%s, N=%s)",
-                           pi_lower * 100, pi_upper * 100,
-                           results_list[["Number of studies (k)"]] %||% "17",
-                           format(as.integer(total_n), big.mark = ",")),
-           hjust = 0.5, size = 2.1, color = "grey50", fontface = "italic") +
   # Data type legend
-  annotate("point", x = x_leg_indiv_point, y = y_legend,
-           shape = 16, size = 2.2, color = "grey40") +
-  annotate("text", x = x_leg_indiv_text, y = y_legend,
-           label = "Individual data", hjust = 0, size = 2.3, color = "grey40") +
-  annotate("point", x = x_leg_summ_point, y = y_legend,
-           shape = 17, size = 2.2, color = "grey40") +
-  annotate("text", x = x_leg_summ_text, y = y_legend,
-           label = "Summary data", hjust = 0, size = 2.3, color = "grey40") +
   scale_x_continuous(
     name = "Annual survival probability",
     breaks = seq(0.4, 1.0, by = 0.1),
@@ -465,8 +441,7 @@ region_summary <- region_summary %>%
   ungroup()
 
 region_order_b <- region_summary$region
-region_labels_b <- paste0(region_summary$region, " (N=",
-                          trimws(format(region_summary$n_total_reg, big.mark = ",")), ")")
+region_labels_b <- region_summary$region
 
 study_effects_b <- study_effects %>%
   mutate(region_f = factor(region, levels = region_order_b))
@@ -511,9 +486,6 @@ pb <- ggplot() +
                aes(x = pooled_lower, xend = pooled_upper,
                    y = region_num, yend = region_num),
                linewidth = 0.8, color = pal$slate_dark) +
-  annotate("text", x = overall_surv + 0.01, y = length(region_order_b) + 0.55,
-           label = sprintf("Overall pooled: %.1f%%", overall_surv * 100),
-           hjust = 0, vjust = 0.5, size = 2.6, color = pal$slate_mid, fontface = "italic") +
   scale_x_continuous(
     name = "Annual survival rate",
     # Match panel a so the relocated-cohort lower CI (35.8%) is retained.
@@ -561,7 +533,7 @@ pb <- ggplot() +
 print_subheader("Combining panels and saving")
 
 # Wrap panel_a so it stacks as a single "panel" with pb below
-fig3 <- wrap_elements(full = panel_a) / pb +
+fig3 <- wrap_elements(full = clean_figure_artwork(panel_a)) / pb +
   plot_layout(heights = c(1.75, 1))
 
 save_manuscript_fig(

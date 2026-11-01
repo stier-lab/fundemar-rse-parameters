@@ -130,8 +130,6 @@ p_s10a <- ggplot(context_survival,
   geom_col(aes(fill = context), width = 0.55, show.legend = FALSE) +
   geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper),
                 width = 0.12, linewidth = 0.4) +
-  geom_text(aes(label = paste0("n=", format(n, big.mark = ","))),
-            vjust = -1.0, size = 2.5, color = "grey30") +
   scale_y_continuous(
     limits = c(0, 1.12),
     breaks = seq(0, 1, 0.2),
@@ -249,9 +247,6 @@ p_s10c <- ggplot(pairwise_plot,
              color = "grey60", linewidth = 0.3) +
   geom_hline(yintercept = ref_dotted, linetype = "dotted",
              color = "grey60", linewidth = 0.3) +
-  geom_text(aes(label = sig_label),
-            hjust = ifelse(pairwise_plot$cohens_h >= 0, -0.15, 1.15),
-            size = 2.2, color = "grey30") +
   coord_flip(clip = "off", ylim = c(xlim_lo, xlim_hi)) +
   scale_y_continuous(
     breaks = seq(-1, 2, 0.5),
@@ -380,12 +375,6 @@ p_s11b <- ggplot(disturbance_df,
   ) +
   # Place n/k labels ABOVE the error-bar caps so they are never
   # clipped by the plotting area.
-  geom_text(aes(y = pmin(1, ci_upper) + 0.04,
-                label = paste0("n = ", format(n, big.mark = ","))),
-            size = 2.4, color = "grey25", fontface = "bold") +
-  geom_text(aes(y = pmin(1, ci_upper) + 0.10,
-                label = paste0("k = ", n_studies)),
-            size = 2.3, color = "grey40") +
   scale_y_continuous(
     limits = c(0, 1.18),
     breaks = seq(0, 1, 0.2),
@@ -424,16 +413,6 @@ p_s11c <- ggplot(size_climate_vuln,
   geom_col(aes(fill = size_class), width = 0.6, show.legend = FALSE) +
   geom_hline(yintercept = mean_cv, linetype = "dashed",
              color = MANUSCRIPT_PALETTE$accent, linewidth = 0.4) +
-  geom_text(aes(y = label_y,
-                label = paste0("n = ", n_years, " yr")),
-            size = 2.3, color = "grey30") +
-  annotate("text",
-           x = 0.55,
-           y = mean_cv,
-           label = "mean",
-           hjust = 0, vjust = -0.5,
-           size = 2.3, color = MANUSCRIPT_PALETTE$accent,
-           fontface = "italic") +
   scale_y_continuous(
     limits = c(0, cv_max * 1.35),
     expand = expansion(mult = c(0, 0.02))
@@ -458,8 +437,6 @@ reg_max <- max(regional_var$cv_survival, na.rm = TRUE)
 p_s11d <- ggplot(regional_var,
                   aes(x = reorder(region_wrap, cv_survival), y = cv_survival)) +
   geom_col(fill = MANUSCRIPT_PALETTE$surv_mid, width = 0.55) +
-  geom_text(aes(label = paste0("n = ", n_years, " yr")),
-            hjust = -0.15, size = 2.3, color = "grey40") +
   coord_flip(clip = "off", ylim = c(0, reg_max * 1.18)) +
   scale_y_continuous(
     expand = expansion(mult = c(0, 0))

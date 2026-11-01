@@ -68,7 +68,7 @@ study_data <- read_csv(data_path, show_col_types = FALSE)
 
 # Normalize region spellings (USVI -> US Virgin Islands) to match script 20b
 study_data <- study_data %>%
-  mutate(region = ifelse(region == "USVI", "US Virgin Islands", region))
+  standardize_effect_reporting_regions()
 
 cat(sprintf("  Loaded %d study-level estimates across %d regions\n",
             nrow(study_data), n_distinct(study_data$region)))
@@ -108,8 +108,7 @@ region_summary <- region_summary %>%
 
 # Create ordered factor for plotting (lowest survival at bottom)
 region_order <- region_summary$region
-region_labels <- paste0(region_summary$region, " (N=",
-                        trimws(format(region_summary$n_total, big.mark = ",")), ")")
+region_labels <- region_summary$region
 
 study_data <- study_data %>%
   mutate(
@@ -216,7 +215,7 @@ p <- ggplot() +
   # Scales
   scale_x_continuous(
     name = "Annual survival rate",
-    limits = c(0.40, 1.0),
+    limits = c(0.35, 1.0),
     breaks = seq(0.4, 1.0, 0.1),
     labels = scales::percent_format(accuracy = 1)
   ) +
@@ -238,11 +237,6 @@ p <- ggplot() +
     labels = scales::comma
   ) +
   # Annotation: overall pooled label
-  annotate("text",
-           x = overall_pooled + 0.015, y = length(region_order) + 0.6,
-           label = sprintf("Overall pooled: %.1f%%", overall_pooled * 100),
-           hjust = 0, vjust = 0.5, size = 3.0, color = pal$slate_mid,
-           fontface = "italic") +
   # Theme
 
   theme_manuscript(base_size = 11) +

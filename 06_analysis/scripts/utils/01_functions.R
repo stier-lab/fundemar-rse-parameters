@@ -518,6 +518,70 @@ validate_growth_data <- function(df) {
 # 6. MANUSCRIPT FIGURE HELPERS
 # =============================================================================
 
+# Artwork carries data/axes/panel identifiers; decoding and prose live in captions.
+write_figure_companion <- function(plot, filename) {
+  path <- file.path(dirname(filename), "legends",
+    paste0(tools::file_path_sans_ext(basename(filename)), "_keys.md"))
+  if (tolower(tools::file_ext(filename)) != "png" && file.exists(path)) return(invisible(NULL))
+  had_seed <- exists(".Random.seed", envir = .GlobalEnv, inherits = FALSE)
+  if (had_seed) saved_seed <- get(".Random.seed", envir = .GlobalEnv)
+  on.exit({
+    if (had_seed) assign(".Random.seed", saved_seed, envir = .GlobalEnv)
+    else if (exists(".Random.seed", envir = .GlobalEnv, inherits = FALSE))
+      rm(".Random.seed", envir = .GlobalEnv)
+  })
+  panels <- function(p) {
+    if (inherits(p, "patchwork")) {
+      children <- unlist(lapply(p$patches$plots, panels), recursive = FALSE)
+      p$patches$plots <- list()
+      class(p) <- setdiff(class(p), "patchwork")
+      c(children, list(p))
+    } else list(p)
+  }
+  output <- c("# Companion figure keys", "",
+    "Artwork omits titles and decoding guides. Values below describe the plotted encodings; statistical scope and interpretation remain in the manuscript caption or producer's result tables.", "")
+  items <- tryCatch(panels(plot), error = function(e) list(plot))
+  for (i in seq_along(items)) {
+    p <- items[[i]]
+    if (!inherits(p, "ggplot")) next
+    keys <- tryCatch({
+      b <- suppressWarnings(ggplot2::ggplot_build(p))
+      unlist(lapply(b$plot$scales$scales, function(s) {
+        aes <- intersect(s$aesthetics, c("colour", "fill", "shape", "size", "linetype", "alpha"))
+        if (!length(aes)) return(character())
+        breaks <- s$get_breaks()
+        if (!length(breaks)) return(character())
+        breaks <- breaks[!is.na(breaks)]
+        labels <- as.character(s$get_labels(breaks))
+        appearance <- as.character(s$map(breaks))
+        c(paste0("- ", paste(aes, collapse = "/"), ": ",
+          paste(paste0(labels, " = ", appearance), collapse = "; ")))
+      }))
+    }, error = function(e) character())
+    if (length(keys)) output <- c(output, paste0("## Panel ", i), "", keys, "")
+  }
+  dir.create(dirname(path), recursive = TRUE, showWarnings = FALSE)
+  while (length(output) && !nzchar(tail(output, 1L))) output <- head(output, -1L)
+  writeLines(output, path)
+  invisible(path)
+}
+
+clean_figure_artwork <- function(plot) {
+  style <- ggplot2::theme(plot.title = ggplot2::element_blank(),
+    plot.subtitle = ggplot2::element_blank(), plot.caption = ggplot2::element_blank(),
+    legend.position = "none")
+  labels <- ggplot2::labs(title = NULL, subtitle = NULL, caption = NULL)
+  if (inherits(plot, "patchwork")) {
+    plot <- plot & labels & style
+    plot$patches$annotation$title <- NULL
+    plot$patches$annotation$subtitle <- NULL
+    plot$patches$annotation$caption <- NULL
+  } else if (inherits(plot, "ggplot")) {
+    plot <- plot + labels + style
+  }
+  plot
+}
+
 theme_manuscript <- function(base_size = 11) {
   pal <- MANUSCRIPT_PALETTE
   ggplot2::theme_minimal(base_size = base_size) %+replace%
@@ -528,6 +592,7 @@ theme_manuscript <- function(base_size = 11) {
       text             = ggplot2::element_text(family = "Arial", color = pal$slate_dark),
       plot.title       = ggplot2::element_blank(),
       plot.subtitle    = ggplot2::element_blank(),
+      plot.caption     = ggplot2::element_blank(),
       axis.title       = ggplot2::element_text(size = base_size, face = "plain",
                                                 margin = ggplot2::margin(t = 3, r = 4)),
       axis.text        = ggplot2::element_text(size = max(6, base_size - 2), color = "grey30"),
@@ -538,7 +603,7 @@ theme_manuscript <- function(base_size = 11) {
       panel.grid.minor = ggplot2::element_blank(),
       panel.background = ggplot2::element_rect(fill = "white", color = NA),
       plot.background  = ggplot2::element_rect(fill = "white", color = NA),
-      legend.position  = "bottom",
+      legend.position  = "none",
       legend.box       = "horizontal",
       legend.key.size  = ggplot2::unit(4, "mm"),
       plot.margin      = ggplot2::margin(5, 7, 5, 7, "mm"),
@@ -585,6 +650,8 @@ save_manuscript_fig <- function(plot, filename, width_mm = 170, height_mm = 120,
 
   png_path <- file.path(fig_dir, paste0(filename, ".png"))
   pdf_path <- file.path(fig_dir, paste0(filename, ".pdf"))
+  write_figure_companion(plot, png_path)
+  plot <- clean_figure_artwork(plot)
 
   check_coral_reefs_figure(plot, width_mm, height_mm, filename)
 
@@ -600,6 +667,12 @@ save_manuscript_fig <- function(plot, filename, width_mm = 170, height_mm = 120,
   # The PNG is a 600-dpi combination-figure derivative for visual QA and any
   # raster upload requested by Editorial Manager.
   cat(sprintf("  Saved: %s (.png + vector .pdf) -- %d x %d mm\n", filename, width_mm, height_mm))
+}
+
+# Apply the same standing artwork rule to ordinary exploratory ggsave calls.
+ggsave <- function(filename, plot = ggplot2::last_plot(), ...) {
+  write_figure_companion(plot, filename)
+  ggplot2::ggsave(filename, plot = clean_figure_artwork(plot), ...)
 }
 
 # =============================================================================

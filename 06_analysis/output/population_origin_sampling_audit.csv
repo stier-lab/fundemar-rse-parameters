@@ -5,6 +5,7 @@ USGS_USVI_exp,Restoration fragment,Y,observed_at_risk_interval,TRUE,46
 fundemar_fragments,Restoration fragment,Y,observed_at_risk_interval,TRUE,44
 kuffner_et_al_2020,Restoration fragment,Y,observed_at_risk_interval,TRUE,53
 mendoza_quiroz_et_al_2023,Restoration outplant (sexual recruit),N,observed_at_risk_interval,TRUE,52
-neely_et_al_2022,Natural colony,U,observed_at_risk_interval,FALSE,21
-neely_et_al_2022,Natural colony,U,observed_at_risk_interval,TRUE,2626
+neely_et_al_2022,Natural colony,U,observed_at_risk_interval,TRUE,1966
+neely_et_al_2022,Natural colony,Y,loose_fragment_outside_consistent_attached_monitoring,FALSE,2
+neely_et_al_2022,Natural colony,Y,observed_at_risk_interval,TRUE,677
 pausch_et_al_2018,Restoration fragment,Y,observed_at_risk_interval,TRUE,968

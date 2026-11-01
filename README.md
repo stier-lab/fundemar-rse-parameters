@@ -16,13 +16,13 @@
 
 > **The question:** How do *A. palmata* survival and growth vary with colony size across the Caribbean, and what does that mean for persistence and restoration under chronic disturbance?
 
-This repository updates the Vardi et al. (2012) Lefkovitch projection model using 14,160 individual-level observations from seven studies and summary-level data from 10 additional studies. It estimates size-dependent vital rates across 13 Caribbean regions, carries uncertainty through hierarchical bootstrap and meta-analysis, and produces the parameter distributions used by the companion Restoration Strategy Evaluation model.
+This repository updates the Vardi et al. (2012) Lefkovitch projection model using seven individual-record datasets and published summary-level data. The prepared inventory contains 7,776 survival intervals and 6,319 growth intervals; these outcome-specific counts are not a count of unique colonies. Eighteen studies support the broader synthesis, and seventeen contribute survival effects. It estimates size-dependent vital rates across 13 Caribbean regions, carries uncertainty through hierarchical bootstrap and meta-analysis, and produces the parameter distributions used by the companion Restoration Strategy Evaluation model.
 
 | What this repository provides | Where to start |
 | --- | --- |
 | Canonical demographic data, reproducible R analyses, manuscript figures, and RSE-ready parameter lists | [Analysis workflow](06_analysis/README.md) · [Manuscript-facing outputs](07_reporting/README.md) · [Quick start](#quick-start) |
 
-**Current analysis status.** The interval-annualized meta-analysis estimates pooled annual survival at 78.9% (95% CI: 70.7–85.2%; 95% prediction interval: 38.0–95.8%; 17 studies, 22 effects). After preserving distinct Neely survey intervals and known live fates, the recruitment-free transition subsystem has deterministic λ = 0.953 (bootstrap interval: 0.913–1.000). Its 4,791 growth records require observed positive live-area endpoints or source live-area indices; annualized change is projected over one year, with a 0.1-cm² floor. The Neely index is not literal planar area. Nursery-held material is separate from reef outplants, and endpoint-selected NOAA fragments cannot estimate cohort survival. Sexual and external recruitment remain fixed at zero, so this is not a forecast of whole-population viability. RSE parameter exports were refreshed, but the neighboring RSE analyses and app have not been rerun. A clean-clone rerun under the locked R environment remains a release requirement.
+**Current analysis status.** The interval-annualized meta-analysis estimates pooled annual survival at 78.9% (95% CI: 70.8–85.3%; 95% prediction interval: 38.0–95.8%; 17 studies, 22 effects). After preserving distinct Neely survey intervals and known live fates, the recruitment-free transition subsystem has deterministic λ = 0.955 (bootstrap interval: 0.913–1.000). Its 4,808 growth records require observed positive live-area endpoints or source live-area indices; annualized change is projected over one year, with a 0.1-cm² floor. The Neely index is not literal planar area. Nursery-held material is separate from reef outplants, and endpoint-selected NOAA fragments cannot estimate cohort survival. Sexual and external recruitment remain fixed at zero, so this is not a forecast of whole-population viability. RSE parameter exports were refreshed, but the neighboring RSE analyses and app have not been rerun. A clean-clone rerun under the locked R environment remains a release requirement.
 
 **Design principle.** Transparency over false precision: analyses distinguish manuscript-facing results from supporting and exploratory work, expose heterogeneity, and preserve a traceable path from source studies to model parameters.
 
@@ -74,18 +74,18 @@ This organization ensures every step from literature search to final analysis is
 
 | Finding | Value | Interpretation |
 |---------|-------|----------------|
-| **Conditional transition λ** | 0.953 (CI: 0.913–1.000) | Recruitment-free post-settlement subsystem; 97.4% of bootstrap replicates had λ < 1, not a real-world decline probability |
-| **Most Critical Parameter** | SC5 Stasis | Largest-class persistence contributes 51.5% of matrix-cell elasticity (bootstrap interval: 38.8–64.7%) |
+| **Conditional transition λ** | 0.955 (CI: 0.913–1.000) | Recruitment-free post-settlement subsystem; 97.5% of bootstrap replicates had λ < 1, not a real-world decline probability |
+| **Most Critical Parameter** | SC5 Stasis | Largest-class persistence contributes 51.4% of matrix-cell elasticity (bootstrap interval: 38.8–64.5%) |
 | **Survival Nonlinearity** | Curvature minimum ~7,498 cm² | Strongest downward curvature, not an inflection or tested planting-size cutoff; unstable across study folds |
 | **Core Growth Nonlinearity** | RGR curvature minimum at 35 cm² | Relative growth declines with size; positive-growth probability has no supported nonlinear threshold |
 | **Shrinkage Frequency** | See output-backed subset summaries | Surviving colonies frequently lose tissue; near-annual shrinkage and matrix-transition subsets have distinct eligibility |
 | **Disturbance × Size** | Survival interaction `p = 0.00126` | Global association, not pairwise class-specific tests or a causal disturbance effect |
 | **Study Heterogeneity (I²)** | 97.6% | Among-study variation is substantial; the prediction interval is 38.0–95.8% |
 | **Expanded Meta-Analysis** | 78.9% (k=17; 22 effects) | Tier-1 and Tier-2 inputs use the same interval-annualized time scale |
-| **Natural vs Restoration** | 85.7% vs 74.5% | 11.2 pp difference, p=0.165; underpowered and not statistically resolved; restoration-origin includes nursery-held material |
+| **Natural vs Restoration** | 85.7% vs 74.5% | 11.2 pp difference, p=0.163; underpowered and not statistically resolved; restoration-origin includes nursery-held material |
 | **Updates Vardi (2012)** | Lefkovitch matrix | Largest dataset for species |
 | **Heatwave reference** | Pooled monitoring extends through 2024 | The reference matrix is not a fitted pre-2023 counterfactual. Manzello et al. (2025) mortality is an additional prescribed stress pulse, not a reconstruction of the historical event. |
-| **Recruitment assumption** | λ = 0.953 assumes no sexual or external recruitment | Fragmentation is the only recruitment pathway represented; removing it lowers λ to 0.889. This remains a conditional subsystem. |
+| **Recruitment assumption** | λ = 0.955 assumes no sexual or external recruitment | Fragmentation is the only recruitment pathway represented; removing it lowers λ to 0.890. This remains a conditional subsystem. |
 | **Biological-realism framework (FigS29)** | Supporting scenario sensitivity analysis | Mechanism-specific results are in `06_analysis/output/biological_realism_scenarios.csv`; S0 must reproduce the corrected live-area baseline, not a legacy matrix. These scenarios are separate from the primary recruitment-free analysis. |
 
 > For manuscript-facing interpretation, use [the manuscript draft](07_reporting/manuscript/acropora_palmata_demography_manuscript_draft.md), [the claim-to-output crosswalk](07_reporting/internal/claim_output_crosswalk.md), and [the figure/table map](07_reporting/manuscript/figure_table_map.md).
@@ -295,14 +295,14 @@ What was removed in cleanup was the ad hoc thresholding that had been bolted ont
 | Study | Origin | Region | Standardized survival rows | Notes |
 |---|---|---|---:|---|
 | NOAA monitoring | Natural | FL, Curacao, Navassa | 4,048 | Naturally occurring fragments retain natural origin; endpoint-selected fragments excluded from survival inference |
-| Neely et al. 2022 | Natural | FL Keys | 2,667 | Two ACER IDs excluded; physical colony type unknown pending source metadata |
+| Neely et al. 2022 | Natural | FL Keys | 2,665 | Three ACER IDs excluded; collector-verified first-sighting AF cohort; all colonies wild |
 | Pausch et al. 2018 | Restoration | Florida | 969 | Fragment experiments |
 | USGS USVI | Restoration | USVI | 46 | Reef outplants |
 | Kuffner et al. 2020 | Restoration | Florida | 53 | Reef outplants |
 | Mendoza-Quiroz et al. 2023 | Restoration, sexual recruits | Mexico | 52 | Nursery and reef cohorts distinguished |
 | FUNDEMAR | Restoration | Dominican Rep. | 45 | Nursery fragments; no post-outplant age assigned |
 
-Counts are rows in the standardized survival file before duplicate, measurement, and cohort-eligibility filters; they are not unique colony counts. The retained inventory has 7,778 intervals and the primary survival file has 7,663 eligible intervals.
+Counts are rows in the standardized survival file before duplicate, measurement, and cohort-eligibility filters; they are not unique colony counts. The retained inventory has 7,776 intervals and the primary survival file has 7,680 eligible intervals.
 
 ### Tier 2: Summary-level data (10 additional studies)
 
@@ -313,7 +313,7 @@ Counts are rows in the standardized survival file before duplicate, measurement,
 | Vardi 2011 (3 regions) | Natural | Jamaica, PR, V. Gorda | 245 | 76–96% | Hand |
 | Bruckner & Bruckner 2001 | Restoration | Puerto Rico | 105 | 90.5% | Hand |
 | Ortiz Prosper 2005 | Restoration | Puerto Rico | 207 | 78.7% | Hand |
-| Forrester et al. 2013 | Restoration | BVI | 257 | 53.3% | Hand |
+| Forrester et al. 2014 | Restoration | BVI | 257 | 53.3% | Hand |
 | Rosales et al. 2024 | Restoration | FL Keys | 58 | 79.3% | Hand |
 | Maurer et al. 2022 | Restoration | Bahamas | 24 | 95.8% | Hand |
 | Williams & Miller 2010 | Restoration | FL Keys | 18 | 77.8% | Hand |

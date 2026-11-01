@@ -180,11 +180,7 @@ p_a <- ggplot(surv_reliable, aes(x = survey_yr, y = survival)) +
   } +
   # Disturbance event labels at top
   {if (nrow(event_bands) > 0)
-    geom_text(data = event_bands,
-              aes(x = (xmin + xmax) / 2, y = Inf, label = label),
-              inherit.aes = FALSE,
-              vjust = 1.2, size = 2.2, color = pal$accent,
-              lineheight = 0.85, fontface = "italic")
+    NULL
   } +
   # Confidence ribbon (reliable years only)
   geom_ribbon(aes(ymin = ci_lower, ymax = ci_upper),

@@ -14,7 +14,8 @@ audit = rows("06_analysis/output/population_origin_sampling_audit.csv")
 inventory = sum(int(r["n_intervals"]) for r in audit)
 eligible = sum(int(r["n_intervals"]) for r in audit if r["survival_cohort_eligible"] == "TRUE")
 endpoint = sum(int(r["n_intervals"]) for r in audit if r["survival_sampling_basis"] == "fragment_status_selected_at_live_endpoint")
-unverified = inventory - eligible - endpoint
+loose = sum(int(r["n_intervals"]) for r in audit if r["survival_sampling_basis"] == "loose_fragment_outside_consistent_attached_monitoring")
+unverified = inventory - eligible - endpoint - loose
 raw_survival = len(rows("05_data/standardized/apal_surv_ind.csv"))
 raw_growth = len(rows("05_data/standardized/apal_growth_ind.csv"))
 filtering = rows("06_analysis/output/data_filtering_audit.csv")
@@ -25,11 +26,14 @@ checks = {
     "survival inventory": f"left {inventory:,} inventory records" in main,
     "primary survival eligibility": f"leaving {eligible:,} eligible intervals" in main,
     "selected endpoint exclusion": f"{endpoint:,} endpoint-selected natural-fragment records" in main,
-    "unverified duration exclusion": f"{unverified:,} intervals without verified duration" in main,
+    "unverified duration exclusion": (
+        f"{unverified:,} intervals without verified duration" in main if unverified else
+        "no intervals without verified duration" in main),
     "standardized growth": f"contained {raw_growth:,} records" in main,
     "prepared growth": f"{growth:,} prepared records" in main,
     "source origin wording": "classified population origin independently of fragmentation" in main,
-    "supplement cohort exclusion": f"{endpoint:,} NOAA" in esm and f"{unverified:,} Neely" in esm,
+    "supplement cohort exclusion": f"{endpoint:,} NOAA" in esm and f"{loose:,} loose-fragment intervals" in esm,
+    "loose-fragment protocol": f"{loose:,} loose-fragment intervals" in main,
 }
 out = "06_analysis/output/"
 survival = rows(out + "survival_thresholds.csv")[0]

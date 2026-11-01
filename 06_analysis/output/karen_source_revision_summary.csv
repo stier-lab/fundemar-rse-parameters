@@ -1,9 +1,9 @@
 metric,value
-prepared_survival,7663
-prepared_growth,6300
-prepared_neely_survival,2647
-prepared_neely_growth,1975
-neely_missing_duration,21
+prepared_survival,7680
+prepared_growth,6319
+prepared_neely_survival,2645
+prepared_neely_growth,1994
+neely_missing_duration,0
 known_live_missing_endpoint_lai,20
 known_live_missing_initial_lai,20
-neely_distinct_2012_intervals,1050
+neely_distinct_2012_intervals,1059

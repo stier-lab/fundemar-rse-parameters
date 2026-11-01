@@ -370,11 +370,8 @@ make_display_data <- function(summary_data, rate_column, white_text_above) {
     mutate(
       n = coalesce(n, 0L),
       display_rate = if_else(n >= MIN_DISPLAY_N, .data[[rate_column]], NA_real_),
-      fill_label = case_when(
-        n == 0L ~ "No data\nn = 0",
-        n < MIN_DISPLAY_N ~ sprintf("<%d obs.\nn = %d", MIN_DISPLAY_N, n),
-        TRUE ~ sprintf("%.0f%%\nn = %s", display_rate * 100, scales::comma(n))
-      ),
+      fill_label = if_else(n >= MIN_DISPLAY_N,
+                           sprintf("%.0f%%", display_rate * 100), ""),
       text_col = if_else(!is.na(display_rate) & display_rate > white_text_above,
                          "white", pal$slate_dark),
       availability_fill = if_else(n == 0L, "white", "#E5E7EB")
@@ -442,8 +439,8 @@ dir.create(legend_dir, showWarnings = FALSE, recursive = TRUE)
 writeLines(
   c(
     "Fig. S17 (Fig. S4 in Online Resource 1). Observed demographic rates across size classes and curated disturbance states.",
-    "(a) Observed interval survival and (b) the proportion of records with positive growth for natural colonies. Tile labels give the observed percentage and the number of colony-interval records; these are descriptive proportions, not size-class-specific treatment effects or pairwise tests. Survival percentages average binary colony-interval fates. Survey durations differ among records, so these percentages are not annual survival rates.",
-    sprintf("Both panels display a percentage only when n >= %d. Grey tiles labeled '<%d obs.' indicate an observed cell below this display threshold; white tiles labeled 'No data' indicate n = 0. The no-curated-disturbance SC1 cell has one survival record and no growth records. This display rule does not remove observations from the models or exported summaries.", MIN_DISPLAY_N, MIN_DISPLAY_N),
+    "(a) Observed interval survival and (b) the proportion of records with positive growth for natural colonies. Tile labels give the observed percentage; cell sample counts are retained in the exported summaries; these are descriptive proportions, not size-class-specific treatment effects or pairwise tests. Survival percentages average binary colony-interval fates. Survey durations differ among records, so these percentages are not annual survival rates.",
+    sprintf("Both panels display a percentage only when n >= %d. Grey tiles indicate an observed cell below this display threshold; white tiles indicate n = 0. The no-curated-disturbance SC1 cell has one survival record and no growth records. This display rule does not remove observations from the models or exported summaries.", MIN_DISPLAY_N),
     "Blue shading encodes observed interval survival; orange shading encodes positive-growth frequency, matching the outcome colors in Fig. S5. The positive-growth indicator uses annual live-area change when available and otherwise annual total-colony-area change from the prepared growth data; it is not restricted to the matched live-area endpoints used in the primary growth analysis. SC1-SC5 use initial live-area boundaries of 0, 10, 100, 900, and 4,000 cm². Disturbance states distinguish intervals without a curated event, context-only pressure, and acute-event intervals flagged for baseline exclusion. Study, site, and time composition differ among states, so the displayed contrasts are not causal disturbance effects."
   ),
   file.path(legend_dir, "FigS17_disturbance_size_interaction.md")
